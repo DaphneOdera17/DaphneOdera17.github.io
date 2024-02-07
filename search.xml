@@ -18,8 +18,8 @@
     
     <entry>
       <title>base64编码</title>
-      <link href="/post/undefined.html"/>
-      <url>/post/undefined.html</url>
+      <link href="/post/e4aae5e6.html"/>
+      <url>/post/e4aae5e6.html</url>
       
         <content type="html"><![CDATA[<h1 id="Base64-编码"><a href="#Base64-编码" class="headerlink" title="$Base64$ 编码"></a>$Base64$ 编码</h1><p><a href="https://en.wikipedia.org/wiki/Base64">Wiki</a></p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20240121092628109.png" alt="base64编码表"></p><p>$Base64$ 用 $6$ 位表示</p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20240121091417546.png" alt=""></p><p>将  $echo$ “$HelloWorld$” 的结果作为 $Base64$ 命令的输入来执行一个 $Base64$ 编码操作</p><h2 id="编码的原理和过程"><a href="#编码的原理和过程" class="headerlink" title="编码的原理和过程"></a>编码的原理和过程</h2><h4 id="1-转换编码对象为二进制"><a href="#1-转换编码对象为二进制" class="headerlink" title="1.转换编码对象为二进制"></a>1.转换编码对象为二进制</h4><p>$H：01001000$</p><p>$e：01100101$</p><p>$l：01101100$</p><p>$l：01101100$</p><p>$o：01101111$</p><p>$W：01010111$</p><p>$o：01101111$</p><p>$r：01110010$</p><p>$l：01101100$</p><p>$d：01100100$</p><p>$\n：00001010$$</p><p>再将二进制位从左往右排列，得到字符串的二进制表示</p><h4 id="2-把二进制的字符串按照每六位一组来分组"><a href="#2-把二进制的字符串按照每六位一组来分组" class="headerlink" title="2.把二进制的字符串按照每六位一组来分组"></a>2.把二进制的字符串按照每六位一组来分组</h4><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20240121091749052.png" alt=""></p><p>如果最后一组二进制位不足 $6$ 位，用 $0$ 来补齐</p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20240121091857123.png" alt=""></p><h4 id="3-把每一组的二进制位转换成十进制的数字并映射"><a href="#3-把每一组的二进制位转换成十进制的数字并映射" class="headerlink" title="3.把每一组的二进制位转换成十进制的数字并映射"></a>3.把每一组的二进制位转换成十进制的数字并映射</h4><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20240121092008188.png" alt=""></p><p>就得到了编码之后的结果</p><p>$SGVsbG9Xb3JsZAo$</p><p>但是需要注意的是，$\textcolor{red}{编码之后的长度必须为 4 的倍数}$</p><p>如果不是的话，需要在结尾的位置用 $=$ 来补齐。</p><p>因此，结果为</p><p>$SGVsbG9Xb3JsZAo=$</p><h2 id="解码"><a href="#解码" class="headerlink" title="解码"></a>解码</h2><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20240121092530681.png" alt=""></p>]]></content>
       
@@ -37,8 +37,8 @@
     
     <entry>
       <title>Hello World</title>
-      <link href="/post/undefined.html"/>
-      <url>/post/undefined.html</url>
+      <link href="/post/4a17b156.html"/>
+      <url>/post/4a17b156.html</url>
       
         <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
       
@@ -49,17 +49,6 @@
     
   
   
-    
-    
-    <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
     
     
     <entry>
@@ -74,22 +63,22 @@
     
     
     <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title></title>
+      <link href="/js/modify.js"/>
+      <url>/js/modify.js</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA['use strict';const cheerio = require('cheerio');/** * 在页面插入新顶部图 * @param {cheerio.Root} $ Root */function insertTopImg($) {    let header = $('#page-header');    if (header.length === 0) return;    let background = header.css('background-image');    if (!background) return;    $('#post, #page, #archive, #tag, #category').prepend(`<div class="top-img" style="background-image: ${background};"></div>`);}hexo.extend.filter.register('after_render:html', function(str, data) {    let $ = cheerio.load(str, {        decodeEntities: false    });    insertTopImg($);    return $.html();});]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title></title>
-      <link href="/js/modify.js"/>
-      <url>/js/modify.js</url>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
-        <content type="html"><![CDATA['use strict';const cheerio = require('cheerio');/** * 在页面插入新顶部图 * @param {cheerio.Root} $ Root */function insertTopImg($) {    let header = $('#page-header');    if (header.length === 0) return;    let background = header.css('background-image');    if (!background) return;    $('#post, #page, #archive, #tag, #category').prepend(`<div class="top-img" style="background-image: ${background};"></div>`);}hexo.extend.filter.register('after_render:html', function(str, data) {    let $ = cheerio.load(str, {        decodeEntities: false    });    insertTopImg($);    return $.html();});]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
@@ -110,6 +99,17 @@
       <title></title>
       <link href="/css/background.css"/>
       <url>/css/background.css</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       

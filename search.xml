@@ -89,7 +89,18 @@
       <link href="/css/myStyle.css"/>
       <url>/css/myStyle.css</url>
       
-        <content type="html"><![CDATA[#web_bg {background-image: url("../img/banner.jpg"),linear-gradient(60deg,rgba(255, 165, 150, 0.5) 5%,rgba(0, 228, 255, 0.35));}/* 侧边栏个人信息卡片动态渐变色 */#aside-content > .card-widget {background: linear-gradient(-45deg,#e8d8b9,#eccec5,#a3e9eb,#bdbdf0,#eec1ea);box-shadow: 0 0 5px rgb(66, 68, 68);position: relative;background-size: 400% 400%;-webkit-animation: Gradient 10s ease infinite;-moz-animation: Gradient 10s ease infinite;animation: Gradient 10s ease infinite !important;}@-webkit-keyframes Gradient {0% {background-position: 0% 50%;}50% {background-position: 100% 50%;}100% {background-position: 0% 50%;}}@-moz-keyframes Gradient {0% {background-position: 0% 50%;}50% {background-position: 100% 50%;}100% {background-position: 0% 50%;}}@keyframes Gradient {0% {background-position: 0% 50%;}50% {background-position: 100% 50%;}100% {background-position: 0% 50%;}}/* 个人信息Follow me按钮 */#aside-content > .card-widget.card-info > #card-info-btn {background-color: #3eb8be;border-radius: 8px;}#aside-content > .sticky_layout > .card-widget {background: rgba(255, 255, 255, 0.8);}/*文章页面*/.layout > #post {background: rgba(255, 255, 255, 0.8);}/*分类页面*/.layout > #page {background: rgba(255, 255, 255, 0.6);}/*时间轴页面*/.layout > #archive {background: rgba(255, 255, 255, 0.6);}]]></content>
+        <content type="html"><![CDATA[@import "nib" // 顶部图#page-header &,&: before background: transparent !important &.post-bg,&.not-home-page height: 280px !important #post-info bottom: 40px !important#page-site-info top: 140px !important @media screen and(max-width: 768px) &.not-home-page height: 200px !important #post-infobottom: 10px !important #page-site-info top: 100px !important .top-imgheight: 250px margin: -50px -40px 50px border-top-left-radius: inheritborder-top-right-radius: inherit background-position: center centerbackground-size: cover transition: all 0.3s @media screen and(max-width: 768px) height: 230px margin: -36px -14px 36px [data-theme="dark"] & filter: brightness(0.8) // 页脚#footer: before background-color: alpha(#fff, 0.5) [data-theme= "dark"] &background-color: alpha(#000, 0.5) #footer-wrap,#footer-wrap a color: #111 transition: unset [data-theme= "dark"] & color: var(--light-grey);]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/js/modify.js"/>
+      <url>/js/modify.js</url>
+      
+        <content type="html"><![CDATA['use strict';const cheerio = require('cheerio');/** * 在页面插入新顶部图 * @param {cheerio.Root} $ Root */function insertTopImg($) {    let header = $('#page-header');    if (header.length === 0) return;    let background = header.css('background-image');    if (!background) return;    $('#post, #page, #archive, #tag, #category').prepend(`<div class="top-img" style="background-image: ${background};"></div>`);}hexo.extend.filter.register('after_render:html', function(str, data) {    let $ = cheerio.load(str, {        decodeEntities: false    });    insertTopImg($);    return $.html();});]]></content>
       
     </entry>
     

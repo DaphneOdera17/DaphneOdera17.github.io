@@ -52,11 +52,22 @@
     
     
     <entry>
-      <title></title>
-      <link href="/css/background.css"/>
-      <url>/css/background.css</url>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
-        <content type="html"><![CDATA[/* 文章页背景 */.layout_post > #post {/* 以下代表透明度为0.7 可以自行修改*/background: rgba(255, 255, 255, 0.2);}/* 所有页面背景 */#aside_content .card-widget,#recent-posts > .recent-post-item,.layout_page > div:first-child:not(.recent-posts),.layout_post > #page,.layout_post > #post,.read-mode .layout_post > #post {/* 以下代表透明度为0.7 */background: rgba(255, 255, 255, 0.7);}/*侧边卡片的透明度 */:root {--card-bg: rgba(255, 255, 255, 0.7);}/* 页脚透明 */#footer {/* 以下代表透明度为0.7 */background: rgba(255, 255, 255, 0);}]]></content>
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
@@ -75,6 +86,17 @@
     
     <entry>
       <title></title>
+      <link href="/css/background.css"/>
+      <url>/css/background.css</url>
+      
+        <content type="html"><![CDATA[/* 文章页背景 */.layout_post > #post {/* 以下代表透明度为0.7 可以自行修改*/background: rgba(255, 255, 255, 0.9);}/* 所有页面背景 */#aside_content .card-widget,#recent-posts > .recent-post-item,.layout_page > div:first-child:not(.recent-posts),.layout_post > #page,.layout_post > #post,.read-mode .layout_post > #post {/* 以下代表透明度为0.7 */background: rgba(255, 255, 255, 0.9);}/*侧边卡片的透明度 */:root {--card-bg: rgba(255, 255, 255, 0.9);}/* 页脚透明 */#footer {/* 以下代表透明度为0.7 */background: rgba(255, 255, 255, 0.9);}]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
       <link href="/css/modify.css"/>
       <url>/css/modify.css</url>
       
@@ -85,31 +107,9 @@
     
     
     <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>link</title>
       <link href="/link/index.html"/>
       <url>/link/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       

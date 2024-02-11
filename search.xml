@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>时空复杂度</title>
+      <link href="/post/c689e876.html"/>
+      <url>/post/c689e876.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="时空复杂度"><a href="#时空复杂度" class="headerlink" title="时空复杂度"></a>时空复杂度</h1><h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><p>评测机大概 $1s$ 最多运行 $1$ 亿次，即 $1e8$​</p><p>时间复杂度一般小于 $1e7 \sim 1e8$ 就可以</p><p>$2^{20} ≈ 10^6$</p><p>$2^{16} = 65536$</p><p>$2^{15} = 32768$</p><p>$2^{63} = 10^{18}$</p><h2 id="根据数据范围反推算法复杂度及算法"><a href="#根据数据范围反推算法复杂度及算法" class="headerlink" title="根据数据范围反推算法复杂度及算法"></a>根据数据范围反推算法复杂度及算法</h2><p>源自 $y$ 总，指路：<a href="https://www.acwing.com/blog/content/32/">原文链接</a></p><ol><li>$n \le 30$, 指数级别, $dfs$+剪枝，状态压缩$dp$</li><li>$n \le 100$ =&gt; $O(n^3)$，$floyd，dp，$高斯消元</li><li>$n \le 1000$ =&gt; $O(n^2)$，$O(n^2logn)$，$dp$，二分，朴素版$Dijkstra$、朴素版$Prim$、$Bellman-Ford$</li><li>$n \le 10000$ =&gt; $O(n * \sqrt n)$，块状链表、分块、莫队</li><li>$n \le 100000$ =&gt; $O(nlogn)$ =&gt; 各种$sort$，线段树、树状数组、$set/map$、$heap$、拓扑排序、$dijkstra+heap$、$prim+heap$、$Kruskal$、$spfa$、求凸包、求半平面交、二分、$CDQ$分治、整体二分、后缀数组、树链剖分、动态树</li><li>$n \le 1000000$ =&gt; $O(n)$, 以及常数较小的 $O(nlogn)$ 算法 =&gt; 单调队列、 $hash$、双指针扫描、$BFS$、并查集，$kmp$、$AC$自动机，常数比较大的 $O(nlogn)$ 的做法：$sort$、树状数组、$heap$、$dijkstra$、$spfa$</li><li>$n \le 10000000$ =&gt; $O(n)$，双指针扫描、$kmp$、$AC$自动机、线性筛素数</li><li>$n \le 10^9$ =&gt; $O(\sqrt n)$，判断质数</li><li>$n \le 10^{18}$ =&gt; $O(logn)$，最大公约数，快速幂，数位$DP$</li><li>$n \le 10^{1000}$ =&gt; $O((logn)^2)$，高精度加减乘除</li><li>$n \le 10^{100000}$ =&gt; $O(logk \times loglogk)，k$表示位数，高精度加减、$FFT/NTT$</li></ol><h2 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h2><p>对于空间复杂度</p><p>$int ~ =~4 ~ Byte$</p><p>$char ~ =~1 ~ Byte$</p><p>$long~ long ~ =~8 ~ Byte$</p><p>$float ~ =~4 ~ Byte$</p><p>$double ~ =~8 ~ Byte$</p><p>$64MB = 6\times 2^{20}Byte = 6.4 \times 10^{7} Byte$</p><p>可以开 $1.6 \times 10^{7}$ 个 $int$</p><h2 id="数据量对于输入输出的影响"><a href="#数据量对于输入输出的影响" class="headerlink" title="数据量对于输入输出的影响"></a>数据量对于输入输出的影响</h2><p>$n &lt; 10^5$ 时，用  $scanf,printf,cin,cout$ 差不多</p><p>$n \ge 10^5$ 时，用 $scanf,printf$</p><p>如果想用 $cin, cout$，需要关闭同步</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>), cin.<span class="built_in">tie</span>(<span class="number">0</span>), cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 时间复杂度 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>pointer</title>
       <link href="/post/320468a8.html"/>
       <url>/post/320468a8.html</url>

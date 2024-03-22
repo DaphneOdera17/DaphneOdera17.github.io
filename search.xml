@@ -8,7 +8,7 @@
       <link href="/post/aa87ba6f.html"/>
       <url>/post/aa87ba6f.html</url>
       
-        <content type="html"><![CDATA[<p>ssh: connect to host github.com port 22: Connection refused</p><p>默认配置文件在 ~/.ssh/config<br>如果没有则 touch ~/.ssh/config</p><p>vim ~/.ssh/config<br>在其中添加这几行：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">  Hostname ssh.github.com</span><br><span class="line">  Port 443</span><br></pre></td></tr></table></figure><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240319163811.png" alt="image.png"></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="ssh-connect-to-host-github-com-port-22-Connection-refused"><a href="#ssh-connect-to-host-github-com-port-22-Connection-refused" class="headerlink" title="ssh: connect to host github.com port 22: Connection refused"></a>ssh: connect to host github.com port 22: Connection refused</h1><p>默认配置文件在 ~/.ssh/config<br>如果没有则 touch ~/.ssh/config</p><p>vim ~/.ssh/config<br>在其中添加这几行：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">  Hostname ssh.github.com</span><br><span class="line">  Port 443</span><br></pre></td></tr></table></figure><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240319163811.png" alt="image.png"></p>]]></content>
       
       
       <categories>

@@ -24,6 +24,7 @@
     padding-top: 0;
 }
 
+
 @media screen and (min-width: 1200px) {
     #recent-posts{
         margin-top:-1rem;  /*头部为空时抵消间隔，若有磁贴或日历请注释掉该行*/
@@ -83,3 +84,9 @@
     }
 }
 
+.page #page:not(.home #page),.page #tag,.page #archive,.page #category{
+    background: transparent!important;
+    border: none!important;
+    box-shadow: none!important;
+    padding-top: 0;
+}

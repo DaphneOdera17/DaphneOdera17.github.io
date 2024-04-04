@@ -6,8 +6,9 @@
     max-width:312px;
     min-width:300px;
 }
+
 .recent-posts{
-  width:auto!important;
+  width:50%;
 }
 
 @media screen and (max-width: 900px){
@@ -15,9 +16,6 @@
         max-width:none!important;
     }
 }
-
-
-
 
 @media screen and (min-width: 1200px) {
     #recent-posts{
@@ -36,7 +34,7 @@
     }
     #recent-posts > .recent-post-item .post_cover {
       width: 100%; /*图片封面宽度*/
-        height: 200px;/*图片封面高度*/
+      height: 200px;/*图片封面高度*/
     }
     #recent-posts > .recent-post-item .post_cover img.post_bg {
       width: 100%;/*图片宽度*/

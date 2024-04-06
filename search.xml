@@ -8,7 +8,7 @@
       <link href="/post/c0d75012.html"/>
       <url>/post/c0d75012.html</url>
       
-        <content type="html"><![CDATA[<h1 id="hexo-添加-aplayer-播放器"><a href="#hexo-添加-aplayer-播放器" class="headerlink" title="hexo 添加 aplayer 播放器"></a><strong>hexo 添加 aplayer 播放器</strong></h1><h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p>先安装插件 <a href="https://github.com/MoePlayer/hexo-tag-aplayer">hexo-tag-aplayer</a><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-tag-aplayer</span><br></pre></td></tr></table></figure></p><h2 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h2><p>在 hexo 的根目录配置文件 _config.yml 添加<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">aplayer:</span></span><br><span class="line">  <span class="attr">meting:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">asset_inject:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure><br>再在主题配置文件中，以 _config.butterfly.yml 中找到  aplayerInject<br>将 enable, per_page 改为 true<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Inject the css and script (aplayer/meting)</span></span><br><span class="line"><span class="attr">aplayerInject:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">per_page:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure><br>再找到 inject 在 bottom 下面添加<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="string">&lt;div</span> <span class="string">class=&quot;aplayer</span> <span class="literal">no</span><span class="string">-destroy&quot;</span> <span class="string">data-id=&quot;2740999019&quot;</span> <span class="string">data-server=&quot;netease&quot;</span> <span class="string">data-type=&quot;playlist&quot;</span> <span class="string">data-fixed=&quot;true&quot;</span> <span class="string">data-autoplay=&quot;true&quot;&gt;</span> <span class="string">&lt;/div&gt;</span></span><br></pre></td></tr></table></figure><br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">inject:</span></span><br><span class="line">    <span class="attr">head:</span></span><br><span class="line">    <span class="attr">bottom:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">&lt;div</span> <span class="string">class=&quot;aplayer</span> <span class="literal">no</span><span class="string">-destroy&quot;</span> <span class="string">data-id=&quot;2740999019&quot;</span> <span class="string">data-server=&quot;netease&quot;</span> <span class="string">data-type=&quot;playlist&quot;</span> <span class="string">data-fixed=&quot;true&quot;</span> <span class="string">data-autoplay=&quot;true&quot;&gt;</span> <span class="string">&lt;/div&gt;</span></span><br></pre></td></tr></table></figure></p><h1 id="这里的-data-id-对应相应音乐软件播放列表的-id"><a href="#这里的-data-id-对应相应音乐软件播放列表的-id" class="headerlink" title="这里的 data-id 对应相应音乐软件播放列表的 id"></a>这里的 data-id 对应相应音乐软件播放列表的 id</h1><p>以网易云为例子，在官网的界面打开，看链接可以找到 id<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240406194433.png" alt="image.png"></p><p>为了让切换页面之后音乐不会暂停。<br>在主题配置文件中启用 pjax<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">pjax:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></p><h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>最后 hexo clean &amp; hexo g &amp; hexo s 三连，即可看到播放器。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240406194841.png" alt="image.png"></p><h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://butterfly.js.org/posts/507c070f/#%E6%8F%92%E5%85%A5-Aplayer-html">butterfly 官方文档</a></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="hexo-添加-aplayer-播放器"><a href="#hexo-添加-aplayer-播放器" class="headerlink" title="hexo 添加 aplayer 播放器"></a><strong>hexo 添加 aplayer 播放器</strong></h1><h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p>先安装插件 <a href="https://github.com/MoePlayer/hexo-tag-aplayer">hexo-tag-aplayer</a><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-tag-aplayer</span><br></pre></td></tr></table></figure></p><h2 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h2><p>在 hexo 的根目录配置文件 _config.yml 添加<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">aplayer:</span></span><br><span class="line">  <span class="attr">meting:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">asset_inject:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure><br>再在主题配置文件中，以 _config.butterfly.yml 中找到  aplayerInject<br>将 enable, per_page 改为 true<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Inject the css and script (aplayer/meting)</span></span><br><span class="line"><span class="attr">aplayerInject:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">per_page:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure><br>再找到 inject 在 bottom 下面添加<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="string">&lt;div</span> <span class="string">class=&quot;aplayer</span> <span class="literal">no</span><span class="string">-destroy&quot;</span> <span class="string">data-id=&quot;2740999019&quot;</span> <span class="string">data-server=&quot;netease&quot;</span> <span class="string">data-type=&quot;playlist&quot;</span> <span class="string">data-fixed=&quot;true&quot;</span> <span class="string">data-autoplay=&quot;true&quot;&gt;</span> <span class="string">&lt;/div&gt;</span></span><br></pre></td></tr></table></figure><br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">inject:</span></span><br><span class="line">    <span class="attr">head:</span></span><br><span class="line">    <span class="attr">bottom:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">&lt;div</span> <span class="string">class=&quot;aplayer</span> <span class="literal">no</span><span class="string">-destroy&quot;</span> <span class="string">data-id=&quot;2740999019&quot;</span> <span class="string">data-server=&quot;netease&quot;</span> <span class="string">data-type=&quot;playlist&quot;</span> <span class="string">data-fixed=&quot;true&quot;</span> <span class="string">data-autoplay=&quot;true&quot;&gt;</span> <span class="string">&lt;/div&gt;</span></span><br></pre></td></tr></table></figure><br><strong>这里的 data-id 对应相应音乐软件播放列表的 id</strong></p><p>以网易云为例子，在官网的界面打开，看链接可以找到 id<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240406194433.png" alt="image.png"></p><p>为了让切换页面之后音乐不会暂停。<br>在主题配置文件中启用 pjax<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">pjax:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></p><h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>最后 hexo clean &amp; hexo g &amp; hexo s 三连，即可看到播放器。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240406194841.png" alt="image.png"></p><h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://butterfly.js.org/posts/507c070f/#%E6%8F%92%E5%85%A5-Aplayer-html">butterfly 官方文档</a></p>]]></content>
       
       
       <categories>
@@ -223,9 +223,9 @@
       
         <tags>
             
-            <tag> 算法 </tag>
-            
             <tag> 时间复杂度 </tag>
+            
+            <tag> 算法 </tag>
             
         </tags>
       
@@ -264,44 +264,11 @@
     
     
     <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>gallery</title>
-      <link href="/gallery/index.html"/>
-      <url>/gallery/index.html</url>
-      
-        <content type="html"><![CDATA[<div class="gallery-group-main"><figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='/img-url' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">name</div>  <p>description</p>  <a href='/link'></a>  </figcaption>  </figure>  <figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='/img-url' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">name</div>  <p>description</p>  <a href='/link'></a>  </figcaption>  </figure>  <figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='/img-url' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">name</div>  <p>description</p>  <a href='/link'></a>  </figcaption>  </figure>  </div>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title></title>
-      <link href="/js/modify.js"/>
-      <url>/js/modify.js</url>
+      <link href="/css/background.css"/>
+      <url>/css/background.css</url>
       
-        <content type="html"><![CDATA['use strict';const cheerio = require('cheerio');/** * 在页面插入新顶部图 * @param {cheerio.Root} $ Root */function insertTopImg($) {    let header = $('#page-header');    if (header.length === 0) return;    let background = header.css('background-image');    if (!background) return;    $('#post, #page, #archive, #tag, #category').prepend(`<div class="top-img" style="background-image: ${background};"></div>`);}hexo.extend.filter.register('after_render:html', function(str, data) {    let $ = cheerio.load(str, {        decodeEntities: false    });    insertTopImg($);    return $.html();});]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>关于我</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[/* 文章页背景 */.layout_post > #post {/* 以下代表透明度为0.7 可以自行修改*/background: rgba(255, 255, 255, 0.9);}/* 所有页面背景 */#aside_content .card-widget,#recent-posts > .recent-post-item,.layout_page > div:first-child:not(.recent-posts),.layout_post > #page,.layout_post > #post,.read-mode .layout_post > #post {/* 以下代表透明度为0.7 */background: rgba(255, 255, 255, 0.9);}/*侧边卡片的透明度 */:root {--card-bg: rgba(255, 255, 255, 0.9);}/* 页脚透明 */#footer {/* 以下代表透明度为0.7 */background: rgba(255, 255, 255, 0.9);}]]></content>
       
     </entry>
     
@@ -319,9 +286,42 @@
     
     
     <entry>
-      <title>link</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/js/modify.js"/>
+      <url>/js/modify.js</url>
+      
+        <content type="html"><![CDATA['use strict';const cheerio = require('cheerio');/** * 在页面插入新顶部图 * @param {cheerio.Root} $ Root */function insertTopImg($) {    let header = $('#page-header');    if (header.length === 0) return;    let background = header.css('background-image');    if (!background) return;    $('#post, #page, #archive, #tag, #category').prepend(`<div class="top-img" style="background-image: ${background};"></div>`);}hexo.extend.filter.register('after_render:html', function(str, data) {    let $ = cheerio.load(str, {        decodeEntities: false    });    insertTopImg($);    return $.html();});]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>gallery</title>
+      <link href="/gallery/index.html"/>
+      <url>/gallery/index.html</url>
+      
+        <content type="html"><![CDATA[<div class="gallery-group-main"><figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='/img-url' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">name</div>  <p>description</p>  <a href='/link'></a>  </figcaption>  </figure>  <figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='/img-url' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">name</div>  <p>description</p>  <a href='/link'></a>  </figcaption>  </figure>  <figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='/img-url' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">name</div>  <p>description</p>  <a href='/link'></a>  </figcaption>  </figure>  </div>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>关于我</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -341,6 +341,17 @@
     
     
     <entry>
+      <title></title>
+      <link href="/music/index.html"/>
+      <url>/music/index.html</url>
+      
+        <content type="html"><![CDATA[<!-- 播放器 --><div class="music-player"><!-- audio标签 --><audio class="music-player__audio" ></audio><!-- 播放器主体 --><div class="music-player__main"><!-- 模糊背景 --><div class="music-player__blur"></div><!-- 唱片 --><div class="music-player__disc"><!-- 唱片图片 --><div class="music-player__image"><img width="100%" src="" alt=""></div><!-- 指针 --><div class="music-player__pointer"><img width="100%" src="/img/cd_tou.png" alt=""></div></div><!-- 控件主体 --><div class="music-player__controls"><!-- 歌曲信息 --><div class="music__info"><h3 class="music__info--title">...</h3></div><!-- 控件... --><div class="player-control"><div class="player-control__content"><div class="player-control__btns"><div class="player-control__btn player-control__btn--prev"><i class="iconfont icon-prev"></i></div><div class="player-control__btn player-control__btn--play"><i class="iconfont icon-play"></i></div><div class="player-control__btn player-control__btn--next"><i class="iconfont icon-next"></i></div><div class="player-control__btn player-control__btn--mode"><i class="iconfont icon-random"></i></div></div><div class="player-control__volume"><div class="control__volume--icon player-control__btn"><i class="iconfont icon-volume"></i></div><div class="control__volume--progress progress"></div></div></div><div class="player-control__content"><div class="player__song--progress progress"></div><div class="player__song--timeProgess nowTime">00:00</div><div class="player__song--timeProgess totalTime">00:00</div></div></div></div></div><!-- 歌曲列表 --><div class="music-player__list"><ul class="music__list_content"></ul></div></div><script src="/js/utill.js"></script><script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.slim.min.js"></script><script src="/js/player.js?10"></script><div style="text-align:center;margin:-100px 0; font:normal 14px/24px 'MicroSoft YaHei';color:#ffffff"></div>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>个人随想录</title>
       <link href="/talk/index.html"/>
       <url>/talk/index.html</url>
@@ -352,22 +363,11 @@
     
     
     <entry>
-      <title></title>
-      <link href="/css/background.css"/>
-      <url>/css/background.css</url>
+      <title>link</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
       
-        <content type="html"><![CDATA[/* 文章页背景 */.layout_post > #post {/* 以下代表透明度为0.7 可以自行修改*/background: rgba(255, 255, 255, 0.9);}/* 所有页面背景 */#aside_content .card-widget,#recent-posts > .recent-post-item,.layout_page > div:first-child:not(.recent-posts),.layout_post > #page,.layout_post > #post,.read-mode .layout_post > #post {/* 以下代表透明度为0.7 */background: rgba(255, 255, 255, 0.9);}/*侧边卡片的透明度 */:root {--card-bg: rgba(255, 255, 255, 0.9);}/* 页脚透明 */#footer {/* 以下代表透明度为0.7 */background: rgba(255, 255, 255, 0.9);}]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/music/index.html"/>
-      <url>/music/index.html</url>
-      
-        <content type="html"><![CDATA[<!-- 播放器 --><div class="music-player"><!-- audio标签 --><audio class="music-player__audio" ></audio><!-- 播放器主体 --><div class="music-player__main"><!-- 模糊背景 --><div class="music-player__blur"></div><!-- 唱片 --><div class="music-player__disc"><!-- 唱片图片 --><div class="music-player__image"><img width="100%" src="" alt=""></div><!-- 指针 --><div class="music-player__pointer"><img width="100%" src="/img/cd_tou.png" alt=""></div></div><!-- 控件主体 --><div class="music-player__controls"><!-- 歌曲信息 --><div class="music__info"><h3 class="music__info--title">...</h3></div><!-- 控件... --><div class="player-control"><div class="player-control__content"><div class="player-control__btns"><div class="player-control__btn player-control__btn--prev"><i class="iconfont icon-prev"></i></div><div class="player-control__btn player-control__btn--play"><i class="iconfont icon-play"></i></div><div class="player-control__btn player-control__btn--next"><i class="iconfont icon-next"></i></div><div class="player-control__btn player-control__btn--mode"><i class="iconfont icon-random"></i></div></div><div class="player-control__volume"><div class="control__volume--icon player-control__btn"><i class="iconfont icon-volume"></i></div><div class="control__volume--progress progress"></div></div></div><div class="player-control__content"><div class="player__song--progress progress"></div><div class="player__song--timeProgess nowTime">00:00</div><div class="player__song--timeProgess totalTime">00:00</div></div></div></div></div><!-- 歌曲列表 --><div class="music-player__list"><ul class="music__list_content"></ul></div></div><script src="/js/utill.js"></script><script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.slim.min.js"></script><script src="/js/player.js?10"></script><div style="text-align:center;margin:-100px 0; font:normal 14px/24px 'MicroSoft YaHei';color:#ffffff"></div>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     

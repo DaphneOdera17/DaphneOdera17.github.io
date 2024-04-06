@@ -108,7 +108,7 @@ function startSakura() {
     document.getElementsByTagName('body')[0].appendChild(canvas);
     cxt = canvas.getContext('2d');
     var sakuraList = new SakuraList();
-    for (var i = 0; i < 50; i++) {
+    for (var i = 0; i < 20; i++) {
         var sakura, randomX, randomY, randomS, randomR, randomFnx, randomFny;
         randomX = getRandom('x');
         randomY = getRandom('y');
@@ -116,6 +116,10 @@ function startSakura() {
         randomS = getRandom('s');
         randomFnx = getRandom('fnx');
         randomFny = getRandom('fny');
+        randomFny = function (x, y) {
+            return y + (1.0 + Math.random()) * 0.7; // 调整速度，增加乘数
+        };
+
         randomFnR = getRandom('fnr');
         sakura = new Sakura(randomX, randomY, randomS, randomR, {
             x: randomFnx,

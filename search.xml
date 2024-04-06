@@ -4,7 +4,38 @@
   
     
     <entry>
-      <title>NJU-PA0:环境的配置</title>
+      <title>hexo魔改|添加aplayer音乐播放器</title>
+      <link href="/post/c0d75012.html"/>
+      <url>/post/c0d75012.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="hexo-添加-aplayer-播放器"><a href="#hexo-添加-aplayer-播放器" class="headerlink" title="hexo 添加 aplayer 播放器"></a><strong>hexo 添加 aplayer 播放器</strong></h1><h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p>先安装插件 <a href="https://github.com/MoePlayer/hexo-tag-aplayer">hexo-tag-aplayer</a><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-tag-aplayer</span><br></pre></td></tr></table></figure></p><h2 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h2><p>在 hexo 的根目录配置文件 _config.yml 添加<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">aplayer:</span></span><br><span class="line">  <span class="attr">meting:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">asset_inject:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure><br>再在主题配置文件中，以 _config.butterfly.yml 中找到  aplayerInject<br>将 enable, per_page 改为 true<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Inject the css and script (aplayer/meting)</span></span><br><span class="line"><span class="attr">aplayerInject:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">per_page:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure><br>再找到 inject 在 bottom 下面添加<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="string">&lt;div</span> <span class="string">class=&quot;aplayer</span> <span class="literal">no</span><span class="string">-destroy&quot;</span> <span class="string">data-id=&quot;2740999019&quot;</span> <span class="string">data-server=&quot;netease&quot;</span> <span class="string">data-type=&quot;playlist&quot;</span> <span class="string">data-fixed=&quot;true&quot;</span> <span class="string">data-autoplay=&quot;true&quot;&gt;</span> <span class="string">&lt;/div&gt;</span></span><br></pre></td></tr></table></figure><br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">inject:</span></span><br><span class="line">    <span class="attr">head:</span></span><br><span class="line">    <span class="attr">bottom:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">&lt;div</span> <span class="string">class=&quot;aplayer</span> <span class="literal">no</span><span class="string">-destroy&quot;</span> <span class="string">data-id=&quot;2740999019&quot;</span> <span class="string">data-server=&quot;netease&quot;</span> <span class="string">data-type=&quot;playlist&quot;</span> <span class="string">data-fixed=&quot;true&quot;</span> <span class="string">data-autoplay=&quot;true&quot;&gt;</span> <span class="string">&lt;/div&gt;</span></span><br></pre></td></tr></table></figure></p><h1 id="这里的-data-id-对应相应音乐软件播放列表的-id"><a href="#这里的-data-id-对应相应音乐软件播放列表的-id" class="headerlink" title="这里的 data-id 对应相应音乐软件播放列表的 id"></a>这里的 data-id 对应相应音乐软件播放列表的 id</h1><p>以网易云为例子，在官网的界面打开，看链接可以找到 id<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240406194433.png" alt="image.png"></p><p>为了让切换页面之后音乐不会暂停。<br>在主题配置文件中启用 pjax<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">pjax:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></p><h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>最后 hexo clean &amp; hexo g &amp; hexo s 三连，即可看到播放器。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240406194841.png" alt="image.png"></p><h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://butterfly.js.org/posts/507c070f/#%E6%8F%92%E5%85%A5-Aplayer-html">butterfly 官方文档</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo魔改系列 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> butterfly </tag>
+            
+            <tag> aplayer </tag>
+            
+            <tag> 音乐播放器 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>NJU-ics | PA0:环境的配置</title>
       <link href="/post/f6ba7c15.html"/>
       <url>/post/f6ba7c15.html</url>
       
@@ -33,7 +64,7 @@
     
     
     <entry>
-      <title>hexo魔改:添加旋转小风车</title>
+      <title>hexo魔改|添加旋转小风车</title>
       <link href="/post/e03cfb73.html"/>
       <url>/post/e03cfb73.html</url>
       
@@ -62,7 +93,7 @@
     
     
     <entry>
-      <title>动态规划 数字三角形模型</title>
+      <title>算法|动态规划:数字三角形模型</title>
       <link href="/post/9a8bfad7.html"/>
       <url>/post/9a8bfad7.html</url>
       
@@ -91,7 +122,7 @@
     
     
     <entry>
-      <title>cs61B-sp21 project0 2048</title>
+      <title>cs61B-sp21 | Project0:2048</title>
       <link href="/post/2b409a66.html"/>
       <url>/post/2b409a66.html</url>
       
@@ -120,7 +151,7 @@
     
     
     <entry>
-      <title>解决ssh: connect to host github.com port 22: Connection refused</title>
+      <title>Github|解决ssh: connect to host github.com port 22: Connection refused</title>
       <link href="/post/aa87ba6f.html"/>
       <url>/post/aa87ba6f.html</url>
       
@@ -147,7 +178,7 @@
     
     
     <entry>
-      <title>Github配置SSH</title>
+      <title>Github|配置SSH</title>
       <link href="/post/790c8b8.html"/>
       <url>/post/790c8b8.html</url>
       
@@ -176,12 +207,18 @@
     
     
     <entry>
-      <title>时空复杂度</title>
+      <title>算法|时空复杂度</title>
       <link href="/post/c689e876.html"/>
       <url>/post/c689e876.html</url>
       
         <content type="html"><![CDATA[<h1 id="时空复杂度"><a href="#时空复杂度" class="headerlink" title="时空复杂度"></a>时空复杂度</h1><h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><p>评测机大概 $1s$ 最多运行 $1$ 亿次，即 $1e8$​</p><p>时间复杂度一般小于 $1e7 \sim 1e8$ 就可以</p><p>$2^{20} ≈ 10^6$</p><p>$2^{16} = 65536$</p><p>$2^{15} = 32768$</p><p>$2^{63} = 10^{18}$</p><h2 id="根据数据范围反推算法复杂度及算法"><a href="#根据数据范围反推算法复杂度及算法" class="headerlink" title="根据数据范围反推算法复杂度及算法"></a>根据数据范围反推算法复杂度及算法</h2><p>源自 $y$ 总，指路：<a href="https://www.acwing.com/blog/content/32/">原文链接</a></p><ol><li>$n \le 30$, 指数级别, $dfs$+剪枝，状态压缩$dp$</li><li>$n \le 100$ =&gt; $O(n^3)$，$floyd，dp，$高斯消元</li><li>$n \le 1000$ =&gt; $O(n^2)$，$O(n^2logn)$，$dp$，二分，朴素版$Dijkstra$、朴素版$Prim$、$Bellman-Ford$</li><li>$n \le 10000$ =&gt; $O(n * \sqrt n)$，块状链表、分块、莫队</li><li>$n \le 100000$ =&gt; $O(nlogn)$ =&gt; 各种$sort$，线段树、树状数组、$set/map$、$heap$、拓扑排序、$dijkstra+heap$、$prim+heap$、$Kruskal$、$spfa$、求凸包、求半平面交、二分、$CDQ$分治、整体二分、后缀数组、树链剖分、动态树</li><li>$n \le 1000000$ =&gt; $O(n)$, 以及常数较小的 $O(nlogn)$ 算法 =&gt; 单调队列、 $hash$、双指针扫描、$BFS$、并查集，$kmp$、$AC$自动机，常数比较大的 $O(nlogn)$ 的做法：$sort$、树状数组、$heap$、$dijkstra$、$spfa$</li><li>$n \le 10000000$ =&gt; $O(n)$，双指针扫描、$kmp$、$AC$自动机、线性筛素数</li><li>$n \le 10^9$ =&gt; $O(\sqrt n)$，判断质数</li><li>$n \le 10^{18}$ =&gt; $O(logn)$，最大公约数，快速幂，数位$DP$</li><li>$n \le 10^{1000}$ =&gt; $O((logn)^2)$，高精度加减乘除</li><li>$n \le 10^{100000}$ =&gt; $O(logk \times loglogk)，k$表示位数，高精度加减、$FFT/NTT$</li></ol><h2 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h2><p>对于空间复杂度</p><p>$int ~ =~4 ~ Byte$</p><p>$char ~ =~1 ~ Byte$</p><p>$long~ long ~ =~8 ~ Byte$</p><p>$float ~ =~4 ~ Byte$</p><p>$double ~ =~8 ~ Byte$</p><p>$64MB = 6\times 2^{20}Byte = 6.4 \times 10^{7} Byte$</p><p>可以开 $1.6 \times 10^{7}$ 个 $int$</p><h2 id="数据量对于输入输出的影响"><a href="#数据量对于输入输出的影响" class="headerlink" title="数据量对于输入输出的影响"></a>数据量对于输入输出的影响</h2><p>$n &lt; 10^5$ 时，用  $scanf,printf,cin,cout$ 差不多</p><p>$n \ge 10^5$ 时，用 $scanf,printf$</p><p>如果想用 $cin, cout$，需要关闭同步</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>), cin.<span class="built_in">tie</span>(<span class="number">0</span>), cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
       
       
         <tags>
@@ -197,17 +234,25 @@
     
     
     <entry>
-      <title>base64编码</title>
+      <title>科普|base64编码</title>
       <link href="/post/e4aae5e6.html"/>
       <url>/post/e4aae5e6.html</url>
       
         <content type="html"><![CDATA[<h1 id="Base64-编码"><a href="#Base64-编码" class="headerlink" title="$Base64$ 编码"></a>$Base64$ 编码</h1><p><a href="https://en.wikipedia.org/wiki/Base64">Wiki</a></p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20240121092628109.png" alt="base64编码表"></p><p>$Base64$ 用 $6$ 位表示</p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20240121091417546.png" alt=""></p><p>将  $echo$ “$HelloWorld$” 的结果作为 $Base64$ 命令的输入来执行一个 $Base64$ 编码操作</p><h2 id="编码的原理和过程"><a href="#编码的原理和过程" class="headerlink" title="编码的原理和过程"></a>编码的原理和过程</h2><h4 id="1-转换编码对象为二进制"><a href="#1-转换编码对象为二进制" class="headerlink" title="1.转换编码对象为二进制"></a>1.转换编码对象为二进制</h4><p>$H：01001000$</p><p>$e：01100101$</p><p>$l：01101100$</p><p>$l：01101100$</p><p>$o：01101111$</p><p>$W：01010111$</p><p>$o：01101111$</p><p>$r：01110010$</p><p>$l：01101100$</p><p>$d：01100100$</p><p>$\n：00001010$$</p><p>再将二进制位从左往右排列，得到字符串的二进制表示</p><h4 id="2-把二进制的字符串按照每六位一组来分组"><a href="#2-把二进制的字符串按照每六位一组来分组" class="headerlink" title="2.把二进制的字符串按照每六位一组来分组"></a>2.把二进制的字符串按照每六位一组来分组</h4><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20240121091749052.png" alt=""></p><p>如果最后一组二进制位不足 $6$ 位，用 $0$ 来补齐</p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20240121091857123.png" alt=""></p><h4 id="3-把每一组的二进制位转换成十进制的数字并映射"><a href="#3-把每一组的二进制位转换成十进制的数字并映射" class="headerlink" title="3.把每一组的二进制位转换成十进制的数字并映射"></a>3.把每一组的二进制位转换成十进制的数字并映射</h4><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20240121092008188.png" alt=""></p><p>就得到了编码之后的结果</p><p>$SGVsbG9Xb3JsZAo$</p><p>但是需要注意的是，$\textcolor{red}{编码之后的长度必须为 4 的倍数}$</p><p>如果不是的话，需要在结尾的位置用 $=$ 来补齐。</p><p>因此，结果为</p><p>$SGVsbG9Xb3JsZAo=$</p><h2 id="解码"><a href="#解码" class="headerlink" title="解码"></a>解码</h2><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20240121092530681.png" alt=""></p>]]></content>
       
       
+      <categories>
+          
+          <category> 科普 </category>
+          
+      </categories>
+      
       
         <tags>
             
             <tag> 编码 </tag>
+            
+            <tag> base64 </tag>
             
         </tags>
       
@@ -219,11 +264,22 @@
     
     
     <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title></title>
+      <link href="/css/background.css"/>
+      <url>/css/background.css</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[/* 文章页背景 */.layout_post > #post {/* 以下代表透明度为0.7 可以自行修改*/background: rgba(255, 255, 255, 0.9);}/* 所有页面背景 */#aside_content .card-widget,#recent-posts > .recent-post-item,.layout_page > div:first-child:not(.recent-posts),.layout_post > #page,.layout_post > #post,.read-mode .layout_post > #post {/* 以下代表透明度为0.7 */background: rgba(255, 255, 255, 0.9);}/*侧边卡片的透明度 */:root {--card-bg: rgba(255, 255, 255, 0.9);}/* 页脚透明 */#footer {/* 以下代表透明度为0.7 */background: rgba(255, 255, 255, 0.9);}]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/css/modify.css"/>
+      <url>/css/modify.css</url>
+      
+        <content type="html"><![CDATA[#page-header,#page-header:before {  background: transparent !important;}#page-header.post-bg,#page-header.not-home-page {  height: 280px !important;}#page-header #post-info {  bottom: 40px !important;}#page-header #page-site-info {  top: 140px !important;}@media screen and (max-width: 768px) {  #page-header.not-home-page {    height: 200px !important;  }  #page-header #post-info {    bottom: 10px !important;  }  #page-header #page-site-info {    top: 100px !important;  }}.top-img {  height: 250px;  margin: -50px -40px 50px;  border-top-left-radius: inherit;  border-top-right-radius: inherit;  background-position: center center;  background-size: cover;  -webkit-transition: all 0.3s;  -moz-transition: all 0.3s;  -o-transition: all 0.3s;  -ms-transition: all 0.3s;  transition: all 0.3s;}@media screen and (max-width: 768px) {  .top-img {    height: 230px;    margin: -36px -14px 36px;  }}[data-theme='dark'] .top-img {  filter: brightness(0.8);}#footer:before {  background-color: rgba(255,255,255,0.5);}[data-theme='dark'] #footer:before {  background-color: rgba(0,0,0,0.5);}#footer-wrap,#footer-wrap a {  color: #111;  -webkit-transition: unset;  -moz-transition: unset;  -o-transition: unset;  -ms-transition: unset;  transition: unset;}[data-theme='dark'] #footer-wrap,[data-theme='dark'] #footer-wrap a {  color: var(--light-grey);}]]></content>
       
     </entry>
     
@@ -242,10 +298,32 @@
     
     <entry>
       <title></title>
-      <link href="/css/modify.css"/>
-      <url>/css/modify.css</url>
+      <link href="/music/index.html"/>
+      <url>/music/index.html</url>
       
-        <content type="html"><![CDATA[#page-header,#page-header:before {  background: transparent !important;}#page-header.post-bg,#page-header.not-home-page {  height: 280px !important;}#page-header #post-info {  bottom: 40px !important;}#page-header #page-site-info {  top: 140px !important;}@media screen and (max-width: 768px) {  #page-header.not-home-page {    height: 200px !important;  }  #page-header #post-info {    bottom: 10px !important;  }  #page-header #page-site-info {    top: 100px !important;  }}.top-img {  height: 250px;  margin: -50px -40px 50px;  border-top-left-radius: inherit;  border-top-right-radius: inherit;  background-position: center center;  background-size: cover;  -webkit-transition: all 0.3s;  -moz-transition: all 0.3s;  -o-transition: all 0.3s;  -ms-transition: all 0.3s;  transition: all 0.3s;}@media screen and (max-width: 768px) {  .top-img {    height: 230px;    margin: -36px -14px 36px;  }}[data-theme='dark'] .top-img {  filter: brightness(0.8);}#footer:before {  background-color: rgba(255,255,255,0.5);}[data-theme='dark'] #footer:before {  background-color: rgba(0,0,0,0.5);}#footer-wrap,#footer-wrap a {  color: #111;  -webkit-transition: unset;  -moz-transition: unset;  -o-transition: unset;  -ms-transition: unset;  transition: unset;}[data-theme='dark'] #footer-wrap,[data-theme='dark'] #footer-wrap a {  color: var(--light-grey);}]]></content>
+        <content type="html"><![CDATA[<!-- 播放器 --><div class="music-player"><!-- audio标签 --><audio class="music-player__audio" ></audio><!-- 播放器主体 --><div class="music-player__main"><!-- 模糊背景 --><div class="music-player__blur"></div><!-- 唱片 --><div class="music-player__disc"><!-- 唱片图片 --><div class="music-player__image"><img width="100%" src="" alt=""></div><!-- 指针 --><div class="music-player__pointer"><img width="100%" src="/img/cd_tou.png" alt=""></div></div><!-- 控件主体 --><div class="music-player__controls"><!-- 歌曲信息 --><div class="music__info"><h3 class="music__info--title">...</h3></div><!-- 控件... --><div class="player-control"><div class="player-control__content"><div class="player-control__btns"><div class="player-control__btn player-control__btn--prev"><i class="iconfont icon-prev"></i></div><div class="player-control__btn player-control__btn--play"><i class="iconfont icon-play"></i></div><div class="player-control__btn player-control__btn--next"><i class="iconfont icon-next"></i></div><div class="player-control__btn player-control__btn--mode"><i class="iconfont icon-random"></i></div></div><div class="player-control__volume"><div class="control__volume--icon player-control__btn"><i class="iconfont icon-volume"></i></div><div class="control__volume--progress progress"></div></div></div><div class="player-control__content"><div class="player__song--progress progress"></div><div class="player__song--timeProgess nowTime">00:00</div><div class="player__song--timeProgess totalTime">00:00</div></div></div></div></div><!-- 歌曲列表 --><div class="music-player__list"><ul class="music__list_content"></ul></div></div><script src="/js/utill.js"></script><script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.slim.min.js"></script><script src="/js/player.js?10"></script><div style="text-align:center;margin:-100px 0; font:normal 14px/24px 'MicroSoft YaHei';color:#ffffff"></div>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>link</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
@@ -263,22 +341,11 @@
     
     
     <entry>
-      <title></title>
-      <link href="/css/background.css"/>
-      <url>/css/background.css</url>
+      <title>talk</title>
+      <link href="/talk/index.html"/>
+      <url>/talk/index.html</url>
       
-        <content type="html"><![CDATA[/* 文章页背景 */.layout_post > #post {/* 以下代表透明度为0.7 可以自行修改*/background: rgba(255, 255, 255, 0.9);}/* 所有页面背景 */#aside_content .card-widget,#recent-posts > .recent-post-item,.layout_page > div:first-child:not(.recent-posts),.layout_post > #page,.layout_post > #post,.read-mode .layout_post > #post {/* 以下代表透明度为0.7 */background: rgba(255, 255, 255, 0.9);}/*侧边卡片的透明度 */:root {--card-bg: rgba(255, 255, 255, 0.9);}/* 页脚透明 */#footer {/* 以下代表透明度为0.7 */background: rgba(255, 255, 255, 0.9);}]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>link</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p><head>  <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script></head><br>  <body>        <!-- 引用 artitalk -->        <script type="text/javascript" src="https://unpkg.com/artitalk"></script>        <!-- 存放说说的容器 -->        <div id="artitalk_main"></div>        <script>        new Artitalk({            appId: 'io9zpiEMivhCI0bTijyctNGY-MdYXbMMI', // Your LeanCloud appId            appKey: 'Fxtw4McQ0lRMQ4jKyk4AInWj' // Your LeanCloud appKey        })        </script>  </body></p>]]></content>
       
     </entry>
     

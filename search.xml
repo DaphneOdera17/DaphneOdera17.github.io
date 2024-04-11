@@ -311,11 +311,22 @@
     
     
     <entry>
-      <title>gallery</title>
-      <link href="/gallery/index.html"/>
-      <url>/gallery/index.html</url>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
-        <content type="html"><![CDATA[<div class="gallery-group-main"><figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='/img-url' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">name</div>  <p>description</p>  <a href='/link'></a>  </figcaption>  </figure>  <figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='/img-url' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">name</div>  <p>description</p>  <a href='/link'></a>  </figcaption>  </figure>  <figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='/img-url' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">name</div>  <p>description</p>  <a href='/link'></a>  </figcaption>  </figure>  </div>]]></content>
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>books</title>
+      <link href="/books/index.html"/>
+      <url>/books/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
@@ -333,31 +344,20 @@
     
     
     <entry>
-      <title></title>
-      <link href="/css/modify.css"/>
-      <url>/css/modify.css</url>
+      <title>个人随想录</title>
+      <link href="/talk/index.html"/>
+      <url>/talk/index.html</url>
       
-        <content type="html"><![CDATA[#page-header,#page-header:before {  background: transparent !important;}#page-header.post-bg,#page-header.not-home-page {  height: 280px !important;}#page-header #post-info {  bottom: 40px !important;}#page-header #page-site-info {  top: 140px !important;}@media screen and (max-width: 768px) {  #page-header.not-home-page {    height: 200px !important;  }  #page-header #post-info {    bottom: 10px !important;  }  #page-header #page-site-info {    top: 100px !important;  }}.top-img {  height: 250px;  margin: -50px -40px 50px;  border-top-left-radius: inherit;  border-top-right-radius: inherit;  background-position: center center;  background-size: cover;  -webkit-transition: all 0.3s;  -moz-transition: all 0.3s;  -o-transition: all 0.3s;  -ms-transition: all 0.3s;  transition: all 0.3s;}@media screen and (max-width: 768px) {  .top-img {    height: 230px;    margin: -36px -14px 36px;  }}[data-theme='dark'] .top-img {  filter: brightness(0.8);}#footer:before {  background-color: rgba(255,255,255,0.5);}[data-theme='dark'] #footer:before {  background-color: rgba(0,0,0,0.5);}#footer-wrap,#footer-wrap a {  color: #111;  -webkit-transition: unset;  -moz-transition: unset;  -o-transition: unset;  -ms-transition: unset;  transition: unset;}[data-theme='dark'] #footer-wrap,[data-theme='dark'] #footer-wrap a {  color: var(--light-grey);}]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/js/modify.js"/>
-      <url>/js/modify.js</url>
-      
-        <content type="html"><![CDATA['use strict';const cheerio = require('cheerio');/** * 在页面插入新顶部图 * @param {cheerio.Root} $ Root */function insertTopImg($) {    let header = $('#page-header');    if (header.length === 0) return;    let background = header.css('background-image');    if (!background) return;    $('#post, #page, #archive, #tag, #category').prepend(`<div class="top-img" style="background-image: ${background};"></div>`);}hexo.extend.filter.register('after_render:html', function(str, data) {    let $ = cheerio.load(str, {        decodeEntities: false    });    insertTopImg($);    return $.html();});]]></content>
+        <content type="html"><![CDATA[<head>  <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script></head><body>      <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240406235836.png">      <!-- 引用 artitalk -->      <script type="text/javascript" src="https://unpkg.com/artitalk"></script>      <!-- 存放说说的容器 -->      <div id="artitalk_main"></div>      <script>      new Artitalk({          appId: 'io9zpiEMivhCI0bTijyctNGY-MdYXbMMI', // Your LeanCloud appId          appKey: 'Fxtw4McQ0lRMQ4jKyk4AInWj' // Your LeanCloud appKey      })      </script></body>]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -377,17 +377,6 @@
     
     
     <entry>
-      <title>个人随想录</title>
-      <link href="/talk/index.html"/>
-      <url>/talk/index.html</url>
-      
-        <content type="html"><![CDATA[<head>  <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script></head><body>      <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240406235836.png">      <!-- 引用 artitalk -->      <script type="text/javascript" src="https://unpkg.com/artitalk"></script>      <!-- 存放说说的容器 -->      <div id="artitalk_main"></div>      <script>      new Artitalk({          appId: 'io9zpiEMivhCI0bTijyctNGY-MdYXbMMI', // Your LeanCloud appId          appKey: 'Fxtw4McQ0lRMQ4jKyk4AInWj' // Your LeanCloud appKey      })      </script></body>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title></title>
       <link href="/music/index.html"/>
       <url>/music/index.html</url>
@@ -399,11 +388,33 @@
     
     
     <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title></title>
+      <link href="/js/modify.js"/>
+      <url>/js/modify.js</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA['use strict';const cheerio = require('cheerio');/** * 在页面插入新顶部图 * @param {cheerio.Root} $ Root */function insertTopImg($) {    let header = $('#page-header');    if (header.length === 0) return;    let background = header.css('background-image');    if (!background) return;    $('#post, #page, #archive, #tag, #category').prepend(`<div class="top-img" style="background-image: ${background};"></div>`);}hexo.extend.filter.register('after_render:html', function(str, data) {    let $ = cheerio.load(str, {        decodeEntities: false    });    insertTopImg($);    return $.html();});]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>gallery</title>
+      <link href="/gallery/index.html"/>
+      <url>/gallery/index.html</url>
+      
+        <content type="html"><![CDATA[<div class="gallery-group-main"><figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='/img-url' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">name</div>  <p>description</p>  <a href='/link'></a>  </figcaption>  </figure>  <figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='/img-url' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">name</div>  <p>description</p>  <a href='/link'></a>  </figcaption>  </figure>  <figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='/img-url' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">name</div>  <p>description</p>  <a href='/link'></a>  </figcaption>  </figure>  </div>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/css/modify.css"/>
+      <url>/css/modify.css</url>
+      
+        <content type="html"><![CDATA[#page-header,#page-header:before {  background: transparent !important;}#page-header.post-bg,#page-header.not-home-page {  height: 280px !important;}#page-header #post-info {  bottom: 40px !important;}#page-header #page-site-info {  top: 140px !important;}@media screen and (max-width: 768px) {  #page-header.not-home-page {    height: 200px !important;  }  #page-header #post-info {    bottom: 10px !important;  }  #page-header #page-site-info {    top: 100px !important;  }}.top-img {  height: 250px;  margin: -50px -40px 50px;  border-top-left-radius: inherit;  border-top-right-radius: inherit;  background-position: center center;  background-size: cover;  -webkit-transition: all 0.3s;  -moz-transition: all 0.3s;  -o-transition: all 0.3s;  -ms-transition: all 0.3s;  transition: all 0.3s;}@media screen and (max-width: 768px) {  .top-img {    height: 230px;    margin: -36px -14px 36px;  }}[data-theme='dark'] .top-img {  filter: brightness(0.8);}#footer:before {  background-color: rgba(255,255,255,0.5);}[data-theme='dark'] #footer:before {  background-color: rgba(0,0,0,0.5);}#footer-wrap,#footer-wrap a {  color: #111;  -webkit-transition: unset;  -moz-transition: unset;  -o-transition: unset;  -ms-transition: unset;  transition: unset;}[data-theme='dark'] #footer-wrap,[data-theme='dark'] #footer-wrap a {  color: var(--light-grey);}]]></content>
       
     </entry>
     

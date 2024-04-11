@@ -15,3 +15,22 @@ body {
     line-height: 2em;
 }
 
+/* Modify the font color of the footer */
+
+#footer-wrap {
+    color: white !important;
+}
+  
+.framework-info {
+    color: white !important;
+}
+  
+.framework-info a {
+    color: rgb(49, 136, 212) !important;
+    text-decoration: underline;
+}
+  
+  .footer_custom_text a {
+    color: rgb(49, 136, 212) !important;
+    text-decoration: underline;
+}

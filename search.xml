@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>深度学习 | EECS 498-007 / 598-005 | Image Classification</title>
+      <link href="/post/f1db88d.html"/>
+      <url>/post/f1db88d.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="Image-Classification"><a href="#Image-Classification" class="headerlink" title="Image Classification"></a>Image Classification</h1><p><a href="https://en.wikipedia.org/wiki/Robustness">Robustness</a> 鲁棒性</p><h2 id="Edge-images"><a href="#Edge-images" class="headerlink" title="Edge images"></a>Edge images</h2><p><a href="https://en.wikipedia.org/wiki/Edge_detection">Edge Detection</a><br><a href="https://www.cnblogs.com/xyf327/p/14745908.html">有关边缘检测算法</a></p><h2 id="Image-Classification-1"><a href="#Image-Classification-1" class="headerlink" title="Image Classification:"></a>Image Classification:</h2><p>input: image<br>output: Assign image to one of a fixed set of categories.<br><strong>Problem</strong>: Semantic Gap(语义差距)<br>Object Detection:<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240406104140.png" style="zoom: 50%"><br>    One way to perform is via image classification of different sliding windows im the image. In a nutshell, it means classify different sub-regions of the image so we could look at s sub region over here and then classify it as background, horse, person, car or a truck…<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">classify_image</span>(<span class="params">image</span>):</span><br><span class="line"><span class="comment"># Some magic here?</span></span><br><span class="line"><span class="keyword">return</span> class_label</span><br></pre></td></tr></table></figure></p><h2 id="Machine-Learning-Data-Driven-Approach"><a href="#Machine-Learning-Data-Driven-Approach" class="headerlink" title="Machine Learning:Data-Driven Approach"></a>Machine Learning:Data-Driven Approach</h2><ol><li>Collect a dataset of images and labels</li><li>Use Machine Learning to train a classifier</li><li>Evaluate the classifier on new images<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">train</span>(<span class="params">images, labels</span>):</span><br><span class="line"><span class="comment"># Machine learning</span></span><br><span class="line"><span class="comment"># Memorize all data and labels</span></span><br><span class="line"><span class="keyword">return</span> model</span><br></pre></td></tr></table></figure></li></ol><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">predict</span>(<span class="params">model, test_images</span>):</span><br><span class="line"><span class="comment"># Use model to predict labels</span></span><br><span class="line"><span class="comment"># Predict the label of the most similar training image</span></span><br><span class="line"><span class="keyword">return</span> test_labels</span><br></pre></td></tr></table></figure><h2 id="Distance-Metric-to-compare-images"><a href="#Distance-Metric-to-compare-images" class="headerlink" title="Distance Metric to compare images"></a>Distance Metric to compare images</h2><h3 id="曼哈顿距离"><a href="#曼哈顿距离" class="headerlink" title="曼哈顿距离:"></a>曼哈顿距离:</h3><h4 id="L1-Manhattan-distance-d-1-I-1-I-2-sum-p-I-1-p-I-2-p"><a href="#L1-Manhattan-distance-d-1-I-1-I-2-sum-p-I-1-p-I-2-p" class="headerlink" title="L1(Manhattan) distance: $d_1(I_1,I_2) = \sum_p|I_1^p-I_2^p|$"></a><strong>L1(Manhattan) distance:</strong> $d_1(I_1,I_2) = \sum_p|I_1^p-I_2^p|$</h4><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240412191451.png" style="zoom: 50%"><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240409085507.png" style="zoom:50%"></p><h2 id="Nearest-Neighbor-Decision-Boundaries"><a href="#Nearest-Neighbor-Decision-Boundaries" class="headerlink" title="Nearest Neighbor Decision Boundaries"></a>Nearest Neighbor Decision Boundaries</h2><p>Decision Boundarie is the boundary between two classification regions.<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240409090934.png" style="zoom:50%"><br>Decision Boundarie can be nosiy; affected by outliers.<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240409091231.png" style="zoom: 70%"></p><h2 id="K-Nearest-Neighbors"><a href="#K-Nearest-Neighbors" class="headerlink" title="K-Nearest Neighbors"></a>K-Nearest Neighbors</h2><h3 id="Using-more-neighbors-helps-smooth-out-rough-decision-boundaries"><a href="#Using-more-neighbors-helps-smooth-out-rough-decision-boundaries" class="headerlink" title="Using more neighbors helps smooth out rough decision boundaries."></a>Using more neighbors helps smooth out rough decision boundaries.</h3><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240409090850.png" style="zoom:75%"></p><h3 id="Using-more-neighbors-helps-reduce-the-effect-of-outliers"><a href="#Using-more-neighbors-helps-reduce-the-effect-of-outliers" class="headerlink" title="Using more neighbors helps reduce the effect of outliers."></a>Using more neighbors helps reduce the effect of outliers.</h3><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240409091528.png" style="zoom:75%"></p><h3 id="When-K-gt-1-there-can-be-ties-between-classes-Need-to-break-somehow"><a href="#When-K-gt-1-there-can-be-ties-between-classes-Need-to-break-somehow" class="headerlink" title="When K &gt; 1 there can be ties between classes. Need to break somehow!"></a>When K &gt; 1 there can be ties between classes. Need to break somehow!</h3><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240409091632.png" style="zoom:75%"><br>白色区域均有三个最近的邻居。</p><h3 id="欧几里得距离"><a href="#欧几里得距离" class="headerlink" title="欧几里得距离"></a>欧几里得距离</h3><h4 id="L2-Euclidean-distance-d-2-I-1-I-2-sqrt-sum-p-I-1-p-I-2-p-2"><a href="#L2-Euclidean-distance-d-2-I-1-I-2-sqrt-sum-p-I-1-p-I-2-p-2" class="headerlink" title="L2(Euclidean) distance = $d_2(I_1, I_2) = \sqrt{\sum_{p}(I_1^p - I_2^p) ^ 2}$"></a><strong>L2(Euclidean) distance</strong> = $d_2(I_1, I_2) = \sqrt{\sum_{p}(I_1^p - I_2^p) ^ 2}$</h4><h3 id="Setting-Hyperparameters"><a href="#Setting-Hyperparameters" class="headerlink" title="Setting Hyperparameters"></a>Setting Hyperparameters</h3><p>Among the three ideas above, The best idea is <strong>Idea #3</strong><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240412200840.png" alt="image.png"><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240412201137.png" style="zoom: 50%"><br>当然，我们也可以将数据集划分为更多，以此更好估计我们的泛化性能。<br>也就是<strong>交叉验证</strong><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240412201236.png" alt="image.png"><br>随着训练的数量越来越多<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240412201717.png" style="zoom: 50%"><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240412201741.png" style="zoom: 50%"><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240412201753.png" style="zoom: 50%"><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240412201811.png" style="zoom: 50%"><br>We can see the nearest neighbor classifier performs well.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 深度学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 深度学习 </tag>
+            
+            <tag> Deep Learning </tag>
+            
+            <tag> EECS 498-007 / 598-005 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>一生一芯 | 状态机模型</title>
       <link href="/post/3296e98d.html"/>
       <url>/post/3296e98d.html</url>
@@ -289,22 +318,11 @@
     
     
     <entry>
-      <title>books</title>
-      <link href="/books/index.html"/>
-      <url>/books/index.html</url>
+      <title>个人随想录</title>
+      <link href="/artitalk/index.html"/>
+      <url>/artitalk/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>gallery</title>
-      <link href="/gallery/index.html"/>
-      <url>/gallery/index.html</url>
-      
-        <content type="html"><![CDATA[<div class="gallery-group-main"><figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='/img-url' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">name</div>  <p>description</p>  <a href='/link'></a>  </figcaption>  </figure>  <figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='/img-url' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">name</div>  <p>description</p>  <a href='/link'></a>  </figcaption>  </figure>  <figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='/img-url' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">name</div>  <p>description</p>  <a href='/link'></a>  </figcaption>  </figure>  </div>]]></content>
       
     </entry>
     
@@ -314,50 +332,6 @@
       <title>关于我</title>
       <link href="/about/index.html"/>
       <url>/about/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/css/background.css"/>
-      <url>/css/background.css</url>
-      
-        <content type="html"><![CDATA[/* 文章页背景 */.layout_post > #post {/* 以下代表透明度为0.7 可以自行修改*/background: rgba(255, 255, 255, 0.9);}/* 所有页面背景 */#aside_content .card-widget,#recent-posts > .recent-post-item,.layout_page > div:first-child:not(.recent-posts),.layout_post > #page,.layout_post > #post,.read-mode .layout_post > #post {/* 以下代表透明度为0.7 */background: rgba(255, 255, 255, 0.9);}/*侧边卡片的透明度 */:root {--card-bg: rgba(255, 255, 255, 0.9);}/* 页脚透明 */#footer {/* 以下代表透明度为0.7 */background: rgba(255, 255, 255, 0.9);}]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>link</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>个人随想录</title>
-      <link href="/artitalk/index.html"/>
-      <url>/artitalk/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -377,11 +351,66 @@
     
     
     <entry>
-      <title>个人随想录</title>
-      <link href="/talk/index.html"/>
-      <url>/talk/index.html</url>
+      <title></title>
+      <link href="/css/modify.css"/>
+      <url>/css/modify.css</url>
       
-        <content type="html"><![CDATA[<head>  <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script></head><body>      <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240406235836.png">      <!-- 引用 artitalk -->      <script type="text/javascript" src="https://unpkg.com/artitalk"></script>      <!-- 存放说说的容器 -->      <div id="artitalk_main"></div>      <script>      new Artitalk({          appId: 'io9zpiEMivhCI0bTijyctNGY-MdYXbMMI', // Your LeanCloud appId          appKey: 'Fxtw4McQ0lRMQ4jKyk4AInWj' // Your LeanCloud appKey      })      </script></body>]]></content>
+        <content type="html"><![CDATA[#page-header,#page-header:before {  background: transparent !important;}#page-header.post-bg,#page-header.not-home-page {  height: 280px !important;}#page-header #post-info {  bottom: 40px !important;}#page-header #page-site-info {  top: 140px !important;}@media screen and (max-width: 768px) {  #page-header.not-home-page {    height: 200px !important;  }  #page-header #post-info {    bottom: 10px !important;  }  #page-header #page-site-info {    top: 100px !important;  }}.top-img {  height: 250px;  margin: -50px -40px 50px;  border-top-left-radius: inherit;  border-top-right-radius: inherit;  background-position: center center;  background-size: cover;  -webkit-transition: all 0.3s;  -moz-transition: all 0.3s;  -o-transition: all 0.3s;  -ms-transition: all 0.3s;  transition: all 0.3s;}@media screen and (max-width: 768px) {  .top-img {    height: 230px;    margin: -36px -14px 36px;  }}[data-theme='dark'] .top-img {  filter: brightness(0.8);}#footer:before {  background-color: rgba(255,255,255,0.5);}[data-theme='dark'] #footer:before {  background-color: rgba(0,0,0,0.5);}#footer-wrap,#footer-wrap a {  color: #111;  -webkit-transition: unset;  -moz-transition: unset;  -o-transition: unset;  -ms-transition: unset;  transition: unset;}[data-theme='dark'] #footer-wrap,[data-theme='dark'] #footer-wrap a {  color: var(--light-grey);}]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>gallery</title>
+      <link href="/gallery/index.html"/>
+      <url>/gallery/index.html</url>
+      
+        <content type="html"><![CDATA[<div class="gallery-group-main"><figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='/img-url' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">name</div>  <p>description</p>  <a href='/link'></a>  </figcaption>  </figure>  <figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='/img-url' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">name</div>  <p>description</p>  <a href='/link'></a>  </figcaption>  </figure>  <figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='/img-url' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">name</div>  <p>description</p>  <a href='/link'></a>  </figcaption>  </figure>  </div>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/css/background.css"/>
+      <url>/css/background.css</url>
+      
+        <content type="html"><![CDATA[/* 文章页背景 */.layout_post > #post {/* 以下代表透明度为0.7 可以自行修改*/background: rgba(255, 255, 255, 0.9);}/* 所有页面背景 */#aside_content .card-widget,#recent-posts > .recent-post-item,.layout_page > div:first-child:not(.recent-posts),.layout_post > #page,.layout_post > #post,.read-mode .layout_post > #post {/* 以下代表透明度为0.7 */background: rgba(255, 255, 255, 0.9);}/*侧边卡片的透明度 */:root {--card-bg: rgba(255, 255, 255, 0.9);}/* 页脚透明 */#footer {/* 以下代表透明度为0.7 */background: rgba(255, 255, 255, 0.9);}]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>books</title>
+      <link href="/books/index.html"/>
+      <url>/books/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>link</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
@@ -399,11 +428,11 @@
     
     
     <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>个人随想录</title>
+      <link href="/talk/index.html"/>
+      <url>/talk/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<head>  <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script></head><body>      <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240406235836.png">      <!-- 引用 artitalk -->      <script type="text/javascript" src="https://unpkg.com/artitalk"></script>      <!-- 存放说说的容器 -->      <div id="artitalk_main"></div>      <script>      new Artitalk({          appId: 'io9zpiEMivhCI0bTijyctNGY-MdYXbMMI', // Your LeanCloud appId          appKey: 'Fxtw4McQ0lRMQ4jKyk4AInWj' // Your LeanCloud appKey      })      </script></body>]]></content>
       
     </entry>
     
@@ -421,11 +450,11 @@
     
     
     <entry>
-      <title></title>
-      <link href="/css/modify.css"/>
-      <url>/css/modify.css</url>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
-        <content type="html"><![CDATA[#page-header,#page-header:before {  background: transparent !important;}#page-header.post-bg,#page-header.not-home-page {  height: 280px !important;}#page-header #post-info {  bottom: 40px !important;}#page-header #page-site-info {  top: 140px !important;}@media screen and (max-width: 768px) {  #page-header.not-home-page {    height: 200px !important;  }  #page-header #post-info {    bottom: 10px !important;  }  #page-header #page-site-info {    top: 100px !important;  }}.top-img {  height: 250px;  margin: -50px -40px 50px;  border-top-left-radius: inherit;  border-top-right-radius: inherit;  background-position: center center;  background-size: cover;  -webkit-transition: all 0.3s;  -moz-transition: all 0.3s;  -o-transition: all 0.3s;  -ms-transition: all 0.3s;  transition: all 0.3s;}@media screen and (max-width: 768px) {  .top-img {    height: 230px;    margin: -36px -14px 36px;  }}[data-theme='dark'] .top-img {  filter: brightness(0.8);}#footer:before {  background-color: rgba(255,255,255,0.5);}[data-theme='dark'] #footer:before {  background-color: rgba(0,0,0,0.5);}#footer-wrap,#footer-wrap a {  color: #111;  -webkit-transition: unset;  -moz-transition: unset;  -o-transition: unset;  -ms-transition: unset;  transition: unset;}[data-theme='dark'] #footer-wrap,[data-theme='dark'] #footer-wrap a {  color: var(--light-grey);}]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     

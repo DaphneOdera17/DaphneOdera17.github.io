@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>hexo魔改 | 添加 Valine 评论系统</title>
+      <link href="/post/60917e5c.html"/>
+      <url>/post/60917e5c.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="hexo魔改-添加-Valine-评论系统"><a href="#hexo魔改-添加-Valine-评论系统" class="headerlink" title="hexo魔改 | 添加 Valine 评论系统"></a>hexo魔改 | 添加 Valine 评论系统</h1><p>在 LeanCloud 注册一个账号并登录 <a href="https://console.leancloud.cn/apps">https://console.leancloud.cn/apps</a><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240402204003.png" alt="image.png"></p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240402204054.png" alt="image.png"><br>创建完成后，进入应用的界面<br>找到设置中 <strong>“应用凭证”</strong><br>我们需要用到 AppID、AppKey、服务器地址。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240402204229.png" alt="image.png"><br>打开 hexo 主题配置文件。<br>以 butterfly 为例<br>先将 Valine 启用<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240402204420.png" alt="image.png"><br>再在他下面找到 valine 的配置项hexo魔改 | 添加旋转小风车<br>将上面的 AppID、AppKey、服务器地址 分别填入 appID, appKey, serverURL<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240402204543.png" alt="image.png"><br>保存之后<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure><br>三连。<br>进入网站测试<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240402204659.png" alt="image.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo魔改系列 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> butterfly </tag>
+            
+            <tag> Valine </tag>
+            
+            <tag> 评论 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>问题解决实录 | Python | Failed building wheel for matplotlib</title>
       <link href="/post/f849bb21.html"/>
       <url>/post/f849bb21.html</url>
@@ -401,6 +432,17 @@
     
     
     <entry>
+      <title></title>
+      <link href="/css/background.css"/>
+      <url>/css/background.css</url>
+      
+        <content type="html"><![CDATA[/* 文章页背景 */.layout_post > #post {/* 以下代表透明度为0.7 可以自行修改*/background: rgba(255, 255, 255, 0.9);}/* 所有页面背景 */#aside_content .card-widget,#recent-posts > .recent-post-item,.layout_page > div:first-child:not(.recent-posts),.layout_post > #page,.layout_post > #post,.read-mode .layout_post > #post {/* 以下代表透明度为0.7 */background: rgba(255, 255, 255, 0.9);}/*侧边卡片的透明度 */:root {--card-bg: rgba(255, 255, 255, 0.9);}/* 页脚透明 */#footer {/* 以下代表透明度为0.7 */background: rgba(255, 255, 255, 0.9);}]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>books</title>
       <link href="/books/index.html"/>
       <url>/books/index.html</url>
@@ -412,9 +454,9 @@
     
     
     <entry>
-      <title>关于我</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title>个人随想录</title>
+      <link href="/artitalk/index.html"/>
+      <url>/artitalk/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -434,11 +476,11 @@
     
     
     <entry>
-      <title>gallery</title>
-      <link href="/gallery/index.html"/>
-      <url>/gallery/index.html</url>
+      <title>关于我</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
-        <content type="html"><![CDATA[<div class="gallery-group-main"><figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='/img-url' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">name</div>  <p>description</p>  <a href='/link'></a>  </figcaption>  </figure>  <figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='/img-url' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">name</div>  <p>description</p>  <a href='/link'></a>  </figcaption>  </figure>  <figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='/img-url' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">name</div>  <p>description</p>  <a href='/link'></a>  </figcaption>  </figure>  </div>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
@@ -457,10 +499,10 @@
     
     <entry>
       <title></title>
-      <link href="/css/background.css"/>
-      <url>/css/background.css</url>
+      <link href="/css/modify.css"/>
+      <url>/css/modify.css</url>
       
-        <content type="html"><![CDATA[/* 文章页背景 */.layout_post > #post {/* 以下代表透明度为0.7 可以自行修改*/background: rgba(255, 255, 255, 0.9);}/* 所有页面背景 */#aside_content .card-widget,#recent-posts > .recent-post-item,.layout_page > div:first-child:not(.recent-posts),.layout_post > #page,.layout_post > #post,.read-mode .layout_post > #post {/* 以下代表透明度为0.7 */background: rgba(255, 255, 255, 0.9);}/*侧边卡片的透明度 */:root {--card-bg: rgba(255, 255, 255, 0.9);}/* 页脚透明 */#footer {/* 以下代表透明度为0.7 */background: rgba(255, 255, 255, 0.9);}]]></content>
+        <content type="html"><![CDATA[#page-header,#page-header:before {  background: transparent !important;}#page-header.post-bg,#page-header.not-home-page {  height: 280px !important;}#page-header #post-info {  bottom: 40px !important;}#page-header #page-site-info {  top: 140px !important;}@media screen and (max-width: 768px) {  #page-header.not-home-page {    height: 200px !important;  }  #page-header #post-info {    bottom: 10px !important;  }  #page-header #page-site-info {    top: 100px !important;  }}.top-img {  height: 250px;  margin: -50px -40px 50px;  border-top-left-radius: inherit;  border-top-right-radius: inherit;  background-position: center center;  background-size: cover;  -webkit-transition: all 0.3s;  -moz-transition: all 0.3s;  -o-transition: all 0.3s;  -ms-transition: all 0.3s;  transition: all 0.3s;}@media screen and (max-width: 768px) {  .top-img {    height: 230px;    margin: -36px -14px 36px;  }}[data-theme='dark'] .top-img {  filter: brightness(0.8);}#footer:before {  background-color: rgba(255,255,255,0.5);}[data-theme='dark'] #footer:before {  background-color: rgba(0,0,0,0.5);}#footer-wrap,#footer-wrap a {  color: #111;  -webkit-transition: unset;  -moz-transition: unset;  -o-transition: unset;  -ms-transition: unset;  transition: unset;}[data-theme='dark'] #footer-wrap,[data-theme='dark'] #footer-wrap a {  color: var(--light-grey);}]]></content>
       
     </entry>
     
@@ -478,31 +520,20 @@
     
     
     <entry>
+      <title>gallery</title>
+      <link href="/gallery/index.html"/>
+      <url>/gallery/index.html</url>
+      
+        <content type="html"><![CDATA[<div class="gallery-group-main"><figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='/img-url' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">name</div>  <p>description</p>  <a href='/link'></a>  </figcaption>  </figure>  <figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='/img-url' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">name</div>  <p>description</p>  <a href='/link'></a>  </figcaption>  </figure>  <figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='/img-url' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">name</div>  <p>description</p>  <a href='/link'></a>  </figcaption>  </figure>  </div>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>link</title>
       <link href="/link/index.html"/>
       <url>/link/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>个人随想录</title>
-      <link href="/talk/index.html"/>
-      <url>/talk/index.html</url>
-      
-        <content type="html"><![CDATA[<head>  <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script></head><body>      <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240406235836.png">      <!-- 引用 artitalk -->      <script type="text/javascript" src="https://unpkg.com/artitalk"></script>      <!-- 存放说说的容器 -->      <div id="artitalk_main"></div>      <script>      new Artitalk({          appId: 'io9zpiEMivhCI0bTijyctNGY-MdYXbMMI', // Your LeanCloud appId          appKey: 'Fxtw4McQ0lRMQ4jKyk4AInWj' // Your LeanCloud appKey      })      </script></body>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>个人随想录</title>
-      <link href="/artitalk/index.html"/>
-      <url>/artitalk/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -533,11 +564,11 @@
     
     
     <entry>
-      <title></title>
-      <link href="/css/modify.css"/>
-      <url>/css/modify.css</url>
+      <title>个人随想录</title>
+      <link href="/talk/index.html"/>
+      <url>/talk/index.html</url>
       
-        <content type="html"><![CDATA[#page-header,#page-header:before {  background: transparent !important;}#page-header.post-bg,#page-header.not-home-page {  height: 280px !important;}#page-header #post-info {  bottom: 40px !important;}#page-header #page-site-info {  top: 140px !important;}@media screen and (max-width: 768px) {  #page-header.not-home-page {    height: 200px !important;  }  #page-header #post-info {    bottom: 10px !important;  }  #page-header #page-site-info {    top: 100px !important;  }}.top-img {  height: 250px;  margin: -50px -40px 50px;  border-top-left-radius: inherit;  border-top-right-radius: inherit;  background-position: center center;  background-size: cover;  -webkit-transition: all 0.3s;  -moz-transition: all 0.3s;  -o-transition: all 0.3s;  -ms-transition: all 0.3s;  transition: all 0.3s;}@media screen and (max-width: 768px) {  .top-img {    height: 230px;    margin: -36px -14px 36px;  }}[data-theme='dark'] .top-img {  filter: brightness(0.8);}#footer:before {  background-color: rgba(255,255,255,0.5);}[data-theme='dark'] #footer:before {  background-color: rgba(0,0,0,0.5);}#footer-wrap,#footer-wrap a {  color: #111;  -webkit-transition: unset;  -moz-transition: unset;  -o-transition: unset;  -ms-transition: unset;  transition: unset;}[data-theme='dark'] #footer-wrap,[data-theme='dark'] #footer-wrap a {  color: var(--light-grey);}]]></content>
+        <content type="html"><![CDATA[<head>  <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script></head><body>      <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240406235836.png">      <!-- 引用 artitalk -->      <script type="text/javascript" src="https://unpkg.com/artitalk"></script>      <!-- 存放说说的容器 -->      <div id="artitalk_main"></div>      <script>      new Artitalk({          appId: 'io9zpiEMivhCI0bTijyctNGY-MdYXbMMI', // Your LeanCloud appId          appKey: 'Fxtw4McQ0lRMQ4jKyk4AInWj' // Your LeanCloud appKey      })      </script></body>]]></content>
       
     </entry>
     

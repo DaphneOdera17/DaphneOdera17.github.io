@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>问题解决实录 | Python | Failed building wheel for matplotlib</title>
+      <link href="/post/f849bb21.html"/>
+      <url>/post/f849bb21.html</url>
+      
+        <content type="html"><![CDATA[<p>朋友遇到 python 安装 matplotlib 时的问题，笔者帮忙远程调试(踩了不少坑)。网上的解决方案有很多无效，以此来记录以下个人解决方案。<br>在使用指令</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install matplotlib</span><br></pre></td></tr></table></figure><p>出现如下报错：<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427174142.png" alt=""><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427174113.png" alt=""><br>“which is required to install pyproject.toml-based projects”<br>笔者尝试过使用以下指令无果。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install wheel</span><br></pre></td></tr></table></figure><p>进入 matplotlib 官网<br><a href="https://pypi.org/project/matplotlib/">https://pypi.org/project/matplotlib/</a><br>下载最新版 matplotlib<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427174448.png" alt=""></p><p>在文件夹下有 pyproject.toml 文件<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427174601.png" alt=""><br>终端进入该文件夹，并且在命令行输入<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pyproject.toml</span><br></pre></td></tr></table></figure><br>(PS: 笔者看见过网上一个解决方案，用 poerty install 但是会有 build-system 的报错，就没有用了)。<br>当然这时候进行 install matplotlib 是没有用的。因为我们缺乏 Microsoft Visual C++ 14.0</p><p>因为缺乏 Microsoft Visual C++ 14.0,需要下载相应的 Build-Tools。最简单的方法是通过 Visual Studio Installer 下载。<br>进入官网并下载 Visual Studio.<br><a href="https://visualstudio.microsoft.com/zh-hans/#vs-section">https://visualstudio.microsoft.com/zh-hans/#vs-section</a><br>在软件安装界面选择 “使用 C++ 的桌面开发” 并保持右侧勾选项不变。等待其安装完毕。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427175001.png" alt=""><br>此时再运行以下指令，未报错。安装成功。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">pip install pyproject.toml</span><br><span class="line">pip install matplotlib</span><br><span class="line"></span><br><span class="line">python -i</span><br><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">&gt;&gt; import matplotlib as plt</span></span><br></pre></td></tr></table></figure><br>(我不知道不在本文件夹下安装会不会出错，我是帮朋友弄完凭记忆写的文章，难免会有漏洞 &gt; _ &lt; )<br>如果该方案有误或者有更好的建议，欢迎交流~。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 问题解决实录 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 问题解决实录 </tag>
+            
+            <tag> matplotlib </tag>
+            
+            <tag> python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>hexo魔改 | 修改首页卡片样式</title>
       <link href="/post/639f0c9.html"/>
       <url>/post/639f0c9.html</url>

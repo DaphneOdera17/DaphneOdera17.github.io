@@ -1,36 +1,36 @@
 @font-face {
-    font-family: 'Microsoft Jhenghei';
-    font-display: swap;
-    src: url('/fonts/Microsoft-JhengHei.ttf') format("truetype");
+	font-family: "LXGW WenKai GB Screen";
+	font-display: swap;
+	src: url("/fonts/LXGWWenKaiGBScreen.ttf") format("truetype");
 }
 
 h1 {
-    font-size: 2em;
-    margin: 0.67em 0;
+	font-size: 2em;
+	margin: 0.67em 0;
 }
 
 body {
-    font-size: 15pt;
-    font-weight: normal;
-    line-height: 2em;
+	font-size: 15pt;
+	font-weight: normal;
+	line-height: 2em;
 }
 
 /* Modify the font color of the footer */
 
 #footer-wrap {
-    color: white !important;
+	color: white !important;
 }
-  
+
 .framework-info {
-    color: white !important;
+	color: white !important;
 }
-  
+
 .framework-info a {
-    color: rgb(49, 136, 212) !important;
-    text-decoration: underline;
+	color: rgb(49, 136, 212) !important;
+	text-decoration: underline;
 }
-  
-  .footer_custom_text a {
-    color: rgb(49, 136, 212) !important;
-    text-decoration: underline;
+
+.footer_custom_text a {
+	color: rgb(49, 136, 212) !important;
+	text-decoration: underline;
 }

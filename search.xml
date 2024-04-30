@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>CSAPP | Chapter 1 | 计算机系统漫游</title>
+      <link href="/post/c390144.html"/>
+      <url>/post/c390144.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="CSAPP-Chapter-1-计算机系统漫游"><a href="#CSAPP-Chapter-1-计算机系统漫游" class="headerlink" title="CSAPP | Chapter 1 | 计算机系统漫游"></a>CSAPP | Chapter 1 | 计算机系统漫游</h1><p>计算机系统由<strong>系统软件</strong>与<strong>硬件</strong>组成。<br>对于一个简单的 C 程序 hello.c 来说，即便它非常简单，但是为了让它运行，系统的每个主要组成部分都需要协调工作。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;hello, world\n&quot;</span>);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h2 id="信息就是位-上下文"><a href="#信息就是位-上下文" class="headerlink" title="信息就是位 + 上下文"></a>信息就是位 + 上下文</h2><p>hello.c 的 ASCII 码文本表示<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240413105808.png" alt="image.png"><br>hello 程序的生命周期从<strong>源程序</strong>(或源文件)开始，源程序实际上是由 0 和 1 组成的位(比特)序列。8 个位又组成 1 个字节。每个字节表示文本中的某些文本字符。<br>大部分计算机系统用 ASCII 标准，即用单个字节表示每个字符。<br>像 hello.c 这样只有 ASCII 字符构成的文件称为<strong>文本文件</strong>，所有其他文件都称为<strong>二进制文件</strong>。<br>实际上，系统中所有信息，都是以位序列存储，也就是二进制序列。唯一区分不同数据的就是我们读到这些对象时的上下文。例如，在不同上下文中，一个同样的字节序咧可能表示一个整数、浮点数、字符串或者机器指令。</p><p><strong>ISO：International Standards Organization</strong> 国际标准化组织</p><h2 id="程序被其他程序翻译成不同的格式"><a href="#程序被其他程序翻译成不同的格式" class="headerlink" title="程序被其他程序翻译成不同的格式"></a>程序被其他程序翻译成不同的格式</h2><p>为了能运行 hello.c 程序，每条 C 语句都必须被其他程序转化为一系列<strong>低级机器语言指令</strong>，然后这些指令按照一种称为<strong>可执行目标程序</strong>的格式打包好，并以二进制磁盘文件的形式存储。目标程序也称为<strong>可执行目标文件</strong>。<br>Unix 系统，源文件到目标文件的转化由<strong>编译器驱动</strong>完成。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -o hello hello.c</span><br></pre></td></tr></table></figure></p><h3 id="编译系统"><a href="#编译系统" class="headerlink" title="编译系统"></a>编译系统</h3><p><strong>预处理器</strong>preprocessor、<strong>编译器</strong>compiler、<strong>汇编器</strong>assembler和<strong>链接器</strong>linker：<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240414111155.png" alt="编译系统"></p><h4 id="预处理阶段-Preprocessing-phase"><a href="#预处理阶段-Preprocessing-phase" class="headerlink" title="预处理阶段 Preprocessing phase"></a>预处理阶段 Preprocessing phase</h4><p>预处理器(cpp)根据以 # 开头的命令修改原始的 C 程序。例如 #include<stdio.h> 命令告诉预处理器读取系统头文件 stdio.h 的内容并把它插入到程序文本中。结果得到了另一个 C 程序，是以 .i 作为文件后缀(扩展名) suffix.</p><h4 id="编译阶段-Compilation-phase"><a href="#编译阶段-Compilation-phase" class="headerlink" title="编译阶段 Compilation phase"></a>编译阶段 Compilation phase</h4><p>编译器(cc1)将文本文件 hello.i 翻译成文本文件 hello.s，它包含一个汇编语言程序，这个程序包含了 main 函数的定义。<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">main:</span><br><span class="line">subq $8, %rsp</span><br><span class="line">movl $.LC0, %edi</span><br><span class="line">call puts</span><br><span class="line">movl $0, %eax</span><br><span class="line">addq $8, %rsp</span><br><span class="line">ret</span><br></pre></td></tr></table></figure></p><h4 id="汇编阶段-Assembly-phase"><a href="#汇编阶段-Assembly-phase" class="headerlink" title="汇编阶段 Assembly phase"></a>汇编阶段 Assembly phase</h4><p>汇编器(as)将 hello.s 翻译为机器语言指令，把这些指令打包成一种叫做可重定位目标程序(relocatable object program)，并将结果保存在目标文件 hello.o 中。hello.o 是一个二进制文件，它包含 main 函数的指令编码(encode)。如果我们用文本编辑器直接打开这个文件，会看到一堆乱码(gibberish)</p><h4 id="链接阶段-Linking-phase"><a href="#链接阶段-Linking-phase" class="headerlink" title="链接阶段 Linking phase"></a>链接阶段 Linking phase</h4><p>在 hello 程序中，调用了 printf 函数，它是每个 C 编译器都提供的标准 C 库(standard C library) 中的一个函数。 printf 函数存在于一个名为 printf.o 的单独的预编译好了的目标文件中，而这个文件必须以某种方式合并到 hello.o 程序中。链接器(ld) 就负责处理这种合并，结果得到 hello 文件，它是一个<strong>可执行目标文件</strong>，可以被加载到内存中并由系统执行。</p><h2 id="处理器读取并解释存储在内存中的指令"><a href="#处理器读取并解释存储在内存中的指令" class="headerlink" title="处理器读取并解释存储在内存中的指令"></a>处理器读取并解释存储在内存中的指令</h2><p>要运行可执行 hello 程序，在 Linux 系统下我们输入<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">linux&gt; </span><span class="language-bash">./hello</span></span><br><span class="line">hello, world</span><br></pre></td></tr></table></figure><br>可以看到终端输出了 hello, world<br>shell 会判断输入的命令，如果第一个单词不是内置的指令，那么就会被认为是可执行文件的名字，并且运行它。</p><h3 id="系统的硬件组成"><a href="#系统的硬件组成" class="headerlink" title="系统的硬件组成"></a>系统的硬件组成</h3><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240414235737.png" alt="image.png"></p><h4 id="Buses-总线"><a href="#Buses-总线" class="headerlink" title="Buses 总线"></a>Buses 总线</h4><p>总线负责携带信息字节并且在各个部件中传递。通常设计为传送特定长度的字节块(字)。</p><h4 id="I-O-设备"><a href="#I-O-设备" class="headerlink" title="I/O 设备"></a>I/O 设备</h4><p>I/O 设备即输入/输出设备，是系统与外部世界的联系通道。每个 I/O 设备都通过一个控制器或者适配器与 I/O 总线连接。<br>控制器(controller) 是 I/O 设备本身或者系统的主印制电路板 (主板 motherboard)。<br>适配器(adpater) 是一块插在主板插槽上的卡。<br>虽然他们的封装方式不同，但是他们的功能都是在 I/O 总线和 I/O 设备之间传递信息。</p><h4 id="Main-Memory-主存"><a href="#Main-Memory-主存" class="headerlink" title="Main Memory 主存"></a>Main Memory 主存</h4><p>主存是一个临时存储设备。在处理器执行程序时，用来存放程序和程序处理的数据。<br>物理上：主存由 <strong>动态随机存储存储器 (DRAM)</strong> 组成。<br>逻辑上：存储器是一个线性的字节数组，每个字节都有自己特定的从零开始地址(数组索引)。</p><h4 id="Processor-处理器"><a href="#Processor-处理器" class="headerlink" title="Processor 处理器"></a>Processor 处理器</h4><p>中央处理单元(CPU)，简称处理器，是解释或执行存储在主存中指令的引擎。<br>它的核心是一个大小为一个自己的存储设备(或寄存器)，称为 <strong>程序计数器(PC)</strong>。在任何时候，PC 都指向主存中的某条机器语言指令(也就是含有该指令的地址)。<br>在计算机系统通电到断电，处理器一直在不断执行程序计数器指向的指令，再更新程序计数器，指向下一条指令。<br>处理器按照指令集架构(ISA: Instruction set architecture) 来操作。处理器读取 PC 指向的内存处的指令并且解释指令中的位，进行指令的操作，并且更新 PC，让它只想下一个指令(这条指令不一定和刚刚执行的指令相邻)。<br><strong>Main memory</strong> 主存<br><strong>register file</strong> 寄存器文件: 由一些单个字长的寄存器组成，每个寄存器都有自己唯一的名字。<br><strong>ALU(arithmetic/logic unit)</strong> 算术逻辑单元: 计算新的数据和地址值</p><p>CPU 可能在指令要求下执行的操作：<br><strong>Load 加载</strong>: 从主存复制一个字节或者一个字到寄存器来覆盖寄存器原先的内容。<br><strong>Store 存储</strong>: 从寄存器复制一个字节或者一个字到主存的某个位置来覆盖这个位置上原来的内容。<br><strong>Operate 操作</strong>: 把两个寄存器的内容复制到 ALU，ALU 对他们进行算数操作，并将结果存放到一个寄存器中，覆盖寄存器中原来的内容。<br><strong>Jump 跳转</strong>: 从指令本身抽取一个字并复制到 PC(程序计数器)，覆盖 PC 原先的值。</p><h5 id="hello-程序的运行"><a href="#hello-程序的运行" class="headerlink" title="hello 程序的运行"></a>hello 程序的运行</h5><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240424111630.png" alt="image.png"><br>当目标文件 hello 的代码和数据被加载到主存，处理器就开始执行 hello 程序 main 程序中的机器语言指令。这些指令将 “hello, world\n” 字符串中的字节从主存复制到寄存器文件，再从寄存器文件中复制到显示设备，最终显示到屏幕上。<br>如果使用 direct memory access(DMA) 技术，数据可以不通过处理器而直接从磁盘到达主存。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240424112158.png" alt="image.png"></p><h2 id="Caches-高速缓存"><a href="#Caches-高速缓存" class="headerlink" title="Caches 高速缓存"></a>Caches 高速缓存</h2><p>由于信息从一个地方移动到另一个地方需要花费大量开销(overhead)。<br>Cache Memory 高速缓存存储器 作为暂时的集结区域，存放处理器可能会用到的信息。</p><h3 id="Cache-memories"><a href="#Cache-memories" class="headerlink" title="Cache memories"></a>Cache memories</h3><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240424112458.png" alt="image.png"></p><h3 id="Memory-Hierarchy"><a href="#Memory-Hierarchy" class="headerlink" title="Memory Hierarchy"></a>Memory Hierarchy</h3><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240424231318.png" alt="image.png"></p><h2 id="The-Operating-System-Manages-the-Hardware"><a href="#The-Operating-System-Manages-the-Hardware" class="headerlink" title="The Operating System Manages the Hardware"></a>The Operating System Manages the Hardware</h2><p>应用层如果想控制硬件，必须经过操作系统，见下图。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240424231530.png" alt="image.png"></p><h3 id="Processes-进程"><a href="#Processes-进程" class="headerlink" title="Processes 进程"></a>Processes 进程</h3><p>进程：A process is the operating system’s abstraction for a running program.<br>multicore processors: 多核处理器<br>uniprocessor system: 单处理器系统<br>multiprocessor system: 多处理器系统<br>context switching: 上下文切换<br>操作系统保持跟踪进程所需的所有状态信息。这种状态就是 <strong>上下文</strong>。单处理器系统系统在任何一个时刻只能执行一个进程的代码。当操作系统决定把控制权转换为一个新的进程，就会进行上下文切换，保存当前进程的上下文，恢复新进程的上下文，然后将控制权传递到新进程，新进程就会从上次停止的地方开始。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240424234059.png" alt="image.png"></p><blockquote><p>示例场景中有两个并发的进程∶shell 进程和 hello 进程。最开始，只有 shell 进程在运行，即等待命令行上的输入。当我们让它运行 hello 程序时，shell 通过调用一个专门的函数，即系统调用，来执行我们的请求，系统调用会将控制权传递给操作系统。操作系统保存 shell 进程的上下文，创建一个新的 hello 进程及其上下文，然后将控制权传给新的 hello 进程。hello 进程终止后，操作系统恢复 shell 进程的上下文，并将控制权传回给它，shell 进程会继续等待下一个命令行输入。</p></blockquote><p>内核 kernel 控制从一个进程过渡到另一个进程。</p><h3 id="Threads-线程"><a href="#Threads-线程" class="headerlink" title="Threads 线程"></a>Threads 线程</h3><p>实际上，一个进程可以由多个称为线程的执行单元组成。<br>每个线程都运行在进程的上下文中，并共享同样的代码和全局数据。</p><h3 id="Virtual-Memory"><a href="#Virtual-Memory" class="headerlink" title="Virtual Memory"></a>Virtual Memory</h3><p>虚拟内存假设每个进程都在独占地使用主存，每个进程看到的内存都是一样的，称为虚拟地址空间。<br>进程的虚拟地址空间：(图中的地址从下往上增大)<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240424234925.png" alt="image.png"><br>从下往上依次为：</p><p>1.程序代码和数据：所有进程的代码是从同一固定地址开始的。</p><p>2.堆：代码和数据区在一开始运行时就被指定了大小。而堆可以动态扩展和收缩，例如使用 malloc 和 free 函数</p><p>3.共享库: 类似于 C 标准库</p><p>4.栈:在用户虚拟地址空间的顶部是用户栈。编译器用它来实现函数调用。栈和堆一样，可以动态扩展和收缩。每当我们调用一个函数，栈就会增长。从一个函数返回时，栈就会收缩。</p><p>5.虚拟内存:应用程序不能直接读写这个区域的内容或者直接调用内核代码定义的函数。只能调用内核来执行这些操作。</p><h3 id="Files"><a href="#Files" class="headerlink" title="Files"></a>Files</h3><p>文件就是字节序列。<br>系统中所有输入输出都是通过使用一小组称为 Unix I/O 的系统函数调用读写文件来实现的。</p><h2 id="Systems-Communicate-with-Other-Systems-Using-Networks"><a href="#Systems-Communicate-with-Other-Systems-Using-Networks" class="headerlink" title="Systems Communicate with Other Systems Using Networks"></a>Systems Communicate with Other Systems Using Networks</h2><p>网络可以视作一个 I/O 设备。现代系统经常通过网络和其他系统连接在一起。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240430202003.png" alt=""></p><h3 id="利用-telnet-通过网络远程运行-hello"><a href="#利用-telnet-通过网络远程运行-hello" class="headerlink" title="利用 telnet 通过网络远程运行 hello"></a>利用 telnet 通过网络远程运行 hello</h3><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240430202114.png" alt=""></p><h2 id="Concurrency-and-Parallelism-并发和并行"><a href="#Concurrency-and-Parallelism-并发和并行" class="headerlink" title="Concurrency and Parallelism 并发和并行"></a>Concurrency and Parallelism 并发和并行</h2><p>并发(Concurrency)：指的是一个同时具有多个活动的系统<br>并行(Parallelism)；用并发来使一个系统运行的更快。</p><h3 id="Thread-Level-Concurrency-线程级并发"><a href="#Thread-Level-Concurrency-线程级并发" class="headerlink" title="Thread-Level Concurrency 线程级并发"></a>Thread-Level Concurrency 线程级并发</h3><p>使用线程，可以在一个进程中执行多个控制流。传统意义上是通过使一台计算机在他正在执行的进程间快速切换来实现的。它允许多个用户同时与系统进行交互。以前用的是 <strong>单处理器系统</strong>，用一个处理器来完成多个任务切换。<br><strong>多处理器系统</strong>：一个由但操作系统内核控制的多处理器组成的系统。<br>多核也就是将多个 CPU(核) 集成到一个集成电路芯片上。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240430204155.png" alt=""></p><h4 id="4-个处理器核集成在一个芯片上"><a href="#4-个处理器核集成在一个芯片上" class="headerlink" title="4 个处理器核集成在一个芯片上"></a>4 个处理器核集成在一个芯片上</h4><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240430204300.png" alt=""><br><strong>超线程(同时多线程)Hyperthreading</strong>: 允许一个 CPU 执行多个控制流。</p><h3 id="Instruction-Level-Parallelism-指令级并行"><a href="#Instruction-Level-Parallelism-指令级并行" class="headerlink" title="Instruction-Level Parallelism 指令级并行"></a>Instruction-Level Parallelism 指令级并行</h3><p>现代处理器可以同时执行多条指令的属性称为指令集并行。</p><h3 id="Single-Instruction-Multiple-Data-SIMD-Parallelism-单指令多数据并行"><a href="#Single-Instruction-Multiple-Data-SIMD-Parallelism-单指令多数据并行" class="headerlink" title="Single-Instruction, Multiple-Data (SIMD) Parallelism 单指令多数据并行"></a>Single-Instruction, Multiple-Data (SIMD) Parallelism 单指令多数据并行</h3><p>允许一条指令产生多个可以并行执行的操作。</p><h2 id="Abstractions-in-CS"><a href="#Abstractions-in-CS" class="headerlink" title="Abstractions in CS"></a>Abstractions in CS</h2><p>API: application program interface 应用程序接口。</p><h4 id="计算机系统提供的一些抽象"><a href="#计算机系统提供的一些抽象" class="headerlink" title="计算机系统提供的一些抽象"></a>计算机系统提供的一些抽象</h4><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240430205242.png" alt=""></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> CSAPP </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CSAPP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>CSAPP | Bits, Bytes, and Integers</title>
       <link href="/post/b8742b63.html"/>
       <url>/post/b8742b63.html</url>
@@ -45,11 +70,11 @@
       
         <tags>
             
+            <tag> 技术 </tag>
+            
             <tag> Docker </tag>
             
             <tag> 教程 </tag>
-            
-            <tag> 技术 </tag>
             
         </tags>
       
@@ -416,11 +441,11 @@
       
         <tags>
             
-            <tag> 技术 </tag>
-            
             <tag> Github </tag>
             
             <tag> SSH </tag>
+            
+            <tag> 技术 </tag>
             
         </tags>
       
@@ -445,9 +470,9 @@
       
         <tags>
             
-            <tag> 时间复杂度 </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> 时间复杂度 </tag>
             
         </tags>
       
@@ -486,6 +511,17 @@
     
     
     <entry>
+      <title>个人随想录</title>
+      <link href="/artitalk/index.html"/>
+      <url>/artitalk/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>books</title>
       <link href="/books/index.html"/>
       <url>/books/index.html</url>
@@ -497,31 +533,20 @@
     
     
     <entry>
+      <title></title>
+      <link href="/css/modify.css"/>
+      <url>/css/modify.css</url>
+      
+        <content type="html"><![CDATA[#page-header,#page-header:before {  background: transparent !important;}#page-header.post-bg,#page-header.not-home-page {  height: 280px !important;}#page-header #post-info {  bottom: 40px !important;}#page-header #page-site-info {  top: 140px !important;}@media screen and (max-width: 768px) {  #page-header.not-home-page {    height: 200px !important;  }  #page-header #post-info {    bottom: 10px !important;  }  #page-header #page-site-info {    top: 100px !important;  }}.top-img {  height: 250px;  margin: -50px -40px 50px;  border-top-left-radius: inherit;  border-top-right-radius: inherit;  background-position: center center;  background-size: cover;  -webkit-transition: all 0.3s;  -moz-transition: all 0.3s;  -o-transition: all 0.3s;  -ms-transition: all 0.3s;  transition: all 0.3s;}@media screen and (max-width: 768px) {  .top-img {    height: 230px;    margin: -36px -14px 36px;  }}[data-theme='dark'] .top-img {  filter: brightness(0.8);}#footer:before {  background-color: rgba(255,255,255,0.5);}[data-theme='dark'] #footer:before {  background-color: rgba(0,0,0,0.5);}#footer-wrap,#footer-wrap a {  color: #111;  -webkit-transition: unset;  -moz-transition: unset;  -o-transition: unset;  -ms-transition: unset;  transition: unset;}[data-theme='dark'] #footer-wrap,[data-theme='dark'] #footer-wrap a {  color: var(--light-grey);}]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>关于我</title>
       <link href="/about/index.html"/>
       <url>/about/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>个人随想录</title>
-      <link href="/artitalk/index.html"/>
-      <url>/artitalk/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -541,11 +566,11 @@
     
     
     <entry>
-      <title></title>
-      <link href="/css/modify.css"/>
-      <url>/css/modify.css</url>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
-        <content type="html"><![CDATA[#page-header,#page-header:before {  background: transparent !important;}#page-header.post-bg,#page-header.not-home-page {  height: 280px !important;}#page-header #post-info {  bottom: 40px !important;}#page-header #page-site-info {  top: 140px !important;}@media screen and (max-width: 768px) {  #page-header.not-home-page {    height: 200px !important;  }  #page-header #post-info {    bottom: 10px !important;  }  #page-header #page-site-info {    top: 100px !important;  }}.top-img {  height: 250px;  margin: -50px -40px 50px;  border-top-left-radius: inherit;  border-top-right-radius: inherit;  background-position: center center;  background-size: cover;  -webkit-transition: all 0.3s;  -moz-transition: all 0.3s;  -o-transition: all 0.3s;  -ms-transition: all 0.3s;  transition: all 0.3s;}@media screen and (max-width: 768px) {  .top-img {    height: 230px;    margin: -36px -14px 36px;  }}[data-theme='dark'] .top-img {  filter: brightness(0.8);}#footer:before {  background-color: rgba(255,255,255,0.5);}[data-theme='dark'] #footer:before {  background-color: rgba(0,0,0,0.5);}#footer-wrap,#footer-wrap a {  color: #111;  -webkit-transition: unset;  -moz-transition: unset;  -o-transition: unset;  -ms-transition: unset;  transition: unset;}[data-theme='dark'] #footer-wrap,[data-theme='dark'] #footer-wrap a {  color: var(--light-grey);}]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
@@ -555,50 +580,6 @@
       <title>个人随想录</title>
       <link href="/essay/index.html"/>
       <url>/essay/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>gallery</title>
-      <link href="/gallery/index.html"/>
-      <url>/gallery/index.html</url>
-      
-        <content type="html"><![CDATA[<div class="gallery-group-main"><figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='/img-url' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">name</div>  <p>description</p>  <a href='/link'></a>  </figcaption>  </figure>  <figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='/img-url' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">name</div>  <p>description</p>  <a href='/link'></a>  </figcaption>  </figure>  <figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='/img-url' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">name</div>  <p>description</p>  <a href='/link'></a>  </figcaption>  </figure>  </div>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/music/index.html"/>
-      <url>/music/index.html</url>
-      
-        <content type="html"><![CDATA[<!-- 播放器 --><div class="music-player"><!-- audio标签 --><audio class="music-player__audio" ></audio><!-- 播放器主体 --><div class="music-player__main"><!-- 模糊背景 --><div class="music-player__blur"></div><!-- 唱片 --><div class="music-player__disc"><!-- 唱片图片 --><div class="music-player__image"><img width="100%" src="" alt=""></div><!-- 指针 --><div class="music-player__pointer"><img width="100%" src="/img/cd_tou.png" alt=""></div></div><!-- 控件主体 --><div class="music-player__controls"><!-- 歌曲信息 --><div class="music__info"><h3 class="music__info--title">...</h3></div><!-- 控件... --><div class="player-control"><div class="player-control__content"><div class="player-control__btns"><div class="player-control__btn player-control__btn--prev"><i class="iconfont icon-prev"></i></div><div class="player-control__btn player-control__btn--play"><i class="iconfont icon-play"></i></div><div class="player-control__btn player-control__btn--next"><i class="iconfont icon-next"></i></div><div class="player-control__btn player-control__btn--mode"><i class="iconfont icon-random"></i></div></div><div class="player-control__volume"><div class="control__volume--icon player-control__btn"><i class="iconfont icon-volume"></i></div><div class="control__volume--progress progress"></div></div></div><div class="player-control__content"><div class="player__song--progress progress"></div><div class="player__song--timeProgess nowTime">00:00</div><div class="player__song--timeProgess totalTime">00:00</div></div></div></div></div><!-- 歌曲列表 --><div class="music-player__list"><ul class="music__list_content"></ul></div></div><script src="/js/utill.js"></script><script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.slim.min.js"></script><script src="/js/player.js?10"></script><div style="text-align:center;margin:-100px 0; font:normal 14px/24px 'MicroSoft YaHei';color:#ffffff"></div>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>个人随想录</title>
-      <link href="/talk/index.html"/>
-      <url>/talk/index.html</url>
-      
-        <content type="html"><![CDATA[<head>  <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script></head><body>      <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240406235836.png">      <!-- 引用 artitalk -->      <script type="text/javascript" src="https://unpkg.com/artitalk"></script>      <!-- 存放说说的容器 -->      <div id="artitalk_main"></div>      <script>      new Artitalk({          appId: 'io9zpiEMivhCI0bTijyctNGY-MdYXbMMI', // Your LeanCloud appId          appKey: 'Fxtw4McQ0lRMQ4jKyk4AInWj' // Your LeanCloud appKey      })      </script></body>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -618,9 +599,53 @@
     
     
     <entry>
+      <title>个人随想录</title>
+      <link href="/talk/index.html"/>
+      <url>/talk/index.html</url>
+      
+        <content type="html"><![CDATA[<head>  <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script></head><body>      <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240406235836.png">      <!-- 引用 artitalk -->      <script type="text/javascript" src="https://unpkg.com/artitalk"></script>      <!-- 存放说说的容器 -->      <div id="artitalk_main"></div>      <script>      new Artitalk({          appId: 'io9zpiEMivhCI0bTijyctNGY-MdYXbMMI', // Your LeanCloud appId          appKey: 'Fxtw4McQ0lRMQ4jKyk4AInWj' // Your LeanCloud appKey      })      </script></body>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>link</title>
       <link href="/link/index.html"/>
       <url>/link/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/music/index.html"/>
+      <url>/music/index.html</url>
+      
+        <content type="html"><![CDATA[<!-- 播放器 --><div class="music-player"><!-- audio标签 --><audio class="music-player__audio" ></audio><!-- 播放器主体 --><div class="music-player__main"><!-- 模糊背景 --><div class="music-player__blur"></div><!-- 唱片 --><div class="music-player__disc"><!-- 唱片图片 --><div class="music-player__image"><img width="100%" src="" alt=""></div><!-- 指针 --><div class="music-player__pointer"><img width="100%" src="/img/cd_tou.png" alt=""></div></div><!-- 控件主体 --><div class="music-player__controls"><!-- 歌曲信息 --><div class="music__info"><h3 class="music__info--title">...</h3></div><!-- 控件... --><div class="player-control"><div class="player-control__content"><div class="player-control__btns"><div class="player-control__btn player-control__btn--prev"><i class="iconfont icon-prev"></i></div><div class="player-control__btn player-control__btn--play"><i class="iconfont icon-play"></i></div><div class="player-control__btn player-control__btn--next"><i class="iconfont icon-next"></i></div><div class="player-control__btn player-control__btn--mode"><i class="iconfont icon-random"></i></div></div><div class="player-control__volume"><div class="control__volume--icon player-control__btn"><i class="iconfont icon-volume"></i></div><div class="control__volume--progress progress"></div></div></div><div class="player-control__content"><div class="player__song--progress progress"></div><div class="player__song--timeProgess nowTime">00:00</div><div class="player__song--timeProgess totalTime">00:00</div></div></div></div></div><!-- 歌曲列表 --><div class="music-player__list"><ul class="music__list_content"></ul></div></div><script src="/js/utill.js"></script><script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.slim.min.js"></script><script src="/js/player.js?10"></script><div style="text-align:center;margin:-100px 0; font:normal 14px/24px 'MicroSoft YaHei';color:#ffffff"></div>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>gallery</title>
+      <link href="/gallery/index.html"/>
+      <url>/gallery/index.html</url>
+      
+        <content type="html"><![CDATA[<div class="gallery-group-main"><figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='/img-url' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">name</div>  <p>description</p>  <a href='/link'></a>  </figcaption>  </figure>  <figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='/img-url' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">name</div>  <p>description</p>  <a href='/link'></a>  </figcaption>  </figure>  <figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='/img-url' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">name</div>  <p>description</p>  <a href='/link'></a>  </figcaption>  </figure>  </div>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       

@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>CSAPP | Bits, Bytes, and Integers</title>
+      <link href="/post/b8742b63.html"/>
+      <url>/post/b8742b63.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="CSAPP-Bits-Bytes-and-Integers"><a href="#CSAPP-Bits-Bytes-and-Integers" class="headerlink" title="CSAPP | Bits, Bytes, and Integers"></a>CSAPP | Bits, Bytes, and Integers</h1><h2 id="Great-Reality"><a href="#Great-Reality" class="headerlink" title="Great Reality"></a>Great Reality</h2><h3 id="Ints-are-not-Integers-Floats-are-not-Reals"><a href="#Ints-are-not-Integers-Floats-are-not-Reals" class="headerlink" title="Ints are not Integers, Floats are not Reals"></a><strong>Ints are not Integers, Floats are not Reals</strong></h3><p>对于 (x + y) + z = x + (y + z)，无符号整形和有符号整形是成立的。<br>但是对于浮点数, (1e20 + -1e20) + 3.14 -&gt; 3.14，而 1.e20 + (-1e20 + 3.14) = 0<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line"><span class="type">int</span> a[<span class="number">2</span>];</span><br><span class="line"><span class="type">double</span> d;</span><br><span class="line">&#125;<span class="type">struct_t</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">double</span> <span class="title function_">fun</span><span class="params">(<span class="type">int</span> i)</span> &#123;</span><br><span class="line"><span class="keyword">volatile</span> <span class="type">struct_t</span> s;</span><br><span class="line">s.d = <span class="number">3.14</span>;</span><br><span class="line">s.a[i] = <span class="number">1073741824</span>; <span class="comment">/* Possibly out of bounds */</span></span><br><span class="line"><span class="keyword">return</span> s.d;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240413142810.png" style="zoom:50%" ><br>我们发现，当 i = 5 时，程序会崩溃。</p><h3 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation:"></a>Explanation:</h3><p>C 语言不会在运行中做任何边界检查<br>对于下图，垂直链的每个块代表 4 字节。a 数组的两个元素都是 4 字节，d 是 8 个字节<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240413142922.png" style="zoom:75%"><br>当 i 大于 1 时，赋值 a[2] 会赋值给 d3 … d0，赋值 a[3] 会赋值给 d4 … d7，所以 i = 4 的时候正常，后面报不报错看栈的空间等。</p><h2 id="Memory-System-Performance-Example"><a href="#Memory-System-Performance-Example" class="headerlink" title="Memory System Performance Example"></a>Memory System Performance Example</h2><p>下面有两端函数。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">copyij</span><span class="params">(<span class="type">int</span> src[<span class="number">2048</span>][<span class="number">2048</span>], <span class="type">int</span> dst[<span class="number">2048</span>][<span class="number">2048</span>])</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="type">int</span> i, j;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2048</span>; i ++)</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt; <span class="number">2048</span>; j ++)</span><br><span class="line">dst[i][j] = src[i][j];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">copyji</span><span class="params">(<span class="type">int</span> src[<span class="number">2048</span>][<span class="number">2048</span>], <span class="type">int</span> dst[<span class="number">2048</span>][<span class="number">2048</span>])</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="type">int</span> i, j;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt; <span class="number">2048</span>; j ++)</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2048</span>; i ++)</span><br><span class="line">dst[i][j] = src[i][j];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>可以看出它们的区别在于一个行优先，一个列优先。而第一段代码运行速度远远快于第二段代码。以行优先代码的运行速度快于一列一列运行。</p><h2 id="Everything-is-bits"><a href="#Everything-is-bits" class="headerlink" title="Everything is bits"></a>Everything is bits</h2><p>整数、浮点数等都可以表示为二进制。</p><h3 id="Data-Representations"><a href="#Data-Representations" class="headerlink" title="Data Representations"></a>Data Representations</h3><div class="table-container"><table><thead><tr><th style="text-align:center">C Data Type</th><th style="text-align:center">Typical 32-bit</th><th style="text-align:center">Typical 64-bit</th><th style="text-align:center">x86-64</th></tr></thead><tbody><tr><td style="text-align:center">char</td><td style="text-align:center">1</td><td style="text-align:center">1</td><td style="text-align:center">1</td></tr><tr><td style="text-align:center">short</td><td style="text-align:center">2</td><td style="text-align:center">2</td><td style="text-align:center">2</td></tr><tr><td style="text-align:center">int</td><td style="text-align:center">4</td><td style="text-align:center">4</td><td style="text-align:center">4</td></tr><tr><td style="text-align:center">long</td><td style="text-align:center">4</td><td style="text-align:center">8</td><td style="text-align:center">8</td></tr><tr><td style="text-align:center">float</td><td style="text-align:center">4</td><td style="text-align:center">4</td><td style="text-align:center">4</td></tr><tr><td style="text-align:center">double</td><td style="text-align:center">8</td><td style="text-align:center">8</td><td style="text-align:center">8</td></tr><tr><td style="text-align:center">long double</td><td style="text-align:center">-</td><td style="text-align:center">-</td><td style="text-align:center">10/16</td></tr><tr><td style="text-align:center">pointer</td><td style="text-align:center">4</td><td style="text-align:center">8</td><td style="text-align:center">8</td></tr><tr><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr></tbody></table></div><h2 id="Boolean-Algebra"><a href="#Boolean-Algebra" class="headerlink" title="Boolean Algebra"></a>Boolean Algebra</h2><p>And: A &amp; B = 1 when both A = 1 and B = 1<br>Or: A | B = 1 when either A = 1 or B = 1<br>Not: ~A = 1 when A = 0<br>Exclusive-Or(Xor): A^B = 1 when either A = 1 or B = 1, but not both 相同为 0，相异为 1</p><h3 id="Representing-amp-Manipulating"><a href="#Representing-amp-Manipulating" class="headerlink" title="Representing &amp; Manipulating"></a>Representing &amp; Manipulating</h3><h4 id="Representation"><a href="#Representation" class="headerlink" title="Representation"></a>Representation</h4><p>Width w bit vector represents subsets of {0, …, w - 1}<br>$a_j = 1~ ~if~ ~j~ ~\in A$</p><p>01101001 代表 {0, 3, 5, 6}<br>7<strong>65</strong>4<strong>3</strong>21<strong>0</strong></p><p>01010101 代表 {0, 2, 4, 6}<br>7<strong>6</strong>5<strong>4</strong>3<strong>2</strong>1<strong>0</strong></p><h4 id="Operations"><a href="#Operations" class="headerlink" title="Operations"></a>Operations</h4><div class="table-container"><table><thead><tr><th style="text-align:center">符号</th><th style="text-align:center">操作</th><th style="text-align:center">二进制序列</th><th style="text-align:center">集合</th></tr></thead><tbody><tr><td style="text-align:center">&amp;</td><td style="text-align:center">Intersection 交</td><td style="text-align:center">01000001</td><td style="text-align:center">{0, 6}</td></tr><tr><td style="text-align:center">\</td><td style="text-align:center"></td><td style="text-align:center">Union 并</td><td style="text-align:center">01111101</td><td>{0, 2 ,3, 4, 5, 6}</td></tr><tr><td style="text-align:center">^</td><td style="text-align:center">Symmetric difference 对称差异</td><td style="text-align:center">00111100</td><td style="text-align:center">{2, 3, 4, 5}</td></tr><tr><td style="text-align:center">~</td><td style="text-align:center">Complement 补</td><td style="text-align:center">10101010</td><td style="text-align:center">{1, 3, 5, 7}</td></tr></tbody></table></div><h3 id="Bit-Level-Operations-in-C"><a href="#Bit-Level-Operations-in-C" class="headerlink" title="Bit-Level Operations in C"></a>Bit-Level Operations in C</h3><p>位运算</p><h4 id="Examples-Char-data-type"><a href="#Examples-Char-data-type" class="headerlink" title="Examples(Char data type)"></a>Examples(Char data type)</h4><p>$\sim0x41 -&gt; 0xBE$<br>    $\sim01000001_2-&gt;10111110_2$ </p><p>$\sim0x00 -&gt; 0xFF$<br>    $\sim0000 0000_2-&gt;1111 1111_2$</p><p>$\sim0x69~ ~\&amp;~ ~0x55 -&gt; 0x41$<br>    $\sim0110 1001_2 $ $\&amp;$ $0101 0101_2-&gt;0100 0001_2$</p><p>$\sim0x69 ~~| ~~0x55 -&gt;  0x7D$<br>    $\sim 01101001_2$ $|$ $01010101_2 -&gt; 01111101_2$​​​</p><h3 id="Logic-Operations-in-C"><a href="#Logic-Operations-in-C" class="headerlink" title="Logic Operations in C"></a>Logic Operations in C</h3><p>$\&amp;\&amp;, ||, !$<br>    view 0 as “False”<br>    Anythings nonzero as “True”<br>    <strong>Always return 0 or 1</strong><br>    <strong>Early termination</strong><br>C 语言的逻辑运算只有 2 种结果， 0x00 和 0x01<br>取反是<strong>按结果取反</strong>，不是按位取反！</p><h4 id="Examples-Char-data-type-1"><a href="#Examples-Char-data-type-1" class="headerlink" title="Examples(Char data type)"></a>Examples(Char data type)</h4><p>$!0x41 -&gt; 0x00$ 相当于对 true 取反，结果为 false, 为 0x00<br>$!0x00 -&gt; 0x01$<br>$!!0x41-&gt; 0x01$</p><p>$0x69~ ~\&amp;\&amp;~ ~0x55 -&gt; 0x01$<br>$0x69~ ~||~ ~0x55 -&gt; 0x01$<br>$p~~$$\&amp;\&amp;$ $*p$ (avoids null pointer access) 在访问之前先判断是否为空指针，如果是空指针，会提前终止。</p><h3 id="Shift-Operation"><a href="#Shift-Operation" class="headerlink" title="Shift Operation"></a>Shift Operation</h3><h4 id="Left-Shift-x-lt-lt-y"><a href="#Left-Shift-x-lt-lt-y" class="headerlink" title="Left Shift: x &lt;&lt; y"></a>Left Shift: x &lt;&lt; y</h4><p>Shift bit-vector x left y positions, Throw away extra bits on left<br>Fill with 0’s on right</p><h4 id="Right-Shift-x-gt-gt-y"><a href="#Right-Shift-x-gt-gt-y" class="headerlink" title="Right Shift: x &gt;&gt; y"></a>Right Shift: x &gt;&gt; y</h4><p>Shift bit-vector x right y position, Throw away extra bits on right<br>Logical Shift<br>    Fill with 0’s on left<br>Arithmetic Shift<br>    Replicate(复制) most significant bit on left<br>对于右移运算，分为算数右移和逻辑右移。他们的填充规则不一样。算数右移填充的是符号位的数字。</p><div class="table-container"><table><thead><tr><th style="text-align:center">Argument x</th><th style="text-align:center">0110 0010</th></tr></thead><tbody><tr><td style="text-align:center">&lt;&lt; 3</td><td style="text-align:center">0001 0000</td></tr><tr><td style="text-align:center">Log. &gt;&gt; 2</td><td style="text-align:center">0001 1000</td></tr><tr><td style="text-align:center">Arith. &gt;&gt; 2</td><td style="text-align:center">0001 1000</td></tr></tbody></table></div><div class="table-container"><table><thead><tr><th style="text-align:center">Argument x</th><th style="text-align:center">1010 0010</th></tr></thead><tbody><tr><td style="text-align:center">&lt;&lt; 3</td><td style="text-align:center">0001 0000</td></tr><tr><td style="text-align:center">Log. &gt;&gt; 2</td><td style="text-align:center">0010 1000</td></tr><tr><td style="text-align:center">Arith. &gt;&gt; 2</td><td style="text-align:center">1110 1000</td></tr></tbody></table></div><h4 id="Undefined-Behavior"><a href="#Undefined-Behavior" class="headerlink" title="Undefined Behavior"></a>Undefined Behavior</h4><p>Shift amount &lt; 0 or &gt;= word size</p><h3 id="Numeric-Ranges"><a href="#Numeric-Ranges" class="headerlink" title="Numeric Ranges"></a>Numeric Ranges</h3><h4 id="Unsigned-Values"><a href="#Unsigned-Values" class="headerlink" title="Unsigned Values"></a>Unsigned Values</h4><p>$UMin = 0 -&gt; 000…0$<br>$UMax = 2^w - 1 -&gt; 111…1$<br>$UMax = 2 \times TMax + 1$</p><h4 id="Two’s-Complement-Values-补码"><a href="#Two’s-Complement-Values-补码" class="headerlink" title="Two’s Complement Values (补码)"></a>Two’s Complement Values (补码)</h4><p>$TMin = -2^{w - 1} -&gt; 100…0$<br>$TMax = w^{w - 1} - 1 -&gt; 011…1$<br>$|TMin| = TMax + 1$</p><h4 id="Other-Values"><a href="#Other-Values" class="headerlink" title="Other Values"></a>Other Values</h4><p>$Minus~1 -&gt; 111…1$</p><h5 id="Values-for-W-16"><a href="#Values-for-W-16" class="headerlink" title="Values for W = 16"></a>Values for W = 16</h5><div class="table-container"><table><thead><tr><th style="text-align:center"></th><th style="text-align:center">Decimal</th><th style="text-align:center">Hex</th><th style="text-align:center">Binary</th><th></th></tr></thead><tbody><tr><td style="text-align:center">UMax</td><td style="text-align:center">65535</td><td style="text-align:center">FF FF</td><td style="text-align:center">11111111 11111111</td><td></td></tr><tr><td style="text-align:center">TMax</td><td style="text-align:center">32767</td><td style="text-align:center">7F FF</td><td style="text-align:center">01111111 11111111</td><td></td></tr><tr><td style="text-align:center">TMin</td><td style="text-align:center">-32768</td><td style="text-align:center">80 00</td><td style="text-align:center">10000000 00000000</td><td></td></tr><tr><td style="text-align:center">-1</td><td style="text-align:center">-1</td><td style="text-align:center">FF FF</td><td style="text-align:center">11111111 11111111</td><td></td></tr><tr><td style="text-align:center">0</td><td style="text-align:center">0</td><td style="text-align:center">00 00</td><td style="text-align:center">00000000 00000000</td><td></td></tr><tr><td style="text-align:center">$UMax = 2 \times TMax + 1$</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center"></td></tr></tbody></table></div><h4 id="From-Binary-to-Unsigned"><a href="#From-Binary-to-Unsigned" class="headerlink" title="From Binary to Unsigned"></a>From Binary to Unsigned</h4><p>$B2U(X) = \sum_{i = 0}^{w - 1}x_i 2^i$</p><h4 id="From-Binary-to-Two’s-complement"><a href="#From-Binary-to-Two’s-complement" class="headerlink" title="From Binary to Two’s complement"></a>From Binary to Two’s complement</h4><p>$B2T(X) = -x_{w - 1} 2^{w - 1} + \sum_{i = 0}^{w - 2} x_i 2^i$<br>对于补码，最高位称为符号位，为 1 代表负数。</p><h4 id="Unsigned-amp-Signed-Numeric-Values"><a href="#Unsigned-amp-Signed-Numeric-Values" class="headerlink" title="Unsigned &amp; Signed Numeric Values"></a>Unsigned &amp; Signed Numeric Values</h4><div class="table-container"><table><thead><tr><th>X</th><th>B2U(X)</th><th>B2T(X)</th></tr></thead><tbody><tr><td>0000</td><td>0</td><td>0</td></tr><tr><td>0001</td><td>1</td><td>1</td></tr><tr><td>0010</td><td>2</td><td>2</td></tr><tr><td>0011</td><td>3</td><td>3</td></tr><tr><td>0100</td><td>4</td><td>4</td></tr><tr><td>0101</td><td>5</td><td>5</td></tr><tr><td>0110</td><td>6</td><td>6</td></tr><tr><td>0111</td><td>7</td><td>7</td></tr><tr><td>1000</td><td>8</td><td>-8</td></tr><tr><td>1001</td><td>9</td><td>-7</td></tr><tr><td>1010</td><td>10</td><td>-6</td></tr><tr><td>1011</td><td>11</td><td>-5</td></tr><tr><td>1100</td><td>12</td><td>-4</td></tr><tr><td>1101</td><td>13</td><td>-3</td></tr><tr><td>1110</td><td>14</td><td>-2</td></tr><tr><td>1111</td><td>15</td><td>-1</td></tr><tr><td>观察可知，负数与对应的正数关系是，正数取反加 1</td><td></td></tr></tbody></table></div><h4 id="Casting"><a href="#Casting" class="headerlink" title="Casting"></a>Casting</h4><p>如果有符号数和无符号数混合，有符号数会被隐式转换为无符号数。<br>$-1 &gt; 0U$ 因为 $-1$ 会被转换为无符号数 $1111~ ~1111$ 也就变成 $UMax$<br>$W =32,~TMIN = -2147483647, ~TMAX=2147483647$<br>$2147483647U &lt; -2147483647 - 1$<br>$(unsigned)-1 &gt; -2$<br>$2147483647 &lt; 2147483648U$<br>$2147483647 &gt; (int)2147483648U$, 对于 32 位系统来说，$int$ 范围是 $-2147483648 \sim 2147483647$,$unsigned~int$ 范围是 $0 \sim 4294967295$，所以将 $2147483648U$ 转换为 $int$, 会溢出。</p><p>考虑以下的代码：<br>对于 x = TMin, 他的输出还是 TMin。<br>因为 $-x = \sim x + 1$<br>对于 TMin 1000…0 取反 0111…1 再加 1， 1000…0 所以结果还是 TMin<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(x &lt; <span class="number">0</span>)</span><br><span class="line"><span class="keyword">return</span> -x;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="keyword">return</span> x;</span><br></pre></td></tr></table></figure><br>以下代码会造成无限循环。 $i$ 会从 $0$ 变为 $UMax$ (个人认为是 0 减 1 为 -1, 表示为全 1，则解释为 UMax)<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">unsigned</span> <span class="type">int</span> i;</span><br><span class="line"><span class="keyword">for</span>(i = n - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i --) &#123;</span><br><span class="line">f(a[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>对于下面的代码, $sizeof(char)$ 实际上返回的是 无符号数。$i$ 为有符号数，有符号数和无符号数比较会被转换为无符号数。$i - sizeof(char) &gt;= 0$ 这个条件就会一直成立，无限循环。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> i;</span><br><span class="line"><span class="keyword">for</span>(i = n - <span class="number">1</span>; i - <span class="keyword">sizeof</span>(<span class="type">char</span>) &gt;= <span class="number">0</span>; i --) &#123;</span><br><span class="line">f(a[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3 id="Sign-Extension"><a href="#Sign-Extension" class="headerlink" title="Sign Extension"></a>Sign Extension</h3><p>Task:<br>    Given w-bit signed integer x<br>    Convert it to (w+k)-bit integer with same value<br>Rule:<br>    Make k copies of sign bit<br>    $X’ = x_{w-1}, …, x_{w-1}, x_{w - 2}, …, x_0$<br>对于 $1110$，符号位权重为 $-2^3=-8$，将它左移一位，变为 $11110$，原先符号位位置上的权重变为了 $8$，而新的符号位权重为 $-2^4=-16$, $-16 + 8 = -8$, 所以并不改变总和的效应。<br>Converting from smaller to larger integer data type, C automatically performs sign extension.<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">short</span> <span class="type">int</span> x = <span class="number">15213</span>;</span><br><span class="line"><span class="type">int</span> ix = (<span class="type">int</span>) x;</span><br><span class="line"><span class="type">short</span> <span class="type">int</span> y = <span class="number">-15213</span>;</span><br><span class="line"><span class="type">int</span> iy = (<span class="type">int</span>) y;</span><br></pre></td></tr></table></figure><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240424105410.png" alt="image.png"></p><h3 id="Two’s-Complement-Addition"><a href="#Two’s-Complement-Addition" class="headerlink" title="Two’s Complement Addition"></a>Two’s Complement Addition</h3><p>-5 + 3<br> 1011<br>+0011<br>1110  -&gt; -2</p><p>-3 + 5<br> 1101<br>+0101<br>10010 -&gt; 0010 -&gt; 2 </p><p>-3 + -5<br> 1101<br>+1011<br>10000 -&gt; 0 负溢出</p><h2 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h2><p>移位指令比乘法指令花的时间更少。<br>$u &lt;&lt; k$ 相当于 $u \times 2^k$<br>$u &gt;&gt; k$ 相当于 $\lfloor {u / 2^k} \rfloor$<br>前面介绍过算数右移与逻辑右移。算数右移<strong>可以保持符号位</strong>。例如 1010 为 -6，算数右移 1 位，则为 1101 为 -3。但是此时如果再右移 1 位，得到 1110 为 -2。结果出现问题。<br>特别的，对于负数的除法，如果需要右移 $k$ 位，我们需要先加上偏移量 $2^k - 1$。<br>1101 + 1 = 1110 此时再右移 1 位，得到 1111 为 -1。</p><h2 id="正数变负数"><a href="#正数变负数" class="headerlink" title="正数变负数"></a>正数变负数</h2><p>$x -&gt; -x$ 需要对所有位取反，再 + 1。<br>0101 -&gt; 5<br>1010 + 1 = 1011 -&gt; -5</p><h2 id="使用-Unsigned-一些方式"><a href="#使用-Unsigned-一些方式" class="headerlink" title="使用 Unsigned 一些方式"></a>使用 Unsigned 一些方式</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">unsigned</span> i;</span><br><span class="line"><span class="keyword">for</span>(i = cnt - <span class="number">2</span>; i &lt; cnt; i --)</span><br><span class="line">a[i] += a[i + <span class="number">1</span>];</span><br></pre></td></tr></table></figure><p>Better Version:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">size_t</span> i;</span><br><span class="line"><span class="keyword">for</span>(i = cnt - <span class="number">2</span>; i &lt; cnt; i --)</span><br><span class="line">a[i] += a[i + <span class="number">1</span>];</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">1. Data type size_t defined as unsigned value with length = word size</span></span><br><span class="line"><span class="comment">2. Code will work even if cnt = UMax</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure><br>然而，当 cnt 为 signed 并且小于 0 时。会有问题。cnt 会被转换为无符号数，就会变得非常大，导致无限循环。</p><h2 id="大端序和小端序"><a href="#大端序和小端序" class="headerlink" title="大端序和小端序"></a>大端序和小端序</h2><h4 id="Big-Endian"><a href="#Big-Endian" class="headerlink" title="Big Endian"></a>Big Endian</h4><p>高位字节存入低地址，低位字节存入高地址。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240430134050.png" alt=""><br>上图从左往右 01234567</p><h4 id="Little-Endian"><a href="#Little-Endian" class="headerlink" title="Little Endian"></a>Little Endian</h4><p>低位字节存入低地址，高位字节存入高地址。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240430134057.png" alt=""><br>从右往左 01234567<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240430134509.png" alt=""></p><h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>字符串以 null 结尾，也就是 ‘0’<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> S[<span class="number">6</span>] = <span class="string">&#x27;18213&#x27;</span>;</span><br></pre></td></tr></table></figure><br>字符 ‘0’ 为 0x30，数字字符 i 为 0x30 + i<br>对于字符串数组来说，大端法和小端法存储没有区别。因为字符是一个字节一个字节存储，而每个都是一个整体。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240430182303.png" alt=""></p><blockquote><p>[!NOTE]<br>例如对于 0x12345678 来说，这是一个整体，0x12 是整体的高位，0x78 是整体的低位，存储就是 0x78 0x56 0x34 0x12。而对于字符数组，内部组织形式是一个字节一个字节，数组相当于是 0x12 0x34 0x56 0x78，每个字符是一个整体。</p></blockquote><h2 id="易错"><a href="#易错" class="headerlink" title="易错"></a>易错</h2><p>1.如果 x &lt; 0, 那么 $((x <em> 2) &lt; 0)$ 吗？ 错误，因为可能会负溢出，$x </em> 2$ 可能会是一个正数。</p><p>2.如果一个数 x，x &amp; 7 == 7，也就是最低的 3 位为 111，如果 (x &lt;&lt; 30) 那么结果 &lt; 0。</p><p>3.Is ux &gt; -1? 错的。无符号数和有符号数作比较，有符号数被隐式转换为无符号数。-1 就会被转换为 UMax。</p><p>4.如果 x &gt; y，那么 -x &lt; -y 一定成立吗？ 错误的，因为如果 y 为 TMin，我们直到 $|TMin| = TMax + 1$。对 TMin 取相反数，也就是 TMin 的位取反再 + 1，那就变成 TMax + 1，发生正溢出。又变回了 TMin。</p><p>5.x &gt;= 0 那么 -x &lt;= 0 吗？ 正确的</p><p>6.x &lt;= 0 那么 -x &gt;= 0 吗？ 错误的，比如 TMin。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> CSAPP </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CSAPP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Docker | 入门:安装与配置</title>
       <link href="/post/3345e4e9.html"/>
       <url>/post/3345e4e9.html</url>
@@ -20,11 +45,11 @@
       
         <tags>
             
-            <tag> 技术 </tag>
-            
             <tag> Docker </tag>
             
             <tag> 教程 </tag>
+            
+            <tag> 技术 </tag>
             
         </tags>
       
@@ -391,11 +416,11 @@
       
         <tags>
             
+            <tag> 技术 </tag>
+            
             <tag> Github </tag>
             
             <tag> SSH </tag>
-            
-            <tag> 技术 </tag>
             
         </tags>
       
@@ -420,9 +445,9 @@
       
         <tags>
             
-            <tag> 算法 </tag>
-            
             <tag> 时间复杂度 </tag>
+            
+            <tag> 算法 </tag>
             
         </tags>
       
@@ -461,6 +486,39 @@
     
     
     <entry>
+      <title>books</title>
+      <link href="/books/index.html"/>
+      <url>/books/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>关于我</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>个人随想录</title>
       <link href="/artitalk/index.html"/>
       <url>/artitalk/index.html</url>
@@ -483,31 +541,20 @@
     
     
     <entry>
-      <title>关于我</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title></title>
+      <link href="/css/modify.css"/>
+      <url>/css/modify.css</url>
       
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>books</title>
-      <link href="/books/index.html"/>
-      <url>/books/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[#page-header,#page-header:before {  background: transparent !important;}#page-header.post-bg,#page-header.not-home-page {  height: 280px !important;}#page-header #post-info {  bottom: 40px !important;}#page-header #page-site-info {  top: 140px !important;}@media screen and (max-width: 768px) {  #page-header.not-home-page {    height: 200px !important;  }  #page-header #post-info {    bottom: 10px !important;  }  #page-header #page-site-info {    top: 100px !important;  }}.top-img {  height: 250px;  margin: -50px -40px 50px;  border-top-left-radius: inherit;  border-top-right-radius: inherit;  background-position: center center;  background-size: cover;  -webkit-transition: all 0.3s;  -moz-transition: all 0.3s;  -o-transition: all 0.3s;  -ms-transition: all 0.3s;  transition: all 0.3s;}@media screen and (max-width: 768px) {  .top-img {    height: 230px;    margin: -36px -14px 36px;  }}[data-theme='dark'] .top-img {  filter: brightness(0.8);}#footer:before {  background-color: rgba(255,255,255,0.5);}[data-theme='dark'] #footer:before {  background-color: rgba(0,0,0,0.5);}#footer-wrap,#footer-wrap a {  color: #111;  -webkit-transition: unset;  -moz-transition: unset;  -o-transition: unset;  -ms-transition: unset;  transition: unset;}[data-theme='dark'] #footer-wrap,[data-theme='dark'] #footer-wrap a {  color: var(--light-grey);}]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>个人随想录</title>
+      <link href="/essay/index.html"/>
+      <url>/essay/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -527,28 +574,6 @@
     
     
     <entry>
-      <title>个人随想录</title>
-      <link href="/essay/index.html"/>
-      <url>/essay/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/css/modify.css"/>
-      <url>/css/modify.css</url>
-      
-        <content type="html"><![CDATA[#page-header,#page-header:before {  background: transparent !important;}#page-header.post-bg,#page-header.not-home-page {  height: 280px !important;}#page-header #post-info {  bottom: 40px !important;}#page-header #page-site-info {  top: 140px !important;}@media screen and (max-width: 768px) {  #page-header.not-home-page {    height: 200px !important;  }  #page-header #post-info {    bottom: 10px !important;  }  #page-header #page-site-info {    top: 100px !important;  }}.top-img {  height: 250px;  margin: -50px -40px 50px;  border-top-left-radius: inherit;  border-top-right-radius: inherit;  background-position: center center;  background-size: cover;  -webkit-transition: all 0.3s;  -moz-transition: all 0.3s;  -o-transition: all 0.3s;  -ms-transition: all 0.3s;  transition: all 0.3s;}@media screen and (max-width: 768px) {  .top-img {    height: 230px;    margin: -36px -14px 36px;  }}[data-theme='dark'] .top-img {  filter: brightness(0.8);}#footer:before {  background-color: rgba(255,255,255,0.5);}[data-theme='dark'] #footer:before {  background-color: rgba(0,0,0,0.5);}#footer-wrap,#footer-wrap a {  color: #111;  -webkit-transition: unset;  -moz-transition: unset;  -o-transition: unset;  -ms-transition: unset;  transition: unset;}[data-theme='dark'] #footer-wrap,[data-theme='dark'] #footer-wrap a {  color: var(--light-grey);}]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title></title>
       <link href="/music/index.html"/>
       <url>/music/index.html</url>
@@ -560,11 +585,11 @@
     
     
     <entry>
-      <title></title>
-      <link href="/js/modify.js"/>
-      <url>/js/modify.js</url>
+      <title>个人随想录</title>
+      <link href="/talk/index.html"/>
+      <url>/talk/index.html</url>
       
-        <content type="html"><![CDATA['use strict';const cheerio = require('cheerio');/** * 在页面插入新顶部图 * @param {cheerio.Root} $ Root */function insertTopImg($) {    let header = $('#page-header');    if (header.length === 0) return;    let background = header.css('background-image');    if (!background) return;    $('#post, #page, #archive, #tag, #category').prepend(`<div class="top-img" style="background-image: ${background};"></div>`);}hexo.extend.filter.register('after_render:html', function(str, data) {    let $ = cheerio.load(str, {        decodeEntities: false    });    insertTopImg($);    return $.html();});]]></content>
+        <content type="html"><![CDATA[<head>  <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script></head><body>      <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240406235836.png">      <!-- 引用 artitalk -->      <script type="text/javascript" src="https://unpkg.com/artitalk"></script>      <!-- 存放说说的容器 -->      <div id="artitalk_main"></div>      <script>      new Artitalk({          appId: 'io9zpiEMivhCI0bTijyctNGY-MdYXbMMI', // Your LeanCloud appId          appKey: 'Fxtw4McQ0lRMQ4jKyk4AInWj' // Your LeanCloud appKey      })      </script></body>]]></content>
       
     </entry>
     
@@ -582,11 +607,11 @@
     
     
     <entry>
-      <title>个人随想录</title>
-      <link href="/talk/index.html"/>
-      <url>/talk/index.html</url>
+      <title></title>
+      <link href="/js/modify.js"/>
+      <url>/js/modify.js</url>
       
-        <content type="html"><![CDATA[<head>  <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script></head><body>      <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240406235836.png">      <!-- 引用 artitalk -->      <script type="text/javascript" src="https://unpkg.com/artitalk"></script>      <!-- 存放说说的容器 -->      <div id="artitalk_main"></div>      <script>      new Artitalk({          appId: 'io9zpiEMivhCI0bTijyctNGY-MdYXbMMI', // Your LeanCloud appId          appKey: 'Fxtw4McQ0lRMQ4jKyk4AInWj' // Your LeanCloud appKey      })      </script></body>]]></content>
+        <content type="html"><![CDATA['use strict';const cheerio = require('cheerio');/** * 在页面插入新顶部图 * @param {cheerio.Root} $ Root */function insertTopImg($) {    let header = $('#page-header');    if (header.length === 0) return;    let background = header.css('background-image');    if (!background) return;    $('#post, #page, #archive, #tag, #category').prepend(`<div class="top-img" style="background-image: ${background};"></div>`);}hexo.extend.filter.register('after_render:html', function(str, data) {    let $ = cheerio.load(str, {        decodeEntities: false    });    insertTopImg($);    return $.html();});]]></content>
       
     </entry>
     

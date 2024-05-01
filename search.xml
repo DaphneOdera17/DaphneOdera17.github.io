@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>CSAPP | Floating Point</title>
+      <link href="/post/e8b77b1.html"/>
+      <url>/post/e8b77b1.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="CSAPP-Floating-Point"><a href="#CSAPP-Floating-Point" class="headerlink" title="CSAPP | Floating Point"></a>CSAPP | Floating Point</h1><p>$b_i$  $b_{i-1}$ … $b_2$ $b_1$ $b_0$ $b_{-1}$ $b_{-2}$ $b_{-3}$ … $b_{-j}$<br>$S=\sum_{k=-j}^{i}b_k\times2^k$</p><h2 id="IEEE-Standard-754"><a href="#IEEE-Standard-754" class="headerlink" title="IEEE Standard 754"></a>IEEE Standard 754</h2><h3 id="浮点数表示方法"><a href="#浮点数表示方法" class="headerlink" title="浮点数表示方法"></a>浮点数表示方法</h3><p>$v=(-1)^s\times M\times 2^E$<br><strong>符号位 Sign:</strong> 0 表示正，1 表示负。<br><strong>尾数 Significand M:</strong> $\in [1.0, 2.0)$<br><strong>阶码 exponent:</strong> E 对浮点数加权，权重为 2 的 E 次幂。</p><p>浮点数分为三个域：符号、阶码、 尾数<br>sign (1 bit) | exponent (e bit) | fraction(or mantissa) (f bit)</p><p>sign 直接编码符号 s<br>k 位阶码字段 $exp=e_{k-1}…e_1e_0$ 编码了 E(但是不等同于 E)<br>n 位小数字段 $frac=f_{n-1}…f_1f_0$ 编码了 M(但是不等同于 M)</p><h4 id="规格化值"><a href="#规格化值" class="headerlink" title="规格化值"></a>规格化值</h4><p>1.exp $\neq$ 000…0 and exp $\neq$ 111…1</p><p>2.阶码字段以 biased(偏置) 形式表示，E = Exp - Bias，Exp 为无符号数，Exp 的范围为 $0000 0001 \sim 1111 1110$ 即 $1 \sim 254$。Bias 为 $2^{k-1}-1$，由此产生的指数取值范围，单精度为 $-126\sim +127$，双精度为 $-1022\sim +1023$</p><p>3.小数字段 frac 被解释为描述小数值 f，$f \in [0,1)$, 二进制表示为 $0.f_{n-1}…f_1f_0$。尾数定义为 $M=1+f$。可以把 M 看作为二进制表示为 $1.f_{n-1}…f_1f_0$。</p><p>4.对于尾数，我们可以“抛掉”小数点左边的 1，只看右侧。M 最小的时候 frac = 000…0(M = 1.0)，M 最大的时候 frac = 111…1(M = 2.0 - $\varepsilon$，也就是 1.111…1)<br><a href="https://blog.csdn.net/weixin_43891234/article/details/114692825">IEEE754浮点数阶码为什么需要偏置bias</a></p><h3 id="Single-precision-32-bits"><a href="#Single-precision-32-bits" class="headerlink" title="Single precision: 32 bits"></a>Single precision: 32 bits</h3><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240501134941.png" alt=""></p><h3 id="Double-Precision-64-bits"><a href="#Double-Precision-64-bits" class="headerlink" title="Double Precision: 64 bits"></a>Double Precision: 64 bits</h3><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240501135000.png" alt=""></p><h4 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h4><p>对于浮点数 F = 15213.0<br>$15213_{10}$<br>$= 1110 1101 1011 01_2$<br>$=1.110 1101 1011 01_2 \times 2^{13}$</p><h4 id="Significand"><a href="#Significand" class="headerlink" title="Significand"></a><strong>Significand</strong></h4><p>$M=1.110 1101 1011 01_2$<br>$frac=110 1101 1011 01 0000 0000 00_2$(23 bits)</p><h4 id="Exponent"><a href="#Exponent" class="headerlink" title="Exponent"></a><strong>Exponent</strong></h4><p>$E = 13$ 因为 2 的幂是 13<br>$Bias=127$ 因为 float 单精度表示，k = 8, $Bias=2^{k-1}-1=2^7-1=127$<br>$Exp=140=10001100_2=E + Bias$</p><h4 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h4><p>$0~~10001100~110 1101 1011 01 0000 0000 00_2$<br>从左到右分别为 s exp frac</p><h4 id="非规格化值"><a href="#非规格化值" class="headerlink" title="非规格化值"></a>非规格化值</h4><p>如果使用规格化数，总是使 $M \geq 1$，就无法表示 0。而 +0.0 的浮点表示位模式为全 0。符号位为 0，阶码字段为 0，是一个非规格化值。然而此时 M = f = 0。如果符号位为 1，那么就是 -0.0。</p><p>1.exp = 000…0 成立</p><p>2.E = 1 - Bias</p><p>3.M = 0.xxx…x</p><h4 id="特殊的值"><a href="#特殊的值" class="headerlink" title="特殊的值"></a>特殊的值</h4><p>$exp = 111…1, frac=000…0$ 代表无穷大<br>$exp=111…1,frac\neq 000…0$ $NaN(not~a~number)$ E.g. sqrt(-1) </p><h4 id="Visualization-Floating-Point-Encodings"><a href="#Visualization-Floating-Point-Encodings" class="headerlink" title="Visualization: Floating Point Encodings"></a>Visualization: Floating Point Encodings</h4><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240501160831.png" alt=""><br>对于 8 位浮点数：<br>$k = 4, Bias=2^3-1=7,E = 1-Bias=1-7=-6$<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240501161139.png" alt=""><br><strong>对于非规格化值：</strong><br>$E=1-Bias$<br>0 0000 000，M = 0，$0 \times 2^{-6} = 0$<br>0 0000 001, $M=1\times 2^{-3}=\frac{1}{8}, \frac{1}{8} \times \frac{1}{2^6} = \frac{1}{512}$<br>…<br>0 0000 111 为非规格化值所能表示的最大值<br><strong>对于规格化值：</strong><br>$E=exp-Bias$<br>0 0001 000 此时 $exp=1, E=exp-Bias=1-7=-6,frac=000,M=1.000$，这是最小的规格化值。<br>……</p><h2 id="Rounding"><a href="#Rounding" class="headerlink" title="Rounding"></a>Rounding</h2><p>IEEE 现在有四种舍入方式，分别为 向零舍入、向下舍入、向上舍入、就近舍入(默认)<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240501164705.png" alt=""></p><h4 id="如何理解就近舍入"><a href="#如何理解就近舍入" class="headerlink" title="如何理解就近舍入?"></a>如何理解就近舍入?</h4><p>当为中间数，要向最近的偶数(舍入后保留的最低有效位是偶数)舍入。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240501170926.png" alt=""><br>对于 7.8950000，9 是一个奇数，所以向上舍入。<br>对于 7.8850000，8 是一个偶数，所以向下舍入。</p><h3 id="二进制数截断"><a href="#二进制数截断" class="headerlink" title="二进制数截断"></a>二进制数截断</h3><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240501172630.png" alt=""><br>对于 $10.11100_2$ 如果直接截断，则为 10.11 是个奇数，所以应该加上 0.001</p><h2 id="乘法"><a href="#乘法" class="headerlink" title="乘法"></a>乘法</h2><p>$((-1)^{s1}\times M1 \times 2^{E1}) \times ((-1)^{s2}\times M2 \times 2^{E2})$<br>$Sign~s: s1 \oplus s2$<br>$Significand~M:M1 \times M2$<br>$Exponent~E: E1 + E2$</p><p>如果 M $\geq$ 2，则须有右移位同时增加指数，来让尾数在 1 和 2 之间。<br>如果 E 超出范围，则会溢出到无穷大。<br>如果 M 有太多位，则需要就近舍入。</p><p>(3.14 + 1e10) - 1e10 = 0<br>3.14 + (1e10 - 1e10) = 3.14<br>1e20 $*$ (1e20 - 1e20) = 0.0</p><h2 id="Questions"><a href="#Questions" class="headerlink" title="Questions"></a>Questions</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> x = ...;</span><br><span class="line"><span class="type">float</span> f = ...;</span><br><span class="line"><span class="type">double</span> d = ...;</span><br><span class="line"></span><br><span class="line">x == (<span class="type">int</span>)(<span class="type">float</span>) x; <span class="comment">// False, 在浮点数的 frac 区域没有足够的位来表示 int,会舍入</span></span><br><span class="line">x == (<span class="type">int</span>)(<span class="type">double</span>) x; <span class="comment">// True</span></span><br><span class="line">f == (<span class="type">float</span>)(<span class="type">double</span>) f; <span class="comment">// True</span></span><br><span class="line">d == (<span class="type">double</span>)(<span class="type">float</span>) d; <span class="comment">// False</span></span><br><span class="line">f == -(-f); <span class="comment">// True</span></span><br><span class="line"><span class="number">2</span> / <span class="number">3</span> == <span class="number">2</span> / <span class="number">3.0</span> <span class="comment">// False, 2/3=0, 2/3.0 是一个浮点数</span></span><br><span class="line">d &lt; <span class="number">0.0</span> -&gt; ((d * <span class="number">2</span>) &lt; <span class="number">0.0</span>) <span class="comment">// Yes, 即使 d * 2 溢出到负无穷大，也是小于 0</span></span><br><span class="line">d &gt; f -&gt; -f &gt; -d <span class="comment">// Yes</span></span><br><span class="line">d * d &gt;= <span class="number">0.0</span> <span class="comment">// Yes</span></span><br><span class="line">(d + f) - d == f <span class="comment">// No</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> CSAPP </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CSAPP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>CSAPP | Chapter 1 | 计算机系统漫游</title>
       <link href="/post/c390144.html"/>
       <url>/post/c390144.html</url>
@@ -511,42 +536,9 @@
     
     
     <entry>
-      <title>个人随想录</title>
-      <link href="/artitalk/index.html"/>
-      <url>/artitalk/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>books</title>
       <link href="/books/index.html"/>
       <url>/books/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/css/modify.css"/>
-      <url>/css/modify.css</url>
-      
-        <content type="html"><![CDATA[#page-header,#page-header:before {  background: transparent !important;}#page-header.post-bg,#page-header.not-home-page {  height: 280px !important;}#page-header #post-info {  bottom: 40px !important;}#page-header #page-site-info {  top: 140px !important;}@media screen and (max-width: 768px) {  #page-header.not-home-page {    height: 200px !important;  }  #page-header #post-info {    bottom: 10px !important;  }  #page-header #page-site-info {    top: 100px !important;  }}.top-img {  height: 250px;  margin: -50px -40px 50px;  border-top-left-radius: inherit;  border-top-right-radius: inherit;  background-position: center center;  background-size: cover;  -webkit-transition: all 0.3s;  -moz-transition: all 0.3s;  -o-transition: all 0.3s;  -ms-transition: all 0.3s;  transition: all 0.3s;}@media screen and (max-width: 768px) {  .top-img {    height: 230px;    margin: -36px -14px 36px;  }}[data-theme='dark'] .top-img {  filter: brightness(0.8);}#footer:before {  background-color: rgba(255,255,255,0.5);}[data-theme='dark'] #footer:before {  background-color: rgba(0,0,0,0.5);}#footer-wrap,#footer-wrap a {  color: #111;  -webkit-transition: unset;  -moz-transition: unset;  -o-transition: unset;  -ms-transition: unset;  transition: unset;}[data-theme='dark'] #footer-wrap,[data-theme='dark'] #footer-wrap a {  color: var(--light-grey);}]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>关于我</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -566,9 +558,9 @@
     
     
     <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>个人随想录</title>
+      <link href="/essay/index.html"/>
+      <url>/essay/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -577,11 +569,22 @@
     
     
     <entry>
-      <title>个人随想录</title>
-      <link href="/essay/index.html"/>
-      <url>/essay/index.html</url>
+      <title>关于我</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>gallery</title>
+      <link href="/gallery/index.html"/>
+      <url>/gallery/index.html</url>
+      
+        <content type="html"><![CDATA[<div class="gallery-group-main"><figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='/img-url' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">name</div>  <p>description</p>  <a href='/link'></a>  </figcaption>  </figure>  <figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='/img-url' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">name</div>  <p>description</p>  <a href='/link'></a>  </figcaption>  </figure>  <figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='/img-url' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">name</div>  <p>description</p>  <a href='/link'></a>  </figcaption>  </figure>  </div>]]></content>
       
     </entry>
     
@@ -599,20 +602,9 @@
     
     
     <entry>
-      <title>个人随想录</title>
-      <link href="/talk/index.html"/>
-      <url>/talk/index.html</url>
-      
-        <content type="html"><![CDATA[<head>  <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script></head><body>      <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240406235836.png">      <!-- 引用 artitalk -->      <script type="text/javascript" src="https://unpkg.com/artitalk"></script>      <!-- 存放说说的容器 -->      <div id="artitalk_main"></div>      <script>      new Artitalk({          appId: 'io9zpiEMivhCI0bTijyctNGY-MdYXbMMI', // Your LeanCloud appId          appKey: 'Fxtw4McQ0lRMQ4jKyk4AInWj' // Your LeanCloud appKey      })      </script></body>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>link</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -632,11 +624,22 @@
     
     
     <entry>
-      <title>gallery</title>
-      <link href="/gallery/index.html"/>
-      <url>/gallery/index.html</url>
+      <title></title>
+      <link href="/css/modify.css"/>
+      <url>/css/modify.css</url>
       
-        <content type="html"><![CDATA[<div class="gallery-group-main"><figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='/img-url' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">name</div>  <p>description</p>  <a href='/link'></a>  </figcaption>  </figure>  <figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='/img-url' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">name</div>  <p>description</p>  <a href='/link'></a>  </figcaption>  </figure>  <figure class="gallery-group">  <img class="gallery-group-img no-lightbox" src='/img-url' alt="Group Image Gallery">  <figcaption>  <div class="gallery-group-name">name</div>  <p>description</p>  <a href='/link'></a>  </figcaption>  </figure>  </div>]]></content>
+        <content type="html"><![CDATA[#page-header,#page-header:before {  background: transparent !important;}#page-header.post-bg,#page-header.not-home-page {  height: 280px !important;}#page-header #post-info {  bottom: 40px !important;}#page-header #page-site-info {  top: 140px !important;}@media screen and (max-width: 768px) {  #page-header.not-home-page {    height: 200px !important;  }  #page-header #post-info {    bottom: 10px !important;  }  #page-header #page-site-info {    top: 100px !important;  }}.top-img {  height: 250px;  margin: -50px -40px 50px;  border-top-left-radius: inherit;  border-top-right-radius: inherit;  background-position: center center;  background-size: cover;  -webkit-transition: all 0.3s;  -moz-transition: all 0.3s;  -o-transition: all 0.3s;  -ms-transition: all 0.3s;  transition: all 0.3s;}@media screen and (max-width: 768px) {  .top-img {    height: 230px;    margin: -36px -14px 36px;  }}[data-theme='dark'] .top-img {  filter: brightness(0.8);}#footer:before {  background-color: rgba(255,255,255,0.5);}[data-theme='dark'] #footer:before {  background-color: rgba(0,0,0,0.5);}#footer-wrap,#footer-wrap a {  color: #111;  -webkit-transition: unset;  -moz-transition: unset;  -o-transition: unset;  -ms-transition: unset;  transition: unset;}[data-theme='dark'] #footer-wrap,[data-theme='dark'] #footer-wrap a {  color: var(--light-grey);}]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>个人随想录</title>
+      <link href="/talk/index.html"/>
+      <url>/talk/index.html</url>
+      
+        <content type="html"><![CDATA[<head>  <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script></head><body>      <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240406235836.png">      <!-- 引用 artitalk -->      <script type="text/javascript" src="https://unpkg.com/artitalk"></script>      <!-- 存放说说的容器 -->      <div id="artitalk_main"></div>      <script>      new Artitalk({          appId: 'io9zpiEMivhCI0bTijyctNGY-MdYXbMMI', // Your LeanCloud appId          appKey: 'Fxtw4McQ0lRMQ4jKyk4AInWj' // Your LeanCloud appKey      })      </script></body>]]></content>
       
     </entry>
     
@@ -646,6 +649,28 @@
       <title>tags</title>
       <link href="/tags/index.html"/>
       <url>/tags/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>个人随想录</title>
+      <link href="/artitalk/index.html"/>
+      <url>/artitalk/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>link</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       

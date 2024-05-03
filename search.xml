@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>VsCode | 修改首页启动页 Logo</title>
+      <link href="/post/184dbe6a.html"/>
+      <url>/post/184dbe6a.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="VsCode-修改首页启动页-Logo"><a href="#VsCode-修改首页启动页-Logo" class="headerlink" title="VsCode | 修改首页启动页 Logo"></a>VsCode | 修改首页启动页 Logo</h1><h2 id="最终效果："><a href="#最终效果：" class="headerlink" title="最终效果："></a>最终效果：</h2><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240503202114.png" alt=""></p><h2 id="插件的安装"><a href="#插件的安装" class="headerlink" title="插件的安装"></a>插件的安装</h2><p>先安装插件 Custom CSS and JS Loader<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240503210221.png" alt=""></p><h3 id="插件配置"><a href="#插件配置" class="headerlink" title="插件配置"></a>插件配置</h3><p>Ctrl + Shift + P 输入<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240503210258.png" alt=""><br>打开用户设置，在末尾添加<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;vscode_custom_css.imports&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;&quot;</span><span class="punctuation">]</span></span><br></pre></td></tr></table></figure><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240503210455.png" alt=""></p><h2 id="下载-Logo"><a href="#下载-Logo" class="headerlink" title="下载 Logo"></a>下载 Logo</h2><p>下载 Logo<br><a href="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/VSCode-Thick.png">点我下载</a></p><h2 id="引入图片"><a href="#引入图片" class="headerlink" title="引入图片"></a>引入图片</h2><p>创建一个文件夹 Vs_code_config，里面放入 user.css<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.editor-group-watermark &gt; .letterpress&#123;</span><br><span class="line">  background-image: <span class="built_in">url</span>(<span class="string">&quot;https://raw.githubusercontent.com/Aikoyori/ProgrammingVTuberLogos/main/VSCode/VSCode-Thick.png&quot;</span>) !important;</span><br><span class="line">  opacity: <span class="number">.75</span>;</span><br><span class="line">  aspect-ratio: <span class="number">3</span>/<span class="number">2</span> !important;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>但是会因为网络原因可能加载不出来。所以我们可以通过将图片转换 base64 来进行访问。<br><a href="https://tool.chinaz.com/tools/imgtobase">base64编码在线转换网站</a><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240503202202.png" alt=""><br>然后将这些编码粘贴到 url 里面，替换掉原先的网页链接并保存<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240503210845.png" alt=""></p><h3 id="引入-css"><a href="#引入-css" class="headerlink" title="引入 css"></a>引入 css</h3><p>回到用户的 settings.json<br>将之前输入的改为，其中 file:/// 之后是你 user.css 存放的路径<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;vscode_custom_css.imports&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;file:///D:/VS_code_config/user.css&quot;</span><span class="punctuation">]</span></span><br></pre></td></tr></table></figure></p><h2 id="让插件生效"><a href="#让插件生效" class="headerlink" title="让插件生效"></a>让插件生效</h2><p>Ctrl + Shift + P 输入 &gt;Enable…<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240503210126.png" alt=""><br>点击 Enable Custom CSS and JS<br>重启 VsCode 生效</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> VsCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+            <tag> VsCode </tag>
+            
+            <tag> Logo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>CSAPP | Floating Point</title>
       <link href="/post/e8b77b1.html"/>
       <url>/post/e8b77b1.html</url>
@@ -95,9 +124,9 @@
       
         <tags>
             
-            <tag> Docker </tag>
-            
             <tag> 教程 </tag>
+            
+            <tag> Docker </tag>
             
             <tag> 技术 </tag>
             
@@ -547,9 +576,20 @@
     
     
     <entry>
-      <title>关于我</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title></title>
+      <link href="/css/modify.css"/>
+      <url>/css/modify.css</url>
+      
+        <content type="html"><![CDATA[#page-header,#page-header:before {  background: transparent !important;}#page-header.post-bg,#page-header.not-home-page {  height: 280px !important;}#page-header #post-info {  bottom: 40px !important;}#page-header #page-site-info {  top: 140px !important;}@media screen and (max-width: 768px) {  #page-header.not-home-page {    height: 200px !important;  }  #page-header #post-info {    bottom: 10px !important;  }  #page-header #page-site-info {    top: 100px !important;  }}.top-img {  height: 250px;  margin: -50px -40px 50px;  border-top-left-radius: inherit;  border-top-right-radius: inherit;  background-position: center center;  background-size: cover;  -webkit-transition: all 0.3s;  -moz-transition: all 0.3s;  -o-transition: all 0.3s;  -ms-transition: all 0.3s;  transition: all 0.3s;}@media screen and (max-width: 768px) {  .top-img {    height: 230px;    margin: -36px -14px 36px;  }}[data-theme='dark'] .top-img {  filter: brightness(0.8);}#footer:before {  background-color: rgba(255,255,255,0.5);}[data-theme='dark'] #footer:before {  background-color: rgba(0,0,0,0.5);}#footer-wrap,#footer-wrap a {  color: #111;  -webkit-transition: unset;  -moz-transition: unset;  -o-transition: unset;  -ms-transition: unset;  transition: unset;}[data-theme='dark'] #footer-wrap,[data-theme='dark'] #footer-wrap a {  color: var(--light-grey);}]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>个人随想录</title>
+      <link href="/essay/index.html"/>
+      <url>/essay/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -558,20 +598,9 @@
     
     
     <entry>
-      <title>link</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -592,54 +621,21 @@
     
     <entry>
       <title></title>
-      <link href="/js/modify.js"/>
-      <url>/js/modify.js</url>
-      
-        <content type="html"><![CDATA['use strict';const cheerio = require('cheerio');/** * 在页面插入新顶部图 * @param {cheerio.Root} $ Root */function insertTopImg($) {    let header = $('#page-header');    if (header.length === 0) return;    let background = header.css('background-image');    if (!background) return;    $('#post, #page, #archive, #tag, #category').prepend(`<div class="top-img" style="background-image: ${background};"></div>`);}hexo.extend.filter.register('after_render:html', function(str, data) {    let $ = cheerio.load(str, {        decodeEntities: false    });    insertTopImg($);    return $.html();});]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>个人随想录</title>
-      <link href="/essay/index.html"/>
-      <url>/essay/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/css/modify.css"/>
-      <url>/css/modify.css</url>
-      
-        <content type="html"><![CDATA[#page-header,#page-header:before {  background: transparent !important;}#page-header.post-bg,#page-header.not-home-page {  height: 280px !important;}#page-header #post-info {  bottom: 40px !important;}#page-header #page-site-info {  top: 140px !important;}@media screen and (max-width: 768px) {  #page-header.not-home-page {    height: 200px !important;  }  #page-header #post-info {    bottom: 10px !important;  }  #page-header #page-site-info {    top: 100px !important;  }}.top-img {  height: 250px;  margin: -50px -40px 50px;  border-top-left-radius: inherit;  border-top-right-radius: inherit;  background-position: center center;  background-size: cover;  -webkit-transition: all 0.3s;  -moz-transition: all 0.3s;  -o-transition: all 0.3s;  -ms-transition: all 0.3s;  transition: all 0.3s;}@media screen and (max-width: 768px) {  .top-img {    height: 230px;    margin: -36px -14px 36px;  }}[data-theme='dark'] .top-img {  filter: brightness(0.8);}#footer:before {  background-color: rgba(255,255,255,0.5);}[data-theme='dark'] #footer:before {  background-color: rgba(0,0,0,0.5);}#footer-wrap,#footer-wrap a {  color: #111;  -webkit-transition: unset;  -moz-transition: unset;  -o-transition: unset;  -ms-transition: unset;  transition: unset;}[data-theme='dark'] #footer-wrap,[data-theme='dark'] #footer-wrap a {  color: var(--light-grey);}]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
       <link href="/music/index.html"/>
       <url>/music/index.html</url>
       
         <content type="html"><![CDATA[<!-- 播放器 --><div class="music-player"><!-- audio标签 --><audio class="music-player__audio" ></audio><!-- 播放器主体 --><div class="music-player__main"><!-- 模糊背景 --><div class="music-player__blur"></div><!-- 唱片 --><div class="music-player__disc"><!-- 唱片图片 --><div class="music-player__image"><img width="100%" src="" alt=""></div><!-- 指针 --><div class="music-player__pointer"><img width="100%" src="/img/cd_tou.png" alt=""></div></div><!-- 控件主体 --><div class="music-player__controls"><!-- 歌曲信息 --><div class="music__info"><h3 class="music__info--title">...</h3></div><!-- 控件... --><div class="player-control"><div class="player-control__content"><div class="player-control__btns"><div class="player-control__btn player-control__btn--prev"><i class="iconfont icon-prev"></i></div><div class="player-control__btn player-control__btn--play"><i class="iconfont icon-play"></i></div><div class="player-control__btn player-control__btn--next"><i class="iconfont icon-next"></i></div><div class="player-control__btn player-control__btn--mode"><i class="iconfont icon-random"></i></div></div><div class="player-control__volume"><div class="control__volume--icon player-control__btn"><i class="iconfont icon-volume"></i></div><div class="control__volume--progress progress"></div></div></div><div class="player-control__content"><div class="player__song--progress progress"></div><div class="player__song--timeProgess nowTime">00:00</div><div class="player__song--timeProgess totalTime">00:00</div></div></div></div></div><!-- 歌曲列表 --><div class="music-player__list"><ul class="music__list_content"></ul></div></div><script src="/js/utill.js"></script><script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.slim.min.js"></script><script src="/js/player.js?10"></script><div style="text-align:center;margin:-100px 0; font:normal 14px/24px 'MicroSoft YaHei';color:#ffffff"></div>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
@@ -662,6 +658,39 @@
       <url>/talk/index.html</url>
       
         <content type="html"><![CDATA[<head>  <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script></head><body>      <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240406235836.png">      <!-- 引用 artitalk -->      <script type="text/javascript" src="https://unpkg.com/artitalk"></script>      <!-- 存放说说的容器 -->      <div id="artitalk_main"></div>      <script>      new Artitalk({          appId: 'io9zpiEMivhCI0bTijyctNGY-MdYXbMMI', // Your LeanCloud appId          appKey: 'Fxtw4McQ0lRMQ4jKyk4AInWj' // Your LeanCloud appKey      })      </script></body>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>link</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/js/modify.js"/>
+      <url>/js/modify.js</url>
+      
+        <content type="html"><![CDATA['use strict';const cheerio = require('cheerio');/** * 在页面插入新顶部图 * @param {cheerio.Root} $ Root */function insertTopImg($) {    let header = $('#page-header');    if (header.length === 0) return;    let background = header.css('background-image');    if (!background) return;    $('#post, #page, #archive, #tag, #category').prepend(`<div class="top-img" style="background-image: ${background};"></div>`);}hexo.extend.filter.register('after_render:html', function(str, data) {    let $ = cheerio.load(str, {        decodeEntities: false    });    insertTopImg($);    return $.html();});]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>关于我</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     

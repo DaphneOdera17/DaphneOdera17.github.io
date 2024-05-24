@@ -8,7 +8,7 @@
       <link href="/post/b5141e1c.html"/>
       <url>/post/b5141e1c.html</url>
       
-        <content type="html"><![CDATA[<h1 id="Linux-安装并配置-Ubuntu-22-04-LTS"><a href="#Linux-安装并配置-Ubuntu-22-04-LTS" class="headerlink" title="Linux | 安装并配置 Ubuntu 22.04 LTS"></a>Linux | 安装并配置 Ubuntu 22.04 LTS</h1><p>笔者采用的是 VMware Workstation 软件。</p><h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><h2 id="VMware-Workstation-软件"><a href="#VMware-Workstation-软件" class="headerlink" title="VMware Workstation 软件"></a>VMware Workstation 软件</h2><p><a href="https://www.vmware.com/products/workstation-pro.html">官方下载网址</a><br>该软件似乎是需要破解的，请读者自行解决。</p><h3 id="镜像下载"><a href="#镜像下载" class="headerlink" title="镜像下载"></a>镜像下载</h3><p><a href="https://ubuntu.com/desktop?gad_source=1&amp;gclid=CjwKCAjw57exBhAsEiwAaIxaZsMPkLdcWOm7d0kcc6l1SEcZdaj86yHpSRbbqQ-3MLEWqbyIc0kIERoCipcQAvD_BwE">Ubuntu 官网</a><br>点击并下载镜像。<br>笔者用的是 22.04 版本的镜像，当然也可以选择最新版。安装步骤应该差不多。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240428205949.png" alt=""></p><h2 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h2><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427202202.png" alt=""><br>勾选稍后安装操作系统<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427202243.png" alt=""><br>版本选择 Ubuntu 64位<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427202336.png" alt=""><br>名称和位置根据自己偏好设置<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427202446.png" alt=""><br>处理器根据自己电脑情况来，后续也可以进行调整<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427202521.png" alt=""><br>内存默认 4GB，也可以调整<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427202559.png" alt=""><br>选择 网络地址转换(NAT)<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427202645.png" alt=""></p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427202710.png" alt=""></p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427202722.png" alt=""></p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427202735.png" alt=""><br>个人认为磁盘大小 50GB 比较合理<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427202851.png" alt=""><br>磁盘文件根据给出的来就行<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427202931.png" alt=""></p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427202945.png" alt=""></p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427203112.png" alt=""></p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427203144.png" alt=""><br>找到你 iso 的下载路径<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427203222.png" alt=""><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427203233.png" alt=""><br>设置完成后打开虚拟机<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427203254.png" alt=""><br>选择第一个并回车（或者等待它自动跳转）<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427203345.png" alt=""><br>语言自行选择，尽量选英文<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427204626.png" alt=""><br>选择键盘布局<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427204704.png" alt=""><br>选择正常安装即可<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427204740.png" alt=""><br>选择清空整个磁盘文件并安装系统<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427204835.png" alt=""><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427204903.png" alt=""><br>地区选在上海<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427205007.png" alt=""><br>自行配置名字和密码。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427205108.png" alt=""><br>安装完成后选择重启<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427211442.png" alt=""></p><h4 id="Please-remove-the-installation-medium-then-reboot"><a href="#Please-remove-the-installation-medium-then-reboot" class="headerlink" title="Please remove the installation medium, then reboot"></a>Please remove the installation medium, then reboot</h4><p>重启的时候如果停留在一个界面显示要移除安装介质并且按下 Enter 的，<strong>直接按 Enter</strong> 就行（笔者忘记截图了）。<br>输入密码进入系统。</p><h2 id="更新镜像源"><a href="#更新镜像源" class="headerlink" title="更新镜像源"></a>更新镜像源</h2><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427212347.png" alt=""><br>找到 Terminal 并打开<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427212605.png" alt=""><br>进入终端界面后，我们先安装 Vim 文本编辑器<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install vim</span><br></pre></td></tr></table></figure><br>提示输入密码，输入并回车（此时输入密码是不显示出来的）<br>安装完成后输入以下指令备份一份存储镜像源的文件。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak</span><br></pre></td></tr></table></figure><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/apt</span><br><span class="line">ls</span><br></pre></td></tr></table></figure><br>替换镜像：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/apt/sources.list</span><br></pre></td></tr></table></figure><br>在 vim 文本编辑器中，我们在默认模式下，按下： gg（也就是连按两下 g），跳到行首，然后按下 dG(先按下小写 d, 再按大写 G)。即可清空文本。<br>然后我们复制进去（可以通过右键找到粘贴）<br>下面是阿里源，当然你也可以用清华源、中科大源等，别的请自行百度。我们以阿里源作为示范：<br><a href="https://midoq.github.io/2022/05/30/Ubuntu20-04%E6%9B%B4%E6%8D%A2%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F%E6%BA%90/">其它镜像源</a><br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">deb https://mirrors.aliyun.com/ubuntu/ jammy main restricted universe multiverse</span><br><span class="line">deb-src https://mirrors.aliyun.com/ubuntu/ jammy main restricted universe multiverse</span><br><span class="line"></span><br><span class="line">deb https://mirrors.aliyun.com/ubuntu/ jammy-security main restricted universe multiverse</span><br><span class="line">deb-src https://mirrors.aliyun.com/ubuntu/ jammy-security main restricted universe multiverse</span><br><span class="line"></span><br><span class="line">deb https://mirrors.aliyun.com/ubuntu/ jammy-updates main restricted universe multiverse</span><br><span class="line">deb-src https://mirrors.aliyun.com/ubuntu/ jammy-updates main restricted universe multiverse</span><br><span class="line"></span><br><span class="line"># deb https://mirrors.aliyun.com/ubuntu/ jammy-proposed main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.aliyun.com/ubuntu/ jammy-proposed main restricted universe multiverse</span><br><span class="line"></span><br><span class="line">deb https://mirrors.aliyun.com/ubuntu/ jammy-backports main restricted universe multiverse</span><br><span class="line">deb-src https://mirrors.aliyun.com/ubuntu/ jammy-backports main restricted universe multiverse</span><br></pre></td></tr></table></figure><br>再按下 :wq (先按下 冒号键:, 再输入 wq) 即可保存。<br>然后更新(需要进入漫长的等待):<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br></pre></td></tr></table></figure></p><h2 id="更改终端字体、界面"><a href="#更改终端字体、界面" class="headerlink" title="更改终端字体、界面"></a>更改终端字体、界面</h2><h3 id="更改字体大小"><a href="#更改字体大小" class="headerlink" title="更改字体大小"></a>更改字体大小</h3><p>我们会发现终端的字体太小了。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427214123.png" alt=""><br>找到 Preference<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427214156.png" alt=""><br>在 Profiles 下的 Unnamed<br>勾选 Custom font:<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427214240.png" alt=""><br>调整字体大小<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427214332.png" alt=""></p><h3 id="更改终端大小"><a href="#更改终端大小" class="headerlink" title="更改终端大小"></a>更改终端大小</h3><p>更改 columns 和 rows 即可（需要重启终端才可生效）<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427214431.png" alt=""></p><h2 id="安装必须工具"><a href="#安装必须工具" class="headerlink" title="安装必须工具"></a>安装必须工具</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install build-essential</span><br></pre></td></tr></table></figure><p>安装的时候可能会提示：Do you want to continue? 记得输入 Y 然后回车。<br>安装完成后，g++、gcc、make 等都已安装。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install git</span><br></pre></td></tr></table></figure></p><h2 id="安装中文输入法"><a href="#安装中文输入法" class="headerlink" title="安装中文输入法"></a>安装中文输入法</h2><h3 id="安装中文语言包"><a href="#安装中文语言包" class="headerlink" title="安装中文语言包"></a>安装中文语言包</h3><p>先在终端输入：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove thunderbird</span><br><span class="line">sudo apt-get install language-pack-zh-han*</span><br></pre></td></tr></table></figure><br>打开设置进入 Region &amp; Language。选择 Manage installed Languages。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240524225230.png" alt=""><br>不过会出现此报错，忽略即可。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240524225505.png" alt=""><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240524225608.png" alt=""><br>找到 Chinese 双击选择并应用。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240524225641.png" alt=""><br>等待系统安装完中文语言包，我们进入下个阶段。</p><h3 id="安装中文输入法-1"><a href="#安装中文输入法-1" class="headerlink" title="安装中文输入法"></a>安装中文输入法</h3><p>先在终端输入<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install ibus-pinyin</span><br></pre></td></tr></table></figure><br>进入设置。</p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240524224319.png" alt=""></p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240524224343.png" alt=""><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240524225816.png" alt=""><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240524225832.png" alt=""><br><strong>$\textcolor{red}{添加后记得重启，否则可能无效!!!}$</strong><br>之后即可正常使用中文输入法。<br>按 win + 空格键 可以切换中英文输入法。</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="Linux-安装并配置-Ubuntu-22-04-LTS"><a href="#Linux-安装并配置-Ubuntu-22-04-LTS" class="headerlink" title="Linux | 安装并配置 Ubuntu 22.04 LTS"></a>Linux | 安装并配置 Ubuntu 22.04 LTS</h1><p>笔者采用的是 VMware Workstation 软件。</p><h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><h2 id="VMware-Workstation-软件"><a href="#VMware-Workstation-软件" class="headerlink" title="VMware Workstation 软件"></a>VMware Workstation 软件</h2><p><a href="https://www.vmware.com/products/workstation-pro.html">官方下载网址</a><br>该软件似乎是需要破解的，请读者自行解决。</p><h3 id="镜像下载"><a href="#镜像下载" class="headerlink" title="镜像下载"></a>镜像下载</h3><p><a href="https://ubuntu.com/desktop?gad_source=1&amp;gclid=CjwKCAjw57exBhAsEiwAaIxaZsMPkLdcWOm7d0kcc6l1SEcZdaj86yHpSRbbqQ-3MLEWqbyIc0kIERoCipcQAvD_BwE">Ubuntu 官网</a><br>点击并下载镜像。<br>笔者用的是 22.04 版本的镜像，当然也可以选择最新版。安装步骤应该差不多。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240428205949.png" style="zoom: 25%;" /></p><h2 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h2><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427202202.png" style="zoom: 33%;" /><br>勾选稍后安装操作系统<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427202243.png" style="zoom: 50%;" /><br>版本选择 Ubuntu 64位<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427202336.png" style="zoom:50%;" /><br>名称和位置根据自己偏好设置<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427202446.png" style="zoom:50%;" /><br>处理器根据自己电脑情况来，后续也可以进行调整<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427202521.png" style="zoom: 50%;" /><br>内存默认 4GB，也可以调整<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427202559.png" style="zoom:50%;" /><br>选择 网络地址转换(NAT)<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427202645.png" style="zoom:50%;" /></p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427202710.png" style="zoom:50%;" /></p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427202722.png" style="zoom:50%;" /></p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427202735.png" style="zoom:50%;" /><br>个人认为磁盘大小 50GB 比较合理<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427202851.png" style="zoom:50%;" /><br>磁盘文件根据给出的来就行<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427202931.png" style="zoom:50%;" /></p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427202945.png" style="zoom:50%;" /></p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427203112.png" style="zoom:33%;" /></p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427203144.png" style="zoom:50%;" /><br>找到你 iso 的下载路径<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427203222.png" style="zoom:50%;" /><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427203233.png" alt=""><br>设置完成后打开虚拟机<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427203254.png" alt=""><br>选择第一个并回车（或者等待它自动跳转）<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427203345.png" style="zoom: 67%;" /><br>语言自行选择，尽量选英文<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427204626.png" style="zoom: 50%;" /><br>选择键盘布局<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427204704.png" style="zoom: 67%;" /><br>选择正常安装即可<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427204740.png" style="zoom: 67%;" /><br>选择清空整个磁盘文件并安装系统<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427204835.png" style="zoom:67%;" /><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427204903.png" alt=""><br>地区选在上海<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427205007.png" style="zoom:50%;" /><br>自行配置名字和密码。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427205108.png" style="zoom:67%;" /><br>安装完成后选择重启<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427211442.png" style="zoom: 67%;" /></p><h4 id="Please-remove-the-installation-medium-then-reboot"><a href="#Please-remove-the-installation-medium-then-reboot" class="headerlink" title="Please remove the installation medium, then reboot"></a>Please remove the installation medium, then reboot</h4><p>重启的时候如果停留在一个界面显示要移除安装介质并且按下 Enter 的，<strong>直接按 Enter</strong> 就行（笔者忘记截图了）。<br>输入密码进入系统。</p><h2 id="更新镜像源"><a href="#更新镜像源" class="headerlink" title="更新镜像源"></a>更新镜像源</h2><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427212347.png" style="zoom:50%;" /><br>找到 Terminal 并打开<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427212605.png" style="zoom:50%;" /><br>进入终端界面后，我们先安装 Vim 文本编辑器</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install vim</span><br></pre></td></tr></table></figure><p>提示输入密码，输入并回车（此时输入密码是不显示出来的）<br>安装完成后输入以下指令备份一份存储镜像源的文件。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak</span><br></pre></td></tr></table></figure><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/apt</span><br><span class="line">ls</span><br></pre></td></tr></table></figure><br>替换镜像：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/apt/sources.list</span><br></pre></td></tr></table></figure><br>在 vim 文本编辑器中，我们在默认模式下，按下： gg（也就是连按两下 g），跳到行首，然后按下 dG(先按下小写 d, 再按大写 G)。即可清空文本。<br>然后我们复制进去（可以通过右键找到粘贴）<br>下面是阿里源，当然你也可以用清华源、中科大源等，别的请自行百度。我们以阿里源作为示范：<br><a href="https://midoq.github.io/2022/05/30/Ubuntu20-04%E6%9B%B4%E6%8D%A2%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F%E6%BA%90/">其它镜像源</a><br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">deb https://mirrors.aliyun.com/ubuntu/ jammy main restricted universe multiverse</span><br><span class="line">deb-src https://mirrors.aliyun.com/ubuntu/ jammy main restricted universe multiverse</span><br><span class="line"></span><br><span class="line">deb https://mirrors.aliyun.com/ubuntu/ jammy-security main restricted universe multiverse</span><br><span class="line">deb-src https://mirrors.aliyun.com/ubuntu/ jammy-security main restricted universe multiverse</span><br><span class="line"></span><br><span class="line">deb https://mirrors.aliyun.com/ubuntu/ jammy-updates main restricted universe multiverse</span><br><span class="line">deb-src https://mirrors.aliyun.com/ubuntu/ jammy-updates main restricted universe multiverse</span><br><span class="line"></span><br><span class="line"># deb https://mirrors.aliyun.com/ubuntu/ jammy-proposed main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.aliyun.com/ubuntu/ jammy-proposed main restricted universe multiverse</span><br><span class="line"></span><br><span class="line">deb https://mirrors.aliyun.com/ubuntu/ jammy-backports main restricted universe multiverse</span><br><span class="line">deb-src https://mirrors.aliyun.com/ubuntu/ jammy-backports main restricted universe multiverse</span><br></pre></td></tr></table></figure><br>再按下 :wq (先按下 冒号键:, 再输入 wq) 即可保存。<br>然后更新(需要进入漫长的等待):<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br></pre></td></tr></table></figure></p><h2 id="更改终端字体、界面"><a href="#更改终端字体、界面" class="headerlink" title="更改终端字体、界面"></a>更改终端字体、界面</h2><h3 id="更改字体大小"><a href="#更改字体大小" class="headerlink" title="更改字体大小"></a>更改字体大小</h3><p>我们会发现终端的字体太小了。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427214123.png" alt=""><br>找到 Preference<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427214156.png" alt=""><br>在 Profiles 下的 Unnamed<br>勾选 Custom font:<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427214240.png" alt=""><br>调整字体大小<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427214332.png" style="zoom:67%;" /></p><h3 id="更改终端大小"><a href="#更改终端大小" class="headerlink" title="更改终端大小"></a>更改终端大小</h3><p>更改 columns 和 rows 即可（需要重启终端才可生效）<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427214431.png" style="zoom:67%;" /></p><h2 id="安装必须工具"><a href="#安装必须工具" class="headerlink" title="安装必须工具"></a>安装必须工具</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install build-essential</span><br></pre></td></tr></table></figure><p>安装的时候可能会提示：Do you want to continue? 记得输入 Y 然后回车。<br>安装完成后，g++、gcc、make 等都已安装。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install git</span><br></pre></td></tr></table></figure></p><h2 id="安装中文输入法"><a href="#安装中文输入法" class="headerlink" title="安装中文输入法"></a>安装中文输入法</h2><h3 id="安装中文语言包"><a href="#安装中文语言包" class="headerlink" title="安装中文语言包"></a>安装中文语言包</h3><p>先在终端输入：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove thunderbird</span><br><span class="line">sudo apt-get install language-pack-zh-han*</span><br></pre></td></tr></table></figure><br>打开设置进入 Region &amp; Language。选择 Manage installed Languages。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240524225230.png" style="zoom:50%;" /><br>不过会出现此报错，忽略即可。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240524225505.png" style="zoom:50%;" /><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240524225608.png" style="zoom: 67%;" /><br>找到 Chinese 双击选择并应用。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240524225641.png" style="zoom:67%;" /><br>等待系统安装完中文语言包，我们进入下个阶段。</p><h3 id="安装中文输入法-1"><a href="#安装中文输入法-1" class="headerlink" title="安装中文输入法"></a>安装中文输入法</h3><p>先在终端输入<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install ibus-pinyin</span><br></pre></td></tr></table></figure><br>进入设置。</p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240524224319.png" style="zoom:50%;" /></p><p>选择 Chinese</p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240524224343.png" alt=""><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240524225816.png" style="zoom:67%;" /><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240524225832.png" style="zoom:67%;" /><br><strong>$\textcolor{red}{添加后记得重启，否则可能无效!!!}$</strong><br>之后即可正常使用中文输入法。<br>按 win + 空格键 可以切换中英文输入法。</p>]]></content>
       
       
       <categories>
@@ -209,11 +209,11 @@
       
         <tags>
             
-            <tag> Docker </tag>
+            <tag> 技术 </tag>
             
             <tag> 教程 </tag>
             
-            <tag> 技术 </tag>
+            <tag> Docker </tag>
             
         </tags>
       
@@ -580,11 +580,11 @@
       
         <tags>
             
-            <tag> 技术 </tag>
-            
             <tag> Github </tag>
             
             <tag> SSH </tag>
+            
+            <tag> 技术 </tag>
             
         </tags>
       
@@ -609,9 +609,9 @@
       
         <tags>
             
-            <tag> 算法 </tag>
-            
             <tag> 时间复杂度 </tag>
+            
+            <tag> 算法 </tag>
             
         </tags>
       
@@ -650,6 +650,28 @@
     
     
     <entry>
+      <title>个人随想录</title>
+      <link href="/artitalk/index.html"/>
+      <url>/artitalk/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/css/modify.css"/>
+      <url>/css/modify.css</url>
+      
+        <content type="html"><![CDATA[#page-header,#page-header:before {  background: transparent !important;}#page-header.post-bg,#page-header.not-home-page {  height: 280px !important;}#page-header #post-info {  bottom: 40px !important;}#page-header #page-site-info {  top: 140px !important;}@media screen and (max-width: 768px) {  #page-header.not-home-page {    height: 200px !important;  }  #page-header #post-info {    bottom: 10px !important;  }  #page-header #page-site-info {    top: 100px !important;  }}.top-img {  height: 250px;  margin: -50px -40px 50px;  border-top-left-radius: inherit;  border-top-right-radius: inherit;  background-position: center center;  background-size: cover;  -webkit-transition: all 0.3s;  -moz-transition: all 0.3s;  -o-transition: all 0.3s;  -ms-transition: all 0.3s;  transition: all 0.3s;}@media screen and (max-width: 768px) {  .top-img {    height: 230px;    margin: -36px -14px 36px;  }}[data-theme='dark'] .top-img {  filter: brightness(0.8);}#footer:before {  background-color: rgba(255,255,255,0.5);}[data-theme='dark'] #footer:before {  background-color: rgba(0,0,0,0.5);}#footer-wrap,#footer-wrap a {  color: #111;  -webkit-transition: unset;  -moz-transition: unset;  -o-transition: unset;  -ms-transition: unset;  transition: unset;}[data-theme='dark'] #footer-wrap,[data-theme='dark'] #footer-wrap a {  color: var(--light-grey);}]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>关于我</title>
       <link href="/about/index.html"/>
       <url>/about/index.html</url>
@@ -661,11 +683,11 @@
     
     
     <entry>
-      <title>个人随想录</title>
-      <link href="/artitalk/index.html"/>
-      <url>/artitalk/index.html</url>
+      <title></title>
+      <link href="/css/background.css"/>
+      <url>/css/background.css</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[/* 文章页背景 */.layout_post > #post {/* 以下代表透明度为0.7 可以自行修改*/background: rgba(255, 255, 255, 0.9);}/* 所有页面背景 */#aside_content .card-widget,#recent-posts > .recent-post-item,.layout_page > div:first-child:not(.recent-posts),.layout_post > #page,.layout_post > #post,.read-mode .layout_post > #post {/* 以下代表透明度为0.7 */background: rgba(255, 255, 255, 0.9);}/*侧边卡片的透明度 */:root {--card-bg: rgba(255, 255, 255, 0.9);}/* 页脚透明 */#footer {/* 以下代表透明度为0.7 */background: rgba(255, 255, 255, 0.9);}]]></content>
       
     </entry>
     
@@ -694,39 +716,6 @@
     
     
     <entry>
-      <title>link</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/music/index.html"/>
-      <url>/music/index.html</url>
-      
-        <content type="html"><![CDATA[<!-- 播放器 --><div class="music-player"><!-- audio标签 --><audio class="music-player__audio" ></audio><!-- 播放器主体 --><div class="music-player__main"><!-- 模糊背景 --><div class="music-player__blur"></div><!-- 唱片 --><div class="music-player__disc"><!-- 唱片图片 --><div class="music-player__image"><img width="100%" src="" alt=""></div><!-- 指针 --><div class="music-player__pointer"><img width="100%" src="/img/cd_tou.png" alt=""></div></div><!-- 控件主体 --><div class="music-player__controls"><!-- 歌曲信息 --><div class="music__info"><h3 class="music__info--title">...</h3></div><!-- 控件... --><div class="player-control"><div class="player-control__content"><div class="player-control__btns"><div class="player-control__btn player-control__btn--prev"><i class="iconfont icon-prev"></i></div><div class="player-control__btn player-control__btn--play"><i class="iconfont icon-play"></i></div><div class="player-control__btn player-control__btn--next"><i class="iconfont icon-next"></i></div><div class="player-control__btn player-control__btn--mode"><i class="iconfont icon-random"></i></div></div><div class="player-control__volume"><div class="control__volume--icon player-control__btn"><i class="iconfont icon-volume"></i></div><div class="control__volume--progress progress"></div></div></div><div class="player-control__content"><div class="player__song--progress progress"></div><div class="player__song--timeProgess nowTime">00:00</div><div class="player__song--timeProgess totalTime">00:00</div></div></div></div></div><!-- 歌曲列表 --><div class="music-player__list"><ul class="music__list_content"></ul></div></div><script src="/js/utill.js"></script><script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.slim.min.js"></script><script src="/js/player.js?10"></script><div style="text-align:center;margin:-100px 0; font:normal 14px/24px 'MicroSoft YaHei';color:#ffffff"></div>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/css/background.css"/>
-      <url>/css/background.css</url>
-      
-        <content type="html"><![CDATA[/* 文章页背景 */.layout_post > #post {/* 以下代表透明度为0.7 可以自行修改*/background: rgba(255, 255, 255, 0.9);}/* 所有页面背景 */#aside_content .card-widget,#recent-posts > .recent-post-item,.layout_page > div:first-child:not(.recent-posts),.layout_post > #page,.layout_post > #post,.read-mode .layout_post > #post {/* 以下代表透明度为0.7 */background: rgba(255, 255, 255, 0.9);}/*侧边卡片的透明度 */:root {--card-bg: rgba(255, 255, 255, 0.9);}/* 页脚透明 */#footer {/* 以下代表透明度为0.7 */background: rgba(255, 255, 255, 0.9);}]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>categories</title>
       <link href="/categories/index.html"/>
       <url>/categories/index.html</url>
@@ -738,11 +727,22 @@
     
     
     <entry>
-      <title></title>
-      <link href="/js/modify.js"/>
-      <url>/js/modify.js</url>
+      <title>link</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
       
-        <content type="html"><![CDATA['use strict';const cheerio = require('cheerio');/** * 在页面插入新顶部图 * @param {cheerio.Root} $ Root */function insertTopImg($) {    let header = $('#page-header');    if (header.length === 0) return;    let background = header.css('background-image');    if (!background) return;    $('#post, #page, #archive, #tag, #category').prepend(`<div class="top-img" style="background-image: ${background};"></div>`);}hexo.extend.filter.register('after_render:html', function(str, data) {    let $ = cheerio.load(str, {        decodeEntities: false    });    insertTopImg($);    return $.html();});]]></content>
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
@@ -771,11 +771,11 @@
     
     
     <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title></title>
+      <link href="/music/index.html"/>
+      <url>/music/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<!-- 播放器 --><div class="music-player"><!-- audio标签 --><audio class="music-player__audio" ></audio><!-- 播放器主体 --><div class="music-player__main"><!-- 模糊背景 --><div class="music-player__blur"></div><!-- 唱片 --><div class="music-player__disc"><!-- 唱片图片 --><div class="music-player__image"><img width="100%" src="" alt=""></div><!-- 指针 --><div class="music-player__pointer"><img width="100%" src="/img/cd_tou.png" alt=""></div></div><!-- 控件主体 --><div class="music-player__controls"><!-- 歌曲信息 --><div class="music__info"><h3 class="music__info--title">...</h3></div><!-- 控件... --><div class="player-control"><div class="player-control__content"><div class="player-control__btns"><div class="player-control__btn player-control__btn--prev"><i class="iconfont icon-prev"></i></div><div class="player-control__btn player-control__btn--play"><i class="iconfont icon-play"></i></div><div class="player-control__btn player-control__btn--next"><i class="iconfont icon-next"></i></div><div class="player-control__btn player-control__btn--mode"><i class="iconfont icon-random"></i></div></div><div class="player-control__volume"><div class="control__volume--icon player-control__btn"><i class="iconfont icon-volume"></i></div><div class="control__volume--progress progress"></div></div></div><div class="player-control__content"><div class="player__song--progress progress"></div><div class="player__song--timeProgess nowTime">00:00</div><div class="player__song--timeProgess totalTime">00:00</div></div></div></div></div><!-- 歌曲列表 --><div class="music-player__list"><ul class="music__list_content"></ul></div></div><script src="/js/utill.js"></script><script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.slim.min.js"></script><script src="/js/player.js?10"></script><div style="text-align:center;margin:-100px 0; font:normal 14px/24px 'MicroSoft YaHei';color:#ffffff"></div>]]></content>
       
     </entry>
     
@@ -783,10 +783,10 @@
     
     <entry>
       <title></title>
-      <link href="/css/modify.css"/>
-      <url>/css/modify.css</url>
+      <link href="/js/modify.js"/>
+      <url>/js/modify.js</url>
       
-        <content type="html"><![CDATA[#page-header,#page-header:before {  background: transparent !important;}#page-header.post-bg,#page-header.not-home-page {  height: 280px !important;}#page-header #post-info {  bottom: 40px !important;}#page-header #page-site-info {  top: 140px !important;}@media screen and (max-width: 768px) {  #page-header.not-home-page {    height: 200px !important;  }  #page-header #post-info {    bottom: 10px !important;  }  #page-header #page-site-info {    top: 100px !important;  }}.top-img {  height: 250px;  margin: -50px -40px 50px;  border-top-left-radius: inherit;  border-top-right-radius: inherit;  background-position: center center;  background-size: cover;  -webkit-transition: all 0.3s;  -moz-transition: all 0.3s;  -o-transition: all 0.3s;  -ms-transition: all 0.3s;  transition: all 0.3s;}@media screen and (max-width: 768px) {  .top-img {    height: 230px;    margin: -36px -14px 36px;  }}[data-theme='dark'] .top-img {  filter: brightness(0.8);}#footer:before {  background-color: rgba(255,255,255,0.5);}[data-theme='dark'] #footer:before {  background-color: rgba(0,0,0,0.5);}#footer-wrap,#footer-wrap a {  color: #111;  -webkit-transition: unset;  -moz-transition: unset;  -o-transition: unset;  -ms-transition: unset;  transition: unset;}[data-theme='dark'] #footer-wrap,[data-theme='dark'] #footer-wrap a {  color: var(--light-grey);}]]></content>
+        <content type="html"><![CDATA['use strict';const cheerio = require('cheerio');/** * 在页面插入新顶部图 * @param {cheerio.Root} $ Root */function insertTopImg($) {    let header = $('#page-header');    if (header.length === 0) return;    let background = header.css('background-image');    if (!background) return;    $('#post, #page, #archive, #tag, #category').prepend(`<div class="top-img" style="background-image: ${background};"></div>`);}hexo.extend.filter.register('after_render:html', function(str, data) {    let $ = cheerio.load(str, {        decodeEntities: false    });    insertTopImg($);    return $.html();});]]></content>
       
     </entry>
     

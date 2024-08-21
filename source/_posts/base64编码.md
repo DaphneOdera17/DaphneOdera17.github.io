@@ -12,8 +12,8 @@ date: 2024-02-07 20:02:13
 updated:
 categories: 科普
 description:
-top_img:
-cover: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240406180912.png
+top_img: 
+cover: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/2024-08-21_11-59-49.png
 toc:
 toc_number:
 copyright:

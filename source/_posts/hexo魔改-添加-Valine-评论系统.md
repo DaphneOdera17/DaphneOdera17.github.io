@@ -9,8 +9,8 @@ tags:
 categories: hexo魔改系列
 keywords: 'hexo添加评论, Valine'
 description: hexo butterfly 主题下添加 Valine 评论系统
-top_img: 'https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427182432.png'
-cover: 'https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427182432.png'
+top_img: 
+cover: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/2024-08-21_11-37-41.png
 mathjax: true
 abbrlink: 60917e5c
 date: 2024-04-27 18:27:31

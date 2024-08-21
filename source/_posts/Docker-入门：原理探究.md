@@ -8,8 +8,8 @@ tags:
 categories: Docker
 keywords: 'Docker, 原理'
 description: 介绍 Docker 的原理，以及与 VM 虚拟机的比较
-top_img: 'https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240610234713.png'
-cover: 'https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240610234713.png'
+top_img: 
+cover: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/2024-08-21_11-59-28.png
 mathjax: true
 abbrlink: ff8ad698
 date: 2024-06-10 23:44:31

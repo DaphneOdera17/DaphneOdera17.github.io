@@ -6,8 +6,8 @@ tags:
 categories: CSAPP
 keywords: CSAPP
 description: CMU 15-213 CSAPP Lecture 1~3
-top_img: 'https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240430192914.png'
-cover: 'https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240430192914.png'
+top_img: 
+cover: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/2024-08-21_12-09-02.png
 mathjax: true
 abbrlink: b8742b63
 date: 2024-04-30 19:22:40

@@ -12,9 +12,9 @@ mathjax: true
 abbrlink: 2b409a66
 date: 2024-03-24 15:53:46
 updated:
-top_img:
+top_img: 
 comments:
-cover: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240406180455.png
+cover: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/2024-08-21_11-50-31.png
 toc:
 toc_number:
 copyright:

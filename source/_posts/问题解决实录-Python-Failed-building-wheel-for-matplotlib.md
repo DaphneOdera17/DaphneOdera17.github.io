@@ -8,8 +8,8 @@ tags:
 categories: 问题解决实录
 keywords: 'matplotlib, python, wheel'
 description: 解决 python 安装 matplotlib 时出现报错 Failed building wheel for matplotlib
-top_img: 'https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427182234.png'
-cover: 'https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427182234.png'
+top_img: 
+cover: 
 mathjax: true
 abbrlink: f849bb21
 date: 2024-04-27 18:03:26

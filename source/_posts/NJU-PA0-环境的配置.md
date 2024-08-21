@@ -10,13 +10,13 @@ keywords:
   - ics
   - PA
   - 计算机系统基础
-cover: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240423194802.png
+top_img: 
+cover: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/2024-08-21_11-58-36.png
 mathjax: true
 abbrlink: f6ba7c15
 date: 2024-04-06 15:58:59
 updated:
 description: 记录在 pa0 中踩过的坑以及解决方法
-top_img: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240423194802.png
 comments:
 toc:
 toc_number:

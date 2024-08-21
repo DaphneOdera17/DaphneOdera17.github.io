@@ -8,10 +8,8 @@ tags:
 categories: VsCode
 keywords: 'VsCode, 教程'
 description: 修改 Visual Studio Code 首页启动页的自带 Logo，采用 ProgrammingVTuberLogos 项目中的 VsCode Logo
-top_img: >-
-  https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/2213f9ea8eb98cc2cccf618905cd1e3.png
-cover: >-
-  https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/2213f9ea8eb98cc2cccf618905cd1e3.png
+top_img: 
+cover: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/2024-08-21_11-58-53.png
 mathjax: true
 abbrlink: 184dbe6a
 date: 2024-05-03 21:11:45

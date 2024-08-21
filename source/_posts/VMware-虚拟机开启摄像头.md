@@ -8,8 +8,8 @@ tags:
 categories: 虚拟机
 keywords: 'VMware,摄像头,虚拟机,Ubuntu开启虚拟机,Linux'
 description: 为 VMware Workstation 软件中的虚拟机开启摄像头
-top_img: 'https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240504151158.png'
-cover: 'https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240504151158.png'
+top_img: 
+cover: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/2024-08-21_11-44-32.png
 mathjax: true
 abbrlink: f4ee2029
 date: 2024-05-04 15:01:57

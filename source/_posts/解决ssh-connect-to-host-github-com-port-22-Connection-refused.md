@@ -8,9 +8,9 @@ tags: [Github, SSH]
 categories: 技术
 keywords: Github, ssh, connection refused, port 22 
 description:
-top_img:
+top_img: 
+cover: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/2024-08-21_11-50-59.png
 comments: true
-cover: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240406181316.png
 toc:
 toc_number:
 copyright:

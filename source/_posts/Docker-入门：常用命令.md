@@ -8,8 +8,8 @@ tags:
 categories: Docker
 keywords: 'Docker, 命令'
 description: 介绍 Docker 的常用命令
-top_img: 'https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240610234656.png'
-cover: 'https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240610234656.png'
+top_img: 
+cover: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/2024-08-21_12-17-56.png
 mathjax: true
 abbrlink: 6c4989a3
 date: 2024-06-10 23:44:44

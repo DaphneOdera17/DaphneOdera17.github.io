@@ -10,8 +10,8 @@ keywords:
   - butterfly
   - 首页卡片样式
 description: 对于 hexo butterfly 主题，修改首页卡片样式，使得悬浮的时候出现蓝色阴影。以及美化侧边栏等。
-top_img: 'https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240731212426.png'
-cover: 'https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240731212426.png'
+top_img: 
+cover: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/2024-08-21_11-45-04.png
 mathjax: true
 abbrlink: 639f0c9
 date: 2024-04-12 22:10:07

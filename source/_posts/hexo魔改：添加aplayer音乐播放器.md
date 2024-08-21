@@ -13,12 +13,12 @@ keywords:
   - aplayer
   - 音乐播放器
 description: 本文以 butterfly 主题为例，在博客界面添加 aplayer 音乐播放器
-cover: 'https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240406195752.png'
 mathjax: true
 abbrlink: c0d75012
 date: 2024-04-06 19:50:48
 updated:
-top_img:
+top_img: 
+cover: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/2024-08-21_11-43-28.png
 comments:
 toc:
 toc_number:

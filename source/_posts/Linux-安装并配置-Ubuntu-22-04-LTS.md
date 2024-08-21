@@ -16,10 +16,8 @@ keywords:
 description: >-
   在 Vmware Workstation 软件下安装并配置 Ubuntu 22.04 LTS
   版本，包括必须工具的安装、字体大小终端大小的改变以及中文输入法的安装。
-top_img: >-
-  https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/%E7%B4%AB%E7%BD%97%E5%85%B0%E6%B0%B8%E6%81%92%E8%8A%B1%E5%9B%AD%20%E8%96%87%E5%B0%94%E8%8E%89%E7%89%B9%20%E8%8D%89%E5%9C%B0%204K%20%E5%A3%81%E7%BA%B8%20%E9%AB%98%E6%B8%85%E5%8A%A8%E6%BC%AB_%E5%9B%BE%E7%89%87%E7%BC%96%E5%8F%B7336060_%E5%A3%81%E7%BA%B8%E7%BD%91.jpeg
-cover: >-
-  https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/%E7%B4%AB%E7%BD%97%E5%85%B0%E6%B0%B8%E6%81%92%E8%8A%B1%E5%9B%AD%20%E8%96%87%E5%B0%94%E8%8E%89%E7%89%B9%20%E8%8D%89%E5%9C%B0%204K%20%E5%A3%81%E7%BA%B8%20%E9%AB%98%E6%B8%85%E5%8A%A8%E6%BC%AB_%E5%9B%BE%E7%89%87%E7%BC%96%E5%8F%B7336060_%E5%A3%81%E7%BA%B8%E7%BD%91.jpeg
+top_img: 
+cover: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/2024-08-21_11-54-25.png
 mathjax: true
 abbrlink: b5141e1c
 date: 2024-05-24 23:07:13

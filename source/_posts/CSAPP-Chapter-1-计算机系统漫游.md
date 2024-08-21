@@ -7,8 +7,8 @@ categories: CSAPP
 keywords: CSAPP
 description: >-
   计算机系统是由硬件和系统软件组成的，它们共同协作以运行应用程序。计算机内部的信息是一组组的位。处理器读取并解释存放在主存里的二进制指令。操作系统内核是应用程序和硬件之间的媒介。
-top_img: 'https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240430210214.png'
-cover: 'https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240430210214.png'
+top_img: 
+cover: 
 mathjax: true
 abbrlink: c390144
 date: 2024-04-30 20:58:01

@@ -8,8 +8,8 @@ tags:
 categories: hexo魔改系列
 keywords: hexo添加旋转小风车
 description: hexo butterfly主题添加旋转小风车
-top_img: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240731212505.png
-cover: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240731212505.png
+top_img: 
+cover: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/2024-08-21_11-42-36.png
 mathjax: true
 abbrlink: e03cfb73
 date: 2024-04-04 08:58:28

@@ -11,9 +11,9 @@ tags:
 categories: 技术
 keywords: Github
 description:
-top_img: 'https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240501180439.png'
+top_img: 
+cover: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/2024-08-21_11-52-25.png
 comments:
-cover: 'https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240501180439.png'
 toc:
 toc_number:
 copyright:

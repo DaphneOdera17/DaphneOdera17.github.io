@@ -923,7 +923,7 @@ inject:
         - <link rel="stylesheet" href="/css/icon.css">
         - <link rel="stylesheet" href="/css/nav.css">
         - <link rel="stylesheet" href="/css/modify.css">
-        - <link rel="stylesheet" href="/css/bbtalk.css">
+        # - <link rel="stylesheet" href="/css/bbtalk.css">
         - <link rel="stylesheet" href="/css/color.css">
         - <link rel="stylesheet" href="/css/own.css">
     bottom:
@@ -958,8 +958,8 @@ CDN:
         # activate_power_mode:
         # algolia_js:
         # algolia_search:
-        # aplayer_css:
-        # aplayer_js:
+        # aplayer_css: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.css
+        # aplayer_js: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.js
         # artalk_css:
         # artalk_js:
         # blueimp_md5:
@@ -974,41 +974,88 @@ CDN:
         # docsearch_css:
         # docsearch_js:
         # egjs_infinitegrid:
-        # fancybox:
-        # fancybox_css:
+        # fancybox: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/fancybox/3.5.7/jquery.fancybox.min.js
+        # fancybox_css: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/fancybox/3.5.7/jquery.fancybox.min.css
         # fireworks:
         # fontawesome:
-        # gitalk:
-        # gitalk_css:
+        # gitalk: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/gitalk/1.7.2/gitalk.min.js
+        # gitalk_css: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/gitalk/1.7.2/gitalk.min.css
         # giscus:
         # instantpage:
         # instantsearch:
         # katex:
         # katex_copytex:
-        # lazyload:
+        # lazyload: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vanilla-lazyload/17.3.1/lazyload.iife.min.js
         # local_search:
         # main:
         # main_css:
         # mathjax:
         # medium_zoom:
         # mermaid:
-        # meting_js:
+        # meting_js: https://cdn1.tianli0.top/npm/js-heo@1.0.12/metingjs/Meting.min.js
         # pangu:
-        # prismjs_autoloader:
-        # prismjs_js:
-        # prismjs_lineNumber_js:
-        # pjax:
+        # prismjs_autoloader: https://cdn1.tianli0.top/npm/prismjs/plugins/autoloader/prism-autoloader.min.js
+        # prismjs_js: https://cdn1.tianli0.top/npm/prismjs@1.1.0/prism.js
+        # prismjs_lineNumber_js: https://cdn1.tianli0.top/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js
+        # pjax: https://lib.baomitu.com/pjax/0.2.8/pjax.min.js
         # sharejs:
         # sharejs_css:
-        # snackbar:
-        # snackbar_css:
-        # translate:
+        # snackbar: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/node-snackbar/0.1.16/snackbar.min.js
+        # snackbar_css: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/node-snackbar/0.1.16/snackbar.min.css
+        # translate: https://cdn1.tianli0.top/npm/js-heo@1.0.6/translate/tw_cn.js
         # twikoo:
-        # typed:
+        # typed: https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/typed.js/2.0.12/typed.min.js
         # utils:
-        # valine:
+        # valine: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/valine/1.4.16/Valine.min.js
         # waline_css:
         # waline_js:
+
+        algolia_search_v4: https://npm.elemecdn.com/algoliasearch@4/dist/algoliasearch-lite.umd.js
+        instantsearch_v4: https://npm.elemecdn.com/instantsearch.js@4/dist/instantsearch.production.min.js
+        pjax: https://npm.elemecdn.com/pjax/pjax.min.js
+        gitalk: https://npm.elemecdn.com/gitalk@latest/dist/gitalk.min.js
+        gitalk_css: https://npm.elemecdn.com/gitalk/dist/gitalk.css
+        blueimp_md5: https://npm.elemecdn.com/blueimp-md5/js/md5.min.js
+        valine: https://npm.elemecdn.com/valine/dist/Valine.min.js
+        disqusjs: https://npm.elemecdn.com/disqusjs@1/dist/disqus.js
+        disqusjs_css: https://npm.elemecdn.com/disqusjs@1/dist/disqusjs.css
+        twikoo: https://npm.elemecdn.com/twikoo/dist/twikoo.all.min.js
+        waline_js: https://npm.elemecdn.com/@waline/client/dist/waline.js
+        waline_css: https://npm.elemecdn.com/@waline/client/dist/waline.css
+        sharejs: https://npm.elemecdn.com/social-share.js/dist/js/social-share.min.js
+        sharejs_css: https://npm.elemecdn.com/social-share.js/dist/css/share.min.css
+        mathjax: https://npm.elemecdn.com/mathjax@3/es5/tex-mml-chtml.js
+        katex: https://npm.elemecdn.com/katex@latest/dist/katex.min.css
+        katex_copytex: https://npm.elemecdn.com/katex@latest/dist/contrib/copy-tex.min.js
+        mermaid: https://npm.elemecdn.com/mermaid/dist/mermaid.min.js
+        canvas_ribbon: https://npm.elemecdn.com/butterfly-extsrc@1/dist/canvas-ribbon.min.js
+        canvas_fluttering_ribbon: https://npm.elemecdn.com/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js
+        canvas_nest: https://npm.elemecdn.com/butterfly-extsrc@1/dist/canvas-nest.min.js
+        lazyload: https://npm.elemecdn.com/vanilla-lazyload/dist/lazyload.iife.min.js
+        instantpage: https://npm.elemecdn.com/instant.page/instantpage.js
+        typed: https://npm.elemecdn.com/typed.js/lib/typed.min.js
+        pangu: https://npm.elemecdn.com/pangu/dist/browser/pangu.min.js
+        fancybox_css_v4: https://npm.elemecdn.com/@fancyapps/ui/dist/fancybox.css
+        fancybox_v4: https://npm.elemecdn.com/@fancyapps/ui/dist/fancybox.umd.js
+        medium_zoom: https://npm.elemecdn.com/medium-zoom/dist/medium-zoom.min.js
+        snackbar_css: https://npm.elemecdn.com/node-snackbar/dist/snackbar.min.css
+        snackbar: https://npm.elemecdn.com/node-snackbar/dist/snackbar.min.js
+        activate_power_mode: https://npm.elemecdn.com/butterfly-extsrc@1/dist/activate-power-mode.min.js
+        fireworks: https://npm.elemecdn.com/butterfly-extsrc@1/dist/fireworks.min.js
+        click_heart: https://npm.elemecdn.com/butterfly-extsrc@1/dist/click-heart.min.js
+        ClickShowText: https://npm.elemecdn.com/butterfly-extsrc@1/dist/click-show-text.min.js
+        fontawesomeV6: https://npm.elemecdn.com/@fortawesome/fontawesome-free@6/css/all.min.css
+        flickr_justified_gallery_js: https://npm.elemecdn.com/flickr-justified-gallery@2/dist/fjGallery.min.js
+        flickr_justified_gallery_css: https://npm.elemecdn.com/flickr-justified-gallery@2/dist/fjGallery.css
+        # aplayer_css: https://npm.elemecdn.com/aplayer/dist/APlayer.min.css
+        # aplayer_js: https://npm.elemecdn.com/aplayer/dist/APlayer.min.js
+        meting_js: https://npm.elemecdn.com/butterfly-extsrc@1/dist/Meting.min.js
+        prismjs_js: https://npm.elemecdn.com/prismjs/prism.js
+        prismjs_lineNumber_js: https://npm.elemecdn.com/prismjs/plugins/line-numbers/prism-line-numbers.min.js
+        prismjs_autoloader: https://npm.elemecdn.com/prismjs/plugins/autoloader/prism-autoloader.min.js
+        artalk_js: https://npm.elemecdn.com/artalk/dist/Artalk.js
+        artalk_css: https://npm.elemecdn.com/artalk/dist/Artalk.css
+
 # tag-plugins-plus
 # see https://akilar.top/posts/615e2dec/
 tag_plugins:

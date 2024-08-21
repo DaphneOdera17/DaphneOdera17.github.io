@@ -7,8 +7,8 @@ tags:
 categories: cs61C
 keywords: cs61C
 description: cs61C fa20 lecture11
-top_img: 'https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240731211649.png'
-cover: 'https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240731211649.png'
+top_img: 
+cover: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240802232722.png
 mathjax: true
 abbrlink: 7c1f4ae8
 date: 2024-07-31 21:01:29

@@ -12,8 +12,8 @@ keywords:
   - 深度学习
   - Image Classification
 description: EECS 498-007 / 598-005 fall 2020 Lec2 for Image Classification
-top_img: 'https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240731212314.png'
-cover: 'https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240731212314.png'
+top_img: 
+cover: 
 mathjax: true
 abbrlink: f1db88d
 date: 2024-04-12 20:32:15

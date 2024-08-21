@@ -10,8 +10,8 @@ keywords:
   - butterfly
   - 修改首页文章数量
 description: 首页默认文章数量为 10，超过就会翻页，和侧边栏不协调。我们通过修改配置文件增加首页的文章数量
-top_img: 'https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240423194720.png'
-cover: 'https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240423194720.png'
+top_img: 
+cover: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/2024-08-21_11-52-43.png
 abbrlink: cec4690b
 date: 2024-04-12 20:57:14
 updated:

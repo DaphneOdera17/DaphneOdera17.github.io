@@ -5,8 +5,8 @@ tags:
   - OpenCV
 categories: OpenCV
 keywords: 'OpenCV, 教程'
-top_img: 'https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240504151308.png'
-cover: 'https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240504151308.png'
+top_img: 
+cover: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/2024-08-21_11-59-10.png
 mathjax: true
 abbrlink: 5dd3bd60
 date: 2024-05-04 14:54:20

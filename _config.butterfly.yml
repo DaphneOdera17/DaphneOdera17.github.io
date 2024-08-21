@@ -235,7 +235,7 @@ aside:
             link: https://github.com/DaphneOdera17
     card_announcement:
         enable: true
-        content: 大一在读蒟蒻,欢迎一起学习交流cs
+        content: 大二在读蒟蒻,欢迎一起学习交流cs
             QQ:2944006086
     card_recent_post:
         enable: true
@@ -449,12 +449,29 @@ gitalk:
 valine:
     appId: EOIcfhHEE25S3QAVOLDHgEDn-gzGzoHsz # leancloud application app id
     appKey: t3x9BkO2af4158r1mLGUPwBh # leancloud application app key
-    avatar: bird # gravatar style https://valine.js.org/#/avatar
+    avatar: monsterid # gravatar style https://valine.js.org/#/avatar
     serverURLs: https://eoicfhhe.lc-cn-n1-shared.com # This configuration is suitable for domestic custom domain name users, overseas version will be automatically detected (no need to manually fill in)
-    bg: # valine background
+    bg: https://gitee.com/cungudafa/source/raw/master/img/gif/Sitich/Sitich30.gif # valine background
+    # bg: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240821153509.png
     visitor: true
-    placeholder: 留下你的足迹o(*￣▽￣*)ブ
+    placeholder: 留下你的足迹 o(*￣▽￣*)ブ
     option:
+
+# valine:
+#     enable: true # if you want use valine,please set this value is true
+#     appId: EOIcfhHEE25S3QAVOLDHgEDn-gzGzoHsz # leancloud application app id
+#     appKey: t3x9BkO2af4158r1mLGUPwBh # leancloud application app key
+#     notify: false # valine mail notify (true/false) https://github.com/xCss/Valine/wiki
+#     verify: false # valine verify code (true/false)
+#     pageSize: 10 # comment list page size
+#     avatar: monsterid # gravatar style https://valine.js.org/#/avatar
+#     lang: zh-cn # i18n: zh-CN/zh-TW/en/ja
+#     placeholder: 昵称填写qq可以显示qq头像和昵称哦~ # valine comment input placeholder(like: Please leave your footprints )
+#     guest_info: nick,mail,link #valine comment header info
+#     recordIP: true # Record reviewer IP
+#     serverURLs: "" #https://cungudafa.top # This configuration is suitable for domestic custom domain name users, overseas version will be automatically detected (no need to manually fill in)
+#     bg: https://gitee.com/cungudafa/source/raw/master/img/gif/Sitich/Sitich30.gif #/img/comment_bg.png # valine background
+#     count: true # top_img顯示評論數
 
 # waline - A simple comment system with backend support fork from Valine
 # https://waline.js.org/
@@ -632,7 +649,7 @@ site_verification:
 # The position of site info, eg: 300px/300em/300rem/10% (主頁標題距離頂部距離)
 index_site_info_top:
 # The height of top_img, eg: 300px/300em/300rem (主頁top_img高度)
-index_top_img_height: 400px
+index_top_img_height: 500px
 
 # The user interface setting of category and tag page (category和tag頁的UI設置)
 # index - same as Homepage UI (index 值代表 UI將與首頁的UI一樣)
@@ -646,7 +663,8 @@ text_align_justify: false
 # Website Background (設置網站背景)
 # can set it to color or image (可設置圖片 或者 顔色)
 # The formal of image: url(http://xxxxxx.com/xxx.jpg)
-background: url(https://cdn.max-c.com/heybox/dailynews/img/7ab60f2b600ea97093cfae7908613115.png?imageMogr2/format/jpg)
+background: url(https://img.picui.cn/free/2024/08/21/66c587d422e57.jpg)
+# background: url(https://cdn.max-c.com/heybox/dailynews/img/7ab60f2b600ea97093cfae7908613115.png?imageMogr2/format/jpg)
 
 # Footer Background
 footer_bg: transparent
@@ -665,9 +683,9 @@ enter_transitions: true
 # Typewriter Effect (打字效果)
 # https://github.com/disjukr/activate-power-mode
 activate_power_mode:
-    enable: false
+    enable: true
     colorful: true # open particle animation (冒光特效)
-    shake: true #  open shake (抖動特效)
+    shake: false #  open shake (抖動特效)
     mobile: false
 
 # Background effects (背景特效)

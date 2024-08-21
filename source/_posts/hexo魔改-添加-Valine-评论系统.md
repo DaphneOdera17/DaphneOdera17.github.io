@@ -41,10 +41,11 @@ highlight_shrink:
 以 butterfly 为例
 先将 Valine 启用
 ![image.png](https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240402204420.png)
-再在他下面找到 valine 的配置项hexo魔改 | 添加旋转小风车
+再在他下面找到 valine 的配置项
 将上面的 AppID、AppKey、服务器地址 分别填入 appID, appKey, serverURL
 ![image.png](https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240402204543.png)
 保存之后
+
 ```shell
 hexo clean
 hexo g

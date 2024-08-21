@@ -431,11 +431,11 @@
             
             <tag> 教程 </tag>
             
+            <tag> 虚拟机 </tag>
+            
             <tag> Ubuntu </tag>
             
             <tag> Linux </tag>
-            
-            <tag> 虚拟机 </tag>
             
         </tags>
       
@@ -888,35 +888,6 @@
     
     
     <entry>
-      <title>算法 | 动态规划 | 数字三角形模型</title>
-      <link href="/post/9a8bfad7.html"/>
-      <url>/post/9a8bfad7.html</url>
-      
-        <content type="html"><![CDATA[<h2 id="摘花生"><a href="#摘花生" class="headerlink" title="摘花生"></a>摘花生</h2><p><a href="https://www.acwing.com/problem/content/1017/">原题链接</a><br><div class="mermaid-wrap"><pre class="mermaid-src" hidden>   graph LR;id1((动态规划)) --&gt; 状态表示 --f[i,j] --&gt; 集合 --&gt; 所有从1,1走到i,j的路线  状态表示 --&gt; 属性 --&gt; MAX  id1((动态规划)) --&gt; 状态计算  </pre></div><br>状态计算：集合的划分。(很重要的划分依据：“最后”)<br>    集合划分依据：1.不重复(但并不是所有情况都要满足) 2.不漏<br>    <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240326232542.png" alt="image.png"></p><p>从 $(1,1)$ 走到 $(i, j)$ 的所有路线的最大值也就是 $f(n, m)$</p><p>$f[i, j] = max(f[i - 1, j], f[i, j - 1]) + w[i, j]$<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e3</span> + <span class="number">50</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> f[N][N];</span><br><span class="line"><span class="type">int</span> w[N][N];</span><br><span class="line"><span class="type">int</span> t;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin &gt;&gt; t;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(t --)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> r, c;</span><br><span class="line">        cin &gt;&gt; r &gt;&gt; c;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= r; i ++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= c; j ++)</span><br><span class="line">                cin &gt;&gt; w[i][j];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= r; i ++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= c; j ++)</span><br><span class="line">                f[i][j] = <span class="built_in">max</span>(f[i - <span class="number">1</span>][j], f[i][j - <span class="number">1</span>]) + w[i][j];</span><br><span class="line"></span><br><span class="line">        cout &lt;&lt; f[r][c] &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h2 id="最低通行费"><a href="#最低通行费" class="headerlink" title="最低通行费"></a>最低通行费</h2><p><a href="https://www.acwing.com/problem/content/1020/">原题链接</a><br>从 “商人必须在 (2N−1) 个单位时间穿越出去。” 得出不能走回头路。<br>本质上和摘花生这题差不多<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">150</span>, INF = <span class="number">1e9</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> w[N][N], f[N][N];</span><br><span class="line"><span class="type">int</span> n;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= n; j ++)</span><br><span class="line">            cin &gt;&gt; w[i][j];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= n; j ++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(i == <span class="number">1</span> &amp;&amp; j == <span class="number">1</span>)</span><br><span class="line">                f[i][j] = w[i][j];</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                f[i][j] = INF;</span><br><span class="line">                <span class="keyword">if</span>(i &gt; <span class="number">1</span>)</span><br><span class="line">                    f[i][j] = <span class="built_in">min</span>(f[i][j], f[i - <span class="number">1</span>][j] + w[i][j]);</span><br><span class="line">                <span class="keyword">if</span>(j &gt; <span class="number">1</span>)</span><br><span class="line">                    f[i][j] = <span class="built_in">min</span>(f[i][j], f[i][j - <span class="number">1</span>] + w[i][j]);</span><br><span class="line">            &#125;   </span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    cout &lt;&lt; f[n][n] &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">150</span>, INF = <span class="number">1e9</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> w[N][N], f[N][N];</span><br><span class="line"><span class="type">int</span> n;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= n; j ++)</span><br><span class="line">            cin &gt;&gt; w[i][j];</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">memset</span>(f, <span class="number">0x3f</span>, <span class="keyword">sizeof</span> f);</span><br><span class="line">    f[<span class="number">1</span>][<span class="number">1</span>] = w[<span class="number">1</span>][<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= n; j ++)</span><br><span class="line">        &#123;</span><br><span class="line">            f[i][j] = <span class="built_in">min</span>(f[i][j], f[i - <span class="number">1</span>][j] + w[i][j]);</span><br><span class="line">            f[i][j] = <span class="built_in">min</span>(f[i][j], f[i][j - <span class="number">1</span>] + w[i][j]);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    cout &lt;&lt; f[n][n] &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="NOIP2000-提高组-方格取数"><a href="#NOIP2000-提高组-方格取数" class="headerlink" title="[NOIP2000 提高组] 方格取数"></a>[NOIP2000 提高组] 方格取数</h2><p><a href="https://www.luogu.com.cn/problem/P1004">原题链接</a></p><div class="mermaid-wrap"><pre class="mermaid-src" hidden>   graph LR;id1((动态规划)) --&gt; 状态表示 --f[i1,j1,i2,j2] --&gt; 集合 --&gt; 所有从1,1与1,1分别走到i1,j1和i2,j2的路径  状态表示 --&gt; 属性 --&gt; MAX  id1((动态规划)) --&gt; 状态计算  </pre></div><p>同一个格子不能被重复选择。<br>只有在 i1 + j1 == i2 + j2 时，两条路径的格子才可能重合。<br>状态表示可以优化为：f[k, i1, i2]  表示所有从 (1, 1), (1, 1) 分别走到 (i1, k - i1), (i2, k - i2) 的路径的最大值。<br><div class="mermaid-wrap"><pre class="mermaid-src" hidden>   graph LR;id1((动态规划)) --&gt; 状态表示 --f[k, i1, i2] --&gt; 集合 --&gt; 所有从1,1和1,1分别走到i1,k-i1和i2,k-i2的路径  状态表示 --&gt; 属性 --&gt; MAX  id1((动态规划)) --&gt; 状态计算  </pre></div></p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240327181205.png" style="zoom:70%"  ><br>第一种情况:<br>    第一条从 $(1, 1) -&gt; (i_1 - 1, j_1) -&gt; (i_1, j_1)$,<br>    第二条从 $(1, 1) -&gt; (i_2 - 1, j_2) -&gt; (i_2, j_2)$<br>    $f[k, i_1, i_2] = max(f[k, i_1, i_2], f[k - 1, i_1-1, i_2-1] + tmp)$<br>第二种情况：<br>    第一条从 $(1, 1) -&gt; (i_1 - 1, j_1) -&gt; (i_1, j_1)$,<br>    第二条从 $(1, 1) -&gt; (i_2, j_2 - 1) -&gt; (i_2, j_2)$<br>    $f[k, i_1, i_2] = max(f[k, i_1, i_2], f[k - 1, i_1-1, i_2] + tmp)$<br>第三种情况：<br>    第一条从 $(1, 1) -&gt; (i_1, j_1 - 1) -&gt; (i_1, j_1)$,<br>    第二条从 $(1, 1) -&gt; (i_2 - 1, j_2) -&gt; (i_2, j_2)$<br>    $f[k, i_1, i_2] = max(f[k, i_1, i_2], f[k - 1, i_1, i_2-1] + tmp)$<br>第四种情况：<br>    第一条从 $(1, 1) -&gt; (i_1, j_1 - 1) -&gt; (i_1, j_1)$,<br>    第二条从 $(1, 1) -&gt; (i_2, j_2 - 1) -&gt; (i_2, j_2)$<br>    $f[k, i_1, i_2] = max(f[k, i_1, i_2], f[k - 1, i_1, i_2] + tmp)$</p><p>如果两个格子重合 $tmp = w[i_1,j_1]$<br>    不重合则 $tmp = w[i_1, j_1] + w[i_2, j_2]$</p><p>$i_1==i_2$ 代表两个格子重合<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">15</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> f[N * <span class="number">2</span>][N][N];</span><br><span class="line"><span class="type">int</span> w[N][N];</span><br><span class="line"><span class="type">int</span> n;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> a, b, c;</span><br><span class="line">    <span class="keyword">while</span>(cin &gt;&gt; a &gt;&gt; b &gt;&gt; c, a || b || c)</span><br><span class="line">        w[a][b] = c;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> k = <span class="number">2</span>; k &lt;= n + n; k ++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i1 = <span class="number">1</span>; i1 &lt;= n; i1 ++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i2 = <span class="number">1</span>; i2 &lt;= n; i2 ++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="type">int</span> j1 = k - i1;</span><br><span class="line">                <span class="type">int</span> j2 = k - i2;</span><br><span class="line">                <span class="keyword">if</span>(j1 &gt;= <span class="number">1</span> &amp;&amp; j1 &lt;= n &amp;&amp; j2 &gt;= <span class="number">1</span> &amp;&amp; j2 &lt;= n)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="type">int</span> tmp = w[i1][j1];</span><br><span class="line">                    <span class="keyword">if</span>(i1 != i2)</span><br><span class="line">                        tmp += w[i2][j2];</span><br><span class="line">                    <span class="type">int</span> &amp;ff = f[k][i1][i2];</span><br><span class="line">                    ff = <span class="built_in">max</span>(ff, f[k - <span class="number">1</span>][i1 - <span class="number">1</span>][i2 - <span class="number">1</span>] + tmp);</span><br><span class="line">                    ff = <span class="built_in">max</span>(ff, f[k - <span class="number">1</span>][i1 - <span class="number">1</span>][i2] + tmp);</span><br><span class="line">                    ff = <span class="built_in">max</span>(ff, f[k - <span class="number">1</span>][i1][i2 - <span class="number">1</span>] + tmp);</span><br><span class="line">                    ff = <span class="built_in">max</span>(ff, f[k - <span class="number">1</span>][i1][i2] + tmp);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; f[n + n][n][n];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 算法 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 算法 </tag>
-            
-            <tag> 动态规划 </tag>
-            
-            <tag> c++ </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>CS61B-sp21 | Project0:2048</title>
       <link href="/post/2b409a66.html"/>
       <url>/post/2b409a66.html</url>
@@ -1059,22 +1030,22 @@
     
     
     <entry>
-      <title>关于我</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title>个人随想录</title>
+      <link href="/artitalk/index.html"/>
+      <url>/artitalk/index.html</url>
       
-        <content type="html"><![CDATA[<h2 id="🛠️技能"><a href="#🛠️技能" class="headerlink" title="🛠️技能"></a>🛠️技能</h2><div style="text-align:center">    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/C%2B%2B.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/C.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Java.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">    <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Python.png" style="zoom:15%;float:left"></span><br></div><h2 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h2><div style="text-align:center">    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/HTML.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Vue.png" style="zoom:15%;float:left">    </span>    <br>    <br></div><h2 id="感兴趣的"><a href="#感兴趣的" class="headerlink" title="感兴趣的"></a>感兴趣的</h2><div style="text-align:center">    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Rust.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Raspberry%20Pi.png" style="zoom:15%;float:left">    </span>    <br>    <br></div><h2 id="My-GitHub"><a href="#My-GitHub" class="headerlink" title="My GitHub"></a>My GitHub</h2><div style="text-align:center">    <span style="width:20%;display:inline-block">        <a href="https://github.com/DaphneOdera17">            <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Github.png" style="zoom:15%">        </a>    </span>    <br></div><h2 id="📈-Stats"><a href="#📈-Stats" class="headerlink" title="📈 Stats"></a>📈 Stats</h2><div style="text-align:center">    <a href="https://github.com/anuraghazra/github-readme-stats">  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api?username=DaphneOdera17&show_icons=true&rank_icon=github&include_all_commits=true"/></a><a href="https://github.com/anuraghazra/convoychat">  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=DaphneOdera17&layout=compact&langs_count=8&card_width=320" /></a></div><h2 id="🔗-Links"><a href="#🔗-Links" class="headerlink" title="🔗 Links"></a>🔗 Links</h2><p><a href="https://www.birdyweb.top">My own website</a><br><a href="https://blog.csdn.net/DaphneOdera17">CSDN</a><br><a href="https://stackoverflow.com/users/22276736/birdy"><br>  <img src="https://img.shields.io/badge/stackoverflow-F58025?logo=stackoverflow&logoColor=white" style="float:left"></a></p>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>关于我</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h2 id="🛠️技能"><a href="#🛠️技能" class="headerlink" title="🛠️技能"></a>🛠️技能</h2><div style="text-align:center">    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/C%2B%2B.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/C.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Java.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">    <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Python.png" style="zoom:15%;float:left"></span><br></div><h2 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h2><div style="text-align:center">    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/HTML.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Vue.png" style="zoom:15%;float:left">    </span>    <br>    <br></div><h2 id="感兴趣的"><a href="#感兴趣的" class="headerlink" title="感兴趣的"></a>感兴趣的</h2><div style="text-align:center">    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Rust.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Raspberry%20Pi.png" style="zoom:15%;float:left">    </span>    <br>    <br></div><h2 id="My-GitHub"><a href="#My-GitHub" class="headerlink" title="My GitHub"></a>My GitHub</h2><div style="text-align:center">    <span style="width:20%;display:inline-block">        <a href="https://github.com/DaphneOdera17">            <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Github.png" style="zoom:15%">        </a>    </span>    <br></div><h2 id="📈-Stats"><a href="#📈-Stats" class="headerlink" title="📈 Stats"></a>📈 Stats</h2><div style="text-align:center">    <a href="https://github.com/anuraghazra/github-readme-stats">  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api?username=DaphneOdera17&show_icons=true&rank_icon=github&include_all_commits=true"/></a><a href="https://github.com/anuraghazra/convoychat">  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=DaphneOdera17&layout=compact&langs_count=8&card_width=320" /></a></div><h2 id="🔗-Links"><a href="#🔗-Links" class="headerlink" title="🔗 Links"></a>🔗 Links</h2><p><a href="https://www.birdyweb.top">My own website</a><br><a href="https://blog.csdn.net/DaphneOdera17">CSDN</a><br><a href="https://stackoverflow.com/users/22276736/birdy"><br>  <img src="https://img.shields.io/badge/stackoverflow-F58025?logo=stackoverflow&logoColor=white" style="float:left"></a></p>]]></content>
       
     </entry>
     
@@ -1093,8 +1064,8 @@
     
     <entry>
       <title>个人随想录</title>
-      <link href="/artitalk/index.html"/>
-      <url>/artitalk/index.html</url>
+      <link href="/essay/index.html"/>
+      <url>/essay/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -1125,17 +1096,6 @@
     
     
     <entry>
-      <title>个人随想录</title>
-      <link href="/essay/index.html"/>
-      <url>/essay/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title></title>
       <link href="/css/modify.css"/>
       <url>/css/modify.css</url>
@@ -1150,6 +1110,28 @@
       <title>link</title>
       <link href="/link/index.html"/>
       <url>/link/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -1174,17 +1156,6 @@
       <url>/music/index.html</url>
       
         <content type="html"><![CDATA[<!-- 播放器 --><div class="music-player"><!-- audio标签 --><audio class="music-player__audio" ></audio><!-- 播放器主体 --><div class="music-player__main"><!-- 模糊背景 --><div class="music-player__blur"></div><!-- 唱片 --><div class="music-player__disc"><!-- 唱片图片 --><div class="music-player__image"><img width="100%" src="" alt=""></div><!-- 指针 --><div class="music-player__pointer"><img width="100%" src="/img/cd_tou.png" alt=""></div></div><!-- 控件主体 --><div class="music-player__controls"><!-- 歌曲信息 --><div class="music__info"><h3 class="music__info--title">...</h3></div><!-- 控件... --><div class="player-control"><div class="player-control__content"><div class="player-control__btns"><div class="player-control__btn player-control__btn--prev"><i class="iconfont icon-prev"></i></div><div class="player-control__btn player-control__btn--play"><i class="iconfont icon-play"></i></div><div class="player-control__btn player-control__btn--next"><i class="iconfont icon-next"></i></div><div class="player-control__btn player-control__btn--mode"><i class="iconfont icon-random"></i></div></div><div class="player-control__volume"><div class="control__volume--icon player-control__btn"><i class="iconfont icon-volume"></i></div><div class="control__volume--progress progress"></div></div></div><div class="player-control__content"><div class="player__song--progress progress"></div><div class="player__song--timeProgess nowTime">00:00</div><div class="player__song--timeProgess totalTime">00:00</div></div></div></div></div><!-- 歌曲列表 --><div class="music-player__list"><ul class="music__list_content"></ul></div></div><script src="/js/utill.js"></script><script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.slim.min.js"></script><script src="/js/player.js?10"></script><div style="text-align:center;margin:-100px 0; font:normal 14px/24px 'MicroSoft YaHei';color:#ffffff"></div>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
       
     </entry>
     

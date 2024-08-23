@@ -26,8 +26,6 @@ katex:
 aplayer:
 highlight_shrink:
 ---
-#Project0 2048
-
 cs61B 的第一个项目就是实现 2048 这个小游戏。如果思路清晰，写起来会比较轻松，大致用时1.5 - 2小时。
 
 $\color{red}{笔者源代码在文末}$

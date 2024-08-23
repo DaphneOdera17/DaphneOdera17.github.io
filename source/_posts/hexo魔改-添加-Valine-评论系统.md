@@ -28,7 +28,6 @@ aplayer:
 highlight_shrink:
 ---
 
-# hexo魔改 | 添加 Valine 评论系统
 在 LeanCloud 注册一个账号并登录 https://console.leancloud.cn/apps
 ![image.png](https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240402204003.png)
 

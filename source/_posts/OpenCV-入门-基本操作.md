@@ -25,7 +25,6 @@ aplayer:
 highlight_shrink:
 ---
 
-# OpenCV | 入门
 ## 安装
 [参考教程](https://www.samontab.com/web/2023/02/installing-opencv-4-7-0-in-ubuntu-22-04-lts/)
 ## 基础知识

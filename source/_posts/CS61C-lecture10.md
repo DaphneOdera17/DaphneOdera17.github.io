@@ -26,7 +26,6 @@ aplayer:
 highlight_shrink:
 ---
 
-# Lecture 10 | State registers
 ## NAND
 ![](https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240730144458.png)
 

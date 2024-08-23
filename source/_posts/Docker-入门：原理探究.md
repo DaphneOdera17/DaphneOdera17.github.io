@@ -27,7 +27,6 @@ aplayer:
 highlight_shrink:
 ---
 
-# Docker | 入门：原理探究
 ## Run 的运行流程
 ![](https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240515171336.png)
 ## Docker 底层原理

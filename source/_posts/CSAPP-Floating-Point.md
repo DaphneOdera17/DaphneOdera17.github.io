@@ -25,7 +25,6 @@ aplayer:
 highlight_shrink:
 ---
 
-# CSAPP | Floating Point
 $b_i$  $b_{i-1}$ ... $b_2$ $b_1$ $b_0$ $b_{-1}$ $b_{-2}$ $b_{-3}$ ... $b_{-j}$
 $S=\sum_{k=-j}^{i}b_k\times2^k$
 

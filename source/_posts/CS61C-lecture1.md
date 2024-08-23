@@ -26,7 +26,6 @@ aplayer:
 highlight_shrink:
 ---
 
-# CS61C | lecture1
 ## 计算机系统抽象
 ## 二进制可以表示任何东西
 n 位数字(base B) 可以表示 <= $B^n$ 个事物

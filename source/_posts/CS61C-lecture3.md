@@ -26,7 +26,6 @@ aplayer:
 highlight_shrink:
 ---
 
-# CS61C | lecture3
 ## 运算优先级
 ![](https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240607130804.png)
 $x\&1==0$ 是 $x\&(1==0)$ 而不是 $(x\&1)==0$

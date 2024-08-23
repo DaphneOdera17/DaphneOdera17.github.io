@@ -26,7 +26,6 @@ aplayer:
 highlight_shrink:
 ---
 
-# Lecture 9 | Running a Program
 ## Interpretation vs Translation
 ### Interpreter
 Directly executes a program in the source language.

@@ -27,8 +27,6 @@ aplayer:
 highlight_shrink: 
 ---
 
-# $Github-SSH$
-
 在终端输入
 
 ```shell

@@ -35,7 +35,6 @@ aplayer:
 highlight_shrink:
 ---
 
-# Linux | 安装并配置 Ubuntu 22.04 LTS
 笔者采用的是 VMware Workstation 软件。
 ## 前期准备
 ## VMware Workstation 软件

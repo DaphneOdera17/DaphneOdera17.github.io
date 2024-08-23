@@ -26,7 +26,6 @@ aplayer:
 highlight_shrink:
 ---
 
-# Lecture 7
 ## Change C language To RISC-V
 ### Ex.1
 ```c

@@ -663,7 +663,8 @@ text_align_justify: false
 # Website Background (設置網站背景)
 # can set it to color or image (可設置圖片 或者 顔色)
 # The formal of image: url(http://xxxxxx.com/xxx.jpg)
-background: url(https://img.picui.cn/free/2024/08/21/66c587d422e57.jpg)
+# background: url(https://img.picui.cn/free/2024/08/21/66c587d422e57.jpg)
+background: url(https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/lingmeng.jpg)
 # background: url(https://cdn.max-c.com/heybox/dailynews/img/7ab60f2b600ea97093cfae7908613115.png?imageMogr2/format/jpg)
 
 # Footer Background

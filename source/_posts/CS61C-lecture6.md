@@ -26,7 +26,6 @@ aplayer:
 highlight_shrink:
 ---
 
-# Lecture 6
 ## 主流 ISA
 ![](https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240613233121.png)
 ## Register

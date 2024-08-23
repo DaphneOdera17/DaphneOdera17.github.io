@@ -31,7 +31,6 @@ katex:
 aplayer:
 highlight_shrink:
 ---
-# **hexo 添加 aplayer 播放器**
 ## 安装插件
 先安装插件 [hexo-tag-aplayer](https://github.com/MoePlayer/hexo-tag-aplayer)
 ```shell

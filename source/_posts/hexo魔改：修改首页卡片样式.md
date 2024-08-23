@@ -29,7 +29,6 @@ aplayer:
 highlight_shrink:
 ---
 
-# hexo魔改 | 修改首页卡片样式
 ## 文章卡片效果预览
 <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240412214100.png" style="zoom: 50%">
 ## 新建样式

@@ -25,7 +25,6 @@ aplayer:
 highlight_shrink:
 ---
 
-# CSAPP | Bits, Bytes, and Integers
 ## Great Reality
 ### **Ints are not Integers, Floats are not Reals**
 对于 (x + y) + z = x + (y + z)，无符号整形和有符号整形是成立的。

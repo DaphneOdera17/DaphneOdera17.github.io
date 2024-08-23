@@ -27,7 +27,6 @@ aplayer:
 highlight_shrink:
 ---
 
-# VMware | 虚拟机开启摄像头
 ## 打开主机摄像头功能
 首先请确保主机摄像头打开。
 ![](https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240503135417.png)

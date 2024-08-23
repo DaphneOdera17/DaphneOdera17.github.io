@@ -29,7 +29,6 @@ aplayer:
 highlight_shrink:
 ---
 
-# hexo魔改 | 修改文章数量
 当我们首页文章数量大于 10 的时候，会发现出现分页情况。
 然而首页下方还空着许多，和侧边栏明显不协调。
 ![b584c7a6449e74d0c4240dbc1a06f57.png](https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/b584c7a6449e74d0c4240dbc1a06f57.png)

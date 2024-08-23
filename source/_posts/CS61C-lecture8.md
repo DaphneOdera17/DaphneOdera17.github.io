@@ -26,7 +26,6 @@ aplayer:
 highlight_shrink:
 ---
 
-# Lecture 8 
 ## R-Format Layout
 在 RISC-V 中, 1 word = 4 Bytes = 32 bits.
 将 32 位指令分为不同段

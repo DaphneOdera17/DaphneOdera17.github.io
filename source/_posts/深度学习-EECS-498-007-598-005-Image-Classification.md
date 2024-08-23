@@ -31,7 +31,6 @@ aplayer:
 highlight_shrink:
 ---
 
-# Image Classification
 [Robustness](https://en.wikipedia.org/wiki/Robustness) 鲁棒性
 ## Edge images
 [Edge Detection](https://en.wikipedia.org/wiki/Edge_detection)

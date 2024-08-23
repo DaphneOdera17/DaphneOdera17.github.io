@@ -27,7 +27,6 @@ aplayer:
 highlight_shrink:
 ---
 
-# Docker | 入门：常用命令
 ## 帮助命令
 ```shell
 docker version # 显示 Docker 版本信息

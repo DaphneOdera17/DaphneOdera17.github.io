@@ -26,7 +26,6 @@ aplayer:
 highlight_shrink:
 ---
 
-# CS61C | lecture5
 ## 浮点数的表示
 用一个小数点作为边界分隔整数部分和小数部分。
 ![](https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240613131804.png)

@@ -26,7 +26,6 @@ aplayer:
 highlight_shrink:
 ---
 
-# Lecture11 | Combinational Logic
 ## 1 iff one(not both) a, b = 1
 
 | a    | b    | y    |

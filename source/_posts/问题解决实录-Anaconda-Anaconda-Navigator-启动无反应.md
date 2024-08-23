@@ -26,7 +26,6 @@ aplayer:
 highlight_shrink:
 ---
 
-# 问题解决实录 | Anaconda | Anaconda Navigator 启动无反应
 以管理员身份运行 Anaconda Prompt
 ```shell
 conda update -n root conda

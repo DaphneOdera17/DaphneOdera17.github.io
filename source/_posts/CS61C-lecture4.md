@@ -26,7 +26,6 @@ aplayer:
 highlight_shrink:
 ---
 
-# CS61C | lecture4
 ## C 语言内存布局
 <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240608190155.png" style="zoom:40%">
 ### Stack 

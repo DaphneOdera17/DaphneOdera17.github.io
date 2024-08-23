@@ -752,16 +752,17 @@ beautify:
 # Global font settings
 # Don't modify the following settings unless you know how they work (非必要不要修改)
 font:
-    global-font-size: 17px
+    global-font-size: 19px
     code-font-size:
-    font-family: "LXGW WenKai GB Screen"
+    # font-family: "LXGW WenKai GB Screen"
+    font-family: "Noto Serif SC ExtraLight"
     code-font-family:
 
 # Font settings for the site title and site subtitle
 # 左上角網站名字 主頁居中網站名字
 blog_title_font:
     font_link:
-    font-family:
+    font-family: "Noto Serif SC ExtraLight"
 
 # The setting of divider icon (水平分隔線圖標設置)
 hr_icon:
@@ -892,7 +893,7 @@ instantpage: true
 # https://github.com/vinta/pangu.js
 # Insert a space between Chinese character and English character (中英文之間添加空格)
 pangu:
-    enable: true
+    enable: false
     field: site # site/post
 
 # Lazyload (圖片懶加載)

@@ -790,8 +790,6 @@ subtitle:
     loop: true
     sub:
         - 手握日月摘 ♥ 辰。
-        - 东川路 800 号。
-        - 饮水思源，爱国荣校。
         - 重重的壳裹着轻轻的仰望
 
 # Loading Animation (加載動畫)
@@ -867,14 +865,14 @@ note:
 # It may contain bugs and unstable, give feedback when you find the bugs.
 # https://github.com/MoOx/pjax
 pjax:
-    enable: true
+    enable: false
     exclude:
         # - xxxx
         # - xxxx
 
 # Inject the css and script (aplayer/meting)
 aplayerInject:
-    enable: true
+    enable: false
     per_page: true
 
 # Snackbar (Toast Notification 彈窗)
@@ -950,7 +948,7 @@ inject:
         # - <script src="/js/cursor.js"></script>
         - <script src="/js/sakura.js"></script>
         - <script src="/js/modify.js"></script>
-        - <div class="aplayer no-destroy" data-id="2740999019" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true"> </div>
+        # - <div class="aplayer no-destroy" data-id="12504694280" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="false"> </div>
 
 # CDN
 # Don't modify the following settings unless you know how they work

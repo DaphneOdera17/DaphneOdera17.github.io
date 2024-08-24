@@ -9,7 +9,7 @@ keywords:
 top_img:
 mathjax: true
 katex:
-aside: false
+aside: true
 aplayer:
 highlight_shrink:
 ---

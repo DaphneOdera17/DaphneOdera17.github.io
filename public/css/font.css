@@ -1,1 +1,67 @@
-@font-face{font-family:"Noto Serif SC ExtraLight";font-display:swap;src:url(/fonts/noto.ttf) format("truetype")}@font-face{font-family:"LXGW WenKai GB Screen";font-display:swap;src:url(/fonts/LXGWWenKaiGBScreen.ttf) format("truetype")}#site-title{font-size:3.3em!important}#subtitle{font-size:1.2em!important}h1{font-size:2.1em!important;margin:.67em 0}h2{font-size:1.8em!important}h3{font-size:1.5em!important}h4{font-size:1.2em!important}body{font-size:20px!important;font-weight:400;line-height:2em}p{font-size:20px!important}#footer-wrap{color:#fff!important}.framework-info{color:#fff!important}.framework-info a{color:#3188d4!important;text-decoration:underline}.footer_custom_text a{color:#3188d4!important;text-decoration:underline}
+@font-face {
+	/* font-family: "LXGW WenKai GB Screen"; */
+	font-family: "Noto Serif SC ExtraLight";
+	font-display: swap;
+	src: url("/fonts/noto.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "LXGW WenKai GB Screen";
+	font-display: swap;
+	src: url("/fonts/LXGWWenKaiGBScreen.ttf") format("truetype");
+}
+
+#site-title {
+	font-size: 3.3em !important;
+}
+
+#subtitle {
+	font-size: 1.2em !important;
+}
+
+h1 {
+	font-size: 2.1em !important;
+	margin: 0.67em 0;
+}
+
+h2 {
+	font-size: 1.8em !important;
+}
+
+h3 {
+	font-size: 1.5em !important;
+}
+
+h4 {
+	font-size: 1.2em !important;
+}
+
+body {
+	font-size: 20px !important;
+	font-weight: normal;
+	line-height: 2em;
+}
+
+p {
+	font-size: 20px !important;
+}
+
+/* Modify the font color of the footer */
+
+#footer-wrap {
+	color: white !important;
+}
+
+.framework-info {
+	color: white !important;
+}
+
+.framework-info a {
+	color: rgb(49, 136, 212) !important;
+	text-decoration: underline;
+}
+
+.footer_custom_text a {
+	color: rgb(49, 136, 212) !important;
+	text-decoration: underline;
+}

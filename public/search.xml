@@ -4,6 +4,60 @@
   
     
     <entry>
+      <title>问题解决实录 | bash 中 tmux 颜色显示不全</title>
+      <link href="/post/7526bffa.html"/>
+      <url>/post/7526bffa.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h1 id="问题解决实录-bash-中-tmux-颜色显示不全"><a href="#问题解决实录-bash-中-tmux-颜色显示不全" class="headerlink" title="问题解决实录 | bash 中 tmux 颜色显示不全"></a>问题解决实录 | bash 中 tmux 颜色显示不全</h1><p>如下图，tmux 中颜色显示不全:<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240928125100.png" alt=""><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo $TERM</span><br></pre></td></tr></table></figure><br>输出的是 screen</p><p>但在 bash 里面输出的是 xterm-256 color<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240928125245.png" alt=""></p><p>在 bash 里面输入：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">touch  ~/.tmux.conf</span><br><span class="line">vim ~/.tmux.conf </span><br><span class="line">set -g default-terminal &quot;xterm-256color&quot;</span><br></pre></td></tr></table></figure><br>使之生效<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source  ~/.tmux.conf</span><br></pre></td></tr></table></figure><br>再打开 tmux 现在显示正常<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240928125445.png" alt=""></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 问题解决实录 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 问题解决实录 </tag>
+            
+            <tag> tmux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Jupyter | jupyter notebook 使用 conda 环境</title>
+      <link href="/post/6548a155.html"/>
+      <url>/post/6548a155.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h2 id="创建虚拟环境"><a href="#创建虚拟环境" class="headerlink" title="创建虚拟环境"></a>创建虚拟环境</h2><p>在 Anaconda Prompt 里面输入：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n env-name</span><br></pre></td></tr></table></figure><br>并且输入 y 确认。例如我们创建环境名为 jupyter<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240929205221.png" style="zoom:80%"></p><h2 id="激活环境"><a href="#激活环境" class="headerlink" title="激活环境"></a>激活环境</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda activate env-name</span><br></pre></td></tr></table></figure><p>激活之后发现环境从 base 变为 jupyter(笔者用的 env-name 为 jupyter)<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240929205434.png" alt=""></p><h2 id="安装内核"><a href="#安装内核" class="headerlink" title="安装内核"></a>安装内核</h2><p>在创建的环境下<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda install ipykernel</span><br><span class="line">python -m ipykernel install --user --name env-name --display-name &quot;name&quot;</span><br></pre></td></tr></table></figure><br>比如我们的<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m ipykernel install --user --name jupyter --display-name &quot;Python (jupyter)&quot;</span><br></pre></td></tr></table></figure><br>显示这个说明安装成功<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/1061e6e092fa0b6bafb4e35f25edecb.png" alt="1061e6e092fa0b6bafb4e35f25edecb.png"><br>在创建虚拟环境的文件夹下打开 jupyter notebook<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook</span><br></pre></td></tr></table></figure><br>创建一个新的 notebook，选择内核的时候看到我们刚才安装的 jupyter 说明成功了。然后选中它进行切换。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/bbc9a635e229b4007fa0127799a9749.png" style="zoom:70%"><br>也可以在这里进行切换内核<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/e984e0a58bc17bd34be87549603cce9.png" alt="e984e0a58bc17bd34be87549603cce9.png"></p><p>下载一些 python 包，在这个虚拟环境下进行下载<br>例如我们要安装 numpy<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240929210644.png" alt=""><br>测试<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240929210728.png" alt=""><br>并没有报错，说明安装成功</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Jupyter Notebook </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Jupyter Notebook </tag>
+            
+            <tag> Anaconda </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Rust | 安装与配置</title>
       <link href="/post/9067b1e8.html"/>
       <url>/post/9067b1e8.html</url>
@@ -192,9 +246,9 @@
       
         <tags>
             
-            <tag> 问题解决实录 </tag>
-            
             <tag> Anaconda </tag>
+            
+            <tag> 问题解决实录 </tag>
             
         </tags>
       
@@ -1175,9 +1229,9 @@
     
     
     <entry>
-      <title>books</title>
-      <link href="/books/index.html"/>
-      <url>/books/index.html</url>
+      <title>个人随想录</title>
+      <link href="/artitalk/index.html"/>
+      <url>/artitalk/index.html</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script>]]></content>
       
@@ -1186,11 +1240,11 @@
     
     
     <entry>
-      <title>关于我</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title>books</title>
+      <link href="/books/index.html"/>
+      <url>/books/index.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h2 id="🛠️技能"><a href="#🛠️技能" class="headerlink" title="🛠️技能"></a>🛠️技能</h2><div style="text-align:center">    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/C%2B%2B.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/C.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Java.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">    <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Python.png" style="zoom:15%;float:left"></span><br></div><h2 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h2><div style="text-align:center">    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/HTML.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Vue.png" style="zoom:15%;float:left">    </span>    <br>    <br></div><h2 id="感兴趣的"><a href="#感兴趣的" class="headerlink" title="感兴趣的"></a>感兴趣的</h2><div style="text-align:center">    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Rust.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Raspberry%20Pi.png" style="zoom:15%;float:left">    </span>    <br>    <br></div><h2 id="My-GitHub"><a href="#My-GitHub" class="headerlink" title="My GitHub"></a>My GitHub</h2><div style="text-align:center">    <span style="width:20%;display:inline-block">        <a href="https://github.com/DaphneOdera17">            <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Github.png" style="zoom:15%">        </a>    </span>    <br></div><h2 id="📈-Stats"><a href="#📈-Stats" class="headerlink" title="📈 Stats"></a>📈 Stats</h2><div style="text-align:center">    <a href="https://github.com/anuraghazra/github-readme-stats">  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api?username=DaphneOdera17&show_icons=true&rank_icon=github&include_all_commits=true"/></a><a href="https://github.com/anuraghazra/convoychat">  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=DaphneOdera17&layout=compact&langs_count=8&card_width=320" /></a></div><h2 id="🔗-Links"><a href="#🔗-Links" class="headerlink" title="🔗 Links"></a>🔗 Links</h2><p><a href="https://www.birdyweb.top">My own website</a><br><a href="https://blog.csdn.net/DaphneOdera17">CSDN</a><br><a href="https://stackoverflow.com/users/22276736/birdy"><br>  <img src="https://img.shields.io/badge/stackoverflow-F58025?logo=stackoverflow&logoColor=white" style="float:left"></a></p>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script>]]></content>
       
     </entry>
     
@@ -1220,28 +1274,6 @@
     
     <entry>
       <title></title>
-      <link href="/css/modify.css"/>
-      <url>/css/modify.css</url>
-      
-        <content type="html"><![CDATA[#page-header,#page-header:before {  background: transparent !important;}#page-header.post-bg,#page-header.not-home-page {  height: 280px !important;}#page-header #post-info {  bottom: 40px !important;}#page-header #page-site-info {  top: 140px !important;}@media screen and (max-width: 768px) {  #page-header.not-home-page {    height: 200px !important;  }  #page-header #post-info {    bottom: 10px !important;  }  #page-header #page-site-info {    top: 100px !important;  }}.top-img {  height: 250px;  margin: -50px -40px 50px;  border-top-left-radius: inherit;  border-top-right-radius: inherit;  background-position: center center;  background-size: cover;  -webkit-transition: all 0.3s;  -moz-transition: all 0.3s;  -o-transition: all 0.3s;  -ms-transition: all 0.3s;  transition: all 0.3s;}@media screen and (max-width: 768px) {  .top-img {    height: 230px;    margin: -36px -14px 36px;  }}[data-theme='dark'] .top-img {  filter: brightness(0.8);}#footer:before {  background-color: rgba(255,255,255,0.5);}[data-theme='dark'] #footer:before {  background-color: rgba(0,0,0,0.5);}#footer-wrap,#footer-wrap a {  color: #111;  -webkit-transition: unset;  -moz-transition: unset;  -o-transition: unset;  -ms-transition: unset;  transition: unset;}[data-theme='dark'] #footer-wrap,[data-theme='dark'] #footer-wrap a {  color: var(--light-grey);}]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>个人随想录</title>
-      <link href="/artitalk/index.html"/>
-      <url>/artitalk/index.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
       <link href="/css/background.css"/>
       <url>/css/background.css</url>
       
@@ -1252,11 +1284,22 @@
     
     
     <entry>
-      <title>gallery</title>
-      <link href="/gallery/index.html"/>
-      <url>/gallery/index.html</url>
+      <title>关于我</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h2 id="🛠️技能"><a href="#🛠️技能" class="headerlink" title="🛠️技能"></a>🛠️技能</h2><div style="text-align:center">    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/C%2B%2B.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/C.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Java.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">    <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Python.png" style="zoom:15%;float:left"></span><br></div><h2 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h2><div style="text-align:center">    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/HTML.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Vue.png" style="zoom:15%;float:left">    </span>    <br>    <br></div><h2 id="感兴趣的"><a href="#感兴趣的" class="headerlink" title="感兴趣的"></a>感兴趣的</h2><div style="text-align:center">    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Rust.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Raspberry%20Pi.png" style="zoom:15%;float:left">    </span>    <br>    <br></div><h2 id="My-GitHub"><a href="#My-GitHub" class="headerlink" title="My GitHub"></a>My GitHub</h2><div style="text-align:center">    <span style="width:20%;display:inline-block">        <a href="https://github.com/DaphneOdera17">            <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Github.png" style="zoom:15%">        </a>    </span>    <br></div><h2 id="📈-Stats"><a href="#📈-Stats" class="headerlink" title="📈 Stats"></a>📈 Stats</h2><div style="text-align:center">    <a href="https://github.com/anuraghazra/github-readme-stats">  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api?username=DaphneOdera17&show_icons=true&rank_icon=github&include_all_commits=true"/></a><a href="https://github.com/anuraghazra/convoychat">  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=DaphneOdera17&layout=compact&langs_count=8&card_width=320" /></a></div><h2 id="🔗-Links"><a href="#🔗-Links" class="headerlink" title="🔗 Links"></a>🔗 Links</h2><p><a href="https://www.birdyweb.top">My own website</a><br><a href="https://blog.csdn.net/DaphneOdera17">CSDN</a><br><a href="https://stackoverflow.com/users/22276736/birdy"><br>  <img src="https://img.shields.io/badge/stackoverflow-F58025?logo=stackoverflow&logoColor=white" style="float:left"></a></p>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/js/modify.js"/>
+      <url>/js/modify.js</url>
+      
+        <content type="html"><![CDATA['use strict';const cheerio = require('cheerio');/** * 在页面插入新顶部图 * @param {cheerio.Root} $ Root */function insertTopImg($) {    let header = $('#page-header');    if (header.length === 0) return;    let background = header.css('background-image');    if (!background) return;    $('#post, #page, #archive, #tag, #category').prepend(`<div class="top-img" style="background-image: ${background};"></div>`);}hexo.extend.filter.register('after_render:html', function(str, data) {    let $ = cheerio.load(str, {        decodeEntities: false    });    insertTopImg($);    return $.html();});]]></content>
       
     </entry>
     
@@ -1266,6 +1309,39 @@
       <title>link</title>
       <link href="/link/index.html"/>
       <url>/link/index.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>个人随想录</title>
+      <link href="/talk/index.html"/>
+      <url>/talk/index.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><head>  <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script></head><body>      <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240406235836.png">      <!-- 引用 artitalk -->      <script type="text/javascript" src="https://unpkg.com/artitalk"></script>      <!-- 存放说说的容器 -->      <div id="artitalk_main"></div>      <script>      new Artitalk({          appId: 'io9zpiEMivhCI0bTijyctNGY-MdYXbMMI', // Your LeanCloud appId          appKey: 'Fxtw4McQ0lRMQ4jKyk4AInWj' // Your LeanCloud appKey      })      </script></body>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>gallery</title>
+      <link href="/gallery/index.html"/>
+      <url>/gallery/index.html</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script>]]></content>
       
@@ -1285,33 +1361,11 @@
     
     
     <entry>
-      <title>个人随想录</title>
-      <link href="/talk/index.html"/>
-      <url>/talk/index.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><head>  <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script></head><body>      <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240406235836.png">      <!-- 引用 artitalk -->      <script type="text/javascript" src="https://unpkg.com/artitalk"></script>      <!-- 存放说说的容器 -->      <div id="artitalk_main"></div>      <script>      new Artitalk({          appId: 'io9zpiEMivhCI0bTijyctNGY-MdYXbMMI', // Your LeanCloud appId          appKey: 'Fxtw4McQ0lRMQ4jKyk4AInWj' // Your LeanCloud appKey      })      </script></body>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title></title>
-      <link href="/js/modify.js"/>
-      <url>/js/modify.js</url>
+      <link href="/css/modify.css"/>
+      <url>/css/modify.css</url>
       
-        <content type="html"><![CDATA['use strict';const cheerio = require('cheerio');/** * 在页面插入新顶部图 * @param {cheerio.Root} $ Root */function insertTopImg($) {    let header = $('#page-header');    if (header.length === 0) return;    let background = header.css('background-image');    if (!background) return;    $('#post, #page, #archive, #tag, #category').prepend(`<div class="top-img" style="background-image: ${background};"></div>`);}hexo.extend.filter.register('after_render:html', function(str, data) {    let $ = cheerio.load(str, {        decodeEntities: false    });    insertTopImg($);    return $.html();});]]></content>
+        <content type="html"><![CDATA[#page-header,#page-header:before {  background: transparent !important;}#page-header.post-bg,#page-header.not-home-page {  height: 280px !important;}#page-header #post-info {  bottom: 40px !important;}#page-header #page-site-info {  top: 140px !important;}@media screen and (max-width: 768px) {  #page-header.not-home-page {    height: 200px !important;  }  #page-header #post-info {    bottom: 10px !important;  }  #page-header #page-site-info {    top: 100px !important;  }}.top-img {  height: 250px;  margin: -50px -40px 50px;  border-top-left-radius: inherit;  border-top-right-radius: inherit;  background-position: center center;  background-size: cover;  -webkit-transition: all 0.3s;  -moz-transition: all 0.3s;  -o-transition: all 0.3s;  -ms-transition: all 0.3s;  transition: all 0.3s;}@media screen and (max-width: 768px) {  .top-img {    height: 230px;    margin: -36px -14px 36px;  }}[data-theme='dark'] .top-img {  filter: brightness(0.8);}#footer:before {  background-color: rgba(255,255,255,0.5);}[data-theme='dark'] #footer:before {  background-color: rgba(0,0,0,0.5);}#footer-wrap,#footer-wrap a {  color: #111;  -webkit-transition: unset;  -moz-transition: unset;  -o-transition: unset;  -ms-transition: unset;  transition: unset;}[data-theme='dark'] #footer-wrap,[data-theme='dark'] #footer-wrap a {  color: var(--light-grey);}]]></content>
       
     </entry>
     

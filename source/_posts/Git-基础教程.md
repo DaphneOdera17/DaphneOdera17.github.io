@@ -12,7 +12,7 @@ date: 2024-09-27 22:59:07
 updated:
 top_img:
 comments:
-cover:
+cover: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/2024-10-01_18-45-09.png
 toc:
 toc_number:
 copyright:

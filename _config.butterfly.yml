@@ -35,7 +35,7 @@ code_word_wrap: false
 # formal:
 #   icon: link || the description || color
 social:
-    fab fa-github: https://github.com/DaphneOdera17 || Github || '#24292e'
+    fab fa-github: https://github.com/zhangbird050801 || Github || '#24292e'
     # fas fa-envelope: mailto:xxxxxx@gmail.com || Email || '#4a7dbe'
 
 # Image (圖片設置)
@@ -232,7 +232,7 @@ aside:
             enable: true
             icon: fab fa-github
             text: Follow Me
-            link: https://github.com/DaphneOdera17
+            link: https://github.com/zhangbird050801
     card_announcement:
         enable: true
         content: 大二在读蒟蒻,欢迎一起学习交流cs

@@ -34,8 +34,8 @@ highlight_shrink:
 pip install matplotlib
 ```
 出现如下报错：
-![](https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427174142.png)
-![](https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427174113.png)
+<img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427174142.png" style="zoom:50%;" />
+<img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427174113.png" style="zoom:50%;" />
 "which is required to install pyproject.toml-based projects"
 笔者尝试过使用以下指令无果。
 
@@ -43,13 +43,16 @@ pip install matplotlib
 pip install wheel
 ```
 进入 matplotlib 官网
-https://pypi.org/project/matplotlib/
+
+{% link matplotlib 官网, , https://pypi.org/project/matplotlib/ %}
+
 下载最新版 matplotlib
-![](https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427174448.png)
+<img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427174448.png" style="zoom: 33%;" />
 
 在文件夹下有 pyproject.toml 文件
-![](https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427174601.png)
+<img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427174601.png" style="zoom:50%;" />
 终端进入该文件夹，并且在命令行输入
+
 ```shell
 pip install pyproject.toml
 ```
@@ -58,10 +61,13 @@ pip install pyproject.toml
 
 因为缺乏 Microsoft Visual C++ 14.0,需要下载相应的 Build-Tools。最简单的方法是通过 Visual Studio Installer 下载。
 进入官网并下载 Visual Studio.
-https://visualstudio.microsoft.com/zh-hans/#vs-section
+
+{% link Visual Studio 官网, visual Studio , https://visualstudio.microsoft.com/zh-hans/#vs-section %}
+
 在软件安装界面选择 “使用 C++ 的桌面开发” 并保持右侧勾选项不变。等待其安装完毕。
-![](https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427175001.png)
+<img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427175001.png" style="zoom: 67%;" />
 此时再运行以下指令，未报错。安装成功。
+
 ```shell
 pip install pyproject.toml
 pip install matplotlib

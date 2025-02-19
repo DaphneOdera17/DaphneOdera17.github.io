@@ -1,11 +1,9 @@
-- class_name: bbtalk
+- class_name: 个人随想录
   essay_list:
-    - content: 放张镇楼图马里奥~
-      image: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240406235836.png
-      date: 2024-4-12
-    - content: 哈哈
-      image: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240406235836.png
-      date: 2024-4-12
-    - content: 测试
-      image: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240406235836.png
-      date: 2024-4-12
+      - content: 今天终于完成了瑞吉外卖项目🎉🎉🎉
+        date: 2025/02/16 10:00:00
+      - content: 开始新的项目《苍穹外卖》
+        date: 2025/02/17 12:00:00
+        image:
+            - https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/%E9%BA%A6%E9%87%91%E5%A1%94-2.jpg
+        location: 浙江温州

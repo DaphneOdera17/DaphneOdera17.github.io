@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>hexo魔改 | 修改卡片透明度</title>
+      <link href="/post/ae1606a8.html"/>
+      <url>/post/ae1606a8.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h1 id="hexo-魔改-修改卡片透明度"><a href="#hexo-魔改-修改卡片透明度" class="headerlink" title="hexo 魔改 | 修改卡片透明度"></a>hexo 魔改 | 修改卡片透明度</h1><p>这是笔者自己瞎倒腾的。作为前端菜鸡一枚，大佬们随便看看就好~</p><p>我用的主题是 butterfly 4.12.0</p><h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>通过开发者工具可以看出来卡片的背景和 <code>--card-bg</code> 变量有关</p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250213225653539.png" alt="|1075" style="zoom:50%;" /></p><p>再在 <code>sources</code> 下的 <code>css</code> 文件夹下的 <code>index.css</code> 查找 <code>--card-bg</code>，可以看出来背景颜色和这个有关，是在这里体现。</p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250213225813444.png" alt="|1075" style="zoom: 50%;" /></p><p>然后继续查找这个变量。在 <code>:root</code> 下面找到，这个就是设置全局默认 -&gt; 白天模式的。我已经调整过了。</p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250213230001150.png" alt="|575" style="zoom: 67%;" /></p><p>那么黑暗模式下的这个值又在哪呢？继续往下找。</p><p>看到这里有个 <code>[data-theme=&#39;dark&#39;]</code> 就是表示黑暗模式。</p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250213230117781.png" alt="|550" style="zoom:67%;" /></p><p>我试了一下在自己创建的 css 文件下写 light 模式和 dark 模式 —card-bg 的修改，但是会有小问题。所以我就用了暴力方法。找到 <code>index.css</code> 中这两个值定义的地方。</p><h2 id="light-模式调整"><a href="#light-模式调整" class="headerlink" title="light 模式调整"></a>light 模式调整</h2><p>首先就是在主题文件夹下 source 目录下的 css 目录下找到 <code>var.styl</code> </p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250213231230938.png" alt="|575" style="zoom:67%;" /></p><p>搜索 <code>card-bg</code> 原先这里是 <code>white</code> 我已经调整过了</p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250213231404579.png" alt="|575" style="zoom:67%;" /></p><p>后面这个 0.9 是透明度，当然，颜色也可以自己调整。<br><figure class="highlight styl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$card</span>-bg = <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">0.9</span>)</span><br></pre></td></tr></table></figure></p><h2 id="dark-模式调整"><a href="#dark-模式调整" class="headerlink" title="dark 模式调整"></a>dark 模式调整</h2><p>进入 <code>_mode</code> 文件夹</p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250213231611829.png" alt="|550" style="zoom:67%;" /></p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250213231635595.png" alt="|600" style="zoom:67%;" /></p><p>打开 <code>darkmode.styl</code> 文件。也是搜索 <code>card-bg</code> 我这里已经调整过颜色</p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250213232024104.png" alt="|600" style="zoom: 33%;" /></p><figure class="highlight styl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">--card-bg</span>: <span class="built_in">rgba</span>(<span class="number">24</span>, <span class="number">22</span>, <span class="number">22</span>, <span class="number">0.8</span>)</span><br></pre></td></tr></table></figure><h2 id="最重要的"><a href="#最重要的" class="headerlink" title="最重要的"></a>最重要的</h2><p>不要忘记：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> butterfly </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Git Bash | 配置 zsh, oh-my-zsh</title>
       <link href="/post/7d893c61.html"/>
       <url>/post/7d893c61.html</url>
@@ -406,7 +427,7 @@
       <link href="/post/184dbe6a.html"/>
       <url>/post/184dbe6a.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h2 id="最终效果："><a href="#最终效果：" class="headerlink" title="最终效果："></a>最终效果：</h2><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240503202114.png" style="zoom:50%;" /></p><h2 id="插件的安装"><a href="#插件的安装" class="headerlink" title="插件的安装"></a>插件的安装</h2><p>先安装插件 Custom CSS and JS Loader<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240503210221.png" style="zoom:50%;" /></p><h3 id="插件配置"><a href="#插件配置" class="headerlink" title="插件配置"></a>插件配置</h3><p>Ctrl + Shift + P 输入<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240503210258.png" style="zoom:50%;" /><br>打开用户设置，在末尾添加</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;vscode_custom_css.imports&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;&quot;</span><span class="punctuation">]</span></span><br></pre></td></tr></table></figure><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240503210455.png" style="zoom:50%;" /></p><h2 id="下载-Logo"><a href="#下载-Logo" class="headerlink" title="下载 Logo"></a>下载 Logo</h2><p>下载 Logo<br><a href="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/VSCode-Thick.png">点我下载</a></p><h2 id="引入图片"><a href="#引入图片" class="headerlink" title="引入图片"></a>引入图片</h2><p>创建一个文件夹 Vs_code_config，里面放入 user.css<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.editor-group-watermark &gt; .letterpress&#123;</span><br><span class="line">  background-image: <span class="built_in">url</span>(<span class="string">&quot;https://raw.githubusercontent.com/Aikoyori/ProgrammingVTuberLogos/main/VSCode/VSCode-Thick.png&quot;</span>) !important;</span><br><span class="line">  opacity: <span class="number">.75</span>;</span><br><span class="line">  aspect-ratio: <span class="number">3</span>/<span class="number">2</span> !important;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>但是会因为网络原因可能加载不出来。所以我们可以通过将图片转换 base64 来进行访问。<br><a href="https://tool.chinaz.com/tools/imgtobase">base64编码在线转换网站</a><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240503202202.png" style="zoom:50%;" /><br>然后将这些编码粘贴到 url 里面，替换掉原先的网页链接并保存<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240503210845.png" style="zoom:50%;" /></p><h3 id="引入-css"><a href="#引入-css" class="headerlink" title="引入 css"></a>引入 css</h3><p>回到用户的 settings.json<br>将之前输入的改为，其中 file:/// 之后是你 user.css 存放的路径<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;vscode_custom_css.imports&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;file:///D:/VS_code_config/user.css&quot;</span><span class="punctuation">]</span></span><br></pre></td></tr></table></figure></p><h2 id="让插件生效"><a href="#让插件生效" class="headerlink" title="让插件生效"></a>让插件生效</h2><p>Ctrl + Shift + P 输入 &gt;Enable…<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240503210126.png" style="zoom:50%;" /><br>点击 Enable Custom CSS and JS<br>重启 VsCode 生效</p>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h2 id="参考视频"><a href="#参考视频" class="headerlink" title="参考视频"></a>参考视频</h2><div class='liushen-tag-link'><a class="tag-Link" target="_blank" href=" https://www.bilibili.com/video/BV1Yt421w7kS/?share_source=copy_web&vd_source=f5b55a19bbc981b8c6886f6d96d3b599">    <div class="tag-link-tips">🪧引用站外地址，不保证站点的可用性和安全性</div>    <div class="tag-link-bottom">        <div class="tag-link-left" style="background-image: url(https://cdn.qyliu.top/i/2024/07/27/66a4632bbf06e.webp);"></div>        <div class="tag-link-right">            <div class="tag-link-title">VSCode美化：自定义开屏图标以及背景</div>            <div class="tag-link-sitename"> ShirasuAzusa</div>        </div>        <i class="fa-solid fa-angle-right"></i>    </div>    </a></div> <h2 id="最终效果："><a href="#最终效果：" class="headerlink" title="最终效果："></a>最终效果：</h2><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240503202114.png" style="zoom:50%;" /></p><h2 id="插件的安装"><a href="#插件的安装" class="headerlink" title="插件的安装"></a>插件的安装</h2><p>先安装插件 Custom CSS and JS Loader<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240503210221.png" style="zoom:50%;" /></p><h3 id="插件配置"><a href="#插件配置" class="headerlink" title="插件配置"></a>插件配置</h3><p>Ctrl + Shift + P 输入<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240503210258.png" style="zoom:50%;" /><br>打开用户设置，在末尾添加</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;vscode_custom_css.imports&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;&quot;</span><span class="punctuation">]</span></span><br></pre></td></tr></table></figure><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240503210455.png" style="zoom:50%;" /></p><h2 id="下载-Logo"><a href="#下载-Logo" class="headerlink" title="下载 Logo"></a>下载 Logo</h2><p>下载 Logo<br><a href="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/VSCode-Thick.png">点我下载</a></p><h2 id="引入图片"><a href="#引入图片" class="headerlink" title="引入图片"></a>引入图片</h2><p>创建一个文件夹 Vs_code_config，里面放入 user.css<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.editor-group-watermark &gt; .letterpress&#123;</span><br><span class="line">  background-image: <span class="built_in">url</span>(<span class="string">&quot;https://raw.githubusercontent.com/Aikoyori/ProgrammingVTuberLogos/main/VSCode/VSCode-Thick.png&quot;</span>) !important;</span><br><span class="line">  opacity: <span class="number">.75</span>;</span><br><span class="line">  aspect-ratio: <span class="number">3</span>/<span class="number">2</span> !important;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>但是会因为网络原因可能加载不出来。所以我们可以通过将图片转换 base64 来进行访问。<br><a href="https://tool.chinaz.com/tools/imgtobase">base64编码在线转换网站</a><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240503202202.png" style="zoom:50%;" /><br>然后将这些编码粘贴到 url 里面，替换掉原先的网页链接并保存<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240503210845.png" style="zoom:50%;" /></p><h3 id="引入-css"><a href="#引入-css" class="headerlink" title="引入 css"></a>引入 css</h3><p>回到用户的 settings.json<br>将之前输入的改为，其中 file:/// 之后是你 user.css 存放的路径<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;vscode_custom_css.imports&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;file:///D:/VS_code_config/user.css&quot;</span><span class="punctuation">]</span></span><br></pre></td></tr></table></figure></p><h2 id="让插件生效"><a href="#让插件生效" class="headerlink" title="让插件生效"></a>让插件生效</h2><p>Ctrl + Shift + P 输入 &gt;Enable…<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240503210126.png" style="zoom:50%;" /><br>点击 Enable Custom CSS and JS<br>重启 VsCode 生效</p>]]></content>
       
       
       <categories>
@@ -495,7 +516,7 @@
       <link href="/post/f849bb21.html"/>
       <url>/post/f849bb21.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><p>朋友遇到 python 安装 matplotlib 时的问题，笔者帮忙远程调试(踩了不少坑)。网上的解决方案有很多无效，以此来记录以下个人解决方案。<br>在使用指令</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install matplotlib</span><br></pre></td></tr></table></figure><p>出现如下报错：<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427174142.png" alt=""><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427174113.png" alt=""><br>“which is required to install pyproject.toml-based projects”<br>笔者尝试过使用以下指令无果。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install wheel</span><br></pre></td></tr></table></figure><p>进入 matplotlib 官网<br><a href="https://pypi.org/project/matplotlib/">https://pypi.org/project/matplotlib/</a><br>下载最新版 matplotlib<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427174448.png" alt=""></p><p>在文件夹下有 pyproject.toml 文件<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427174601.png" alt=""><br>终端进入该文件夹，并且在命令行输入<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pyproject.toml</span><br></pre></td></tr></table></figure><br>(PS: 笔者看见过网上一个解决方案，用 poerty install 但是会有 build-system 的报错，就没有用了)。<br>当然这时候进行 install matplotlib 是没有用的。因为我们缺乏 Microsoft Visual C++ 14.0</p><p>因为缺乏 Microsoft Visual C++ 14.0,需要下载相应的 Build-Tools。最简单的方法是通过 Visual Studio Installer 下载。<br>进入官网并下载 Visual Studio.<br><a href="https://visualstudio.microsoft.com/zh-hans/#vs-section">https://visualstudio.microsoft.com/zh-hans/#vs-section</a><br>在软件安装界面选择 “使用 C++ 的桌面开发” 并保持右侧勾选项不变。等待其安装完毕。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427175001.png" alt=""><br>此时再运行以下指令，未报错。安装成功。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">pip install pyproject.toml</span><br><span class="line">pip install matplotlib</span><br><span class="line"></span><br><span class="line">python -i</span><br><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">&gt;&gt; import matplotlib as plt</span></span><br></pre></td></tr></table></figure><br>(我不知道不在本文件夹下安装会不会出错，我是帮朋友弄完凭记忆写的文章，难免会有漏洞 &gt; _ &lt; )<br>如果该方案有误或者有更好的建议，欢迎交流~。</p>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><p>朋友遇到 python 安装 matplotlib 时的问题，笔者帮忙远程调试(踩了不少坑)。网上的解决方案有很多无效，以此来记录以下个人解决方案。<br>在使用指令</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install matplotlib</span><br></pre></td></tr></table></figure><p>出现如下报错：<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427174142.png" style="zoom:50%;" /><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427174113.png" style="zoom:50%;" /><br>“which is required to install pyproject.toml-based projects”<br>笔者尝试过使用以下指令无果。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install wheel</span><br></pre></td></tr></table></figure><p>进入 matplotlib 官网</p><div class='liushen-tag-link'><a class="tag-Link" target="_blank" href=" https://pypi.org/project/matplotlib/">    <div class="tag-link-tips">🪧引用站外地址，不保证站点的可用性和安全性</div>    <div class="tag-link-bottom">        <div class="tag-link-left" style="background-image: url(https://cdn.qyliu.top/i/2024/07/27/66a4632bbf06e.webp);"></div>        <div class="tag-link-right">            <div class="tag-link-title">matplotlib 官网</div>            <div class="tag-link-sitename"> </div>        </div>        <i class="fa-solid fa-angle-right"></i>    </div>    </a></div><p>下载最新版 matplotlib<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427174448.png" style="zoom: 33%;" /></p><p>在文件夹下有 pyproject.toml 文件<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427174601.png" style="zoom:50%;" /><br>终端进入该文件夹，并且在命令行输入</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pyproject.toml</span><br></pre></td></tr></table></figure><p>(PS: 笔者看见过网上一个解决方案，用 poerty install 但是会有 build-system 的报错，就没有用了)。<br>当然这时候进行 install matplotlib 是没有用的。因为我们缺乏 Microsoft Visual C++ 14.0</p><p>因为缺乏 Microsoft Visual C++ 14.0,需要下载相应的 Build-Tools。最简单的方法是通过 Visual Studio Installer 下载。<br>进入官网并下载 Visual Studio.</p><div class='liushen-tag-link'><a class="tag-Link" target="_blank" href=" https://visualstudio.microsoft.com/zh-hans/#vs-section">    <div class="tag-link-tips">🪧引用站外地址，不保证站点的可用性和安全性</div>    <div class="tag-link-bottom">        <div class="tag-link-left" style="background-image: url(https://cdn.qyliu.top/i/2024/07/27/66a4632bbf06e.webp);"></div>        <div class="tag-link-right">            <div class="tag-link-title">Visual Studio 官网</div>            <div class="tag-link-sitename"> visual Studio </div>        </div>        <i class="fa-solid fa-angle-right"></i>    </div>    </a></div><p>在软件安装界面选择 “使用 C++ 的桌面开发” 并保持右侧勾选项不变。等待其安装完毕。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240427175001.png" style="zoom: 67%;" /><br>此时再运行以下指令，未报错。安装成功。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">pip install pyproject.toml</span><br><span class="line">pip install matplotlib</span><br><span class="line"></span><br><span class="line">python -i</span><br><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">&gt;&gt; import matplotlib as plt</span></span><br></pre></td></tr></table></figure><p>(我不知道不在本文件夹下安装会不会出错，我是帮朋友弄完凭记忆写的文章，难免会有漏洞 &gt; _ &lt; )<br>如果该方案有误或者有更好的建议，欢迎交流~。</p>]]></content>
       
       
       <categories>
@@ -778,9 +799,20 @@
     
     
     <entry>
-      <title>个人随想录</title>
-      <link href="/artitalk/index.html"/>
-      <url>/artitalk/index.html</url>
+      <title>关于我</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h2 id="🛠️技能"><a href="#🛠️技能" class="headerlink" title="🛠️技能"></a>🛠️技能</h2><div style="text-align:center">    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/C%2B%2B.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/C.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Java.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">    <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Python.png" style="zoom:15%;float:left"></span><br></div><h2 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h2><div style="text-align:center">    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/HTML.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Vue.png" style="zoom:15%;float:left">    </span>    <br>    <br></div><h2 id="感兴趣的"><a href="#感兴趣的" class="headerlink" title="感兴趣的"></a>感兴趣的</h2><div style="text-align:center">    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Rust.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Raspberry%20Pi.png" style="zoom:15%;float:left">    </span>    <br>    <br></div><h2 id="My-GitHub"><a href="#My-GitHub" class="headerlink" title="My GitHub"></a>My GitHub</h2><div style="text-align:center">    <span style="width:20%;display:inline-block">        <a href="https://github.com/zhangbird050801">            <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Github.png" style="zoom:15%">        </a>    </span>    <br></div><h2 id="📈-Stats"><a href="#📈-Stats" class="headerlink" title="📈 Stats"></a>📈 Stats</h2><div style="text-align:center">    <a href="https://github.com/anuraghazra/github-readme-stats">  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api?username=zhangbird050801&show_icons=true&rank_icon=github&include_all_commits=true"/></a><a href="https://github.com/anuraghazra/convoychat">  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=zhangbird050801&layout=compact&langs_count=8&card_width=320" /></a></div><h2 id="🔗-Links"><a href="#🔗-Links" class="headerlink" title="🔗 Links"></a>🔗 Links</h2><p><a href="https://www.birdyweb.top">My own website</a><br><a href="https://blog.csdn.net/DaphneOdera17">CSDN</a><br><a href="https://stackoverflow.com/users/22276736/birdy"><br>  <img src="https://img.shields.io/badge/stackoverflow-F58025?logo=stackoverflow&logoColor=white" style="float:left"></a></p>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>books</title>
+      <link href="/books/index.html"/>
+      <url>/books/index.html</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script>]]></content>
       
@@ -800,9 +832,20 @@
     
     
     <entry>
-      <title>books</title>
-      <link href="/books/index.html"/>
-      <url>/books/index.html</url>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>gallery</title>
+      <link href="/gallery/index.html"/>
+      <url>/gallery/index.html</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script>]]></content>
       
@@ -822,33 +865,11 @@
     
     
     <entry>
-      <title>关于我</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title></title>
+      <link href="/js/modify.js"/>
+      <url>/js/modify.js</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h2 id="🛠️技能"><a href="#🛠️技能" class="headerlink" title="🛠️技能"></a>🛠️技能</h2><div style="text-align:center">    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/C%2B%2B.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/C.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Java.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">    <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Python.png" style="zoom:15%;float:left"></span><br></div><h2 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h2><div style="text-align:center">    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/HTML.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Vue.png" style="zoom:15%;float:left">    </span>    <br>    <br></div><h2 id="感兴趣的"><a href="#感兴趣的" class="headerlink" title="感兴趣的"></a>感兴趣的</h2><div style="text-align:center">    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Rust.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Raspberry%20Pi.png" style="zoom:15%;float:left">    </span>    <br>    <br></div><h2 id="My-GitHub"><a href="#My-GitHub" class="headerlink" title="My GitHub"></a>My GitHub</h2><div style="text-align:center">    <span style="width:20%;display:inline-block">        <a href="https://github.com/DaphneOdera17">            <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Github.png" style="zoom:15%">        </a>    </span>    <br></div><h2 id="📈-Stats"><a href="#📈-Stats" class="headerlink" title="📈 Stats"></a>📈 Stats</h2><div style="text-align:center">    <a href="https://github.com/anuraghazra/github-readme-stats">  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api?username=DaphneOdera17&show_icons=true&rank_icon=github&include_all_commits=true"/></a><a href="https://github.com/anuraghazra/convoychat">  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=DaphneOdera17&layout=compact&langs_count=8&card_width=320" /></a></div><h2 id="🔗-Links"><a href="#🔗-Links" class="headerlink" title="🔗 Links"></a>🔗 Links</h2><p><a href="https://www.birdyweb.top">My own website</a><br><a href="https://blog.csdn.net/DaphneOdera17">CSDN</a><br><a href="https://stackoverflow.com/users/22276736/birdy"><br>  <img src="https://img.shields.io/badge/stackoverflow-F58025?logo=stackoverflow&logoColor=white" style="float:left"></a></p>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>gallery</title>
-      <link href="/gallery/index.html"/>
-      <url>/gallery/index.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>个人随想录</title>
-      <link href="/talk/index.html"/>
-      <url>/talk/index.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><head>  <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script></head><body>      <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240406235836.png">      <!-- 引用 artitalk -->      <script type="text/javascript" src="https://unpkg.com/artitalk"></script>      <!-- 存放说说的容器 -->      <div id="artitalk_main"></div>      <script>      new Artitalk({          appId: 'io9zpiEMivhCI0bTijyctNGY-MdYXbMMI', // Your LeanCloud appId          appKey: 'Fxtw4McQ0lRMQ4jKyk4AInWj' // Your LeanCloud appKey      })      </script></body>]]></content>
+        <content type="html"><![CDATA['use strict';const cheerio = require('cheerio');/** * 在页面插入新顶部图 * @param {cheerio.Root} $ Root */function insertTopImg($) {    let header = $('#page-header');    if (header.length === 0) return;    let background = header.css('background-image');    if (!background) return;    $('#post, #page, #archive, #tag, #category').prepend(`<div class="top-img" style="background-image: ${background};"></div>`);}hexo.extend.filter.register('after_render:html', function(str, data) {    let $ = cheerio.load(str, {        decodeEntities: false    });    insertTopImg($);    return $.html();});]]></content>
       
     </entry>
     
@@ -866,33 +887,11 @@
     
     
     <entry>
-      <title></title>
-      <link href="/css/background.css"/>
-      <url>/css/background.css</url>
-      
-        <content type="html"><![CDATA[/* 文章页背景 */.layout_post > #post {/* 以下代表透明度为0.7 可以自行修改*/background: rgba(255, 255, 255, 0.9);}/* 所有页面背景 */#aside_content .card-widget,#recent-posts > .recent-post-item,.layout_page > div:first-child:not(.recent-posts),.layout_post > #page,.layout_post > #post,.read-mode .layout_post > #post {/* 以下代表透明度为0.7 */background: rgba(255, 255, 255, 0.9);}/*侧边卡片的透明度 */:root {--card-bg: rgba(255, 255, 255, 0.9);}/* 页脚透明 */#footer {/* 以下代表透明度为0.7 */background: rgba(255, 255, 255, 0.9);}]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/js/modify.js"/>
-      <url>/js/modify.js</url>
-      
-        <content type="html"><![CDATA['use strict';const cheerio = require('cheerio');/** * 在页面插入新顶部图 * @param {cheerio.Root} $ Root */function insertTopImg($) {    let header = $('#page-header');    if (header.length === 0) return;    let background = header.css('background-image');    if (!background) return;    $('#post, #page, #archive, #tag, #category').prepend(`<div class="top-img" style="background-image: ${background};"></div>`);}hexo.extend.filter.register('after_render:html', function(str, data) {    let $ = cheerio.load(str, {        decodeEntities: false    });    insertTopImg($);    return $.html();});]]></content>
       
     </entry>
     
@@ -904,17 +903,6 @@
       <url>/music/index.html</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><!-- 播放器 --><div class="music-player"><!-- audio标签 --><audio class="music-player__audio" ></audio><!-- 播放器主体 --><div class="music-player__main"><!-- 模糊背景 --><div class="music-player__blur"></div><!-- 唱片 --><div class="music-player__disc"><!-- 唱片图片 --><div class="music-player__image"><img width="100%" src="" alt=""></div><!-- 指针 --><div class="music-player__pointer"><img width="100%" src="/img/cd_tou.png" alt=""></div></div><!-- 控件主体 --><div class="music-player__controls"><!-- 歌曲信息 --><div class="music__info"><h3 class="music__info--title">...</h3></div><!-- 控件... --><div class="player-control"><div class="player-control__content"><div class="player-control__btns"><div class="player-control__btn player-control__btn--prev"><i class="iconfont icon-prev"></i></div><div class="player-control__btn player-control__btn--play"><i class="iconfont icon-play"></i></div><div class="player-control__btn player-control__btn--next"><i class="iconfont icon-next"></i></div><div class="player-control__btn player-control__btn--mode"><i class="iconfont icon-random"></i></div></div><div class="player-control__volume"><div class="control__volume--icon player-control__btn"><i class="iconfont icon-volume"></i></div><div class="control__volume--progress progress"></div></div></div><div class="player-control__content"><div class="player__song--progress progress"></div><div class="player__song--timeProgess nowTime">00:00</div><div class="player__song--timeProgess totalTime">00:00</div></div></div></div></div><!-- 歌曲列表 --><div class="music-player__list"><ul class="music__list_content"></ul></div></div><script src="/js/utill.js"></script><script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.slim.min.js"></script><script src="/js/player.js?10"></script><div style="text-align:center;margin:-100px 0; font:normal 14px/24px 'MicroSoft YaHei';color:#ffffff"></div>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script>]]></content>
       
     </entry>
     

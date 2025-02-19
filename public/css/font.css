@@ -1,14 +1,14 @@
 @font-face {
 	/* font-family: "LXGW WenKai GB Screen"; */
-	font-family: "Noto Serif SC ExtraLight";
+	font-family: "HYTMR-55";
 	font-display: swap;
-	src: url("/fonts/noto.ttf") format("truetype");
+	src: url("../fonts/HYTMR-55.ttf") format("truetype");
 }
 
 @font-face {
-	font-family: "LXGW WenKai GB Screen";
+	font-family: "Noto Serif SC ExtraLight";
 	font-display: swap;
-	src: url("/fonts/LXGWWenKaiGBScreen.ttf") format("truetype");
+	src: url("../fonts/noto.ttf") format("truetype");
 }
 
 #site-title {

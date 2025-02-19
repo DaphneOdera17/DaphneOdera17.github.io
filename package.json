@@ -19,6 +19,8 @@
     "hexo-abbrlink": "^2.2.1",
     "hexo-butterfly-artitalk": "^1.0.4",
     "hexo-butterfly-categories-card": "^1.0.0",
+    "hexo-butterfly-footer-marcus": "^1.1.4",
+    "hexo-butterfly-swiper-lyx": "^1.0.1",
     "hexo-butterfly-tag-plugins-plus": "^1.0.17",
     "hexo-deployer-git": "^4.0.0",
     "hexo-filter-gitcalendar": "^1.0.11",
@@ -40,6 +42,7 @@
     "hexo-wordcount": "^6.0.1",
     "live2d-widget-model-hijiki": "^1.0.5",
     "live2d-widget-model-tsumiki": "^1.0.5",
-    "markdown-it-mermaid": "^0.2.5"
+    "markdown-it-mermaid": "^0.2.5",
+    "yamljs": "^0.3.0"
   }
 }

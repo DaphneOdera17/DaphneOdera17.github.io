@@ -27,7 +27,12 @@ aplayer:
 highlight_shrink:
 ---
 
+## 参考视频
+
+{% link VSCode美化：自定义开屏图标以及背景, ShirasuAzusa, https://www.bilibili.com/video/BV1Yt421w7kS/?share_source=copy_web&vd_source=f5b55a19bbc981b8c6886f6d96d3b599 %} 
+
 ## 最终效果：
+
 <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240503202114.png" style="zoom:50%;" />
 
 ## 插件的安装

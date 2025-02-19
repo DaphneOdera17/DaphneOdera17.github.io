@@ -26,11 +26,9 @@
 } */
 
 body {
-	cursor: url(https://gcore.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/img/default.cur),
-		default;
+	cursor: url("./cursor/normal.cur"), auto !important;
 }
 a,
 img {
-	cursor: url(https://gcore.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/img/pointer.cur),
-		default;
+	cursor: url("./cursor/link-cursor.cur"), auto !important;
 }

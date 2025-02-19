@@ -68,7 +68,7 @@ highlight_shrink:
 
 <div style="text-align:center">
     <span style="width:20%;display:inline-block">
-        <a href="https://github.com/DaphneOdera17">
+        <a href="https://github.com/zhangbird050801">
             <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Github.png" style="zoom:15%">
         </a>
     </span>
@@ -79,12 +79,13 @@ highlight_shrink:
 
 <div style="text-align:center">
     <a href="https://github.com/anuraghazra/github-readme-stats">
-  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api?username=DaphneOdera17&show_icons=true&rank_icon=github&include_all_commits=true"/>
+  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api?username=zhangbird050801&show_icons=true&rank_icon=github&include_all_commits=true"/>
 </a>
 <a href="https://github.com/anuraghazra/convoychat">
-  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=DaphneOdera17&layout=compact&langs_count=8&card_width=320" />
+  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=zhangbird050801&layout=compact&langs_count=8&card_width=320" />
 </a>
 </div>
+
 
 ## 🔗 Links
 <a href="https://www.birdyweb.top">My own website</a>

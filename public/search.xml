@@ -4,6 +4,114 @@
   
     
     <entry>
+      <title>Ubuntu | Redis | 安装配置与远程连接</title>
+      <link href="/post/625c5822.html"/>
+      <url>/post/625c5822.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><p>首先就是安装东西前必备的：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt upgrade</span><br></pre></td></tr></table></figure></p><h2 id="安装-redis"><a href="#安装-redis" class="headerlink" title="安装 redis"></a>安装 redis</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install redis-server</span><br></pre></td></tr></table></figure><h2 id="查看-redis-版本"><a href="#查看-redis-版本" class="headerlink" title="查看 redis 版本"></a>查看 redis 版本</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli --version</span><br></pre></td></tr></table></figure><h2 id="启动与关闭-redis"><a href="#启动与关闭-redis" class="headerlink" title="启动与关闭 redis"></a>启动与关闭 redis</h2><h3 id="启动-redis"><a href="#启动-redis" class="headerlink" title="启动 redis"></a>启动 redis</h3><p>这种挂在后台启动：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start redis</span><br></pre></td></tr></table></figure></p><p>也可以用，不过这种是前台运行<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server</span><br></pre></td></tr></table></figure></p><p>这种 Ctrl + C 退出后进程会被关掉，不过可以通过修改配置以及启动时在后面指定配置路径来解决。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250210220555391.png" alt="|650"></p><h3 id="关闭-redis"><a href="#关闭-redis" class="headerlink" title="关闭 redis"></a>关闭 redis</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl stop redis</span><br></pre></td></tr></table></figure><h2 id="查看-redis-运行状态"><a href="#查看-redis-运行状态" class="headerlink" title="查看 redis 运行状态"></a>查看 redis 运行状态</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status redis</span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps aux | grep redis</span><br></pre></td></tr></table></figure><h2 id="配置-redis"><a href="#配置-redis" class="headerlink" title="配置 redis"></a>配置 redis</h2><p>打开 redis 配置文件：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/redis/redis.conf</span><br></pre></td></tr></table></figure></p><h3 id="允许远程控制"><a href="#允许远程控制" class="headerlink" title="允许远程控制"></a>允许远程控制</h3><p>注释掉 <code>bind 127.0.0.1 :: 1</code><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250210212656685.png" alt="|650"></p><p>添加一行 (允许所有主机 IP 访问 -&gt; 测试环境用)<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind 0.0.0.0</span><br></pre></td></tr></table></figure></p><h3 id="密码配置"><a href="#密码配置" class="headerlink" title="密码配置"></a>密码配置</h3><p>找到 <code>requirepass foobared</code> 这一行<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250210212948487.png" alt="|650"><br>取消注释并改成:<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">requirepass &lt;你想要的密码&gt;</span><br></pre></td></tr></table></figure></p><h3 id="daemonize-配置"><a href="#daemonize-配置" class="headerlink" title="daemonize 配置"></a>daemonize 配置</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- `daemonize:yes`: redis 采用的是单进程多线程的模式。当 redis.conf 中选项 daemonize 设置成 yes 时，代表开启守护进程模式。在该模式下，redis 会在后台运行，并将进程 pid 号写入至 redis.conf 选项 pidfile 设置的文件中，此时 redis 将一直运行，除非手动 kill 该进程。</span><br><span class="line">- `daemonize:no`: 当daemonize选项设置成no时，当前界面将进入 redis 的命令行界面，exit 强制退出或者关闭连接工具(putty,xshell等)都会导致redis 进程退出。</span><br></pre></td></tr></table></figure><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250210215815628.png" alt="|650"></p><p>我们选择 daemonize 设置为 yes。</p><p>保存配置文件之后，重新启动 redis 服务。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart redis-server</span><br></pre></td></tr></table></figure></p><p>我们再看看 redis 进程状态：可以看到最后面是 0.0.0.0:6379<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps aux | grep redis</span><br></pre></td></tr></table></figure><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250210215209007.png" alt="|650"></p><h2 id="远程连接"><a href="#远程连接" class="headerlink" title="远程连接"></a>远程连接</h2><h3 id="使用-vscode-插件连接"><a href="#使用-vscode-插件连接" class="headerlink" title="使用 vscode 插件连接"></a>使用 vscode 插件连接</h3><p>Vscode 提供插件，可以用这个来连接。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250210220359402.png" alt="|440"></p><p>把主机名改了，以及密码，再连接。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250210213240435.png" alt="|500"></p><p>连接成功后：<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250210220726614.png" alt="|518"></p><h3 id="使用本地-redis-cli"><a href="#使用本地-redis-cli" class="headerlink" title="使用本地 redis-cli"></a>使用本地 redis-cli</h3><p>在 redis 安装包下有个 <code>redis-cli. exe</code> 文件。在这个目录下右键，选择在终端打开。</p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250210221240973.png" alt="|550"></p><p>输入指令<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\redis-cli.exe -h &lt;你的 linux 主机 IP&gt; -p 6379 -a &lt;你在配置文件中设置的 redis 连接密码&gt;</span><br></pre></td></tr></table></figure></p><p>比如我这个：<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250210221438095.png" alt="|600"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Redis </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Ubuntu </tag>
+            
+            <tag> Redis </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Linux | 初识文件权限</title>
+      <link href="/post/48844841.html"/>
+      <url>/post/48844841.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><p>/etc/passwd<br>/etc/shadow<br>/etc/group </p><h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><p>用 su - 切换身份至 root 并查看文件详细权限和属性等(包括隐藏文件)<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240609164316.png" style="zoom:50%"><br>依次为</p><div class="table-container"><table><thead><tr><th>权限</th><th>链接</th><th>拥有者</th><th>用户组</th><th>文件容量</th><th>修改日期</th><th>文件名</th></tr></thead><tbody><tr><td>drwx———</td><td>4</td><td>root</td><td>root</td><td>4096</td><td>Apr 16 22:58</td><td>.</td></tr><tr><td>退回到原先身份用 exit</td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div><h3 id="文件类型与权限"><a href="#文件类型与权限" class="headerlink" title="文件类型与权限"></a>文件类型与权限</h3><p>上述第一列尤为重要，一共有 10 个字符<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240609165251.png" style="zoom:70%"><br>第一个字符代表是目录、文件或链接文件等<br>d 表示目录<br>- 表示文件<br>| 表示链接文件<br>b 表示设备文件里面的可供存储的周边设备<br>c 表示设备文件里面的串行端口设备，如键盘、鼠标</p><p>接下来字符每三个为一组，其中：<br>r 表示可读，w 表示可写，x 表示可执行，没有权限则是 -。<br>第一组是文件拥有者可具备的权限，第二组为加入此用户组的账号的权限，第三组为非本人且没有加入本用户组的其他账号的权限。</p><p>文件名前面多个 . 表示是隐藏文件。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">drwxr-xr-- </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">文件拥有者可以在本目录进行任何工作</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">用户组可以进入本目录工作但不能进行写入</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">其他用户没有 x 的权限，并不能进入此目录</span></span><br></pre></td></tr></table></figure></p><h3 id="修改文件属性和权限"><a href="#修改文件属性和权限" class="headerlink" title="修改文件属性和权限"></a>修改文件属性和权限</h3><p>chgrp: 修改文件所属用户组<br>chown: 修改文件所有者<br>chmod: 修改文件的权限</p><h4 id="chmod"><a href="#chmod" class="headerlink" title="chmod"></a>chmod</h4><p>各个权限的数字对照表：</p><div class="table-container"><table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>r</td><td>4</td></tr><tr><td>w</td><td>2</td></tr><tr><td>x</td><td>1</td></tr><tr><td>rwx</td><td>7</td></tr><tr><td>rw-</td><td>6</td></tr><tr><td>r-x</td><td>5</td></tr><tr><td>r—</td><td>4</td></tr><tr><td>-wx</td><td>3</td></tr><tr><td>-w-</td><td>2</td></tr><tr><td>—x</td><td>1</td></tr><tr><td>-rwxr-xr—:</td></tr></tbody></table></div><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 754 filename</span><br></pre></td></tr></table></figure><h2 id="FHS"><a href="#FHS" class="headerlink" title="FHS"></a>FHS</h2><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240609174924.png" alt=""></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>wsl2 | 如何在使用本机 clash</title>
+      <link href="/post/8ce355b9.html"/>
+      <url>/post/8ce355b9.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><p>参考文章 -&gt; 这里面有更多的方法<br><div class='liushen-tag-link'><a class="tag-Link" target="_blank" href=" https://eastmonster.github.io/2022/10/05/clash-config-in-wsl/">    <div class="tag-link-tips">🪧引用站外地址，不保证站点的可用性和安全性</div>    <div class="tag-link-bottom">        <div class="tag-link-left" style="background-image: url(https://cdn.qyliu.top/i/2024/07/27/66a4632bbf06e.webp);"></div>        <div class="tag-link-right">            <div class="tag-link-title">在 WSL2 中使用 Clash for Windows 代理连接</div>            <div class="tag-link-sitename"> East Monster's Blog</div>        </div>        <i class="fa-solid fa-angle-right"></i>    </div>    </a></div></p><p>打开 <code>WSL Settings</code><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250218233845005.png" alt="|275"></p><p>网络这里将网络模式从 <code>Nat</code> 改为 <code>Mirrored</code><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250218234446509.png" alt="|650"></p><p>这篇文章对于 mirrored 模式有一些简要的说明：<br><div class='liushen-tag-link'><a class="tag-Link" target="_blank" href=" https://www.xiaoiluo.com/article/wsl2-network">    <div class="tag-link-tips">🪧引用站外地址，不保证站点的可用性和安全性</div>    <div class="tag-link-bottom">        <div class="tag-link-left" style="background-image: url(https://cdn.qyliu.top/i/2024/07/27/66a4632bbf06e.webp);"></div>        <div class="tag-link-right">            <div class="tag-link-title">WSL2 的镜像网络模式：带来更流畅的 Linux 开发体验</div>            <div class="tag-link-sitename"> LittleFish’Blog</div>        </div>        <i class="fa-solid fa-angle-right"></i>    </div>    </a></div></p><p>Clash 这里 <code>允许局域网连接</code>。同时，记住这个主程序默认端口，一般情况是 <code>7890</code><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250218234536043.png" alt="|525"></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo visudo</span><br></pre></td></tr></table></figure><p>取消注释这一行<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250218235458097.png" alt="|650"></p><p>nano 编辑器的保存和退出。<br>截取自 CSDN:<br><div class='liushen-tag-link'><a class="tag-Link" target="_blank" href=" https://blog.csdn.net/weiyi556/article/details/78980139">    <div class="tag-link-tips">🪧引用站外地址，不保证站点的可用性和安全性</div>    <div class="tag-link-bottom">        <div class="tag-link-left" style="background-image: url(https://cdn.qyliu.top/i/2024/07/27/66a461b627dc2.webp);"></div>        <div class="tag-link-right">            <div class="tag-link-title">sudo visudo 退出保存</div>            <div class="tag-link-sitename"> weiyi556</div>        </div>        <i class="fa-solid fa-angle-right"></i>    </div>    </a></div><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250218235813783.png" alt="|575"></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget www.google.com </span><br></pre></td></tr></table></figure><p>这样就表示成功了。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250219000153282.png" alt="|825"></p><p>不过，clash 开启代理的情况下如果没成功，可能需要重启一下 wsl2。<br>可以在 powershell 里面输入，然后重新打来 wsl2<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl --shutdown</span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> wls2, Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> wls2 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Linux | Bandit 练习</title>
+      <link href="/post/2070d23e.html"/>
+      <url>/post/2070d23e.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h1 id="Level-0"><a href="#Level-0" class="headerlink" title="$Level~0$"></a>$Level~0$</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -p 2220 bandit0@bandit.labs.overthewire.org</span><br></pre></td></tr></table></figure><p>然后再输入 $password$<br>$bandit0$<br>输入</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls</span><br></pre></td></tr></table></figure><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20231204110003599.png" alt="image-20231204110003599"><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat readme</span><br></pre></td></tr></table></figure><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20231204110039079.png" alt="image-20231204110039079"><br>获取密码之后退出登录<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exit</span><br></pre></td></tr></table></figure></p><h1 id="Level-1"><a href="#Level-1" class="headerlink" title="$Level~1$"></a>$Level~1$</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -p 2220 bandit1@bandit.labs.overthewire.org</span><br></pre></td></tr></table></figure><p>复制粘贴 $level~0$ 的密码登入</p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20231204110220752.png" alt="image-20231204110220752"></p><p>此时只发现一个名为 $-$ 的东西</p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20231204110317288.png" alt="image-20231204110317288"></p><p>他并不是一个文件夹名字</p><p>当我们使用</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim -</span><br><span class="line">cat -</span><br></pre></td></tr></table></figure><p>发现都没什么用</p><p>事实上</p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20231204105452618.png" alt="image-20231204105452618"></p><p>当我们使用</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cat &lt; -</span><br><span class="line">cat ./-</span><br></pre></td></tr></table></figure><p>可以输出结果</p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20231204110634289.png" alt="image-20231204110634289"></p><p>接下来不再重复登录以及登出操作</p><h1 id="Level-2"><a href="#Level-2" class="headerlink" title="$Level~2$"></a>$Level~2$</h1><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20231204110739583.png" alt="image-20231204110739583"></p><p>此时列表下存在一个名为 $spaces~in~this~filename$</p><p>如果我们直接</p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20231204110818042.png" alt="image-20231204110818042"></p><p>则会提示错误，他把整个文件名字拆成了 $4$ 个不同的文件名字</p><p>我们可以用</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat spac</span><br></pre></td></tr></table></figure><p>再键入 Tab 键自动补全</p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20231204110936509.png" alt="image-20231204110936509"></p><p>则文件名中如果有空格要用 \ 符号</p><h1 id="Level-3"><a href="#Level-3" class="headerlink" title="$Level~3$"></a>$Level~3$</h1><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20231204114550042.png" alt="image-20231204114550042"></p><p>当我们进入 $inhere$ 目录并且使用 $ls$ 发现没有任何文件</p><p>所以我们用</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -a</span><br></pre></td></tr></table></figure><p>列出当前目录下的所有文件，包括隐藏文件</p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20231204114711247.png" alt="image-20231204114711247"></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat .hidden</span><br></pre></td></tr></table></figure><p>获得密码</p><h1 id="Level-4"><a href="#Level-4" class="headerlink" title="$Level~4$"></a>$Level~4$</h1><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20231204125856394.png" alt="image-20231204125856394"></p><p>需要尝试</p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20231204125838463.png" alt="image-20231204125838463"></p><h1 id="Level-5"><a href="#Level-5" class="headerlink" title="$Level~5$"></a>$Level~5$</h1><h2 id="Solution-1"><a href="#Solution-1" class="headerlink" title="$Solution~1$"></a>$Solution~1$</h2><p>使用 $find$ 指令</p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20231204202656658.png" alt="image-20231204202656658"></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find ./ -type f -readable ! -executable -size 1033c</span><br></pre></td></tr></table></figure><p>$-size~1033$ 来查找文件大小要求</p><p>$-type~f$ 仅查看文件</p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20231204202738822.png" alt="image-20231204202738822"></p><p>再使用 $cat$ 命令获取其中的文本</p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20231204202812349.png" alt="image-20231204202812349"></p><h2 id="Solution-2"><a href="#Solution-2" class="headerlink" title="$Solution~2$"></a>$Solution~2$</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -la */*</span><br></pre></td></tr></table></figure><p>$<em>/</em>$ 可以获取所有子文件</p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20231204203714631.png" alt="image-20231204203714631"></p><h2 id="Solution-3（ERORR"><a href="#Solution-3（ERORR" class="headerlink" title="$Solution~3（ERORR)$"></a>$Solution~3（ERORR)$</h2><p>使用 $grep$</p><script type="math/tex; mode=display"><command>~|~grep~<pattern></script><p>获取第一个命令的输出并将其作为输入通过管道传入第二个命令中</p><p>$<em>/</em>$ 可以获取所有文件，但是不包括隐藏的文件</p><p>使用 $\{.,\}$ 来包括以 $.$ 开头的文件</p><p>$,$ 表示以其他任何内容 </p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20231204205804377.png" alt="image-20231204205804377"></p><p>当我们使用</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file */&#123;.,&#125;* | grep &quot;ASCII text&quot;</span><br></pre></td></tr></table></figure><p>打印出人类可读的文件类型</p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20231204210018183.png" alt="image-20231204210018183"></p><p>这些文件分为 $with~very~long~lines$ 和 空</p><p>为了过滤出不含非常长的行，使用指令</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file */&#123;.,&#125;* | grep &quot;ASCII text&quot; | grep -v &#x27;, with very long lines&#x27;</span><br></pre></td></tr></table></figure><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20231204210516722.png" alt="image-20231204210516722"></p><p>然后可以手动检查这些文件（此时是假设文件不包含 $long~lines$</p><p>但是从其他方法可知，答案并不在这些文件中</p><h2 id="Solution-4"><a href="#Solution-4" class="headerlink" title="$Solution~4$"></a>$Solution~4$</h2><p>用 $du$ 命令获取文件的大小</p><p>如果要获取以字节为单位的大小，要使用 $-b$ 标志。要获取所有文件（包括隐藏文件），可以用 $-a$ 标志</p><p>$ls~-l$ 命令会在第五列显示文件的大小</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">du -b -a | grep </span><br></pre></td></tr></table></figure><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20231204211304254.png" alt="image-20231204211304254"></p><h1 id="Level-6"><a href="#Level-6" class="headerlink" title="$Level~6$"></a>$Level~6$</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -l</span><br></pre></td></tr></table></figure><p>可以查看文件权限</p><p>第三列显示用户，第四列显示拥有该文件的组</p><p>$find$ 指令提供了查找特定用户 $-user~<username>$ 和 特定组 $-group~<groupname>$ 拥有的文件的标识</p><p>当使用命令</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find / -type f -user bandit7 -group bandit6 -size 33c</span><br></pre></td></tr></table></figure><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20231204213606274.png" alt="image-20231204213606274"></p><p>我们发现会为我们无权限的文件打印 $Permission~denied$ 的报错</p><p>可以加上 $2&gt;/dev/null$ 可以隐藏所有错误信息</p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20231204214052226.png" alt="image-20231204214052226"></p><h1 id="Level-7"><a href="#Level-7" class="headerlink" title="$Level~7$"></a>$Level~7$</h1><h2 id="Solution-1-1"><a href="#Solution-1-1" class="headerlink" title="$Solution~1$"></a>$Solution~1$</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim data.txt</span><br></pre></td></tr></table></figure><p>在 $vim$ 中键入 $/$</p><p>输入 $millionth$</p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20231204220343353.png" alt="image-20231204220343353"></p><h2 id="Solution-2-1"><a href="#Solution-2-1" class="headerlink" title="$Solution~2$"></a>$Solution~2$</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat data.txt | grep millionth</span><br></pre></td></tr></table></figure><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20231205201905360.png" alt="image-20231205201905360"></p><h1 id="Level-8"><a href="#Level-8" class="headerlink" title="$Level~8$"></a>$Level~8$</h1><p>$uniq$ 基于相同的行进行过滤。</p><p>$-u$ 用于过滤唯一的行</p><p>$-c$ 可以计数</p><p>$-d$ 可以仅返回重复行</p><p>$sort$ 可以对文本文件的行进行排序</p><p>$-r$ 反向排序</p><p>$-n$ 数字排序</p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20231205202321003.png" alt="image-20231205202321003"></p><h1 id="Level-9"><a href="#Level-9" class="headerlink" title="$Level~9$"></a>$Level~9$</h1><p>$strings$ 命令可以用来查找人类可读的字符串</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">strings data.txt  | grep ==</span><br></pre></td></tr></table></figure><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20231205202943794.png" alt="image-20231205202943794"></p><h1 id="Level-10"><a href="#Level-10" class="headerlink" title="$Level~10$"></a>$Level~10$</h1><p>$base64~[OPTIONS]~[INFILE]~[OUTFILE]$</p><p>$-d~or~-decode$</p><p>$-e~or~-encode$ </p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cat data.txt</span><br><span class="line">base64 -d data.txt</span><br></pre></td></tr></table></figure><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20231205203648397.png" alt="image-20231205203648397"></p><h1 id="Level-11"><a href="#Level-11" class="headerlink" title="$Level~11$"></a>$Level~11$</h1><h4 id="Rot13"><a href="#Rot13" class="headerlink" title="$Rot13$"></a>$Rot13$</h4><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20231205204604064.png" alt="image-20231205204604064"></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Map upper <span class="keyword">case</span> A-Z to N-ZA-M and lower <span class="keyword">case</span> a-z to n-za-m</span></span><br><span class="line">tr &#x27;A-Za-z&#x27; &#x27;N-ZA-Mn-za-m&#x27; &lt;&lt;&lt; &quot;The Quick Brown Fox Jumps Over The Lazy Dog&quot;</span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat data.txt | tr &#x27;A-Za-z&#x27; &#x27;N-ZA-Mn-za-m&#x27;</span><br></pre></td></tr></table></figure><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20231205204405660.png" alt="image-20231205204405660"></p><h1 id="Level-12"><a href="#Level-12" class="headerlink" title="$Level~12$"></a>$Level~12$</h1><p>$mkdir~<path>$ 创建新目录<br>$cp~<source>~<destination>$ 复制文件<br>$mv~<source>~<destination>$ 移动或者重命名文件</p><p>$mktemp~-d$ 创建一个具有随机名称的文件夹<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd /tmp</span><br><span class="line">mktemp -d</span><br><span class="line">cd #相应的目录名称</span><br><span class="line">cp ~/data.txt .</span><br><span class="line">mv data.txt hexdump_data</span><br></pre></td></tr></table></figure><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/image-20231207212925163.png" alt="image-20231207212925163"><br>$xxd~<input\_file>~<output\_file>$ 可以创建十六进制转储<br>$-r$ 可以恢复十六进制传储<br>….</p><h1 id="Level13"><a href="#Level13" class="headerlink" title="$Level13$"></a>$Level13$</h1><p>在目录下有 sshkey. private 文件，意味我们可以通过 ssh 连接登录。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240417203628.png" alt="image.png"><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat sshkey.private</span><br></pre></td></tr></table></figure><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240417203704.png" alt="image.png"><br>退出登录。</p><h2 id="scp"><a href="#scp" class="headerlink" title="$scp$"></a>$scp$</h2><p><a href="https://www.runoob.com/linux/linux-comm-scp.html">菜鸟教程 Linux scp</a><br>scp 即为 Secure copy. 可以基于 ssh 登录进行安全的远程文件拷贝。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240417205301.png" alt="image.png"><br>参考 scp 从本地复制到远程指令:</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp local_file remote_username@remote_ip:remote_file</span><br></pre></td></tr></table></figure><p>将远程服务器 bandit13 中的 sshkey. private 复制到本地根目录。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp -P 2220 bandit13@bandit.labs.overthewire.org:sshkey.private .</span><br></pre></td></tr></table></figure><br>此时会提示登录 bandit13，登录成功之后我们查看本地根目录，发现文件夹下产生了 sshkey. private<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240417205643.png" alt="image.png"></p><h2 id="ssh"><a href="#ssh" class="headerlink" title="$ssh$"></a>$ssh$</h2><p><a href="http://linux.51yip.com/search/ssh">Linux SSH</a></p><blockquote><p>-i identity_file<br>指定一个 RSA 或 DSA 认证所需的身份 (私钥) 文件. 默认文件是协议第一版的 $HOME/. ssh/identity 以及协议第二版的 $HOME/. ssh/id_rsa 和 $HOME/. ssh/id_dsa 文件. 也可以在配置文件中对每个主机单独指定身份文件. 可以同时使用多个 -i 选项 (也可以在配置文件中指定多个身份文件).</p></blockquote><p>我们通过 sshkey. private 密钥登录<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p 2220</span><br></pre></td></tr></table></figure><br>发现报错<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240417210035.png" alt="image.png"><br>因为该文件的权限除了拥有者，其它组也可以访问。<br>我们需要修改它的权限。</p><h2 id="chmod"><a href="#chmod" class="headerlink" title="$chmod$"></a>$chmod$</h2><p><a href="https://cloud.tencent.com/developer/article/2098260">Linux chmod</a><br>Linux 权限共有 3 个组：拥有者、群组、其他组<br>每个组都可以设置三个权限：r (读)、w (写)、x (执行)。用二进制表示这个权限是否拥有。如下所示。最终我们在指令中用三位八进制表示，每位分别对应权限组。如 777 对应 -rwxrwxrwx<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">r-- = 100</span><br><span class="line">-w- = 010 </span><br><span class="line">--x = 001 </span><br><span class="line">--- = 000</span><br></pre></td></tr></table></figure><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">rwx = 111 = 7 </span><br><span class="line">rw- = 110 = 6 </span><br><span class="line">r-x = 101 = 5 </span><br><span class="line">r-- = 100 = 4 </span><br><span class="line">-wx = 011 = 3 </span><br><span class="line">-w- = 010 = 2 </span><br><span class="line">--x = 001 = 1 </span><br><span class="line">--- = 000 = 0</span><br></pre></td></tr></table></figure><br>我们修改他的权限使得只能拥有者访问。700 代表 -rwx———。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 700 sshkey.private</span><br></pre></td></tr></table></figure></p><p>最后，再用指令即可登录。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p 2220</span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> Bandit </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Bandit </tag>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>hexo魔改 | 修改卡片透明度</title>
       <link href="/post/ae1606a8.html"/>
       <url>/post/ae1606a8.html</url>
@@ -174,11 +282,11 @@
       
         <tags>
             
+            <tag> Linux </tag>
+            
             <tag> 教程 </tag>
             
             <tag> Debian </tag>
-            
-            <tag> Linux </tag>
             
             <tag> 虚拟机 </tag>
             
@@ -209,11 +317,11 @@
       
         <tags>
             
+            <tag> Linux </tag>
+            
             <tag> 教程 </tag>
             
             <tag> Debian </tag>
-            
-            <tag> Linux </tag>
             
             <tag> 虚拟机 </tag>
             
@@ -354,9 +462,9 @@
       
         <tags>
             
-            <tag> 教程 </tag>
-            
             <tag> Linux </tag>
+            
+            <tag> 教程 </tag>
             
             <tag> 虚拟机 </tag>
             
@@ -810,17 +918,6 @@
     
     
     <entry>
-      <title>books</title>
-      <link href="/books/index.html"/>
-      <url>/books/index.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title></title>
       <link href="/css/modify.css"/>
       <url>/css/modify.css</url>
@@ -843,9 +940,31 @@
     
     
     <entry>
+      <title>books</title>
+      <link href="/books/index.html"/>
+      <url>/books/index.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>gallery</title>
       <link href="/gallery/index.html"/>
       <url>/gallery/index.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>link</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script>]]></content>
       
@@ -876,11 +995,11 @@
     
     
     <entry>
-      <title>link</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
+      <title></title>
+      <link href="/music/index.html"/>
+      <url>/music/index.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><!-- 播放器 --><div class="music-player"><!-- audio标签 --><audio class="music-player__audio" ></audio><!-- 播放器主体 --><div class="music-player__main"><!-- 模糊背景 --><div class="music-player__blur"></div><!-- 唱片 --><div class="music-player__disc"><!-- 唱片图片 --><div class="music-player__image"><img width="100%" src="" alt=""></div><!-- 指针 --><div class="music-player__pointer"><img width="100%" src="/img/cd_tou.png" alt=""></div></div><!-- 控件主体 --><div class="music-player__controls"><!-- 歌曲信息 --><div class="music__info"><h3 class="music__info--title">...</h3></div><!-- 控件... --><div class="player-control"><div class="player-control__content"><div class="player-control__btns"><div class="player-control__btn player-control__btn--prev"><i class="iconfont icon-prev"></i></div><div class="player-control__btn player-control__btn--play"><i class="iconfont icon-play"></i></div><div class="player-control__btn player-control__btn--next"><i class="iconfont icon-next"></i></div><div class="player-control__btn player-control__btn--mode"><i class="iconfont icon-random"></i></div></div><div class="player-control__volume"><div class="control__volume--icon player-control__btn"><i class="iconfont icon-volume"></i></div><div class="control__volume--progress progress"></div></div></div><div class="player-control__content"><div class="player__song--progress progress"></div><div class="player__song--timeProgess nowTime">00:00</div><div class="player__song--timeProgess totalTime">00:00</div></div></div></div></div><!-- 歌曲列表 --><div class="music-player__list"><ul class="music__list_content"></ul></div></div><script src="/js/utill.js"></script><script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.slim.min.js"></script><script src="/js/player.js?10"></script><div style="text-align:center;margin:-100px 0; font:normal 14px/24px 'MicroSoft YaHei';color:#ffffff"></div>]]></content>
       
     </entry>
     
@@ -892,17 +1011,6 @@
       <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/music/index.html"/>
-      <url>/music/index.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><!-- 播放器 --><div class="music-player"><!-- audio标签 --><audio class="music-player__audio" ></audio><!-- 播放器主体 --><div class="music-player__main"><!-- 模糊背景 --><div class="music-player__blur"></div><!-- 唱片 --><div class="music-player__disc"><!-- 唱片图片 --><div class="music-player__image"><img width="100%" src="" alt=""></div><!-- 指针 --><div class="music-player__pointer"><img width="100%" src="/img/cd_tou.png" alt=""></div></div><!-- 控件主体 --><div class="music-player__controls"><!-- 歌曲信息 --><div class="music__info"><h3 class="music__info--title">...</h3></div><!-- 控件... --><div class="player-control"><div class="player-control__content"><div class="player-control__btns"><div class="player-control__btn player-control__btn--prev"><i class="iconfont icon-prev"></i></div><div class="player-control__btn player-control__btn--play"><i class="iconfont icon-play"></i></div><div class="player-control__btn player-control__btn--next"><i class="iconfont icon-next"></i></div><div class="player-control__btn player-control__btn--mode"><i class="iconfont icon-random"></i></div></div><div class="player-control__volume"><div class="control__volume--icon player-control__btn"><i class="iconfont icon-volume"></i></div><div class="control__volume--progress progress"></div></div></div><div class="player-control__content"><div class="player__song--progress progress"></div><div class="player__song--timeProgess nowTime">00:00</div><div class="player__song--timeProgess totalTime">00:00</div></div></div></div></div><!-- 歌曲列表 --><div class="music-player__list"><ul class="music__list_content"></ul></div></div><script src="/js/utill.js"></script><script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.slim.min.js"></script><script src="/js/player.js?10"></script><div style="text-align:center;margin:-100px 0; font:normal 14px/24px 'MicroSoft YaHei';color:#ffffff"></div>]]></content>
       
     </entry>
     

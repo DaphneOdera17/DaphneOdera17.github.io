@@ -7,8 +7,8 @@ tags:
 categories: 问题解决实录
 keywords: 'Anaconda, Navigator'
 description: 解决 Anaconda Navigator 启动无反应的情况
-top_img: 
-cover: 
+top_img: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Snipaste_2025-05-01_15-22-08.png
+cover: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Snipaste_2025-05-01_15-22-08.png
 mathjax: true
 abbrlink: '4560477'
 date: 2024-07-31 21:02:19

@@ -11,9 +11,9 @@ mathjax: true
 abbrlink: 7526bffa
 date: 2024-10-01 18:07:58
 updated:
-top_img:
+top_img: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Snipaste_2025-05-01_15-22-42.png
 comments:
-cover:
+cover: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Snipaste_2025-05-01_15-22-42.png
 toc:
 toc_number:
 copyright:

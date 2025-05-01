@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>hexo | 创建并部署 hexo 博客</title>
+      <link href="/post/5d39fa56.html"/>
+      <url>/post/5d39fa56.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h1 id="安装-hexo"><a href="#安装-hexo" class="headerlink" title="安装 hexo"></a>安装 hexo</h1><p>前提条件是必需安装了 nodejs。</p><p>安装 hexo，命令行 (推荐用 git bash) 输入：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure></p><h1 id="初始化博客"><a href="#初始化博客" class="headerlink" title="初始化博客"></a>初始化博客</h1><p>初始化博客，myblog 可以替换成你想要的文件夹名字。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init myblog</span><br></pre></td></tr></table></figure></p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216220049007.png" alt="|550"></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd myblog </span><br><span class="line">npm install</span><br></pre></td></tr></table></figure><p>启动本地预览：<br>注意这个 hexo s 就是开启本地预览，如果你关了之后就看不到了<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure></p><p>进入博客：<br><div class='liushen-tag-link'><a class="tag-Link" target="_blank" href=" http://localhost:4000/">    <div class="tag-link-tips">🪧引用站外地址，不保证站点的可用性和安全性</div>    <div class="tag-link-bottom">        <div class="tag-link-left" style="background-image: url(https://cdn.qyliu.top/i/2024/07/27/66a4632bbf06e.webp);"></div>        <div class="tag-link-right">            <div class="tag-link-title">博客</div>            <div class="tag-link-sitename"> hexo</div>        </div>        <i class="fa-solid fa-angle-right"></i>    </div>    </a></div></p><p>显示以下界面即表示成功，这是在本地部署成功。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216220426830.png" alt=""></p><h1 id="GitHub-部署"><a href="#GitHub-部署" class="headerlink" title="GitHub 部署"></a>GitHub 部署</h1><p>先安装必要的插件：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p><h2 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h2><p>打开你个人的 github 仓库主页，新建仓库，我这里使用小号演示。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216220216159.png" alt=""></p><p>仓库名 <code>.github.io</code> 前面必须和你的 github 用户名一致。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216220311032.png" alt=""></p><p>选择复制 ssh 的地址，最好不要用 http 的。<br>后面我会演示如何配置 ssh</p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216221058387.png" alt=""></p><h2 id="配置博客"><a href="#配置博客" class="headerlink" title="配置博客"></a>配置博客</h2><p>下面有单账户配置和多账户配置，多账户配置适合于你本地有两个 github 账户，然后你想指定某个 hexo 仓库用到指定的 github 账户的话，你可以看看我的多账户配置。<br>当然，一般都是单账户，所以直接看单账户就好了。</p><h3 id="单账户配置"><a href="#单账户配置" class="headerlink" title="单账户配置"></a>单账户配置</h3><p>博客根目录下的 <code>_config.yml</code> 里面配置 github url，这里用的是 <code>https://你的用户名.github.io</code><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216222442336.png" alt=""></p><p>也是在 <code>_config.yml</code> 最底下找到：<br>repository 就是前面新建仓库之后的 ssh 地址。<br>branch 和你仓库默认对应就行，但是我建议改成 main。<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">    <span class="attr">repository:</span> <span class="string">git@github.com:BouncyEly/BouncyEly.github.io.git</span></span><br><span class="line">    <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure></p><p>如果不用配置多账户，完成这里之后跳到 配置 ssh 模块。</p><h3 id="多账户配置-可以跳过"><a href="#多账户配置-可以跳过" class="headerlink" title="多账户配置 (可以跳过)"></a>多账户配置 (可以跳过)</h3><p>也可以用以下配置 (因为我有多个账户，所以我局部配置了一下 git)<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">    <span class="attr">repository:</span> <span class="string">git@BouncyEly.github.com:BouncyEly/BouncyEly.github.io.git</span></span><br><span class="line">    <span class="attr">branch:</span> <span class="string">main</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">BouncyEly</span></span><br><span class="line">    <span class="attr">email:</span> <span class="number">1516024203</span><span class="string">@qq.com</span></span><br></pre></td></tr></table></figure></p><p>我这里配置了两个 ssh，分别属于我两个 github 账户：<br><code>C:\Users\Birdy\.ssh\config</code></p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216224655343.png" alt="|525"></p><p>在博客 <code>.deploy_git/.git</code> 目录下找到 config<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216224949262.png" alt=""></p><p>在里面加上：<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216225018271.png" alt=""></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[user]</span><br><span class="line">name = BouncyEly</span><br><span class="line">email = 1516024203@qq.com</span><br></pre></td></tr></table></figure><h2 id="配置-ssh"><a href="#配置-ssh" class="headerlink" title="配置 ssh"></a>配置 ssh</h2><p>刚才配置完之后 <code>_config.yml</code> 底下是这样的。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216221150575.png" alt=""></p><p>然后我们配置一下 ssh。</p><p>也可以看我另一篇文章</p><div class='liushen-tag-link'><a class="tag-Link" target="_blank" href=" https://birdyweb.top/post/790c8b8.html">    <div class="tag-link-tips">✅来自本站，本站可确保其安全性，请放心点击跳转</div>    <div class="tag-link-bottom">        <div class="tag-link-left" style="background-image: url(https://cdn.qyliu.top/i/2024/07/27/66a4632bbf06e.webp);"></div>        <div class="tag-link-right">            <div class="tag-link-title">博客</div>            <div class="tag-link-sitename"> Github | 配置SSH </div>        </div>        <i class="fa-solid fa-angle-right"></i>    </div>    </a></div><p>git bash 打开：<br>有个 enter file 的提示，提示你保存到哪里，你可以直接按 enter 就是保存到默认路径<br><code>C:\Users\用户名\.ssh\</code>，但是我这里自己指定了一下，<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216221505387.png" alt=""></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096 -C &quot;你的github用户邮箱&quot; </span><br></pre></td></tr></table></figure><p>比如我的：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096 -C &quot;1516024203@qq.com&quot; </span><br></pre></td></tr></table></figure></p><p>然后在 <code>C:\Users\用户名\.ssh\</code> 路径下，找到 <code>id_rsa.pub</code> 文件，用记事本之类的打开，待会需要用到<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216221532094.png" alt="|675"></p><h3 id="Github-配置-ssh"><a href="#Github-配置-ssh" class="headerlink" title="Github 配置 ssh"></a>Github 配置 ssh</h3><p>github 页面打开 settings<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216221620252.png" alt=""></p><p>点击 <code>New SSH key</code>，我们将要注册前面生成的 ssh key<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216221640830.png" alt=""></p><p>复制 id_rsa.pub 里面的内容<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216222009694.png" alt=""></p><p>粘贴到这里面。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216221848691.png" alt=""></p><p>提交。<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216222028056.png" alt=""></p><h3 id="配置本地-git-账户"><a href="#配置本地-git-账户" class="headerlink" title="配置本地 git 账户"></a>配置本地 git 账户</h3><p>单用户直接配置全局的:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;userName&quot;       //你的用户名</span><br><span class="line">git config --global user.email &quot;email address&quot; //你的邮箱地址</span><br></pre></td></tr></table></figure></p><p>测试能否正常 ssh 连接。输入完下面这个之后可能会有提示你保存什么东西的，你输入 <code>yes</code> 就可以<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure></p><h3 id="部署-hexo"><a href="#部署-hexo" class="headerlink" title="部署 hexo"></a>部署 hexo</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure><p>然后尝试访问 <code>https://你的用户名.github.io</code></p><p>比如我这个：</p><div class='liushen-tag-link'><a class="tag-Link" target="_blank" href=" https://bouncyely.github.io/">    <div class="tag-link-tips">🪧引用站外地址，不保证站点的可用性和安全性</div>    <div class="tag-link-bottom">        <div class="tag-link-left" style="background-image: url(https://cdn.qyliu.top/i/2024/07/27/66a4632bbf06e.webp);"></div>        <div class="tag-link-right">            <div class="tag-link-title">博客</div>            <div class="tag-link-sitename"> BouncyEly 的 hexo 博客 </div>        </div>        <i class="fa-solid fa-angle-right"></i>    </div>    </a></div><p>-&gt; 访问不出来 <code>ctrl + F5</code> 多刷新几次</p><h1 id="安装主题"><a href="#安装主题" class="headerlink" title="安装主题"></a>安装主题</h1><p>你也可以用别的主题, hexo 官网提供了很多。</p><p>安装主题 <a href="https://docs.anheyu.com/initall.html">https://docs.anheyu.com/initall.html</a></p><p>在你的博客 <strong>根目录</strong> 下，打开 git bash 输入。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone -b main https://github.com/anzhiyu-c/hexo-theme-anzhiyu.git themes/anzhiyu</span><br></pre></td></tr></table></figure></p><p>然后找到刚才克隆下来的文件夹<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216225247009.png" alt=""></p><p>将博客根目录下的 <code>_config.yml</code> 文件里面的 theme 改为 <code>anzhiyu</code><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216225321079.png" alt=""></p><p>打开 git bash 安装插件<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-renderer-pug hexo-renderer-stylus --save</span><br></pre></td></tr></table></figure></p><p>将主题文件（<code>themes/anzhiyu</code> ）下的 <code>_config.yml</code> 复制一份，名字改为 <code>_config.anzhiyu.yml</code> 放到博客根目录下</p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216225445914.png" alt=""></p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216225553360.png" alt=""></p><p>最后再重新部署一下：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216230001915.png" alt=""></p><p>本地预览：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s </span><br></pre></td></tr></table></figure></p><p>加载不出来 ctrl + F5 刷新！多刷新几次。效果就可以呈现出来了！</p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216230145876.png" alt=""></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> anzhiyu </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Ubuntu | Redis | 安装配置与远程连接</title>
       <link href="/post/625c5822.html"/>
       <url>/post/625c5822.html</url>
@@ -56,7 +83,7 @@
     
     
     <entry>
-      <title>wsl2 | 如何在使用本机 clash</title>
+      <title>wsl2 | 如何使用本机 clash</title>
       <link href="/post/8ce355b9.html"/>
       <url>/post/8ce355b9.html</url>
       
@@ -282,9 +309,9 @@
       
         <tags>
             
-            <tag> Linux </tag>
-            
             <tag> 教程 </tag>
+            
+            <tag> Linux </tag>
             
             <tag> Debian </tag>
             
@@ -317,9 +344,9 @@
       
         <tags>
             
-            <tag> Linux </tag>
-            
             <tag> 教程 </tag>
+            
+            <tag> Linux </tag>
             
             <tag> Debian </tag>
             
@@ -462,9 +489,9 @@
       
         <tags>
             
-            <tag> Linux </tag>
-            
             <tag> 教程 </tag>
+            
+            <tag> Linux </tag>
             
             <tag> 虚拟机 </tag>
             
@@ -918,6 +945,17 @@
     
     
     <entry>
+      <title>个人随想录</title>
+      <link href="/essay/index.html"/>
+      <url>/essay/index.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title></title>
       <link href="/css/modify.css"/>
       <url>/css/modify.css</url>
@@ -929,53 +967,9 @@
     
     
     <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>books</title>
-      <link href="/books/index.html"/>
-      <url>/books/index.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>gallery</title>
       <link href="/gallery/index.html"/>
       <url>/gallery/index.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>link</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>个人随想录</title>
-      <link href="/essay/index.html"/>
-      <url>/essay/index.html</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script>]]></content>
       
@@ -995,11 +989,44 @@
     
     
     <entry>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title></title>
       <link href="/music/index.html"/>
       <url>/music/index.html</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><!-- 播放器 --><div class="music-player"><!-- audio标签 --><audio class="music-player__audio" ></audio><!-- 播放器主体 --><div class="music-player__main"><!-- 模糊背景 --><div class="music-player__blur"></div><!-- 唱片 --><div class="music-player__disc"><!-- 唱片图片 --><div class="music-player__image"><img width="100%" src="" alt=""></div><!-- 指针 --><div class="music-player__pointer"><img width="100%" src="/img/cd_tou.png" alt=""></div></div><!-- 控件主体 --><div class="music-player__controls"><!-- 歌曲信息 --><div class="music__info"><h3 class="music__info--title">...</h3></div><!-- 控件... --><div class="player-control"><div class="player-control__content"><div class="player-control__btns"><div class="player-control__btn player-control__btn--prev"><i class="iconfont icon-prev"></i></div><div class="player-control__btn player-control__btn--play"><i class="iconfont icon-play"></i></div><div class="player-control__btn player-control__btn--next"><i class="iconfont icon-next"></i></div><div class="player-control__btn player-control__btn--mode"><i class="iconfont icon-random"></i></div></div><div class="player-control__volume"><div class="control__volume--icon player-control__btn"><i class="iconfont icon-volume"></i></div><div class="control__volume--progress progress"></div></div></div><div class="player-control__content"><div class="player__song--progress progress"></div><div class="player__song--timeProgess nowTime">00:00</div><div class="player__song--timeProgess totalTime">00:00</div></div></div></div></div><!-- 歌曲列表 --><div class="music-player__list"><ul class="music__list_content"></ul></div></div><script src="/js/utill.js"></script><script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.slim.min.js"></script><script src="/js/player.js?10"></script><div style="text-align:center;margin:-100px 0; font:normal 14px/24px 'MicroSoft YaHei';color:#ffffff"></div>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>link</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>books</title>
+      <link href="/books/index.html"/>
+      <url>/books/index.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script>]]></content>
       
     </entry>
     

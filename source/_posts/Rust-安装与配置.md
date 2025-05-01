@@ -10,9 +10,9 @@ mathjax: true
 abbrlink: 9067b1e8
 date: 2024-09-27 23:02:52
 updated:
-top_img:
+top_img: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Snipaste_2025-05-01_15-22-15.png
 comments:
-cover:
+cover: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Snipaste_2025-05-01_15-22-15.png
 toc:
 toc_number:
 copyright:

@@ -1,5 +1,5 @@
 ---
-title: wsl2 | 如何在使用本机 clash
+title: wsl2 | 如何使用本机 clash
 aside: true
 tags:
   - Linux

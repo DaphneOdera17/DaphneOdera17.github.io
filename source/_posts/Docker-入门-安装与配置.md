@@ -8,8 +8,8 @@ tags:
 categories: Docker
 keywords: 'Docker, 安装'
 description: 介绍 Docker 并且在 Ubuntu 系统上安装与配置 Docker
-top_img: 
-cover: 
+top_img: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Snipaste_2025-05-01_15-19-14.png
+cover: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Snipaste_2025-05-01_15-19-14.png
 mathjax: true
 abbrlink: 3345e4e9
 date: 2024-04-28 23:24:17

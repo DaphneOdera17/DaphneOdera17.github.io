@@ -1,0 +1,918 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - img "avatar" [ref=e6]
+    - generic [ref=e7]:
+      - link "文章 33" [ref=e8]:
+        - /url: /archives/
+        - generic [ref=e9]: 文章
+        - generic [ref=e10]: "33"
+      - link "标签 46" [ref=e11]:
+        - /url: /tags/
+        - generic [ref=e12]: 标签
+        - generic [ref=e13]: "46"
+      - link "分类 19" [ref=e14]:
+        - /url: /categories/
+        - generic [ref=e15]: 分类
+        - generic [ref=e16]: "19"
+    - separator [ref=e17]: 
+    - generic [ref=e18]:
+      - link " 首页" [ref=e20]:
+        - /url: /
+        - generic [ref=e21]: 
+        - text: 首页
+      - link " 时间线" [ref=e23]:
+        - /url: /archives/
+        - generic [ref=e24]: 
+        - text: 时间线
+      - link " 标签" [ref=e26]:
+        - /url: /tags/
+        - generic [ref=e27]: 
+        - text: 标签
+      - link " 分类" [ref=e29]:
+        - /url: /categories/
+        - generic [ref=e30]: 
+        - text: 分类
+      - link " 论文" [ref=e32]:
+        - /url: /papers/
+        - generic [ref=e33]: 
+        - text: 论文
+      - generic [ref=e34]:
+        - link " 休闲 " [ref=e35]:
+          - /url: javascript:void(0);
+          - generic [ref=e36]: 
+          - text: 休闲
+          - generic [ref=e37]: 
+        - list [ref=e38]:
+          - listitem [ref=e39]:
+            - link " 音乐" [ref=e40]:
+              - /url: /music/
+              - generic [ref=e41]: 
+              - text: 音乐
+          - listitem [ref=e42]:
+            - link " 说说" [ref=e43]:
+              - /url: /essay/
+              - generic [ref=e44]: 
+              - text: 说说
+          - listitem [ref=e45]:
+            - link " 藏书阁" [ref=e46]:
+              - /url: /books/
+              - generic [ref=e47]: 
+              - text: 藏书阁
+      - link " 相册" [ref=e49]:
+        - /url: /gallery/
+        - generic [ref=e50]: 
+        - text: 相册
+      - link " 友链" [ref=e52]:
+        - /url: /link/
+        - generic [ref=e53]: 
+        - text: 友链
+      - link " 关于" [ref=e55]:
+        - /url: /about/
+        - generic [ref=e56]: 
+        - text: 关于
+  - generic [ref=e57]:
+    - banner [ref=e58]:
+      - navigation [ref=e59]:
+        - link "Birdy の 小窝" [ref=e61]:
+          - /url: /
+          - img [ref=e62]
+          - text: Birdy の 小窝
+        - generic [ref=e63]:
+          - link " 搜索" [ref=e65]:
+            - /url: javascript:void(0);
+            - generic [ref=e66]: 
+            - text: 搜索
+          - generic [ref=e67]:
+            - link " 首页" [ref=e69]:
+              - /url: /
+              - generic [ref=e70]: 
+              - text: 首页
+            - link " 时间线" [ref=e72]:
+              - /url: /archives/
+              - generic [ref=e73]: 
+              - text: 时间线
+            - link " 标签" [ref=e75]:
+              - /url: /tags/
+              - generic [ref=e76]: 
+              - text: 标签
+            - link " 分类" [ref=e78]:
+              - /url: /categories/
+              - generic [ref=e79]: 
+              - text: 分类
+            - link " 论文" [ref=e81]:
+              - /url: /papers/
+              - generic [ref=e82]: 
+              - text: 论文
+            - generic [ref=e83]:
+              - link " 休闲 " [ref=e84]:
+                - /url: javascript:void(0);
+                - generic [ref=e85]: 
+                - text: 休闲
+                - generic [ref=e86]: 
+              - text:   
+            - link " 相册" [ref=e88]:
+              - /url: /gallery/
+              - generic [ref=e89]: 
+              - text: 相册
+            - link " 友链" [ref=e91]:
+              - /url: /link/
+              - generic [ref=e92]: 
+              - text: 友链
+            - link " 关于" [ref=e94]:
+              - /url: /about/
+              - generic [ref=e95]: 
+              - text: 关于
+          - text: 
+      - generic [ref=e96]:
+        - heading "hexo | 创建并部署 hexo 博客" [level=1] [ref=e97]
+        - generic [ref=e98]:
+          - generic [ref=e99]:
+            - generic [ref=e100]:
+              - generic [ref=e101]: 
+              - text: 发表于
+              - time [ref=e102]: 2025-05-01
+              - text: "|"
+              - generic [ref=e103]: 
+              - text: 更新于
+              - time [ref=e104]: 2026-06-06
+            - generic [ref=e105]:
+              - text: "|"
+              - generic [ref=e106]: 
+              - link "hexo" [ref=e107]:
+                - /url: /categories/hexo/
+          - generic [ref=e108]:
+            - generic [ref=e109]:
+              - generic [ref=e110]: 
+              - text: 字数总计:1.1k|
+              - generic [ref=e111]: 
+              - text: 阅读时长:4分钟
+            - text: "|"
+            - generic [ref=e112]:
+              - generic [ref=e113]: 
+              - text: 阅读量:5
+    - main [ref=e114]:
+      - generic [ref=e115]:
+        - article [ref=e117]:
+          - generic [ref=e118]:
+            - generic [ref=e119]:
+              - img [ref=e121]
+              - generic [ref=e124]: AI摘要
+              - generic [ref=e125]: 洪墨AI
+            - generic [ref=e126]: 为了保证传输的安全性和可靠
+          - heading " 安装 hexo安装 hexo" [level=1] [ref=e128]:
+            - text: 
+            - link "安装 hexo":
+              - /url: "#安装-hexo"
+            - text: 安装 hexo
+          - paragraph [ref=e129]: 前提条件是必需安装了 nodejs。
+          - paragraph [ref=e130]: 安装 hexo，命令行 (推荐用 git bash) 输入：
+          - figure [ref=e131]:
+            - generic [ref=e132]:
+              - generic [ref=e133] [cursor=pointer]: 
+              - generic [ref=e134]: shell
+              - generic [ref=e135] [cursor=pointer]: 
+            - table [ref=e136]:
+              - rowgroup [ref=e137]:
+                - row "1 npm install hexo-cli -g" [ref=e138]:
+                  - cell "1" [ref=e139]:
+                    - generic [ref=e140]: "1"
+                  - cell "npm install hexo-cli -g" [ref=e141]:
+                    - generic [ref=e142]: npm install hexo-cli -g
+          - paragraph
+          - heading " 初始化博客初始化博客" [level=1] [ref=e143]:
+            - text: 
+            - link "初始化博客":
+              - /url: "#初始化博客"
+            - text: 初始化博客
+          - paragraph [ref=e144]: 初始化博客，myblog 可以替换成你想要的文件夹名字。
+          - figure [ref=e145]:
+            - generic [ref=e146]:
+              - generic [ref=e147] [cursor=pointer]: 
+              - generic [ref=e148]: shell
+              - generic [ref=e149] [cursor=pointer]: 
+            - table [ref=e150]:
+              - rowgroup [ref=e151]:
+                - row "1 hexo init myblog" [ref=e152]:
+                  - cell "1" [ref=e153]:
+                    - generic [ref=e154]: "1"
+                  - cell "hexo init myblog" [ref=e155]:
+                    - generic [ref=e156]: hexo init myblog
+          - paragraph
+          - paragraph [ref=e157]:
+            - link "|550" [ref=e158]:
+              - /url: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216220049007.png
+              - img "|550" [ref=e159]
+          - figure [ref=e160]:
+            - generic [ref=e161]:
+              - generic [ref=e162] [cursor=pointer]: 
+              - generic [ref=e163]: shell
+              - generic [ref=e164] [cursor=pointer]: 
+            - table [ref=e165]:
+              - rowgroup [ref=e166]:
+                - row "1 2 cd myblog npm install" [ref=e167]:
+                  - cell "1 2" [ref=e168]:
+                    - generic [ref=e169]:
+                      - text: "1"
+                      - text: "2"
+                  - cell "cd myblog npm install" [ref=e170]:
+                    - generic [ref=e171]:
+                      - text: cd myblog
+                      - text: npm install
+          - paragraph [ref=e172]:
+            - text: 启动本地预览：
+            - text: 注意这个 hexo s 就是开启本地预览，如果你关了之后就看不到了
+          - figure [ref=e173]:
+            - generic [ref=e174]:
+              - generic [ref=e175] [cursor=pointer]: 
+              - generic [ref=e176]: shell
+              - generic [ref=e177] [cursor=pointer]: 
+            - table [ref=e178]:
+              - rowgroup [ref=e179]:
+                - row "1 2 3 hexo clean hexo g hexo s" [ref=e180]:
+                  - cell "1 2 3" [ref=e181]:
+                    - generic [ref=e182]:
+                      - text: "1"
+                      - text: "2"
+                      - text: "3"
+                  - cell "hexo clean hexo g hexo s" [ref=e183]:
+                    - generic [ref=e184]:
+                      - text: hexo clean
+                      - text: hexo g
+                      - text: hexo s
+          - paragraph
+          - paragraph [ref=e185]: 进入博客：
+          - link "🪧引用站外地址，不保证站点的可用性和安全性 博客 hexo " [ref=e187]:
+            - /url: " http://localhost:4000/"
+            - generic [ref=e188]: 🪧引用站外地址，不保证站点的可用性和安全性
+            - generic [ref=e189]:
+              - generic [ref=e191]:
+                - generic [ref=e192]: 博客
+                - generic [ref=e193]: hexo
+              - generic [ref=e194]: 
+          - paragraph
+          - paragraph [ref=e195]:
+            - text: 显示以下界面即表示成功，这是在本地部署成功。
+            - link:
+              - /url: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216220426830.png
+          - heading " GitHub 部署GitHub 部署" [level=1] [ref=e196]:
+            - text: 
+            - link "GitHub 部署":
+              - /url: "#GitHub-部署"
+            - text: GitHub 部署
+          - paragraph [ref=e197]: 先安装必要的插件：
+          - figure [ref=e198]:
+            - generic [ref=e199]:
+              - generic [ref=e200] [cursor=pointer]: 
+              - generic [ref=e201]: shell
+              - generic [ref=e202] [cursor=pointer]: 
+            - table [ref=e203]:
+              - rowgroup [ref=e204]:
+                - row "1 npm install hexo-deployer-git --save" [ref=e205]:
+                  - cell "1" [ref=e206]:
+                    - generic [ref=e207]: "1"
+                  - cell "npm install hexo-deployer-git --save" [ref=e208]:
+                    - generic [ref=e209]: npm install hexo-deployer-git --save
+          - paragraph
+          - heading " 新建仓库新建仓库" [level=2] [ref=e210]:
+            - text: 
+            - link "新建仓库":
+              - /url: "#新建仓库"
+            - text: 新建仓库
+          - paragraph [ref=e211]:
+            - text: 打开你个人的 github 仓库主页，新建仓库，我这里使用小号演示。
+            - link:
+              - /url: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216220216159.png
+          - paragraph [ref=e212]:
+            - text: 仓库名
+            - code [ref=e213]: .github.io
+            - text: 前面必须和你的 github 用户名一致。
+            - link:
+              - /url: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216220311032.png
+          - paragraph [ref=e214]:
+            - text: 选择复制 ssh 的地址，最好不要用 http 的。
+            - text: 后面我会演示如何配置 ssh
+          - paragraph:
+            - link:
+              - /url: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216221058387.png
+          - heading " 配置博客配置博客" [level=2] [ref=e215]:
+            - text: 
+            - link "配置博客":
+              - /url: "#配置博客"
+            - text: 配置博客
+          - paragraph [ref=e216]:
+            - text: 下面有单账户配置和多账户配置，多账户配置适合于你本地有两个 github 账户，然后你想指定某个 hexo 仓库用到指定的 github 账户的话，你可以看看我的多账户配置。
+            - text: 当然，一般都是单账户，所以直接看单账户就好了。
+          - heading " 单账户配置单账户配置" [level=3] [ref=e217]:
+            - text: 
+            - link "单账户配置":
+              - /url: "#单账户配置"
+            - text: 单账户配置
+          - paragraph [ref=e218]:
+            - text: 博客根目录下的
+            - code [ref=e219]: _config.yml
+            - text: 里面配置 github url，这里用的是
+            - code [ref=e220]: https://你的用户名.github.io
+            - link:
+              - /url: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216222442336.png
+          - paragraph [ref=e221]:
+            - text: 也是在
+            - code [ref=e222]: _config.yml
+            - text: 最底下找到：
+            - text: repository 就是前面新建仓库之后的 ssh 地址。
+            - text: branch 和你仓库默认对应就行，但是我建议改成 main。
+          - figure [ref=e223]:
+            - generic [ref=e224]:
+              - generic [ref=e225] [cursor=pointer]: 
+              - generic [ref=e226]: yml
+              - generic [ref=e227] [cursor=pointer]: 
+            - table [ref=e228]:
+              - rowgroup [ref=e229]:
+                - 'row "1 2 3 4 deploy: type: git repository: git@github.com:BouncyEly/BouncyEly.github.io.git branch: main" [ref=e230]':
+                  - cell "1 2 3 4" [ref=e231]:
+                    - generic [ref=e232]:
+                      - text: "1"
+                      - text: "2"
+                      - text: "3"
+                      - text: "4"
+                  - 'cell "deploy: type: git repository: git@github.com:BouncyEly/BouncyEly.github.io.git branch: main" [ref=e233]':
+                    - generic [ref=e234]:
+                      - generic [ref=e235]: "deploy:"
+                      - generic [ref=e236]: "type: git"
+                      - generic [ref=e237]: "repository: git@github.com:BouncyEly/BouncyEly.github.io.git"
+                      - generic [ref=e238]: "branch: main"
+          - paragraph
+          - paragraph [ref=e239]: 如果不用配置多账户，完成这里之后跳到 配置 ssh 模块。
+          - heading " 多账户配置 (可以跳过)多账户配置 (可以跳过)" [level=3] [ref=e240]:
+            - text: 
+            - link "多账户配置 (可以跳过)":
+              - /url: "#多账户配置-可以跳过"
+            - text: 多账户配置 (可以跳过)
+          - paragraph [ref=e241]: 也可以用以下配置 (因为我有多个账户，所以我局部配置了一下 git)
+          - figure [ref=e242]:
+            - generic [ref=e243]:
+              - generic [ref=e244] [cursor=pointer]: 
+              - generic [ref=e245]: yml
+              - generic [ref=e246] [cursor=pointer]: 
+            - table [ref=e247]:
+              - rowgroup [ref=e248]:
+                - 'row "1 2 3 4 5 6 deploy: type: git repository: git@BouncyEly.github.com:BouncyEly/BouncyEly.github.io.git branch: main name: BouncyEly email: 1516024203@qq.com" [ref=e249]':
+                  - cell "1 2 3 4 5 6" [ref=e250]:
+                    - generic [ref=e251]:
+                      - text: "1"
+                      - text: "2"
+                      - text: "3"
+                      - text: "4"
+                      - text: "5"
+                      - text: "6"
+                  - 'cell "deploy: type: git repository: git@BouncyEly.github.com:BouncyEly/BouncyEly.github.io.git branch: main name: BouncyEly email: 1516024203@qq.com" [ref=e252]':
+                    - generic [ref=e253]:
+                      - generic [ref=e254]: "deploy:"
+                      - generic [ref=e255]: "type: git"
+                      - generic [ref=e256]: "repository: git@BouncyEly.github.com:BouncyEly/BouncyEly.github.io.git"
+                      - generic [ref=e257]: "branch: main"
+                      - generic [ref=e258]: "name: BouncyEly"
+                      - generic [ref=e259]: "email: 1516024203@qq.com"
+          - paragraph
+          - paragraph [ref=e260]:
+            - text: 我这里配置了两个 ssh，分别属于我两个 github 账户：
+            - code [ref=e261]: C:\Users\Birdy\.ssh\config
+          - paragraph [ref=e262]:
+            - link "|525" [ref=e263]:
+              - /url: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216224655343.png
+              - img "|525" [ref=e264]
+          - paragraph [ref=e265]:
+            - text: 在博客
+            - code [ref=e266]: .deploy_git/.git
+            - text: 目录下找到 config
+            - link:
+              - /url: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216224949262.png
+          - paragraph [ref=e267]:
+            - text: 在里面加上：
+            - link:
+              - /url: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216225018271.png
+          - figure [ref=e268]:
+            - generic [ref=e269]:
+              - generic [ref=e270] [cursor=pointer]: 
+              - generic [ref=e271]: plaintext
+              - generic [ref=e272] [cursor=pointer]: 
+            - table [ref=e273]:
+              - rowgroup [ref=e274]:
+                - row "1 2 3 [user] name = BouncyEly email = 1516024203@qq.com" [ref=e275]:
+                  - cell "1 2 3" [ref=e276]:
+                    - generic [ref=e277]:
+                      - text: "1"
+                      - text: "2"
+                      - text: "3"
+                  - cell "[user] name = BouncyEly email = 1516024203@qq.com" [ref=e278]:
+                    - generic [ref=e279]:
+                      - text: "[user]"
+                      - text: name = BouncyEly
+                      - text: email = 1516024203@qq.com
+          - heading " 配置 ssh配置 ssh" [level=2] [ref=e280]:
+            - text: 
+            - link "配置 ssh":
+              - /url: "#配置-ssh"
+            - text: 配置 ssh
+          - paragraph [ref=e281]:
+            - text: 刚才配置完之后
+            - code [ref=e282]: _config.yml
+            - text: 底下是这样的。
+            - link:
+              - /url: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216221150575.png
+          - paragraph [ref=e283]: 然后我们配置一下 ssh。
+          - paragraph [ref=e284]: 也可以看我另一篇文章
+          - link "✅来自本站，本站可确保其安全性，请放心点击跳转 博客 Github | 配置SSH " [ref=e286]:
+            - /url: " https://birdyweb.top/post/790c8b8.html"
+            - generic [ref=e287]: ✅来自本站，本站可确保其安全性，请放心点击跳转
+            - generic [ref=e288]:
+              - generic [ref=e290]:
+                - generic [ref=e291]: 博客
+                - generic [ref=e292]: Github | 配置SSH
+              - generic [ref=e293]: 
+          - paragraph [ref=e294]:
+            - text: git bash 打开：
+            - text: 有个 enter file 的提示，提示你保存到哪里，你可以直接按 enter 就是保存到默认路径
+            - code [ref=e295]: C:\Users\用户名\.ssh\
+            - text: ，但是我这里自己指定了一下，
+            - link:
+              - /url: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216221505387.png
+          - figure [ref=e296]:
+            - generic [ref=e297]:
+              - generic [ref=e298] [cursor=pointer]: 
+              - generic [ref=e299]: shell
+              - generic [ref=e300] [cursor=pointer]: 
+            - table [ref=e301]:
+              - rowgroup [ref=e302]:
+                - row "1 ssh-keygen -t rsa -b 4096 -C \"你的github用户邮箱\"" [ref=e303]:
+                  - cell "1" [ref=e304]:
+                    - generic [ref=e305]: "1"
+                  - cell "ssh-keygen -t rsa -b 4096 -C \"你的github用户邮箱\"" [ref=e306]:
+                    - generic [ref=e307]: ssh-keygen -t rsa -b 4096 -C "你的github用户邮箱"
+          - paragraph [ref=e308]: 比如我的：
+          - figure [ref=e309]:
+            - generic [ref=e310]:
+              - generic [ref=e311] [cursor=pointer]: 
+              - generic [ref=e312]: shell
+              - generic [ref=e313] [cursor=pointer]: 
+            - table [ref=e314]:
+              - rowgroup [ref=e315]:
+                - row "1 ssh-keygen -t rsa -b 4096 -C \"1516024203@qq.com\"" [ref=e316]:
+                  - cell "1" [ref=e317]:
+                    - generic [ref=e318]: "1"
+                  - cell "ssh-keygen -t rsa -b 4096 -C \"1516024203@qq.com\"" [ref=e319]:
+                    - generic [ref=e320]: ssh-keygen -t rsa -b 4096 -C "1516024203@qq.com"
+          - paragraph
+          - paragraph [ref=e321]:
+            - text: 然后在
+            - code [ref=e322]: C:\Users\用户名\.ssh\
+            - text: 路径下，找到
+            - code [ref=e323]: id_rsa.pub
+            - text: 文件，用记事本之类的打开，待会需要用到
+            - link "|675" [ref=e324]:
+              - /url: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216221532094.png
+              - img "|675" [ref=e325]
+          - heading " Github 配置 sshGithub 配置 ssh" [level=3] [ref=e326]:
+            - text: 
+            - link "Github 配置 ssh":
+              - /url: "#Github-配置-ssh"
+            - text: Github 配置 ssh
+          - paragraph [ref=e327]:
+            - text: github 页面打开 settings
+            - link:
+              - /url: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216221620252.png
+          - paragraph [ref=e328]:
+            - text: 点击
+            - code [ref=e329]: New SSH key
+            - text: ，我们将要注册前面生成的 ssh key
+            - link:
+              - /url: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216221640830.png
+          - paragraph [ref=e330]:
+            - text: 复制 id_rsa.pub 里面的内容
+            - link:
+              - /url: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216222009694.png
+          - paragraph [ref=e331]:
+            - text: 粘贴到这里面。
+            - link:
+              - /url: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216221848691.png
+          - paragraph [ref=e332]:
+            - text: 提交。
+            - link:
+              - /url: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216222028056.png
+          - heading " 配置本地 git 账户配置本地 git 账户" [level=3] [ref=e333]:
+            - text: 
+            - link "配置本地 git 账户":
+              - /url: "#配置本地-git-账户"
+            - text: 配置本地 git 账户
+          - paragraph [ref=e334]: "单用户直接配置全局的:"
+          - figure [ref=e335]:
+            - generic [ref=e336]:
+              - generic [ref=e337] [cursor=pointer]: 
+              - generic [ref=e338]: shell
+              - generic [ref=e339] [cursor=pointer]: 
+            - table [ref=e340]:
+              - rowgroup [ref=e341]:
+                - row "1 2 git config --global user.name \"userName\" //你的用户名 git config --global user.email \"email address\" //你的邮箱地址" [ref=e342]:
+                  - cell "1 2" [ref=e343]:
+                    - generic [ref=e344]:
+                      - text: "1"
+                      - text: "2"
+                  - cell "git config --global user.name \"userName\" //你的用户名 git config --global user.email \"email address\" //你的邮箱地址" [ref=e345]:
+                    - generic [ref=e346]:
+                      - text: git config --global user.name "userName" //你的用户名
+                      - text: git config --global user.email "email address" //你的邮箱地址
+          - paragraph
+          - paragraph [ref=e347]:
+            - text: 测试能否正常 ssh 连接。输入完下面这个之后可能会有提示你保存什么东西的，你输入
+            - code [ref=e348]: "yes"
+            - text: 就可以
+          - figure [ref=e349]:
+            - generic [ref=e350]:
+              - generic [ref=e351] [cursor=pointer]: 
+              - generic [ref=e352]: shell
+              - generic [ref=e353] [cursor=pointer]: 
+            - table [ref=e354]:
+              - rowgroup [ref=e355]:
+                - row "1 ssh -T git@github.com" [ref=e356]:
+                  - cell "1" [ref=e357]:
+                    - generic [ref=e358]: "1"
+                  - cell "ssh -T git@github.com" [ref=e359]:
+                    - generic [ref=e360]: ssh -T git@github.com
+          - paragraph
+          - heading " 部署 hexo部署 hexo" [level=3] [ref=e361]:
+            - text: 
+            - link "部署 hexo":
+              - /url: "#部署-hexo"
+            - text: 部署 hexo
+          - figure [ref=e362]:
+            - generic [ref=e363]:
+              - generic [ref=e364] [cursor=pointer]: 
+              - generic [ref=e365]: shell
+              - generic [ref=e366] [cursor=pointer]: 
+            - table [ref=e367]:
+              - rowgroup [ref=e368]:
+                - row "1 2 3 hexo clean hexo g hexo d" [ref=e369]:
+                  - cell "1 2 3" [ref=e370]:
+                    - generic [ref=e371]:
+                      - text: "1"
+                      - text: "2"
+                      - text: "3"
+                  - cell "hexo clean hexo g hexo d" [ref=e372]:
+                    - generic [ref=e373]:
+                      - text: hexo clean
+                      - text: hexo g
+                      - text: hexo d
+          - paragraph [ref=e374]:
+            - text: 然后尝试访问
+            - code [ref=e375]: https://你的用户名.github.io
+          - paragraph [ref=e376]: 比如我这个：
+          - link "🪧引用站外地址，不保证站点的可用性和安全性 博客 BouncyEly 的 hexo 博客 " [ref=e378]:
+            - /url: " https://bouncyely.github.io/"
+            - generic [ref=e379]: 🪧引用站外地址，不保证站点的可用性和安全性
+            - generic [ref=e380]:
+              - generic [ref=e382]:
+                - generic [ref=e383]: 博客
+                - generic [ref=e384]: BouncyEly 的 hexo 博客
+              - generic [ref=e385]: 
+          - paragraph [ref=e386]:
+            - text: "-> 访问不出来"
+            - code [ref=e387]: ctrl + F5
+            - text: 多刷新几次
+          - heading " 安装主题安装主题" [level=1] [ref=e388]:
+            - text: 
+            - link "安装主题":
+              - /url: "#安装主题"
+            - text: 安装主题
+          - paragraph [ref=e389]: 你也可以用别的主题, hexo 官网提供了很多。
+          - paragraph [ref=e390]:
+            - text: 安装主题
+            - link "https://docs.anheyu.com/initall.html" [ref=e391]:
+              - /url: https://docs.anheyu.com/initall.html
+          - paragraph [ref=e392]:
+            - text: 在你的博客
+            - strong [ref=e393]: 根目录
+            - text: 下，打开 git bash 输入。
+          - figure [ref=e394]:
+            - generic [ref=e395]:
+              - generic [ref=e396] [cursor=pointer]: 
+              - generic [ref=e397]: shell
+              - generic [ref=e398] [cursor=pointer]: 
+            - table [ref=e399]:
+              - rowgroup [ref=e400]:
+                - row "1 git clone -b main https://github.com/anzhiyu-c/hexo-theme-anzhiyu.git themes/anzhiyu" [ref=e401]:
+                  - cell "1" [ref=e402]:
+                    - generic [ref=e403]: "1"
+                  - cell "git clone -b main https://github.com/anzhiyu-c/hexo-theme-anzhiyu.git themes/anzhiyu" [ref=e404]:
+                    - generic [ref=e405]: git clone -b main https://github.com/anzhiyu-c/hexo-theme-anzhiyu.git themes/anzhiyu
+          - paragraph
+          - paragraph [ref=e406]:
+            - text: 然后找到刚才克隆下来的文件夹
+            - link:
+              - /url: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216225247009.png
+          - paragraph [ref=e407]:
+            - text: 将博客根目录下的
+            - code [ref=e408]: _config.yml
+            - text: 文件里面的 theme 改为
+            - code [ref=e409]: anzhiyu
+            - link:
+              - /url: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216225321079.png
+          - paragraph [ref=e410]: 打开 git bash 安装插件
+          - figure [ref=e411]:
+            - generic [ref=e412]:
+              - generic [ref=e413] [cursor=pointer]: 
+              - generic [ref=e414]: shell
+              - generic [ref=e415] [cursor=pointer]: 
+            - table [ref=e416]:
+              - rowgroup [ref=e417]:
+                - row "1 npm install hexo-renderer-pug hexo-renderer-stylus --save" [ref=e418]:
+                  - cell "1" [ref=e419]:
+                    - generic [ref=e420]: "1"
+                  - cell "npm install hexo-renderer-pug hexo-renderer-stylus --save" [ref=e421]:
+                    - generic [ref=e422]: npm install hexo-renderer-pug hexo-renderer-stylus --save
+          - paragraph
+          - paragraph [ref=e423]:
+            - text: 将主题文件（
+            - code [ref=e424]: themes/anzhiyu
+            - text: ）下的
+            - code [ref=e425]: _config.yml
+            - text: 复制一份，名字改为
+            - code [ref=e426]: _config.anzhiyu.yml
+            - text: 放到博客根目录下
+          - paragraph:
+            - link:
+              - /url: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216225445914.png
+          - paragraph:
+            - link:
+              - /url: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216225553360.png
+          - paragraph [ref=e427]: 最后再重新部署一下：
+          - figure [ref=e428]:
+            - generic [ref=e429]:
+              - generic [ref=e430] [cursor=pointer]: 
+              - generic [ref=e431]: shell
+              - generic [ref=e432] [cursor=pointer]: 
+            - table [ref=e433]:
+              - rowgroup [ref=e434]:
+                - row "1 2 3 hexo clean hexo g hexo d" [ref=e435]:
+                  - cell "1 2 3" [ref=e436]:
+                    - generic [ref=e437]:
+                      - text: "1"
+                      - text: "2"
+                      - text: "3"
+                  - cell "hexo clean hexo g hexo d" [ref=e438]:
+                    - generic [ref=e439]:
+                      - text: hexo clean
+                      - text: hexo g
+                      - text: hexo d
+          - paragraph
+          - paragraph:
+            - link:
+              - /url: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216230001915.png
+          - paragraph [ref=e440]: 本地预览：
+          - figure [ref=e441]:
+            - generic [ref=e442]:
+              - generic [ref=e443] [cursor=pointer]: 
+              - generic [ref=e444]: shell
+              - generic [ref=e445] [cursor=pointer]: 
+            - table [ref=e446]:
+              - rowgroup [ref=e447]:
+                - row "1 hexo s" [ref=e448]:
+                  - cell "1" [ref=e449]:
+                    - generic [ref=e450]: "1"
+                  - cell "hexo s" [ref=e451]:
+                    - generic [ref=e452]: hexo s
+          - paragraph
+          - paragraph [ref=e453]: 加载不出来 ctrl + F5 刷新！多刷新几次。效果就可以呈现出来了！
+          - paragraph:
+            - link:
+              - /url: https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20250216230145876.png
+        - generic [ref=e454]:
+          - text: 
+          - generic [ref=e455]:
+            - generic [ref=e456]:
+              - generic [ref=e457]: 
+              - text: "文章作者:"
+            - link "Birdy" [ref=e459]:
+              - /url: https://zhangbird050801.github.io
+          - generic [ref=e460]:
+            - generic [ref=e461]:
+              - generic [ref=e462]: 
+              - text: "文章链接:"
+            - link "https://zhangbird050801.github.io/post/5d39fa56.html" [ref=e464]:
+              - /url: https://zhangbird050801.github.io/post/5d39fa56.html
+          - generic [ref=e465]:
+            - generic [ref=e466]:
+              - generic [ref=e467]: 
+              - text: "版权声明:"
+            - generic [ref=e468]:
+              - text: 本博客所有文章除特别声明外，均采用
+              - link "CC BY-NC-SA 4.0" [ref=e469]:
+                - /url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+              - text: 许可协议。转载请注明来自
+              - link "Birdy の 小窝" [ref=e470]:
+                - /url: https://zhangbird050801.github.io
+              - text: ！
+        - generic [ref=e471]:
+          - generic [ref=e472]:
+            - link "hexo" [ref=e473]:
+              - /url: /tags/hexo/
+            - link "anzhiyu" [ref=e474]:
+              - /url: /tags/anzhiyu/
+          - generic [ref=e476]:
+            - link "" [ref=e477]:
+              - /url: https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fpost%2F5d39fa56.html
+            - link "" [ref=e478]:
+              - /url: https://twitter.com/intent/tweet?text=hexo%20%7C%20%E5%88%9B%E5%BB%BA%E5%B9%B6%E9%83%A8%E7%BD%B2%20hexo%20%E5%8D%9A%E5%AE%A2%20%7C%20Birdy%20%E3%81%AE%20%E5%B0%8F%E7%AA%9D&url=http%3A%2F%2Flocalhost%3A4000%2Fpost%2F5d39fa56.html&via=http%3A%2F%2Flocalhost%3A4000
+            - link "" [ref=e479]:
+              - /url: "javascript:"
+            - link "" [ref=e480]:
+              - /url: http://service.weibo.com/share/share.php?url=http%3A%2F%2Flocalhost%3A4000%2Fpost%2F5d39fa56.html&title=hexo%20%7C%20%E5%88%9B%E5%BB%BA%E5%B9%B6%E9%83%A8%E7%BD%B2%20hexo%20%E5%8D%9A%E5%AE%A2%20%7C%20Birdy%20%E3%81%AE%20%E5%B0%8F%E7%AA%9D&pic=https%3A%2F%2Ftypora-birdy.oss-cn-guangzhou.aliyuncs.com%2FSnipaste_2025-05-01_14-47-55.png&appkey=
+            - link "" [ref=e481]:
+              - /url: http://connect.qq.com/widget/shareqq/index.html?url=http%3A%2F%2Flocalhost%3A4000%2Fpost%2F5d39fa56.html&title=hexo%20%7C%20%E5%88%9B%E5%BB%BA%E5%B9%B6%E9%83%A8%E7%BD%B2%20hexo%20%E5%8D%9A%E5%AE%A2%20%7C%20Birdy%20%E3%81%AE%20%E5%B0%8F%E7%AA%9D&source=hexo%20%7C%20%E5%88%9B%E5%BB%BA%E5%B9%B6%E9%83%A8%E7%BD%B2%20hexo%20%E5%8D%9A%E5%AE%A2%20%7C%20Birdy%20%E3%81%AE%20%E5%B0%8F%E7%AA%9D&desc=%E5%88%9B%E5%BB%BA%E5%B9%B6%E9%83%A8%E7%BD%B2%20hexo%20%E5%8D%9A%E5%AE%A2%2C%20%E4%BD%BF%E7%94%A8%20anzhiyu%20%E4%B8%BB%E9%A2%98%2C%20%E5%8C%85%E6%8B%AC%E5%A4%9A%E8%B4%A6%E6%88%B7%E9%85%8D%E7%BD%AE%E3%80%82&pics=https%3A%2F%2Ftypora-birdy.oss-cn-guangzhou.aliyuncs.com%2FSnipaste_2025-05-01_14-47-55.png
+        - generic [ref=e482] [cursor=pointer]:
+          - generic [ref=e483]: 
+          - text: 赞助
+        - navigation [ref=e484]:
+          - link "cover of previous post 上一篇 Study Notes | 激活函数" [ref=e486]:
+            - /url: /post/396a3f75.html
+            - img "cover of previous post" [ref=e487]
+            - generic [ref=e488]:
+              - generic [ref=e489]: 上一篇
+              - generic [ref=e490]: Study Notes | 激活函数
+          - link "cover of next post 下一篇 Ubuntu | Redis | 安装配置与远程连接" [ref=e492]:
+            - /url: /post/625c5822.html
+            - img "cover of next post" [ref=e493]
+            - generic [ref=e494]:
+              - generic [ref=e495]: 下一篇
+              - generic [ref=e496]: Ubuntu | Redis | 安装配置与远程连接
+        - generic [ref=e497]:
+          - generic [ref=e498]:
+            - generic [ref=e499]: 
+            - text: 相关推荐
+          - generic [ref=e500]:
+            - generic [ref=e501]:
+              - link "cover  2025-02-13 hexo魔改 | 修改卡片透明度":
+                - /url: /post/ae1606a8.html
+                - img "cover" [ref=e502]
+                - generic [ref=e503]:
+                  - generic [ref=e504]:
+                    - generic [ref=e505]: 
+                    - text: 2025-02-13
+                  - generic [ref=e506]: hexo魔改 | 修改卡片透明度
+            - generic [ref=e507]:
+              - link "cover  2024-04-27 hexo魔改 | 添加 Valine 评论系统":
+                - /url: /post/60917e5c.html
+                - img "cover" [ref=e508]
+                - generic [ref=e509]:
+                  - generic [ref=e510]:
+                    - generic [ref=e511]: 
+                    - text: 2024-04-27
+                  - generic [ref=e512]: hexo魔改 | 添加 Valine 评论系统
+            - generic [ref=e513]:
+              - link "cover  2024-08-23 hexo魔改 | 修改指针样式":
+                - /url: /post/77c5c179.html
+                - img "cover" [ref=e514]
+                - generic [ref=e515]:
+                  - generic [ref=e516]:
+                    - generic [ref=e517]: 
+                    - text: 2024-08-23
+                  - generic [ref=e518]: hexo魔改 | 修改指针样式
+            - generic [ref=e519]:
+              - link "cover  2024-04-12 hexo魔改 | 修改首页卡片样式":
+                - /url: /post/639f0c9.html
+                - img "cover" [ref=e520]
+                - generic [ref=e521]:
+                  - generic [ref=e522]:
+                    - generic [ref=e523]: 
+                    - text: 2024-04-12
+                  - generic [ref=e524]: hexo魔改 | 修改首页卡片样式
+            - generic [ref=e525]:
+              - link "cover  2024-04-12 hexo魔改 | 修改首页文章数量":
+                - /url: /post/cec4690b.html
+                - img "cover" [ref=e526]
+                - generic [ref=e527]:
+                  - generic [ref=e528]:
+                    - generic [ref=e529]: 
+                    - text: 2024-04-12
+                  - generic [ref=e530]: hexo魔改 | 修改首页文章数量
+            - generic [ref=e531]:
+              - link "cover  2024-04-04 hexo魔改 | 添加旋转小风车":
+                - /url: /post/e03cfb73.html
+                - img "cover" [ref=e532]
+                - generic [ref=e533]:
+                  - generic [ref=e534]:
+                    - generic [ref=e535]: 
+                    - text: 2024-04-04
+                  - generic [ref=e536]: hexo魔改 | 添加旋转小风车
+        - separator [ref=e537]: 
+        - generic [ref=e540]:
+          - generic [ref=e541]: 
+          - text: 评论
+      - generic [ref=e544]:
+        - generic [ref=e545]:
+          - generic [ref=e546]: 
+          - text: 目录
+        - list [ref=e548]:
+          - listitem [ref=e549]:
+            - link "1. 安装 hexo" [ref=e550]:
+              - /url: "#%E5%AE%89%E8%A3%85-hexo"
+          - listitem [ref=e551]:
+            - link "2. 初始化博客" [ref=e552]:
+              - /url: "#%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8D%9A%E5%AE%A2"
+          - listitem [ref=e553]:
+            - link "3. GitHub 部署" [ref=e554]:
+              - /url: "#GitHub-%E9%83%A8%E7%BD%B2"
+          - listitem [ref=e555]:
+            - link "4. 安装主题" [ref=e556]:
+              - /url: "#%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98"
+    - contentinfo [ref=e557]:
+      - contentinfo [ref=e558]:
+        - generic [ref=e559]:
+          - generic [ref=e560]:
+            - link "" [ref=e561]:
+              - /url: https://birdyweb.top/
+              - generic [ref=e562]: 
+            - link "" [ref=e563]:
+              - /url: https://res.abeim.cn/api/qq/?qq=2944006086
+              - generic [ref=e564]: 
+            - link "" [ref=e565]:
+              - /url: /wechat/
+              - generic [ref=e566]: 
+            - link "" [ref=e567]:
+              - /url: mailto:marcus@marcus233.top
+              - generic [ref=e568]: 
+          - img "返回顶部" [ref=e569]
+          - generic [ref=e570]:
+            - link "" [ref=e571]:
+              - /url: https://github.com/zhangbird050801
+              - generic [ref=e572]: 
+            - link "" [ref=e573]:
+              - /url: https://space.bilibili.com/287677710
+              - generic [ref=e574]: 
+            - link "" [ref=e575]:
+              - /url: /stars/
+              - generic [ref=e576]: 
+            - link "" [ref=e577]:
+              - /url: /message/
+              - generic [ref=e578]: 
+        - generic [ref=e579]:
+          - generic [ref=e580]:
+            - heading "直达" [level=3] [ref=e581]
+            - generic [ref=e582]:
+              - link "藏书阁" [ref=e583]:
+                - /url: /books/
+              - link "空间说说" [ref=e584]:
+                - /url: /essay/
+              - link "音乐" [ref=e585]:
+                - /url: /music/
+          - generic [ref=e586]:
+            - heading "关于" [level=3] [ref=e587]
+            - generic [ref=e588]:
+              - link "关于我" [ref=e589]:
+                - /url: /about/
+              - link "我的相册" [ref=e590]:
+                - /url: /gallery/
+          - generic [ref=e591]:
+            - heading "分类" [level=3] [ref=e592]
+            - generic [ref=e593]:
+              - link "博客分类" [ref=e594]:
+                - /url: /categories/
+              - link "技术" [ref=e595]:
+                - /url: /categories/技术/
+              - link "查看全部" [ref=e596]:
+                - /url: /categories/
+        - generic [ref=e598]:
+          - generic [ref=e599]:
+            - generic [ref=e600]:
+              - text: ©2024 - 2026 By
+              - link "Birdy" [ref=e601]:
+                - /url: https://birdyweb.top/
+            - link "CloudFlare" [ref=e603]:
+              - /url: https://www.cloudflare-cn.com/enterprise/
+          - generic [ref=e604]:
+            - generic "已运行时长" [ref=e605]: 本站已运行：1397 天 16 时 30 分 49 秒
+            - generic [ref=e606]:
+              - link "Hexo" [ref=e607]:
+                - /url: https://hexo.io/zh-cn/
+              - link "| Butterfly" [ref=e608]:
+                - /url: https://butterfly.js.org/
+  - generic [ref=e609]:
+    - generic:
+      - button "" [ref=e610] [cursor=pointer]:
+        - generic [ref=e611]: 
+      - button "繁" [ref=e612] [cursor=pointer]
+      - button "" [ref=e613] [cursor=pointer]:
+        - generic [ref=e614]: 
+      - button "" [ref=e615] [cursor=pointer]:
+        - generic [ref=e616]: 
+    - generic [ref=e617]:
+      - button "" [ref=e618] [cursor=pointer]:
+        - generic [ref=e619]: 
+      - text: 
+      - button "" [ref=e620] [cursor=pointer]:
+        - generic [ref=e621]: 
+      - link "" [ref=e622]:
+        - /url: "#post-comment"
+        - generic [ref=e623]: 
+      - button "" [ref=e624] [cursor=pointer]:
+        - generic [ref=e625]: 
+  - generic:
+    - generic:   

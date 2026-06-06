@@ -1,0 +1,1127 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - img "avatar" [ref=e6]
+    - generic [ref=e7]:
+      - link "文章 33" [ref=e8]:
+        - /url: /archives/
+        - generic [ref=e9]: 文章
+        - generic [ref=e10]: "33"
+      - link "标签 46" [ref=e11]:
+        - /url: /tags/
+        - generic [ref=e12]: 标签
+        - generic [ref=e13]: "46"
+      - link "分类 19" [ref=e14]:
+        - /url: /categories/
+        - generic [ref=e15]: 分类
+        - generic [ref=e16]: "19"
+    - separator [ref=e17]: 
+    - generic [ref=e18]:
+      - link " 首页" [ref=e20]:
+        - /url: /
+        - generic [ref=e21]: 
+        - text: 首页
+      - link " 时间线" [ref=e23]:
+        - /url: /archives/
+        - generic [ref=e24]: 
+        - text: 时间线
+      - link " 标签" [ref=e26]:
+        - /url: /tags/
+        - generic [ref=e27]: 
+        - text: 标签
+      - link " 分类" [ref=e29]:
+        - /url: /categories/
+        - generic [ref=e30]: 
+        - text: 分类
+      - link " 论文" [ref=e32]:
+        - /url: /papers/
+        - generic [ref=e33]: 
+        - text: 论文
+      - generic [ref=e34]:
+        - link " 休闲 " [ref=e35]:
+          - /url: javascript:void(0);
+          - generic [ref=e36]: 
+          - text: 休闲
+          - generic [ref=e37]: 
+        - list [ref=e38]:
+          - listitem [ref=e39]:
+            - link " 音乐" [ref=e40]:
+              - /url: /music/
+              - generic [ref=e41]: 
+              - text: 音乐
+          - listitem [ref=e42]:
+            - link " 说说" [ref=e43]:
+              - /url: /essay/
+              - generic [ref=e44]: 
+              - text: 说说
+          - listitem [ref=e45]:
+            - link " 藏书阁" [ref=e46]:
+              - /url: /books/
+              - generic [ref=e47]: 
+              - text: 藏书阁
+      - link " 相册" [ref=e49]:
+        - /url: /gallery/
+        - generic [ref=e50]: 
+        - text: 相册
+      - link " 友链" [ref=e52]:
+        - /url: /link/
+        - generic [ref=e53]: 
+        - text: 友链
+      - link " 关于" [ref=e55]:
+        - /url: /about/
+        - generic [ref=e56]: 
+        - text: 关于
+  - generic [ref=e57]:
+    - banner [ref=e58]:
+      - navigation [ref=e59]:
+        - link "Birdy の 小窝" [ref=e61]:
+          - /url: /
+          - img [ref=e62]
+          - text: Birdy の 小窝
+        - generic [ref=e63]:
+          - link " 搜索" [ref=e65]:
+            - /url: javascript:void(0);
+            - generic [ref=e66]: 
+            - text: 搜索
+          - generic [ref=e67]:
+            - link " 首页" [ref=e69]:
+              - /url: /
+              - generic [ref=e70]: 
+              - text: 首页
+            - link " 时间线" [ref=e72]:
+              - /url: /archives/
+              - generic [ref=e73]: 
+              - text: 时间线
+            - link " 标签" [ref=e75]:
+              - /url: /tags/
+              - generic [ref=e76]: 
+              - text: 标签
+            - link " 分类" [ref=e78]:
+              - /url: /categories/
+              - generic [ref=e79]: 
+              - text: 分类
+            - link " 论文" [ref=e81]:
+              - /url: /papers/
+              - generic [ref=e82]: 
+              - text: 论文
+            - generic [ref=e83]:
+              - link " 休闲 " [ref=e84]:
+                - /url: javascript:void(0);
+                - generic [ref=e85]: 
+                - text: 休闲
+                - generic [ref=e86]: 
+              - text:   
+            - link " 相册" [ref=e88]:
+              - /url: /gallery/
+              - generic [ref=e89]: 
+              - text: 相册
+            - link " 友链" [ref=e91]:
+              - /url: /link/
+              - generic [ref=e92]: 
+              - text: 友链
+            - link " 关于" [ref=e94]:
+              - /url: /about/
+              - generic [ref=e95]: 
+              - text: 关于
+          - text: 
+      - generic [ref=e96]:
+        - heading "Birdy の 小窝" [level=1] [ref=e97]
+        - generic [ref=e98]: 手握日月摘 |
+        - text: 
+      - generic [ref=e100] [cursor=pointer]: 
+    - main [ref=e101]:
+      - generic [ref=e102]:
+        - generic [ref=e103]:
+          - link "Study Notes | 激活函数" [ref=e105]:
+            - /url: /post/396a3f75.html
+            - img "Study Notes | 激活函数" [ref=e106]
+          - generic [ref=e107]:
+            - link "Study Notes | 激活函数" [ref=e108]:
+              - /url: /post/396a3f75.html
+            - generic [ref=e109]: ReLU、Sigmoid、Softmax 等激活函数
+            - generic [ref=e110]:
+              - generic [ref=e111]:
+                - generic [ref=e112]: 
+                - text: 发表于
+                - time [ref=e113]: 2026-06-06
+              - generic [ref=e114]:
+                - text: "|"
+                - generic [ref=e115]: 
+                - link "DeepLearning" [ref=e116]:
+                  - /url: /categories/DeepLearning/
+              - generic [ref=e117]:
+                - text: "|"
+                - generic [ref=e118]: 
+                - link "激活函数" [ref=e119]:
+                  - /url: /tags/%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/
+                - text: •
+                - link "DL" [ref=e120]:
+                  - /url: /tags/DL/
+              - generic [ref=e121]:
+                - text: "|"
+                - generic [ref=e122]: 
+                - link "" [ref=e123]:
+                  - /url: /post/396a3f75.html#post-comment
+                  - generic [ref=e125]: 
+                - text: 条评论
+        - generic [ref=e126]:
+          - link "hexo | 创建并部署 hexo 博客" [ref=e128]:
+            - /url: /post/5d39fa56.html
+            - img "hexo | 创建并部署 hexo 博客" [ref=e129]
+          - generic [ref=e130]:
+            - link "hexo | 创建并部署 hexo 博客" [ref=e131]:
+              - /url: /post/5d39fa56.html
+            - generic [ref=e132]: 创建并部署 hexo 博客, 使用 anzhiyu 主题, 包括多账户配置。
+            - generic [ref=e133]:
+              - generic [ref=e134]:
+                - generic [ref=e135]: 
+                - text: 发表于
+                - time [ref=e136]: 2025-05-01
+              - generic [ref=e137]:
+                - text: "|"
+                - generic [ref=e138]: 
+                - link "hexo" [ref=e139]:
+                  - /url: /categories/hexo/
+              - generic [ref=e140]:
+                - text: "|"
+                - generic [ref=e141]: 
+                - link "hexo" [ref=e142]:
+                  - /url: /tags/hexo/
+                - text: •
+                - link "anzhiyu" [ref=e143]:
+                  - /url: /tags/anzhiyu/
+              - generic [ref=e144]:
+                - text: "|"
+                - generic [ref=e145]: 
+                - link "" [ref=e146]:
+                  - /url: /post/5d39fa56.html#post-comment
+                  - generic [ref=e148]: 
+                - text: 条评论
+        - generic [ref=e149]:
+          - link "Ubuntu | Redis | 安装配置与远程连接" [ref=e151]:
+            - /url: /post/625c5822.html
+            - img "Ubuntu | Redis | 安装配置与远程连接" [ref=e152]
+          - generic [ref=e153]:
+            - link "Ubuntu | Redis | 安装配置与远程连接" [ref=e154]:
+              - /url: /post/625c5822.html
+            - generic [ref=e155]: 记录 Birdy 在 Ubuntu 下进行 Redis 的配置以及用 vscode 远程连接。
+            - generic [ref=e156]:
+              - generic [ref=e157]:
+                - generic [ref=e158]: 
+                - text: 发表于
+                - time [ref=e159]: 2025-04-13
+              - generic [ref=e160]:
+                - text: "|"
+                - generic [ref=e161]: 
+                - link "Redis" [ref=e162]:
+                  - /url: /categories/Redis/
+              - generic [ref=e163]:
+                - text: "|"
+                - generic [ref=e164]: 
+                - link "Ubuntu" [ref=e165]:
+                  - /url: /tags/Ubuntu/
+                - text: •
+                - link "Redis" [ref=e166]:
+                  - /url: /tags/Redis/
+              - generic [ref=e167]:
+                - text: "|"
+                - generic [ref=e168]: 
+                - link "" [ref=e169]:
+                  - /url: /post/625c5822.html#post-comment
+                  - generic [ref=e171]: 
+                - text: 条评论
+        - generic [ref=e172]:
+          - link "Linux | 初识文件权限" [ref=e174]:
+            - /url: /post/48844841.html
+            - img "Linux | 初识文件权限" [ref=e175]
+          - generic [ref=e176]:
+            - link "Linux | 初识文件权限" [ref=e177]:
+              - /url: /post/48844841.html
+            - generic [ref=e178]:
+              - generic [ref=e179]:
+                - generic [ref=e180]: 
+                - text: 发表于
+                - time [ref=e181]: 2025-04-13
+              - generic [ref=e182]:
+                - text: "|"
+                - generic [ref=e183]: 
+                - link "Linux" [ref=e184]:
+                  - /url: /categories/Linux/
+              - generic [ref=e185]:
+                - text: "|"
+                - generic [ref=e186]: 
+                - link "Linux" [ref=e187]:
+                  - /url: /tags/Linux/
+              - generic [ref=e188]:
+                - text: "|"
+                - generic [ref=e189]: 
+                - link "" [ref=e190]:
+                  - /url: /post/48844841.html#post-comment
+                  - generic [ref=e192]: 
+                - text: 条评论
+        - generic [ref=e193]:
+          - link "wsl2 | 如何使用本机 clash" [ref=e195]:
+            - /url: /post/8ce355b9.html
+            - img "wsl2 | 如何使用本机 clash" [ref=e196]
+          - generic [ref=e197]:
+            - link "wsl2 | 如何使用本机 clash" [ref=e198]:
+              - /url: /post/8ce355b9.html
+            - generic [ref=e199]: 在 wls2 下使用本机代理
+            - generic [ref=e200]:
+              - generic [ref=e201]:
+                - generic [ref=e202]: 
+                - text: 发表于
+                - time [ref=e203]: 2025-04-13
+              - generic [ref=e204]:
+                - text: "|"
+                - generic [ref=e205]: 
+                - link "wls2, Linux" [ref=e206]:
+                  - /url: /categories/wls2-Linux/
+              - generic [ref=e207]:
+                - text: "|"
+                - generic [ref=e208]: 
+                - link "Linux" [ref=e209]:
+                  - /url: /tags/Linux/
+                - text: •
+                - link "wls2" [ref=e210]:
+                  - /url: /tags/wls2/
+              - generic [ref=e211]:
+                - text: "|"
+                - generic [ref=e212]: 
+                - link "" [ref=e213]:
+                  - /url: /post/8ce355b9.html#post-comment
+                  - generic [ref=e215]: 
+                - text: 条评论
+        - generic [ref=e216]:
+          - link "Linux | Bandit 练习" [ref=e218]:
+            - /url: /post/2070d23e.html
+            - img "Linux | Bandit 练习" [ref=e219]
+          - generic [ref=e220]:
+            - link "Linux | Bandit 练习" [ref=e221]:
+              - /url: /post/2070d23e.html
+            - generic [ref=e222]: Birdy 在大一某一段时期弄的 shell 指令的一些小练习(很多都是网上搜的 hh)
+            - generic [ref=e223]:
+              - generic [ref=e224]:
+                - generic [ref=e225]: 
+                - text: 发表于
+                - time [ref=e226]: 2025-04-13
+              - generic [ref=e227]:
+                - text: "|"
+                - generic [ref=e228]: 
+                - link "Linux" [ref=e229]:
+                  - /url: /categories/Linux/
+                - generic [ref=e230]: 
+                - link "Bandit" [ref=e231]:
+                  - /url: /categories/Linux/Bandit/
+              - generic [ref=e232]:
+                - text: "|"
+                - generic [ref=e233]: 
+                - link "Bandit" [ref=e234]:
+                  - /url: /tags/Bandit/
+                - text: •
+                - link "Linux" [ref=e235]:
+                  - /url: /tags/Linux/
+              - generic [ref=e236]:
+                - text: "|"
+                - generic [ref=e237]: 
+                - link "" [ref=e238]:
+                  - /url: /post/2070d23e.html#post-comment
+                  - generic [ref=e240]: 
+                - text: 条评论
+        - generic [ref=e241]:
+          - link "hexo魔改 | 修改卡片透明度" [ref=e243]:
+            - /url: /post/ae1606a8.html
+            - img "hexo魔改 | 修改卡片透明度" [ref=e244]
+          - generic [ref=e245]:
+            - link "hexo魔改 | 修改卡片透明度" [ref=e246]:
+              - /url: /post/ae1606a8.html
+            - generic [ref=e247]: hexo butterfly 主题修改卡片透明度
+            - generic [ref=e248]:
+              - generic [ref=e249]:
+                - generic [ref=e250]: 
+                - text: 发表于
+                - time [ref=e251]: 2025-02-13
+              - generic [ref=e252]:
+                - text: "|"
+                - generic [ref=e253]: 
+                - link "hexo" [ref=e254]:
+                  - /url: /tags/hexo/
+                - text: •
+                - link "butterfly" [ref=e255]:
+                  - /url: /tags/butterfly/
+              - generic [ref=e256]:
+                - text: "|"
+                - generic [ref=e257]: 
+                - link "" [ref=e258]:
+                  - /url: /post/ae1606a8.html#post-comment
+                  - generic [ref=e260]: 
+                - text: 条评论
+        - generic [ref=e261]:
+          - link "Git Bash | 配置 zsh, oh-my-zsh" [ref=e263]:
+            - /url: /post/7d893c61.html
+            - img "Git Bash | 配置 zsh, oh-my-zsh" [ref=e264]
+          - generic [ref=e265]:
+            - link "Git Bash | 配置 zsh, oh-my-zsh" [ref=e266]:
+              - /url: /post/7d893c61.html
+            - generic [ref=e267]: git bash 配置 zsh 并使得 zsh 为默认终端，设置主题以及一些插件等
+            - generic [ref=e268]:
+              - generic [ref=e269]:
+                - generic [ref=e270]: 
+                - text: 发表于
+                - time [ref=e271]: 2025-01-23
+              - generic [ref=e272]:
+                - text: "|"
+                - generic [ref=e273]: 
+                - link "git bash" [ref=e274]:
+                  - /url: /categories/git-bash/
+              - generic [ref=e275]:
+                - text: "|"
+                - generic [ref=e276]: 
+                - link "git" [ref=e277]:
+                  - /url: /tags/git/
+                - text: •
+                - link "git bash" [ref=e278]:
+                  - /url: /tags/git-bash/
+                - text: •
+                - link "zsh" [ref=e279]:
+                  - /url: /tags/zsh/
+              - generic [ref=e280]:
+                - text: "|"
+                - generic [ref=e281]: 
+                - link "" [ref=e282]:
+                  - /url: /post/7d893c61.html#post-comment
+                  - generic [ref=e284]: 
+                - text: 条评论
+        - generic [ref=e285]:
+          - link "问题解决实录 | bash 中 tmux 颜色显示不全" [ref=e287]:
+            - /url: /post/7526bffa.html
+            - img "问题解决实录 | bash 中 tmux 颜色显示不全" [ref=e288]
+          - generic [ref=e289]:
+            - link "问题解决实录 | bash 中 tmux 颜色显示不全" [ref=e290]:
+              - /url: /post/7526bffa.html
+            - generic [ref=e291]: 解决在 bash 终端中进入 tmux 界面，但是颜色显示不全的问题。
+            - generic [ref=e292]:
+              - generic [ref=e293]:
+                - generic [ref=e294]: 
+                - text: 发表于
+                - time [ref=e295]: 2024-10-01
+              - generic [ref=e296]:
+                - text: "|"
+                - generic [ref=e297]: 
+                - link "问题解决实录" [ref=e298]:
+                  - /url: /categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E5%AE%9E%E5%BD%95/
+              - generic [ref=e299]:
+                - text: "|"
+                - generic [ref=e300]: 
+                - link "问题解决实录" [ref=e301]:
+                  - /url: /tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E5%AE%9E%E5%BD%95/
+                - text: •
+                - link "tmux" [ref=e302]:
+                  - /url: /tags/tmux/
+              - generic [ref=e303]:
+                - text: "|"
+                - generic [ref=e304]: 
+                - link "" [ref=e305]:
+                  - /url: /post/7526bffa.html#post-comment
+                  - generic [ref=e307]: 
+                - text: 条评论
+        - generic [ref=e308]:
+          - link "Jupyter | jupyter notebook 使用 conda 环境" [ref=e310]:
+            - /url: /post/6548a155.html
+            - img "Jupyter | jupyter notebook 使用 conda 环境" [ref=e311]
+          - generic [ref=e312]:
+            - link "Jupyter | jupyter notebook 使用 conda 环境" [ref=e313]:
+              - /url: /post/6548a155.html
+            - generic [ref=e314]: jupyter notebook 中使用自己创建的 conda 环境作为内核
+            - generic [ref=e315]:
+              - generic [ref=e316]:
+                - generic [ref=e317]: 
+                - text: 发表于
+                - time [ref=e318]: 2024-10-01
+              - generic [ref=e319]:
+                - text: "|"
+                - generic [ref=e320]: 
+                - link "Jupyter Notebook" [ref=e321]:
+                  - /url: /categories/Jupyter-Notebook/
+              - generic [ref=e322]:
+                - text: "|"
+                - generic [ref=e323]: 
+                - link "Jupyter Notebook" [ref=e324]:
+                  - /url: /tags/Jupyter-Notebook/
+                - text: •
+                - link "Anaconda" [ref=e325]:
+                  - /url: /tags/Anaconda/
+              - generic [ref=e326]:
+                - text: "|"
+                - generic [ref=e327]: 
+                - link "" [ref=e328]:
+                  - /url: /post/6548a155.html#post-comment
+                  - generic [ref=e330]: 
+                - text: 条评论
+        - generic [ref=e331]:
+          - link "git | 基础教程" [ref=e333]:
+            - /url: /post/99daa9d2.html
+            - img "git | 基础教程" [ref=e334]
+          - generic [ref=e335]:
+            - link "git | 基础教程" [ref=e336]:
+              - /url: /post/99daa9d2.html
+            - generic [ref=e337]: git 一些常用命令
+            - generic [ref=e338]:
+              - generic [ref=e339]:
+                - generic [ref=e340]: 
+                - text: 发表于
+                - time [ref=e341]: 2024-09-27
+              - generic [ref=e342]:
+                - text: "|"
+                - generic [ref=e343]: 
+                - link "git" [ref=e344]:
+                  - /url: /categories/git/
+              - generic [ref=e345]:
+                - text: "|"
+                - generic [ref=e346]: 
+                - link "git" [ref=e347]:
+                  - /url: /tags/git/
+              - generic [ref=e348]:
+                - text: "|"
+                - generic [ref=e349]: 
+                - link "" [ref=e350]:
+                  - /url: /post/99daa9d2.html#post-comment
+                  - generic [ref=e352]: 
+                - text: 条评论
+        - generic [ref=e353]:
+          - link "Linux | Debian | Vscode 安装与配置 C 环境" [ref=e355]:
+            - /url: /post/5c534197.html
+            - img "Linux | Debian | Vscode 安装与配置 C 环境" [ref=e356]
+          - generic [ref=e357]:
+            - link "Linux | Debian | Vscode 安装与配置 C 环境" [ref=e358]:
+              - /url: /post/5c534197.html
+            - generic [ref=e359]: Debian 系统下 vscode 的安装以及 C 语言环境搭建
+            - generic [ref=e360]:
+              - generic [ref=e361]:
+                - generic [ref=e362]: 
+                - text: 发表于
+                - time [ref=e363]: 2024-08-23
+              - generic [ref=e364]:
+                - text: "|"
+                - generic [ref=e365]: 
+                - link "Linux" [ref=e366]:
+                  - /url: /categories/Linux/
+              - generic [ref=e367]:
+                - text: "|"
+                - generic [ref=e368]: 
+                - link "教程" [ref=e369]:
+                  - /url: /tags/%E6%95%99%E7%A8%8B/
+                - text: •
+                - link "Linux" [ref=e370]:
+                  - /url: /tags/Linux/
+                - text: •
+                - link "Debian" [ref=e371]:
+                  - /url: /tags/Debian/
+                - text: •
+                - link "虚拟机" [ref=e372]:
+                  - /url: /tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/
+                - text: •
+                - link "Vscode" [ref=e373]:
+                  - /url: /tags/Vscode/
+                - text: •
+                - link "C" [ref=e374]:
+                  - /url: /tags/C/
+              - generic [ref=e375]:
+                - text: "|"
+                - generic [ref=e376]: 
+                - link "" [ref=e377]:
+                  - /url: /post/5c534197.html#post-comment
+                  - generic [ref=e379]: 
+                - text: 条评论
+        - generic [ref=e380]:
+          - link "Linux | Debian | 更换 Gnome 至 Xfce4" [ref=e382]:
+            - /url: /post/250d0309.html
+            - img "Linux | Debian | 更换 Gnome 至 Xfce4" [ref=e383]
+          - generic [ref=e384]:
+            - link "Linux | Debian | 更换 Gnome 至 Xfce4" [ref=e385]:
+              - /url: /post/250d0309.html
+            - generic [ref=e386]: 将 Debian 系统的桌面从 Gnome 改为 Xfce4
+            - generic [ref=e387]:
+              - generic [ref=e388]:
+                - generic [ref=e389]: 
+                - text: 发表于
+                - time [ref=e390]: 2024-08-23
+              - generic [ref=e391]:
+                - text: "|"
+                - generic [ref=e392]: 
+                - link "Linux" [ref=e393]:
+                  - /url: /categories/Linux/
+              - generic [ref=e394]:
+                - text: "|"
+                - generic [ref=e395]: 
+                - link "教程" [ref=e396]:
+                  - /url: /tags/%E6%95%99%E7%A8%8B/
+                - text: •
+                - link "Linux" [ref=e397]:
+                  - /url: /tags/Linux/
+                - text: •
+                - link "Debian" [ref=e398]:
+                  - /url: /tags/Debian/
+                - text: •
+                - link "虚拟机" [ref=e399]:
+                  - /url: /tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/
+              - generic [ref=e400]:
+                - text: "|"
+                - generic [ref=e401]: 
+                - link "" [ref=e402]:
+                  - /url: /post/250d0309.html#post-comment
+                  - generic [ref=e404]: 
+                - text: 条评论
+        - generic [ref=e405]:
+          - link "hexo魔改 | 修改指针样式" [ref=e407]:
+            - /url: /post/77c5c179.html
+            - img "hexo魔改 | 修改指针样式" [ref=e408]
+          - generic [ref=e409]:
+            - link "hexo魔改 | 修改指针样式" [ref=e410]:
+              - /url: /post/77c5c179.html
+            - generic [ref=e411]: hexo butterfly主题修改鼠标指针样式
+            - generic [ref=e412]:
+              - generic [ref=e413]:
+                - generic [ref=e414]: 
+                - text: 发表于
+                - time [ref=e415]: 2024-08-23
+              - generic [ref=e416]:
+                - text: "|"
+                - generic [ref=e417]: 
+                - link "hexo魔改系列" [ref=e418]:
+                  - /url: /categories/hexo%E9%AD%94%E6%94%B9%E7%B3%BB%E5%88%97/
+              - generic [ref=e419]:
+                - text: "|"
+                - generic [ref=e420]: 
+                - link "hexo" [ref=e421]:
+                  - /url: /tags/hexo/
+                - text: •
+                - link "butterfly" [ref=e422]:
+                  - /url: /tags/butterfly/
+                - text: •
+                - link "鼠标指针" [ref=e423]:
+                  - /url: /tags/%E9%BC%A0%E6%A0%87%E6%8C%87%E9%92%88/
+              - generic [ref=e424]:
+                - text: "|"
+                - generic [ref=e425]: 
+                - link "" [ref=e426]:
+                  - /url: /post/77c5c179.html#post-comment
+                  - generic [ref=e428]: 
+                - text: 条评论
+        - generic [ref=e429]:
+          - link "问题解决实录 | Anaconda | Anaconda Navigator 启动无反应" [ref=e431]:
+            - /url: /post/4560477.html
+            - img "问题解决实录 | Anaconda | Anaconda Navigator 启动无反应" [ref=e432]
+          - generic [ref=e433]:
+            - link "问题解决实录 | Anaconda | Anaconda Navigator 启动无反应" [ref=e434]:
+              - /url: /post/4560477.html
+            - generic [ref=e435]: 解决 Anaconda Navigator 启动无反应的情况
+            - generic [ref=e436]:
+              - generic [ref=e437]:
+                - generic [ref=e438]: 
+                - text: 发表于
+                - time [ref=e439]: 2024-07-31
+              - generic [ref=e440]:
+                - text: "|"
+                - generic [ref=e441]: 
+                - link "问题解决实录" [ref=e442]:
+                  - /url: /categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E5%AE%9E%E5%BD%95/
+              - generic [ref=e443]:
+                - text: "|"
+                - generic [ref=e444]: 
+                - link "Anaconda" [ref=e445]:
+                  - /url: /tags/Anaconda/
+                - text: •
+                - link "问题解决实录" [ref=e446]:
+                  - /url: /tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E5%AE%9E%E5%BD%95/
+              - generic [ref=e447]:
+                - text: "|"
+                - generic [ref=e448]: 
+                - link "" [ref=e449]:
+                  - /url: /post/4560477.html#post-comment
+                  - generic [ref=e451]: 
+                - text: 条评论
+        - generic [ref=e452]:
+          - link "Docker | 入门：常用命令" [ref=e454]:
+            - /url: /post/6c4989a3.html
+            - img "Docker | 入门：常用命令" [ref=e455]
+          - generic [ref=e456]:
+            - link "Docker | 入门：常用命令" [ref=e457]:
+              - /url: /post/6c4989a3.html
+            - generic [ref=e458]: 介绍 Docker 的常用命令
+            - generic [ref=e459]:
+              - generic [ref=e460]:
+                - generic [ref=e461]: 
+                - text: 发表于
+                - time [ref=e462]: 2024-06-10
+              - generic [ref=e463]:
+                - text: "|"
+                - generic [ref=e464]: 
+                - link "Docker" [ref=e465]:
+                  - /url: /categories/Docker/
+              - generic [ref=e466]:
+                - text: "|"
+                - generic [ref=e467]: 
+                - link "Docker" [ref=e468]:
+                  - /url: /tags/Docker/
+                - text: •
+                - link "教程" [ref=e469]:
+                  - /url: /tags/%E6%95%99%E7%A8%8B/
+                - text: •
+                - link "技术" [ref=e470]:
+                  - /url: /tags/%E6%8A%80%E6%9C%AF/
+              - generic [ref=e471]:
+                - text: "|"
+                - generic [ref=e472]: 
+                - link "" [ref=e473]:
+                  - /url: /post/6c4989a3.html#post-comment
+                  - generic [ref=e475]: 
+                - text: 条评论
+        - generic [ref=e476]:
+          - link "Docker | 入门：原理探究" [ref=e478]:
+            - /url: /post/ff8ad698.html
+            - img "Docker | 入门：原理探究" [ref=e479]
+          - generic [ref=e480]:
+            - link "Docker | 入门：原理探究" [ref=e481]:
+              - /url: /post/ff8ad698.html
+            - generic [ref=e482]: 介绍 Docker 的原理，以及与 VM 虚拟机的比较
+            - generic [ref=e483]:
+              - generic [ref=e484]:
+                - generic [ref=e485]: 
+                - text: 发表于
+                - time [ref=e486]: 2024-06-10
+              - generic [ref=e487]:
+                - text: "|"
+                - generic [ref=e488]: 
+                - link "Docker" [ref=e489]:
+                  - /url: /categories/Docker/
+              - generic [ref=e490]:
+                - text: "|"
+                - generic [ref=e491]: 
+                - link "Docker" [ref=e492]:
+                  - /url: /tags/Docker/
+                - text: •
+                - link "教程" [ref=e493]:
+                  - /url: /tags/%E6%95%99%E7%A8%8B/
+                - text: •
+                - link "技术" [ref=e494]:
+                  - /url: /tags/%E6%8A%80%E6%9C%AF/
+              - generic [ref=e495]:
+                - text: "|"
+                - generic [ref=e496]: 
+                - link "" [ref=e497]:
+                  - /url: /post/ff8ad698.html#post-comment
+                  - generic [ref=e499]: 
+                - text: 条评论
+        - generic [ref=e500]:
+          - link "Linux | 安装并配置 Ubuntu 22.04 LTS" [ref=e502]:
+            - /url: /post/b5141e1c.html
+            - img "Linux | 安装并配置 Ubuntu 22.04 LTS" [ref=e503]
+          - generic [ref=e504]:
+            - link "Linux | 安装并配置 Ubuntu 22.04 LTS" [ref=e505]:
+              - /url: /post/b5141e1c.html
+            - generic [ref=e506]: 在 Vmware Workstation 软件下安装并配置 Ubuntu 22.04 LTS 版本，包括必须工具的安装、字体大小终端大小的改变以及中文输入法的安装。
+            - generic [ref=e507]:
+              - generic [ref=e508]:
+                - generic [ref=e509]: 
+                - text: 发表于
+                - time [ref=e510]: 2024-05-24
+              - generic [ref=e511]:
+                - text: "|"
+                - generic [ref=e512]: 
+                - link "Linux" [ref=e513]:
+                  - /url: /categories/Linux/
+              - generic [ref=e514]:
+                - text: "|"
+                - generic [ref=e515]: 
+                - link "教程" [ref=e516]:
+                  - /url: /tags/%E6%95%99%E7%A8%8B/
+                - text: •
+                - link "Linux" [ref=e517]:
+                  - /url: /tags/Linux/
+                - text: •
+                - link "虚拟机" [ref=e518]:
+                  - /url: /tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/
+                - text: •
+                - link "Ubuntu" [ref=e519]:
+                  - /url: /tags/Ubuntu/
+              - generic [ref=e520]:
+                - text: "|"
+                - generic [ref=e521]: 
+                - link "" [ref=e522]:
+                  - /url: /post/b5141e1c.html#post-comment
+                  - generic [ref=e524]: 
+                - text: 条评论
+        - navigation [ref=e525]:
+          - generic [ref=e526]:
+            - generic [ref=e527]: "1"
+            - link "2" [ref=e528]:
+              - /url: /page/2/#content-inner
+            - link "" [ref=e529]:
+              - /url: /page/2/#content-inner
+              - generic [ref=e530]: 
+      - generic [ref=e531]:
+        - generic [ref=e532]:
+          - generic [ref=e533]:
+            - img "avatar" [ref=e535]
+            - generic [ref=e536]: Birdy
+            - generic [ref=e537]: 一名什么都不会的蒟蒻
+          - generic [ref=e538]:
+            - link "文章 33" [ref=e539]:
+              - /url: /archives/
+              - generic [ref=e540]: 文章
+              - generic [ref=e541]: "33"
+            - link "标签 46" [ref=e542]:
+              - /url: /tags/
+              - generic [ref=e543]: 标签
+              - generic [ref=e544]: "46"
+            - link "分类 19" [ref=e545]:
+              - /url: /categories/
+              - generic [ref=e546]: 分类
+              - generic [ref=e547]: "19"
+          - link " Follow Me" [ref=e548]:
+            - /url: https://github.com/zhangbird050801
+            - generic [ref=e549]: 
+            - text: Follow Me
+          - link "" [ref=e551]:
+            - /url: https://github.com/zhangbird050801
+            - generic [ref=e552]: 
+        - generic [ref=e553]:
+          - generic [ref=e554]:
+            - generic [ref=e555]: 
+            - text: 公告
+          - generic [ref=e556]: 大三在读蒟蒻,欢迎一起学习交流cs QQ:2944006086
+        - generic [ref=e557]:
+          - generic [ref=e558]:
+            - generic [ref=e559]:
+              - generic [ref=e560]: 
+              - text: 最新文章
+            - generic [ref=e561]:
+              - generic [ref=e562]:
+                - link "Study Notes | 激活函数" [ref=e563]:
+                  - /url: /post/396a3f75.html
+                  - img "Study Notes | 激活函数" [ref=e564]
+                - generic [ref=e565]:
+                  - link "Study Notes | 激活函数" [ref=e566]:
+                    - /url: /post/396a3f75.html
+                  - time [ref=e567]: 2026-06-06
+              - generic [ref=e568]:
+                - link "hexo | 创建并部署 hexo 博客" [ref=e569]:
+                  - /url: /post/5d39fa56.html
+                  - img "hexo | 创建并部署 hexo 博客" [ref=e570]
+                - generic [ref=e571]:
+                  - link "hexo | 创建并部署 hexo 博客" [ref=e572]:
+                    - /url: /post/5d39fa56.html
+                  - time [ref=e573]: 2025-05-01
+              - generic [ref=e574]:
+                - link "Ubuntu | Redis | 安装配置与远程连接" [ref=e575]:
+                  - /url: /post/625c5822.html
+                  - img "Ubuntu | Redis | 安装配置与远程连接" [ref=e576]
+                - generic [ref=e577]:
+                  - link "Ubuntu | Redis | 安装配置与远程连接" [ref=e578]:
+                    - /url: /post/625c5822.html
+                  - time [ref=e579]: 2025-04-13
+              - generic [ref=e580]:
+                - link "Linux | 初识文件权限" [ref=e581]:
+                  - /url: /post/48844841.html
+                  - img "Linux | 初识文件权限" [ref=e582]
+                - generic [ref=e583]:
+                  - link "Linux | 初识文件权限" [ref=e584]:
+                    - /url: /post/48844841.html
+                  - time [ref=e585]: 2025-04-13
+              - generic [ref=e586]:
+                - link "wsl2 | 如何使用本机 clash" [ref=e587]:
+                  - /url: /post/8ce355b9.html
+                  - img "wsl2 | 如何使用本机 clash" [ref=e588]
+                - generic [ref=e589]:
+                  - link "wsl2 | 如何使用本机 clash" [ref=e590]:
+                    - /url: /post/8ce355b9.html
+                  - time [ref=e591]: 2025-04-13
+          - generic [ref=e592]:
+            - generic [ref=e593]:
+              - generic [ref=e594]: 
+              - text: 分类
+              - link "" [ref=e595]:
+                - /url: /categories/
+                - generic [ref=e596]: 
+            - list [ref=e597]:
+              - listitem [ref=e598]:
+                - link "DeepLearning 1" [ref=e599]:
+                  - /url: /categories/DeepLearning/
+                  - generic [ref=e600]: DeepLearning
+                  - generic [ref=e601]: "1"
+              - listitem [ref=e602]:
+                - link "Docker 3" [ref=e603]:
+                  - /url: /categories/Docker/
+                  - generic [ref=e604]: Docker
+                  - generic [ref=e605]: "3"
+              - listitem [ref=e606]:
+                - link "Jupyter Notebook 1" [ref=e607]:
+                  - /url: /categories/Jupyter-Notebook/
+                  - generic [ref=e608]: Jupyter Notebook
+                  - generic [ref=e609]: "1"
+              - listitem [ref=e610]:
+                - link "Linux 5" [ref=e611]:
+                  - /url: /categories/Linux/
+                  - generic [ref=e612]: Linux
+                  - generic [ref=e613]: "5"
+                - list [ref=e614]:
+                  - listitem [ref=e615]:
+                    - link "Bandit 1" [ref=e616]:
+                      - /url: /categories/Linux/Bandit/
+                      - generic [ref=e617]: Bandit
+                      - generic [ref=e618]: "1"
+              - listitem [ref=e619]:
+                - link "NJU-PA 1" [ref=e620]:
+                  - /url: /categories/NJU-PA/
+                  - generic [ref=e621]: NJU-PA
+                  - generic [ref=e622]: "1"
+              - listitem [ref=e623]:
+                - link "OpenCV 1" [ref=e624]:
+                  - /url: /categories/OpenCV/
+                  - generic [ref=e625]: OpenCV
+                  - generic [ref=e626]: "1"
+              - listitem [ref=e627]:
+                - link "Redis 1" [ref=e628]:
+                  - /url: /categories/Redis/
+                  - generic [ref=e629]: Redis
+                  - generic [ref=e630]: "1"
+          - generic [ref=e631]:
+            - generic [ref=e632]:
+              - generic [ref=e633]: 
+              - text: 标签
+            - generic [ref=e634]:
+              - link "Debian" [ref=e635]:
+                - /url: /tags/Debian/
+              - link "VsCode" [ref=e636]:
+                - /url: /tags/VsCode/
+              - link "butterfly" [ref=e637]:
+                - /url: /tags/butterfly/
+              - link "2048" [ref=e638]:
+                - /url: /tags/2048/
+              - link "wls2" [ref=e639]:
+                - /url: /tags/wls2/
+              - link "base64" [ref=e640]:
+                - /url: /tags/base64/
+              - link "C" [ref=e641]:
+                - /url: /tags/C/
+              - link "aplayer" [ref=e642]:
+                - /url: /tags/aplayer/
+              - link "Github" [ref=e643]:
+                - /url: /tags/Github/
+              - link "激活函数" [ref=e644]:
+                - /url: /tags/%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/
+              - link "NJU-PA" [ref=e645]:
+                - /url: /tags/NJU-PA/
+              - link "Linux" [ref=e646]:
+                - /url: /tags/Linux/
+              - link "Bandit" [ref=e647]:
+                - /url: /tags/Bandit/
+              - link "ics" [ref=e648]:
+                - /url: /tags/ics/
+              - link "Docker" [ref=e649]:
+                - /url: /tags/Docker/
+              - link "评论" [ref=e650]:
+                - /url: /tags/%E8%AF%84%E8%AE%BA/
+              - link "Jupyter Notebook" [ref=e651]:
+                - /url: /tags/Jupyter-Notebook/
+              - link "问题解决实录" [ref=e652]:
+                - /url: /tags/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E5%AE%9E%E5%BD%95/
+              - link "tmux" [ref=e653]:
+                - /url: /tags/tmux/
+              - link "cs61B" [ref=e654]:
+                - /url: /tags/cs61B/
+              - link "教程" [ref=e655]:
+                - /url: /tags/%E6%95%99%E7%A8%8B/
+              - link "计算机系统基础" [ref=e656]:
+                - /url: /tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/
+              - link "SSH" [ref=e657]:
+                - /url: /tags/SSH/
+              - link "git" [ref=e658]:
+                - /url: /tags/git/
+              - link "Redis" [ref=e659]:
+                - /url: /tags/Redis/
+              - link "Ubuntu" [ref=e660]:
+                - /url: /tags/Ubuntu/
+              - link "matplotlib" [ref=e661]:
+                - /url: /tags/matplotlib/
+              - link "Vscode" [ref=e662]:
+                - /url: /tags/Vscode/
+              - link "旋转小风车" [ref=e663]:
+                - /url: /tags/%E6%97%8B%E8%BD%AC%E5%B0%8F%E9%A3%8E%E8%BD%A6/
+              - link "Logo" [ref=e664]:
+                - /url: /tags/Logo/
+              - link "java" [ref=e665]:
+                - /url: /tags/java/
+              - link "anzhiyu" [ref=e666]:
+                - /url: /tags/anzhiyu/
+              - link "虚拟机" [ref=e667]:
+                - /url: /tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/
+              - link "编码" [ref=e668]:
+                - /url: /tags/%E7%BC%96%E7%A0%81/
+              - link "音乐播放器" [ref=e669]:
+                - /url: /tags/%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/
+              - link "OpenCV" [ref=e670]:
+                - /url: /tags/OpenCV/
+              - link "VMware" [ref=e671]:
+                - /url: /tags/VMware/
+              - link "hexo" [ref=e672]:
+                - /url: /tags/hexo/
+              - link "技术" [ref=e673]:
+                - /url: /tags/%E6%8A%80%E6%9C%AF/
+              - link "git bash" [ref=e674]:
+                - /url: /tags/git-bash/
+          - generic [ref=e675]:
+            - generic [ref=e676]:
+              - generic [ref=e677]: 
+              - text: 归档
+              - link "" [ref=e678]:
+                - /url: /archives/
+                - generic [ref=e679]: 
+            - list [ref=e680]:
+              - listitem [ref=e681]:
+                - link "六月 2026 1" [ref=e682]:
+                  - /url: /archives/2026/06/
+                  - generic [ref=e683]: 六月 2026
+                  - generic [ref=e684]: "1"
+              - listitem [ref=e685]:
+                - link "五月 2025 1" [ref=e686]:
+                  - /url: /archives/2025/05/
+                  - generic [ref=e687]: 五月 2025
+                  - generic [ref=e688]: "1"
+              - listitem [ref=e689]:
+                - link "四月 2025 4" [ref=e690]:
+                  - /url: /archives/2025/04/
+                  - generic [ref=e691]: 四月 2025
+                  - generic [ref=e692]: "4"
+              - listitem [ref=e693]:
+                - link "二月 2025 1" [ref=e694]:
+                  - /url: /archives/2025/02/
+                  - generic [ref=e695]: 二月 2025
+                  - generic [ref=e696]: "1"
+              - listitem [ref=e697]:
+                - link "一月 2025 1" [ref=e698]:
+                  - /url: /archives/2025/01/
+                  - generic [ref=e699]: 一月 2025
+                  - generic [ref=e700]: "1"
+              - listitem [ref=e701]:
+                - link "十月 2024 2" [ref=e702]:
+                  - /url: /archives/2024/10/
+                  - generic [ref=e703]: 十月 2024
+                  - generic [ref=e704]: "2"
+              - listitem [ref=e705]:
+                - link "九月 2024 1" [ref=e706]:
+                  - /url: /archives/2024/09/
+                  - generic [ref=e707]: 九月 2024
+                  - generic [ref=e708]: "1"
+              - listitem [ref=e709]:
+                - link "八月 2024 3" [ref=e710]:
+                  - /url: /archives/2024/08/
+                  - generic [ref=e711]: 八月 2024
+                  - generic [ref=e712]: "3"
+          - generic [ref=e713]:
+            - generic [ref=e714]:
+              - generic [ref=e715]: 
+              - text: 网站资讯
+            - generic [ref=e716]:
+              - generic [ref=e717]:
+                - generic [ref=e718]: "文章数目 :"
+                - generic [ref=e719]: "33"
+              - generic [ref=e720]:
+                - generic [ref=e721]: "本站总字数 :"
+                - generic [ref=e722]: 18.9k
+              - generic [ref=e723]:
+                - generic [ref=e724]: "本站访客数 :"
+                - generic [ref=e725]: "55675649"
+              - generic [ref=e726]:
+                - generic [ref=e727]: "本站总访问量 :"
+                - generic [ref=e728]: "79303326"
+              - generic [ref=e729]:
+                - generic [ref=e730]: "最后更新时间 :"
+                - generic [ref=e731]: 刚刚
+    - contentinfo [ref=e732]:
+      - contentinfo [ref=e733]:
+        - generic [ref=e734]:
+          - generic [ref=e735]:
+            - link "" [ref=e736]:
+              - /url: https://birdyweb.top/
+              - generic [ref=e737]: 
+            - link "" [ref=e738]:
+              - /url: https://res.abeim.cn/api/qq/?qq=2944006086
+              - generic [ref=e739]: 
+            - link "" [ref=e740]:
+              - /url: /wechat/
+              - generic [ref=e741]: 
+            - link "" [ref=e742]:
+              - /url: mailto:marcus@marcus233.top
+              - generic [ref=e743]: 
+          - img "返回顶部" [ref=e744]
+          - generic [ref=e745]:
+            - link "" [ref=e746]:
+              - /url: https://github.com/zhangbird050801
+              - generic [ref=e747]: 
+            - link "" [ref=e748]:
+              - /url: https://space.bilibili.com/287677710
+              - generic [ref=e749]: 
+            - link "" [ref=e750]:
+              - /url: /stars/
+              - generic [ref=e751]: 
+            - link "" [ref=e752]:
+              - /url: /message/
+              - generic [ref=e753]: 
+        - generic [ref=e754]:
+          - generic [ref=e755]:
+            - heading "直达" [level=3] [ref=e756]
+            - generic [ref=e757]:
+              - link "藏书阁" [ref=e758]:
+                - /url: /books/
+              - link "空间说说" [ref=e759]:
+                - /url: /essay/
+              - link "音乐" [ref=e760]:
+                - /url: /music/
+          - generic [ref=e761]:
+            - heading "关于" [level=3] [ref=e762]
+            - generic [ref=e763]:
+              - link "关于我" [ref=e764]:
+                - /url: /about/
+              - link "我的相册" [ref=e765]:
+                - /url: /gallery/
+          - generic [ref=e766]:
+            - heading "分类" [level=3] [ref=e767]
+            - generic [ref=e768]:
+              - link "博客分类" [ref=e769]:
+                - /url: /categories/
+              - link "技术" [ref=e770]:
+                - /url: /categories/技术/
+              - link "查看全部" [ref=e771]:
+                - /url: /categories/
+        - generic [ref=e773]:
+          - generic [ref=e774]:
+            - generic [ref=e775]:
+              - text: ©2024 - 2026 By
+              - link "Birdy" [ref=e776]:
+                - /url: https://birdyweb.top/
+            - link "CloudFlare" [ref=e778]:
+              - /url: https://www.cloudflare-cn.com/enterprise/
+          - generic [ref=e779]:
+            - generic "已运行时长" [ref=e780]: 本站已运行：1397 天 16 时 17 分 45 秒
+            - generic [ref=e781]:
+              - link "Hexo" [ref=e782]:
+                - /url: https://hexo.io/zh-cn/
+              - link "| Butterfly" [ref=e783]:
+                - /url: https://butterfly.js.org/
+  - generic [ref=e784]:
+    - generic:
+      - button "繁" [ref=e785] [cursor=pointer]
+      - button "" [ref=e786] [cursor=pointer]:
+        - generic [ref=e787]: 
+      - button "" [ref=e788] [cursor=pointer]:
+        - generic [ref=e789]: 
+    - generic [ref=e790]:
+      - button "" [ref=e791] [cursor=pointer]:
+        - generic [ref=e792]: 
+      - button "" [ref=e793] [cursor=pointer]:
+        - generic [ref=e794]: 
+      - button "" [ref=e795] [cursor=pointer]:
+        - generic [ref=e796]: 
+  - generic:
+    - generic:   

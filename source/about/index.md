@@ -55,9 +55,6 @@ highlight_shrink:
 
 <div style="text-align:center">
     <span style="width:20%;display:inline-block">
-        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Rust.png" style="zoom:15%;float:left">
-    </span>
-    <span style="width:20%;display:inline-block">
         <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Raspberry%20Pi.png" style="zoom:15%;float:left">
     </span>
     <br>

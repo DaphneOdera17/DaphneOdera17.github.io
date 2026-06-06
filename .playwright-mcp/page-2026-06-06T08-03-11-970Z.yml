@@ -1,0 +1,248 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - img "avatar" [ref=e6]
+    - generic [ref=e7]:
+      - link "文章 33" [ref=e8]:
+        - /url: /archives/
+        - generic [ref=e9]: 文章
+        - generic [ref=e10]: "33"
+      - link "标签 46" [ref=e11]:
+        - /url: /tags/
+        - generic [ref=e12]: 标签
+        - generic [ref=e13]: "46"
+      - link "分类 19" [ref=e14]:
+        - /url: /categories/
+        - generic [ref=e15]: 分类
+        - generic [ref=e16]: "19"
+    - separator [ref=e17]: 
+    - generic [ref=e18]:
+      - link " 首页" [ref=e20]:
+        - /url: /
+        - generic [ref=e21]: 
+        - text: 首页
+      - link " 时间线" [ref=e23]:
+        - /url: /archives/
+        - generic [ref=e24]: 
+        - text: 时间线
+      - link " 标签" [ref=e26]:
+        - /url: /tags/
+        - generic [ref=e27]: 
+        - text: 标签
+      - link " 分类" [ref=e29]:
+        - /url: /categories/
+        - generic [ref=e30]: 
+        - text: 分类
+      - link " 论文" [ref=e32]:
+        - /url: /papers/
+        - generic [ref=e33]: 
+        - text: 论文
+      - generic [ref=e34]:
+        - link " 休闲 " [ref=e35]:
+          - /url: javascript:void(0);
+          - generic [ref=e36]: 
+          - text: 休闲
+          - generic [ref=e37]: 
+        - list [ref=e38]:
+          - listitem [ref=e39]:
+            - link " 音乐" [ref=e40]:
+              - /url: /music/
+              - generic [ref=e41]: 
+              - text: 音乐
+          - listitem [ref=e42]:
+            - link " 说说" [ref=e43]:
+              - /url: /essay/
+              - generic [ref=e44]: 
+              - text: 说说
+          - listitem [ref=e45]:
+            - link " 藏书阁" [ref=e46]:
+              - /url: /books/
+              - generic [ref=e47]: 
+              - text: 藏书阁
+      - link " 相册" [ref=e49]:
+        - /url: /gallery/
+        - generic [ref=e50]: 
+        - text: 相册
+      - link " 友链" [ref=e52]:
+        - /url: /link/
+        - generic [ref=e53]: 
+        - text: 友链
+      - link " 关于" [ref=e55]:
+        - /url: /about/
+        - generic [ref=e56]: 
+        - text: 关于
+  - generic [ref=e57]:
+    - banner [ref=e58]:
+      - navigation [ref=e59]:
+        - link "Birdy の 小窝" [ref=e61]:
+          - /url: /
+          - img [ref=e62]
+          - text: Birdy の 小窝
+        - generic [ref=e63]:
+          - link " 搜索" [ref=e65]:
+            - /url: javascript:void(0);
+            - generic [ref=e66]: 
+            - text: 搜索
+          - generic [ref=e67]:
+            - link " 首页" [ref=e69]:
+              - /url: /
+              - generic [ref=e70]: 
+              - text: 首页
+            - link " 时间线" [ref=e72]:
+              - /url: /archives/
+              - generic [ref=e73]: 
+              - text: 时间线
+            - link " 标签" [ref=e75]:
+              - /url: /tags/
+              - generic [ref=e76]: 
+              - text: 标签
+            - link " 分类" [ref=e78]:
+              - /url: /categories/
+              - generic [ref=e79]: 
+              - text: 分类
+            - link " 论文" [ref=e81]:
+              - /url: /papers/
+              - generic [ref=e82]: 
+              - text: 论文
+            - generic [ref=e83]:
+              - link " 休闲 " [ref=e84]:
+                - /url: javascript:void(0);
+                - generic [ref=e85]: 
+                - text: 休闲
+                - generic [ref=e86]: 
+              - text:   
+            - link " 相册" [ref=e88]:
+              - /url: /gallery/
+              - generic [ref=e89]: 
+              - text: 相册
+            - link " 友链" [ref=e91]:
+              - /url: /link/
+              - generic [ref=e92]: 
+              - text: 友链
+            - link " 关于" [ref=e94]:
+              - /url: /about/
+              - generic [ref=e95]: 
+              - text: 关于
+          - text: 
+      - heading "论文" [level=1] [ref=e97]
+    - main [ref=e98]:
+      - generic [ref=e101]:
+        - generic [ref=e102]:
+          - generic [ref=e103]:
+            - paragraph [ref=e104]: PAPERS / RESEARCH / FIELD NOTES
+            - heading "Papers worth keeping open." [level=1] [ref=e105]
+            - paragraph [ref=e106]: 论文阅读、技术报告、实验复现和相关工作索引。这里保留问题、方法和可复用线索。
+          - complementary [ref=e107]:
+            - generic [ref=e108]: INDEX
+            - strong [ref=e109]: Reading Log
+            - emphasis [ref=e110]: Methods / Benchmarks / Reports
+        - generic [ref=e111]:
+          - article [ref=e112]:
+            - text: "01"
+            - heading "Reading" [level=2] [ref=e113]
+            - paragraph [ref=e114]: 正在读的论文和技术报告。
+          - article [ref=e115]:
+            - text: "02"
+            - heading "Notes" [level=2] [ref=e116]
+            - paragraph [ref=e117]: 方法、数据集、实验设置和结论摘要。
+          - article [ref=e118]:
+            - text: "03"
+            - heading "Reproduction" [level=2] [ref=e119]
+            - paragraph [ref=e120]: 复现记录、代码线索和实验日志。
+        - generic [ref=e121]:
+          - generic [ref=e122]:
+            - generic [ref=e123]: QUEUE
+            - strong [ref=e124]: 待读论文与技术报告
+            - emphasis [ref=e125]: OPEN
+          - generic [ref=e126]:
+            - generic [ref=e127]: METHOD
+            - strong [ref=e128]: 方法卡片：任务、假设、核心设计
+            - emphasis [ref=e129]: DRAFT
+          - generic [ref=e130]:
+            - generic [ref=e131]: RESULTS
+            - strong [ref=e132]: 实验设置、指标和复现实录
+            - emphasis [ref=e133]: SOON
+    - contentinfo [ref=e134]:
+      - contentinfo [ref=e135]:
+        - generic [ref=e136]:
+          - generic [ref=e137]:
+            - link "" [ref=e138]:
+              - /url: https://birdyweb.top/
+              - generic [ref=e139]: 
+            - link "" [ref=e140]:
+              - /url: https://res.abeim.cn/api/qq/?qq=2944006086
+              - generic [ref=e141]: 
+            - link "" [ref=e142]:
+              - /url: /wechat/
+              - generic [ref=e143]: 
+            - link "" [ref=e144]:
+              - /url: mailto:marcus@marcus233.top
+              - generic [ref=e145]: 
+          - img "返回顶部" [ref=e146]
+          - generic [ref=e147]:
+            - link "" [ref=e148]:
+              - /url: https://github.com/zhangbird050801
+              - generic [ref=e149]: 
+            - link "" [ref=e150]:
+              - /url: https://space.bilibili.com/287677710
+              - generic [ref=e151]: 
+            - link "" [ref=e152]:
+              - /url: /stars/
+              - generic [ref=e153]: 
+            - link "" [ref=e154]:
+              - /url: /message/
+              - generic [ref=e155]: 
+        - generic [ref=e156]:
+          - generic [ref=e157]:
+            - heading "直达" [level=3] [ref=e158]
+            - generic [ref=e159]:
+              - link "藏书阁" [ref=e160]:
+                - /url: /books/
+              - link "空间说说" [ref=e161]:
+                - /url: /essay/
+              - link "音乐" [ref=e162]:
+                - /url: /music/
+          - generic [ref=e163]:
+            - heading "关于" [level=3] [ref=e164]
+            - generic [ref=e165]:
+              - link "关于我" [ref=e166]:
+                - /url: /about/
+              - link "我的相册" [ref=e167]:
+                - /url: /gallery/
+          - generic [ref=e168]:
+            - heading "分类" [level=3] [ref=e169]
+            - generic [ref=e170]:
+              - link "博客分类" [ref=e171]:
+                - /url: /categories/
+              - link "技术" [ref=e172]:
+                - /url: /categories/技术/
+              - link "查看全部" [ref=e173]:
+                - /url: /categories/
+        - generic [ref=e175]:
+          - generic [ref=e176]:
+            - generic [ref=e177]:
+              - text: ©2024 - 2026 By
+              - link "Birdy" [ref=e178]:
+                - /url: https://birdyweb.top/
+            - link "CloudFlare" [ref=e180]:
+              - /url: https://www.cloudflare-cn.com/enterprise/
+          - generic [ref=e181]:
+            - generic "已运行时长" [ref=e182]: 本站已运行：1397 天 16 时 03 分 12 秒
+            - generic [ref=e183]:
+              - link "Hexo" [ref=e184]:
+                - /url: https://hexo.io/zh-cn/
+              - link "| Butterfly" [ref=e185]:
+                - /url: https://butterfly.js.org/
+  - generic [ref=e186]:
+    - generic:
+      - button "繁" [ref=e187] [cursor=pointer]
+      - button "" [ref=e188] [cursor=pointer]:
+        - generic [ref=e189]: 
+    - generic [ref=e190]:
+      - button "" [ref=e191] [cursor=pointer]:
+        - generic [ref=e192]: 
+      - button "" [ref=e193] [cursor=pointer]:
+        - generic [ref=e194]: 
+      - button "" [ref=e195] [cursor=pointer]:
+        - generic [ref=e196]: 
+  - generic:
+    - generic:   

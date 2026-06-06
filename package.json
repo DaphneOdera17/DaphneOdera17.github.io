@@ -3,6 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "obsidian:prepare": "node tools/upload-images-to-oss.js",
+    "obsidian:prepare:dry-run": "node tools/upload-images-to-oss.js --dry-run",
+    "obsidian:prepare:links": "node tools/upload-images-to-oss.js --convert-links",
+    "obsidian:prepare:links:dry-run": "node tools/upload-images-to-oss.js --dry-run --convert-links",
+    "obsidian:test-oss": "node tools/upload-images-to-oss.js --test-oss",
+    "oss:images": "node tools/upload-images-to-oss.js",
+    "oss:images:dry-run": "node tools/upload-images-to-oss.js --dry-run",
     "build": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
@@ -13,6 +20,7 @@
     "version": "7.1.1"
   },
   "dependencies": {
+    "ali-oss": "^6.23.0",
     "cheerio": "^1.0.0-rc.12",
     "gulp-clean-css": "^4.3.0",
     "hexo": "^7.0.0",

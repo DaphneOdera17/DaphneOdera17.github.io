@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Study Notes | 激活函数</title>
+      <link href="/post/396a3f75.html"/>
+      <url>/post/396a3f75.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><p>对于 $f=W_2max(0,W_1x)$，这里的 $max(0, x)$ 实际上就是 ReLU，如果去掉，则变为  $f=W_2W_1x$，$W_2W_1$ 可以用 $W_3$ 表示，那么就变<font color="#ff0000">线性</font>了。</p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/blog/images/file-20260404154946586-e4d4734152.png" alt="file-20260404154946586.png"></p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/blog/images/file-20260404155242886-b1431453fd.png" alt="file-20260404155242886.png"></p><p>一般来说，回归问题可以使用恒等函数，二元分类问题可以使用sigmoid函数，多元分类问题可以使用 softmax函数</p><h2 id="Sigmoid"><a href="#Sigmoid" class="headerlink" title="Sigmoid"></a>Sigmoid</h2><script type="math/tex; mode=display">h(x)=\frac{1}{1+exp(-x)}</script><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">sigmoid</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> / (<span class="number">1</span> + np.exp(-x))</span><br><span class="line"></span><br><span class="line">x = np.arange(-<span class="number">5.0</span>, <span class="number">5.0</span>, <span class="number">0.1</span>)</span><br><span class="line">y = sigmoid(x)</span><br><span class="line">plt.plot(x, y)</span><br><span class="line">plt.ylim(-<span class="number">0.1</span>, <span class="number">1.1</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure><p>输出范围为 $[0,1]$<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/blog/images/Pasted-image-20260329175540-fd43800c30.png" alt="Pasted image 20260329175540.png"></p><div class="note warning flat"><p>当 z 值<strong>非常大</strong>或者<strong>非常小</strong>时，sigmoid 函数的导数 $g′(z)$ 将接近 0 。这会导致权重 W 的梯度将接近 0 ，使得梯度更新十分缓慢，即<strong>梯度消失</strong><br>from <a href="https://brickexperts.github.io/2019/09/03/%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/">https://brickexperts.github.io/2019/09/03/%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/</a></p></div><p>来源 <a href="https://www.cnblogs.com/missidiot/p/9378079.html">https://www.cnblogs.com/missidiot/p/9378079.html</a><br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/blog/images/Pasted-image-20260329180206-cd0a8db694.png" alt="Pasted image 20260329180206.png"></p><h2 id="ReLU"><a href="#ReLU" class="headerlink" title="ReLU"></a>ReLU</h2><p>rectified linear unit</p><script type="math/tex; mode=display">ReLU(x) = max(x,0)</script><script type="math/tex; mode=display">h(x)=\left\{\begin{aligned}x~ ~(x > 0) \\0~ ~(x \leq 0)\\\end{aligned}\right.</script><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/blog/images/Pasted-image-20260329182823-1086d313fb.png" alt="Pasted image 20260329182823.png"></p><p>引入了非线性特征，使得神经网络能够学习复杂的模式，同时也可以缓解梯度消失问题。</p><div class="note warning flat"><ol><li><strong>Dying ReLU问题</strong>：在训练过程中，某些神经元可能永远不会被激活（即输入始终为负值），导致这些神经元在整个训练过程中都没有贡献。为了解决这个问题，研究人员提出了[[激活函数#LeakyReLU]]和Parametric ReLU等变体。</li><li><strong>不对称性</strong>：ReLU在负区间的输出始终为零，可能导致模型在某些情况下性能下降。</li></ol></div><h2 id="Softmax"><a href="#Softmax" class="headerlink" title="Softmax"></a>Softmax</h2><p>softmax 函数的输出在 0.0 ~ 1.0 之间(非负性)。<br>并且它的函数输出值<strong>总和是 1</strong>。</p><script type="math/tex; mode=display">y_k = \frac{exp(a_k)}{\sum_{i=1}^nexp(a_i)}</script><p>$n$ 是输出层神经元的个数，第 $k$ 个神经元的输出是 $y_k$。输出层的各个神经元都受到所有输入信号的影响。</p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/blog/images/Pasted-image-20260329184008-572cec9587.png" alt="Pasted image 20260329184008.png"></p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/blog/images/Pasted-image-20260329214923-7356298fa6.png" alt="Pasted image 20260329214923.png"></p><h2 id="Tanh"><a href="#Tanh" class="headerlink" title="Tanh"></a>Tanh</h2><p>将输入投影到 (-1, 1)</p><script type="math/tex; mode=display">tanh(x)=\frac{1-exp(-2x)}{1+exp(-2x)}</script><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/blog/images/Pasted-image-20260329180832-39487e5e14.png" alt="Pasted image 20260329180832.png"></p><div class="note warning flat"><p>Tanh 和 Sigmoid 类似，也存在梯度消失的问题。<br>Tanh函数作为隐藏层的激活函数，输出范围在 −1 到 1 之间，有助于加速梯度下降的收敛。</p></div><h2 id="LeakyReLU"><a href="#LeakyReLU" class="headerlink" title="LeakyReLU"></a>LeakyReLU</h2><p>LeakyReLU 就是为了解决 ReLU 的 Dying RELU 问题。</p><script type="math/tex; mode=display">Leaky~ReLU(x)=\left\{\begin{aligned}x~ ~(x > 0) \\\alpha x~ ~(x \leq 0)\\\end{aligned}\right.</script><p>$\alpha$ 是一个小的正数，取值 0.01 左右。<br>通过在负区间引入斜率，确保了所有神经元都有梯度。</p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/blog/images/Pasted-image-20260329183350-c5ece77a5c.png" alt="Pasted image 20260329183350.png"></p><h2 id="GLU"><a href="#GLU" class="headerlink" title="GLU"></a>GLU</h2><p>Gated Linear Unit 门控线性单元。<br>$GLU(x)=(X<em>W+b)⊗\sigma(X</em>V+c)$</p><ol><li><strong>门控机制</strong>：GLU 通过引入门控机制，使得模型能够选择性地通过信息，从而提高模型的表达能力。</li><li><strong>非线性</strong>：GLU 结合了线性变换和非线性激活，使得模型能够学习复杂的模式。</li><li><strong>信息过滤</strong>：通过门控机制，GLU 能够过滤掉不重要的信息，从而增强模型的表现。</li></ol><h2 id="SwiGLU"><a href="#SwiGLU" class="headerlink" title="SwiGLU"></a>SwiGLU</h2><p>$Swish(x)=x\cdot \sigma (\beta x)$<br>$\sigma (x) = \frac{1}{1+e^{-x}}$</p><h2 id="GELU"><a href="#GELU" class="headerlink" title="GELU"></a>GELU</h2><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/blog/images/Pasted-image-20260329214609-63b69ee91d.png" alt="Pasted image 20260329214609.png"></p><ol><li><strong>平滑性</strong>：GELU 函数是连续且平滑的，这有助于提高模型的稳定性和收敛速度。GELU 通过引入高斯误差函数，使得激活函数在输入的正负区间内都具有平滑性，从而提高模型的稳定性。</li><li><strong>非线性</strong>：GELU 结合了线性和非线性变换，使得模型能够学习复杂的模式。GELU 结合了线性变换和非线性激活，从而增强了模型的非线性特性。</li><li><strong>概率解释</strong>：GELU 通过高斯误差函数对输入进行平滑处理，从而具有概率解释，即输入值越大，通过的概率越高。GELU 具有概率解释，使得输入值越大，通过的概率越高，从而更好地模拟神经元的激活过程。</li></ol><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/blog/images/Pasted-image-20260329214851-ac5c433ad7.png" alt="Pasted image 20260329214851.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> DeepLearning </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 激活函数 </tag>
+            
+            <tag> DL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>hexo | 创建并部署 hexo 博客</title>
       <link href="/post/5d39fa56.html"/>
       <url>/post/5d39fa56.html</url>
@@ -235,31 +262,6 @@
             <tag> Jupyter Notebook </tag>
             
             <tag> Anaconda </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Rust | 安装与配置</title>
-      <link href="/post/9067b1e8.html"/>
-      <url>/post/9067b1e8.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h1 id="Rust-安装与配置"><a href="#Rust-安装与配置" class="headerlink" title="Rust | 安装与配置"></a>Rust | 安装与配置</h1><p><a href="https://www.rust-lang.org/learn/get-started">Rust 官网</a></p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240315235528.png" alt=""></p><p>双击运行 rustup-init.exe<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240315235608.png" alt="image.png"><br>在终端，选择推荐安装方式，等待安装完成。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rustc --vesion</span><br><span class="line">cargo --vesion</span><br></pre></td></tr></table></figure><p>如果能成功查看版本号则成功。</p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240316001303.png" alt=""></p><p>如果要更新 rust, 可以在命令行输入<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rustup update</span><br></pre></td></tr></table></figure></p><p>添加国内镜像：<br>在系统环境变量中<br>RUSTUP_DIST_SERVER 设置为 <a href="https://mirrors.ustc.edu.cn/rust-static">https://mirrors.ustc.edu.cn/rust-static</a></p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240316001107.png"/><br>RUSTUP_UPDATE_ROOT 设置为 <a href="https://mirrors.ustc.edu.cn/rust-static/rustup">https://mirrors.ustc.edu.cn/rust-static/rustup</a></p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/20240316001214.png" alt="image.png"></p><p>在 C:\Users(Username).cargo\config 添加：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">[source.crates-io]</span><br><span class="line">registry = &quot;https://github.com/rust-lang/crates.io-index&quot;</span><br><span class="line"></span><br><span class="line"># 设置源</span><br><span class="line">replace-with = &#x27;ustc&#x27; </span><br><span class="line"></span><br><span class="line"># 清华大学</span><br><span class="line">[source.tuna]</span><br><span class="line">registry = &quot;https://mirrors.tuna.tsinghua.edu.cn/git/crates.io-index.git&quot;</span><br><span class="line"></span><br><span class="line"># 中国科学技术大学</span><br><span class="line">[source.ustc]</span><br><span class="line">registry = &quot;git://mirrors.ustc.edu.cn/crates.io-index&quot;</span><br><span class="line"></span><br><span class="line"># 上海交通大学</span><br><span class="line">[source.sjtu]</span><br><span class="line">registry = &quot;https://mirrors.sjtug.sjtu.edu.cn/git/crates.io-index&quot;</span><br><span class="line"></span><br><span class="line"># rustcc社区</span><br><span class="line">[source.rustcc]</span><br><span class="line">registry = &quot;git://crates.rustcc.cn/crates.io-index&quot;</span><br></pre></td></tr></table></figure></p><p>使用 $cargo$ 指令创建一个新的项目<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cargo new hello_world</span><br></pre></td></tr></table></figure></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Rust </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Rust </tag>
             
         </tags>
       
@@ -945,22 +947,22 @@
     
     
     <entry>
-      <title>categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>关于我</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h2 id="🛠️技能"><a href="#🛠️技能" class="headerlink" title="🛠️技能"></a>🛠️技能</h2><div style="text-align:center">    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/C%2B%2B.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/C.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Java.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">    <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Python.png" style="zoom:15%;float:left"></span><br></div><h2 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h2><div style="text-align:center">    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/HTML.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Vue.png" style="zoom:15%;float:left">    </span>    <br>    <br></div><h2 id="感兴趣的"><a href="#感兴趣的" class="headerlink" title="感兴趣的"></a>感兴趣的</h2><div style="text-align:center">    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Rust.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Raspberry%20Pi.png" style="zoom:15%;float:left">    </span>    <br>    <br></div><h2 id="My-GitHub"><a href="#My-GitHub" class="headerlink" title="My GitHub"></a>My GitHub</h2><div style="text-align:center">    <span style="width:20%;display:inline-block">        <a href="https://github.com/zhangbird050801">            <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Github.png" style="zoom:15%">        </a>    </span>    <br></div><h2 id="📈-Stats"><a href="#📈-Stats" class="headerlink" title="📈 Stats"></a>📈 Stats</h2><div style="text-align:center">    <a href="https://github.com/anuraghazra/github-readme-stats">  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api?username=zhangbird050801&show_icons=true&rank_icon=github&include_all_commits=true"/></a><a href="https://github.com/anuraghazra/convoychat">  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=zhangbird050801&layout=compact&langs_count=8&card_width=320" /></a></div><h2 id="🔗-Links"><a href="#🔗-Links" class="headerlink" title="🔗 Links"></a>🔗 Links</h2><p><a href="https://www.birdyweb.top">My own website</a><br><a href="https://blog.csdn.net/DaphneOdera17">CSDN</a><br><a href="https://stackoverflow.com/users/22276736/birdy"><br>  <img src="https://img.shields.io/badge/stackoverflow-F58025?logo=stackoverflow&logoColor=white" style="float:left"></a></p>]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title></title>
-      <link href="/css/modify.css"/>
-      <url>/css/modify.css</url>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
-        <content type="html"><![CDATA[#page-header,#page-header:before {  background: transparent !important;}#page-header.post-bg,#page-header.not-home-page {  height: 280px !important;}#page-header #post-info {  bottom: 40px !important;}#page-header #page-site-info {  top: 140px !important;}@media screen and (max-width: 768px) {  #page-header.not-home-page {    height: 200px !important;  }  #page-header #post-info {    bottom: 10px !important;  }  #page-header #page-site-info {    top: 100px !important;  }}.top-img {  height: 250px;  margin: -50px -40px 50px;  border-top-left-radius: inherit;  border-top-right-radius: inherit;  background-position: center center;  background-size: cover;  -webkit-transition: all 0.3s;  -moz-transition: all 0.3s;  -o-transition: all 0.3s;  -ms-transition: all 0.3s;  transition: all 0.3s;}@media screen and (max-width: 768px) {  .top-img {    height: 230px;    margin: -36px -14px 36px;  }}[data-theme='dark'] .top-img {  filter: brightness(0.8);}#footer:before {  background-color: rgba(255,255,255,0.5);}[data-theme='dark'] #footer:before {  background-color: rgba(0,0,0,0.5);}#footer-wrap,#footer-wrap a {  color: #111;  -webkit-transition: unset;  -moz-transition: unset;  -o-transition: unset;  -ms-transition: unset;  transition: unset;}[data-theme='dark'] #footer-wrap,[data-theme='dark'] #footer-wrap a {  color: var(--light-grey);}]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script>]]></content>
       
     </entry>
     
@@ -978,22 +980,11 @@
     
     
     <entry>
-      <title>gallery</title>
-      <link href="/gallery/index.html"/>
-      <url>/gallery/index.html</url>
+      <title></title>
+      <link href="/css/modify.css"/>
+      <url>/css/modify.css</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>关于我</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h2 id="🛠️技能"><a href="#🛠️技能" class="headerlink" title="🛠️技能"></a>🛠️技能</h2><div style="text-align:center">    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/C%2B%2B.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/C.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Java.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">    <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Python.png" style="zoom:15%;float:left"></span><br></div><h2 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h2><div style="text-align:center">    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/HTML.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Vue.png" style="zoom:15%;float:left">    </span>    <br>    <br></div><h2 id="感兴趣的"><a href="#感兴趣的" class="headerlink" title="感兴趣的"></a>感兴趣的</h2><div style="text-align:center">    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Rust.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Raspberry%20Pi.png" style="zoom:15%;float:left">    </span>    <br>    <br></div><h2 id="My-GitHub"><a href="#My-GitHub" class="headerlink" title="My GitHub"></a>My GitHub</h2><div style="text-align:center">    <span style="width:20%;display:inline-block">        <a href="https://github.com/zhangbird050801">            <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Github.png" style="zoom:15%">        </a>    </span>    <br></div><h2 id="📈-Stats"><a href="#📈-Stats" class="headerlink" title="📈 Stats"></a>📈 Stats</h2><div style="text-align:center">    <a href="https://github.com/anuraghazra/github-readme-stats">  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api?username=zhangbird050801&show_icons=true&rank_icon=github&include_all_commits=true"/></a><a href="https://github.com/anuraghazra/convoychat">  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=zhangbird050801&layout=compact&langs_count=8&card_width=320" /></a></div><h2 id="🔗-Links"><a href="#🔗-Links" class="headerlink" title="🔗 Links"></a>🔗 Links</h2><p><a href="https://www.birdyweb.top">My own website</a><br><a href="https://blog.csdn.net/DaphneOdera17">CSDN</a><br><a href="https://stackoverflow.com/users/22276736/birdy"><br>  <img src="https://img.shields.io/badge/stackoverflow-F58025?logo=stackoverflow&logoColor=white" style="float:left"></a></p>]]></content>
+        <content type="html"><![CDATA[#page-header,#page-header:before {  background: transparent !important;}#page-header.post-bg,#page-header.not-home-page {  height: 280px !important;}#page-header #post-info {  bottom: 40px !important;}#page-header #page-site-info {  top: 140px !important;}@media screen and (max-width: 768px) {  #page-header.not-home-page {    height: 200px !important;  }  #page-header #post-info {    bottom: 10px !important;  }  #page-header #page-site-info {    top: 100px !important;  }}.top-img {  height: 250px;  margin: -50px -40px 50px;  border-top-left-radius: inherit;  border-top-right-radius: inherit;  background-position: center center;  background-size: cover;  -webkit-transition: all 0.3s;  -moz-transition: all 0.3s;  -o-transition: all 0.3s;  -ms-transition: all 0.3s;  transition: all 0.3s;}@media screen and (max-width: 768px) {  .top-img {    height: 230px;    margin: -36px -14px 36px;  }}[data-theme='dark'] .top-img {  filter: brightness(0.8);}#footer:before {  background-color: rgba(255,255,255,0.5);}[data-theme='dark'] #footer:before {  background-color: rgba(0,0,0,0.5);}#footer-wrap,#footer-wrap a {  color: #111;  -webkit-transition: unset;  -moz-transition: unset;  -o-transition: unset;  -ms-transition: unset;  transition: unset;}[data-theme='dark'] #footer-wrap,[data-theme='dark'] #footer-wrap a {  color: var(--light-grey);}]]></content>
       
     </entry>
     
@@ -1022,9 +1013,20 @@
     
     
     <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title></title>
+      <link href="/music/index.html"/>
+      <url>/music/index.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><!-- 播放器 --><div class="music-player"><!-- audio标签 --><audio class="music-player__audio" ></audio><!-- 播放器主体 --><div class="music-player__main"><!-- 模糊背景 --><div class="music-player__blur"></div><!-- 唱片 --><div class="music-player__disc"><!-- 唱片图片 --><div class="music-player__image"><img width="100%" src="" alt=""></div><!-- 指针 --><div class="music-player__pointer"><img width="100%" src="/img/cd_tou.png" alt=""></div></div><!-- 控件主体 --><div class="music-player__controls"><!-- 歌曲信息 --><div class="music__info"><h3 class="music__info--title">...</h3></div><!-- 控件... --><div class="player-control"><div class="player-control__content"><div class="player-control__btns"><div class="player-control__btn player-control__btn--prev"><i class="iconfont icon-prev"></i></div><div class="player-control__btn player-control__btn--play"><i class="iconfont icon-play"></i></div><div class="player-control__btn player-control__btn--next"><i class="iconfont icon-next"></i></div><div class="player-control__btn player-control__btn--mode"><i class="iconfont icon-random"></i></div></div><div class="player-control__volume"><div class="control__volume--icon player-control__btn"><i class="iconfont icon-volume"></i></div><div class="control__volume--progress progress"></div></div></div><div class="player-control__content"><div class="player__song--progress progress"></div><div class="player__song--timeProgess nowTime">00:00</div><div class="player__song--timeProgess totalTime">00:00</div></div></div></div></div><!-- 歌曲列表 --><div class="music-player__list"><ul class="music__list_content"></ul></div></div><script src="/js/utill.js"></script><script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.slim.min.js"></script><script src="/js/player.js?10"></script><div style="text-align:center;margin:-100px 0; font:normal 14px/24px 'MicroSoft YaHei';color:#ffffff"></div>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>gallery</title>
+      <link href="/gallery/index.html"/>
+      <url>/gallery/index.html</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script>]]></content>
       
@@ -1033,11 +1035,11 @@
     
     
     <entry>
-      <title></title>
-      <link href="/music/index.html"/>
-      <url>/music/index.html</url>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><!-- 播放器 --><div class="music-player"><!-- audio标签 --><audio class="music-player__audio" ></audio><!-- 播放器主体 --><div class="music-player__main"><!-- 模糊背景 --><div class="music-player__blur"></div><!-- 唱片 --><div class="music-player__disc"><!-- 唱片图片 --><div class="music-player__image"><img width="100%" src="" alt=""></div><!-- 指针 --><div class="music-player__pointer"><img width="100%" src="/img/cd_tou.png" alt=""></div></div><!-- 控件主体 --><div class="music-player__controls"><!-- 歌曲信息 --><div class="music__info"><h3 class="music__info--title">...</h3></div><!-- 控件... --><div class="player-control"><div class="player-control__content"><div class="player-control__btns"><div class="player-control__btn player-control__btn--prev"><i class="iconfont icon-prev"></i></div><div class="player-control__btn player-control__btn--play"><i class="iconfont icon-play"></i></div><div class="player-control__btn player-control__btn--next"><i class="iconfont icon-next"></i></div><div class="player-control__btn player-control__btn--mode"><i class="iconfont icon-random"></i></div></div><div class="player-control__volume"><div class="control__volume--icon player-control__btn"><i class="iconfont icon-volume"></i></div><div class="control__volume--progress progress"></div></div></div><div class="player-control__content"><div class="player__song--progress progress"></div><div class="player__song--timeProgess nowTime">00:00</div><div class="player__song--timeProgess totalTime">00:00</div></div></div></div></div><!-- 歌曲列表 --><div class="music-player__list"><ul class="music__list_content"></ul></div></div><script src="/js/utill.js"></script><script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.slim.min.js"></script><script src="/js/player.js?10"></script><div style="text-align:center;margin:-100px 0; font:normal 14px/24px 'MicroSoft YaHei';color:#ffffff"></div>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script>]]></content>
       
     </entry>
     

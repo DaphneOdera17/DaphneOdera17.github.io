@@ -4,29 +4,6 @@
   
     
     <entry>
-      <title>CNN</title>
-      <link href="/post/7203e497.html"/>
-      <url>/post/7203e497.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><p>CNN 卷积神经网络<br>CNN 是 Fully Connected Layer 的 FFN 的一个 special case, 由它做 receptive field，再拿掉不需要的 weight 做 parameter sharing，则得到 CNN<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/blog/images/Pasted-image-20260328222502-07666c7cb7.png" alt="Pasted image 20260328222502.png"></p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/blog/images/7fabb9ae4d39bf7a3d2c091e8b647072-1a8be6d44a.png" alt="7fabb9ae4d39bf7a3d2c091e8b647072.png"></p><p>![][<a href="https://upload.wikimedia.org/wikipedia/commons/1/19/2D_Convolution_Animation.gif">https://upload.wikimedia.org/wikipedia/commons/1/19/2D_Convolution_Animation.gif</a>]</p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/blog/images/file-20260404172445869-acbcd87d35.png" alt="file-20260404172445869.png"></p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/blog/images/file-20260404174546560-2d6cb494d5.png" alt="file-20260404174546560.png"></p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/blog/images/file-20260404174612931-08c2dca4b8.png" alt="file-20260404174612931.png"></p><p>example<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/blog/images/file-20260404174638174-b204318990.png" alt="file-20260404174638174.png"></p><p>实际上还要加上激活函数<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/blog/images/file-20260404174725052-81a4a6901b.png" alt="file-20260404174725052.png"></p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/blog/images/file-20260404175120239-833761e8ad.png" alt="file-20260404175120239.png"></p><p>Solution: Add padding around the input before sliding the filter<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/blog/images/file-20260404175157112-4e533f0afd.png" alt="file-20260404175157112.png"></p><h2 id="感受野"><a href="#感受野" class="headerlink" title="感受野"></a>感受野</h2><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/blog/images/file-20260404175347336-b358df2bc3.png" alt="file-20260404175347336.png"></p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/blog/images/file-20260404175538056-dedc68efc2.png" alt="file-20260404175538056.png"></p><h2 id="Stride"><a href="#Stride" class="headerlink" title="Stride"></a>Stride</h2><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/blog/images/file-20260404175608877-1ebf6888d9.png" alt="file-20260404175608877.png"></p><h2 id="Parameters"><a href="#Parameters" class="headerlink" title="Parameters"></a>Parameters</h2><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/blog/images/file-20260404175852723-cfec32ae6b.png" alt="file-20260404175852723.png"></p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/blog/images/file-20260404180001607-d4235e07a6.png" alt="file-20260404180001607.png"></p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/blog/images/file-20260404180034294-6dffef3ba2.png" alt="file-20260404180034294.png"></p><h2 id="Pooling"><a href="#Pooling" class="headerlink" title="Pooling"></a>Pooling</h2><p>Max pooling<br><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/blog/images/file-20260404180239776-5eb74220e7.png" alt="file-20260404180239776.png"></p><h2 id="Transfer-Learning-with-CNNs"><a href="#Transfer-Learning-with-CNNs" class="headerlink" title="Transfer Learning with CNNs"></a>Transfer Learning with CNNs</h2><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/blog/images/Pasted-image-20260405142308-157d7c7f38.png" alt="Pasted image 20260405142308.png"></p><p><img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/blog/images/Pasted-image-20260405142020-ca6eec7ea4.png" alt="Pasted image 20260405142020.png"></p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> DL </tag>
-            
-            <tag> ML </tag>
-            
-            <tag> CNN </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>hexo | 创建并部署 hexo 博客</title>
       <link href="/post/5d39fa56.html"/>
       <url>/post/5d39fa56.html</url>
@@ -332,9 +309,9 @@
       
         <tags>
             
-            <tag> 教程 </tag>
-            
             <tag> Linux </tag>
+            
+            <tag> 教程 </tag>
             
             <tag> Debian </tag>
             
@@ -367,9 +344,9 @@
       
         <tags>
             
-            <tag> 教程 </tag>
-            
             <tag> Linux </tag>
+            
+            <tag> 教程 </tag>
             
             <tag> Debian </tag>
             
@@ -512,9 +489,9 @@
       
         <tags>
             
-            <tag> 教程 </tag>
-            
             <tag> Linux </tag>
+            
+            <tag> 教程 </tag>
             
             <tag> 虚拟机 </tag>
             
@@ -957,6 +934,17 @@
     
     
     <entry>
+      <title>books</title>
+      <link href="/books/index.html"/>
+      <url>/books/index.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>categories</title>
       <link href="/categories/index.html"/>
       <url>/categories/index.html</url>
@@ -968,11 +956,11 @@
     
     
     <entry>
-      <title>books</title>
-      <link href="/books/index.html"/>
-      <url>/books/index.html</url>
+      <title></title>
+      <link href="/css/modify.css"/>
+      <url>/css/modify.css</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script>]]></content>
+        <content type="html"><![CDATA[#page-header,#page-header:before {  background: transparent !important;}#page-header.post-bg,#page-header.not-home-page {  height: 280px !important;}#page-header #post-info {  bottom: 40px !important;}#page-header #page-site-info {  top: 140px !important;}@media screen and (max-width: 768px) {  #page-header.not-home-page {    height: 200px !important;  }  #page-header #post-info {    bottom: 10px !important;  }  #page-header #page-site-info {    top: 100px !important;  }}.top-img {  height: 250px;  margin: -50px -40px 50px;  border-top-left-radius: inherit;  border-top-right-radius: inherit;  background-position: center center;  background-size: cover;  -webkit-transition: all 0.3s;  -moz-transition: all 0.3s;  -o-transition: all 0.3s;  -ms-transition: all 0.3s;  transition: all 0.3s;}@media screen and (max-width: 768px) {  .top-img {    height: 230px;    margin: -36px -14px 36px;  }}[data-theme='dark'] .top-img {  filter: brightness(0.8);}#footer:before {  background-color: rgba(255,255,255,0.5);}[data-theme='dark'] #footer:before {  background-color: rgba(0,0,0,0.5);}#footer-wrap,#footer-wrap a {  color: #111;  -webkit-transition: unset;  -moz-transition: unset;  -o-transition: unset;  -ms-transition: unset;  transition: unset;}[data-theme='dark'] #footer-wrap,[data-theme='dark'] #footer-wrap a {  color: var(--light-grey);}]]></content>
       
     </entry>
     
@@ -1001,11 +989,22 @@
     
     
     <entry>
-      <title></title>
-      <link href="/css/modify.css"/>
-      <url>/css/modify.css</url>
+      <title>关于我</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
-        <content type="html"><![CDATA[#page-header,#page-header:before {  background: transparent !important;}#page-header.post-bg,#page-header.not-home-page {  height: 280px !important;}#page-header #post-info {  bottom: 40px !important;}#page-header #page-site-info {  top: 140px !important;}@media screen and (max-width: 768px) {  #page-header.not-home-page {    height: 200px !important;  }  #page-header #post-info {    bottom: 10px !important;  }  #page-header #page-site-info {    top: 100px !important;  }}.top-img {  height: 250px;  margin: -50px -40px 50px;  border-top-left-radius: inherit;  border-top-right-radius: inherit;  background-position: center center;  background-size: cover;  -webkit-transition: all 0.3s;  -moz-transition: all 0.3s;  -o-transition: all 0.3s;  -ms-transition: all 0.3s;  transition: all 0.3s;}@media screen and (max-width: 768px) {  .top-img {    height: 230px;    margin: -36px -14px 36px;  }}[data-theme='dark'] .top-img {  filter: brightness(0.8);}#footer:before {  background-color: rgba(255,255,255,0.5);}[data-theme='dark'] #footer:before {  background-color: rgba(0,0,0,0.5);}#footer-wrap,#footer-wrap a {  color: #111;  -webkit-transition: unset;  -moz-transition: unset;  -o-transition: unset;  -ms-transition: unset;  transition: unset;}[data-theme='dark'] #footer-wrap,[data-theme='dark'] #footer-wrap a {  color: var(--light-grey);}]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h2 id="🛠️技能"><a href="#🛠️技能" class="headerlink" title="🛠️技能"></a>🛠️技能</h2><div style="text-align:center">    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/C%2B%2B.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/C.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Java.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">    <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Python.png" style="zoom:15%;float:left"></span><br></div><h2 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h2><div style="text-align:center">    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/HTML.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Vue.png" style="zoom:15%;float:left">    </span>    <br>    <br></div><h2 id="感兴趣的"><a href="#感兴趣的" class="headerlink" title="感兴趣的"></a>感兴趣的</h2><div style="text-align:center">    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Rust.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Raspberry%20Pi.png" style="zoom:15%;float:left">    </span>    <br>    <br></div><h2 id="My-GitHub"><a href="#My-GitHub" class="headerlink" title="My GitHub"></a>My GitHub</h2><div style="text-align:center">    <span style="width:20%;display:inline-block">        <a href="https://github.com/zhangbird050801">            <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Github.png" style="zoom:15%">        </a>    </span>    <br></div><h2 id="📈-Stats"><a href="#📈-Stats" class="headerlink" title="📈 Stats"></a>📈 Stats</h2><div style="text-align:center">    <a href="https://github.com/anuraghazra/github-readme-stats">  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api?username=zhangbird050801&show_icons=true&rank_icon=github&include_all_commits=true"/></a><a href="https://github.com/anuraghazra/convoychat">  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=zhangbird050801&layout=compact&langs_count=8&card_width=320" /></a></div><h2 id="🔗-Links"><a href="#🔗-Links" class="headerlink" title="🔗 Links"></a>🔗 Links</h2><p><a href="https://www.birdyweb.top">My own website</a><br><a href="https://blog.csdn.net/DaphneOdera17">CSDN</a><br><a href="https://stackoverflow.com/users/22276736/birdy"><br>  <img src="https://img.shields.io/badge/stackoverflow-F58025?logo=stackoverflow&logoColor=white" style="float:left"></a></p>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/js/modify.js"/>
+      <url>/js/modify.js</url>
+      
+        <content type="html"><![CDATA['use strict';const cheerio = require('cheerio');/** * 在页面插入新顶部图 * @param {cheerio.Root} $ Root */function insertTopImg($) {    let header = $('#page-header');    if (header.length === 0) return;    let background = header.css('background-image');    if (!background) return;    $('#post, #page, #archive, #tag, #category').prepend(`<div class="top-img" style="background-image: ${background};"></div>`);}hexo.extend.filter.register('after_render:html', function(str, data) {    let $ = cheerio.load(str, {        decodeEntities: false    });    insertTopImg($);    return $.html();});]]></content>
       
     </entry>
     
@@ -1017,17 +1016,6 @@
       <url>/link/index.html</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/music/index.html"/>
-      <url>/music/index.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><!-- 播放器 --><div class="music-player"><!-- audio标签 --><audio class="music-player__audio" ></audio><!-- 播放器主体 --><div class="music-player__main"><!-- 模糊背景 --><div class="music-player__blur"></div><!-- 唱片 --><div class="music-player__disc"><!-- 唱片图片 --><div class="music-player__image"><img width="100%" src="" alt=""></div><!-- 指针 --><div class="music-player__pointer"><img width="100%" src="/img/cd_tou.png" alt=""></div></div><!-- 控件主体 --><div class="music-player__controls"><!-- 歌曲信息 --><div class="music__info"><h3 class="music__info--title">...</h3></div><!-- 控件... --><div class="player-control"><div class="player-control__content"><div class="player-control__btns"><div class="player-control__btn player-control__btn--prev"><i class="iconfont icon-prev"></i></div><div class="player-control__btn player-control__btn--play"><i class="iconfont icon-play"></i></div><div class="player-control__btn player-control__btn--next"><i class="iconfont icon-next"></i></div><div class="player-control__btn player-control__btn--mode"><i class="iconfont icon-random"></i></div></div><div class="player-control__volume"><div class="control__volume--icon player-control__btn"><i class="iconfont icon-volume"></i></div><div class="control__volume--progress progress"></div></div></div><div class="player-control__content"><div class="player__song--progress progress"></div><div class="player__song--timeProgess nowTime">00:00</div><div class="player__song--timeProgess totalTime">00:00</div></div></div></div></div><!-- 歌曲列表 --><div class="music-player__list"><ul class="music__list_content"></ul></div></div><script src="/js/utill.js"></script><script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.slim.min.js"></script><script src="/js/player.js?10"></script><div style="text-align:center;margin:-100px 0; font:normal 14px/24px 'MicroSoft YaHei';color:#ffffff"></div>]]></content>
       
     </entry>
     
@@ -1046,21 +1034,10 @@
     
     <entry>
       <title></title>
-      <link href="/js/modify.js"/>
-      <url>/js/modify.js</url>
+      <link href="/music/index.html"/>
+      <url>/music/index.html</url>
       
-        <content type="html"><![CDATA['use strict';const cheerio = require('cheerio');/** * 在页面插入新顶部图 * @param {cheerio.Root} $ Root */function insertTopImg($) {    let header = $('#page-header');    if (header.length === 0) return;    let background = header.css('background-image');    if (!background) return;    $('#post, #page, #archive, #tag, #category').prepend(`<div class="top-img" style="background-image: ${background};"></div>`);}hexo.extend.filter.register('after_render:html', function(str, data) {    let $ = cheerio.load(str, {        decodeEntities: false    });    insertTopImg($);    return $.html();});]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>关于我</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h2 id="🛠️技能"><a href="#🛠️技能" class="headerlink" title="🛠️技能"></a>🛠️技能</h2><div style="text-align:center">    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/C%2B%2B.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/C.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Java.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">    <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Python.png" style="zoom:15%;float:left"></span><br></div><h2 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h2><div style="text-align:center">    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/HTML.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Vue.png" style="zoom:15%;float:left">    </span>    <br>    <br></div><h2 id="感兴趣的"><a href="#感兴趣的" class="headerlink" title="感兴趣的"></a>感兴趣的</h2><div style="text-align:center">    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Rust.png" style="zoom:15%;float:left">    </span>    <span style="width:20%;display:inline-block">        <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Raspberry%20Pi.png" style="zoom:15%;float:left">    </span>    <br>    <br></div><h2 id="My-GitHub"><a href="#My-GitHub" class="headerlink" title="My GitHub"></a>My GitHub</h2><div style="text-align:center">    <span style="width:20%;display:inline-block">        <a href="https://github.com/zhangbird050801">            <img src="https://typora-birdy.oss-cn-guangzhou.aliyuncs.com/Github.png" style="zoom:15%">        </a>    </span>    <br></div><h2 id="📈-Stats"><a href="#📈-Stats" class="headerlink" title="📈 Stats"></a>📈 Stats</h2><div style="text-align:center">    <a href="https://github.com/anuraghazra/github-readme-stats">  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api?username=zhangbird050801&show_icons=true&rank_icon=github&include_all_commits=true"/></a><a href="https://github.com/anuraghazra/convoychat">  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=zhangbird050801&layout=compact&langs_count=8&card_width=320" /></a></div><h2 id="🔗-Links"><a href="#🔗-Links" class="headerlink" title="🔗 Links"></a>🔗 Links</h2><p><a href="https://www.birdyweb.top">My own website</a><br><a href="https://blog.csdn.net/DaphneOdera17">CSDN</a><br><a href="https://stackoverflow.com/users/22276736/birdy"><br>  <img src="https://img.shields.io/badge/stackoverflow-F58025?logo=stackoverflow&logoColor=white" style="float:left"></a></p>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><!-- 播放器 --><div class="music-player"><!-- audio标签 --><audio class="music-player__audio" ></audio><!-- 播放器主体 --><div class="music-player__main"><!-- 模糊背景 --><div class="music-player__blur"></div><!-- 唱片 --><div class="music-player__disc"><!-- 唱片图片 --><div class="music-player__image"><img width="100%" src="" alt=""></div><!-- 指针 --><div class="music-player__pointer"><img width="100%" src="/img/cd_tou.png" alt=""></div></div><!-- 控件主体 --><div class="music-player__controls"><!-- 歌曲信息 --><div class="music__info"><h3 class="music__info--title">...</h3></div><!-- 控件... --><div class="player-control"><div class="player-control__content"><div class="player-control__btns"><div class="player-control__btn player-control__btn--prev"><i class="iconfont icon-prev"></i></div><div class="player-control__btn player-control__btn--play"><i class="iconfont icon-play"></i></div><div class="player-control__btn player-control__btn--next"><i class="iconfont icon-next"></i></div><div class="player-control__btn player-control__btn--mode"><i class="iconfont icon-random"></i></div></div><div class="player-control__volume"><div class="control__volume--icon player-control__btn"><i class="iconfont icon-volume"></i></div><div class="control__volume--progress progress"></div></div></div><div class="player-control__content"><div class="player__song--progress progress"></div><div class="player__song--timeProgess nowTime">00:00</div><div class="player__song--timeProgess totalTime">00:00</div></div></div></div></div><!-- 歌曲列表 --><div class="music-player__list"><ul class="music__list_content"></ul></div></div><script src="/js/utill.js"></script><script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.slim.min.js"></script><script src="/js/player.js?10"></script><div style="text-align:center;margin:-100px 0; font:normal 14px/24px 'MicroSoft YaHei';color:#ffffff"></div>]]></content>
       
     </entry>
     
